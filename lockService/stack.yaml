@@ -1,0 +1,16 @@
+flags: {}
+image:
+  container:
+    base: fpco/stack-run
+    name: lockserv
+extra-package-dbs: []
+packages:
+- .
+- ../filesystem-api
+- location:
+    git: https://github.com/Palmik/bson-generic.git
+    commit: e078def65d0dee1ea7e3205f445e47d5937851f3
+docker:
+  enable: false
+extra-deps: []
+resolver: lts-7.10
