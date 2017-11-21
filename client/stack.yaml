@@ -17,15 +17,14 @@
 #  location: "./custom-snapshot.yaml"
 resolver: lts-7.12
 docker:
-  enable: true # warning!
+  enable: true  
 
 # stack image container
 image:
   container:
-    name: lockserv 
+    name: client 
     base: fpco/stack-run
     
-
 # User packages to be built.
 # Various formats can be used as shown in the example below.
 #
@@ -53,7 +52,7 @@ packages:
 
 # Dependency packages to be pulled from upstream that are not in the resolver
 # (e.g., acme-missiles-0.3)
-extra-deps: [servant-client-0.9.1.1, servant-0.9.1.1, servant-server-0.9.1.1, http-api-data-0.3.2]
+extra-deps: [servant-client-0.9.1.1, servant-0.9.1.1, servant-server-0.9.1.1, http-api-data-0.3.2,git-embed-0.1.0]
 
 
 # Override default flag values for local packages and extra-deps

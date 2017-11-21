@@ -36,6 +36,7 @@ import           Network.Wai.Handler.Warp
 import           Network.Wai.Logger
 
 import           Servant
+import           Network.Socket
 import qualified Servant.API                  as SC
 import qualified Servant.Client               as SC
 import           System.Environment           (getArgs, getProgName, lookupEnv)
@@ -54,9 +55,8 @@ import           EncryptionAPI
 
 
  
-type API1 = "lock"                     :> ReqBody '[JSON] Message3  :> Post '[JSON] Bool
-     :<|> "unlock"                     :> ReqBody '[JSON] Message3  :> Post '[JSON]  Bool  
-     :<|> "islocked"                   :> QueryParam "filename" String :> Get '[JSON] Bool 
+type API1 = "lock"      :>RemoteHost :> ReqBody '[JSON] Message3  :> Post '[JSON] Bool 
+    
 
 startApp :: IO ()    -- set up wai logger for service to output apache style logging for rest calls
 startApp = withLogging $ \ aplogger -> do
@@ -64,7 +64,7 @@ startApp = withLogging $ \ aplogger -> do
   
   warnLog "Starting filesystem"
 
-  let settings = setPort 8081 $ setLogger aplogger defaultSettings
+  let settings = setPort 8077 $ setLogger aplogger defaultSettings
   runSettings settings app
 
 
@@ -76,59 +76,13 @@ api :: Proxy API1
 api = Proxy 
 
 server :: Server API1
-server = lock
-    :<|> unlock
-    :<|> islocked 
+server = lock 
   where
 
-    unlock :: Message3 -> Handler Bool
-    unlock msg= liftIO $ do
-      let(key,username) = decryptMessage3 msg
-      
-      withMongoDbConnection $ do -- get the lock and update it
-        docs <- find (select ["filename" =: key] "LockService_RECORD") >>= drainCursor
-        let lockStatus = take 1 $ catMaybes $ DL.map (\ b -> fromBSON b :: Maybe Lock) docs
-        case lockStatus of
-            [(Lock _ True storedUserN)]  ->liftIO $ do
-              case (storedUserN==username) of
-                (True)-> do
-                   withMongoDbConnection $ upsert (select ["filename" =: key] "LockService_RECORD") $ toBSON (Lock key False "")
-                   return True  
-                (False)-> return False
-            
-            [] -> return False
-
-
-
-    lock ::Message3 -> Handler Bool
-    lock msg   = liftIO $ do
-      let(key,username) = decryptMessage3 msg
-      warnLog $ "Trying to lock " ++ key ++ "."
-      withMongoDbConnection $ do
-        docs <- find (select ["filename" =: key] "LockService_RECORD") >>= drainCursor
-        let lock =  catMaybes $ DL.map (\ b -> fromBSON b :: Maybe Lock) docs
-        case lock of
-            [(Lock _ True _)] -> return False   -- if locked
-            [(Lock _ False _ )] -> liftIO $ do
-              withMongoDbConnection $ upsert (select ["filename" =: key] "LockService_RECORD") $ toBSON $ (Lock key True username)
-              return True
-            [] -> liftIO $ do -- there is no file
-                withMongoDbConnection $ upsert (select ["filename" =: key] "LockService_RECORD") $ toBSON $ (Lock key True username)
-                return True 
-
-    islocked :: Maybe String -> Handler Bool
-    islocked (Just key) = liftIO $ do
-     
-      warnLog $ "Searching if locked " ++ key
-      withMongoDbConnection $ do
-        docs <- find (select ["filename" =: key] "LockService_RECORD") >>= drainCursor
-        let lock =  catMaybes $ DL.map (\ b -> fromBSON b :: Maybe Lock) docs
-        case ( lock) of
-          [(Lock _ True _ )] -> return True
-          [(Lock _ False _ )]-> return False
-          otherwise -> return False
-
-    islocked Nothing = liftIO $ do
-        
-        warnLog $ " incorrect format for islocked api: "
-        return False
+    
+    -- need to store information about the client 
+    -- port number and ip
+    lock ::SockAddr -> Message3  -> Handler Bool
+    lock m n  = liftIO $ do
+      warnLog $ show m
+      return True 
