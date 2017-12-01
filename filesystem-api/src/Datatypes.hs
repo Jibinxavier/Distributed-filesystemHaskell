@@ -58,8 +58,10 @@ import           System.IO
 data Lock = Lock { filename :: String 
                   , status :: Bool
                   , usern:: String
+                  , queue:: [[String]] -- (usern, addr)
                  }deriving (Show, Generic, FromJSON, ToJSON, ToBSON, FromBSON)
- 
+deriving instance FromBSON [[String]]
+deriving instance ToBSON [[String]]
 data Message1 = Message1 { file    :: String
                        } deriving (Show, Generic, FromJSON, ToJSON, ToBSON, FromBSON)
 data Message = Message { name    :: String
@@ -231,6 +233,9 @@ data LocalTransInfo = LocalTransInfo {
                     
 deriving instance FromBSON [TChanges]
 deriving instance ToBSON [TChanges] 
+
+-- deriving instance FromBSON [(String,String)]
+-- deriving instance ToBSON [(String,String)] 
 deriving instance FromBSON [FInfo]
 deriving instance ToBSON [FInfo] 
 deriving instance FromBSON [FileContents]
