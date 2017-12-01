@@ -9,8 +9,7 @@ author:              Jibin
 maintainer:          Jibin
 copyright:           2017
 category:            test
-build-type:          Simple
-extra-source-files:  README.md
+build-type:          Simple 
 cabal-version:       >=1.10
 
 library

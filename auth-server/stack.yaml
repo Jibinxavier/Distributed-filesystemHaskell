@@ -24,7 +24,7 @@ docker:
 image:
   container:
     name: authserver
-    base: docker-whale
+    base: distr-filesystem-base
 
 # Dependency packages to be pulled from upstream that are not in the resolver
 # (e.g., acme-missiles-0.3)

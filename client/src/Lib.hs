@@ -49,9 +49,15 @@ import           Helpers
  
 doFileLock :: String-> String -> IO ()
 doFileLock fpath usern= do
-  doCall  (lock $ Message3  "encFpath" "encUname" "ticket") lockIP lockPort "seesh"
+  authInfo <- getAuthClientInfo usern
+  case authInfo of 
+    (Just (ticket,seshkey) ) -> do 
+      let encFpath = myEncryptAES (aesPad seshkey) (fpath)
+      let encUname = myEncryptAES (aesPad seshkey) (usern)
+      doCall  (lock $ Message3  encFpath encUname ticket) lockIP lockPort seshkey
 
-
+    (Nothing) -> putStrLn $ "Expired token . Sigin in again.  " 
+  
 
 doFileUnLock :: String-> String -> IO ()
 doFileUnLock fpath usern= do
@@ -310,7 +316,8 @@ doLogin userN pass  = do
 someFunc :: IO ()
 someFunc = do
   banner
-  join $ execParser =<< opts
+  forever $ do
+    join $ execParser =<< opts
 
 -- | Defined in the applicative style, opts provides a declaration of the entire command line
 --   parser structure. To add a new command just follow the example of the existing commands. A
@@ -387,15 +394,7 @@ opts = do
                                           <*> argument str (metavar "dir") 
                                           <*> argument str (metavar "file name") 
                                           <*> argument str (metavar "usern") 
-                                          ) "Upload to transaction" )
-  
-
-
-
-
-
-
- 
+                                          ) "Upload to transaction" ) 
                         <> command "sign-up"
                                    (withInfo ( doSignup
                                            <$> argument str (metavar "User name")

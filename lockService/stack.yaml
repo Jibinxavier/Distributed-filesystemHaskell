@@ -23,7 +23,7 @@ docker:
 image:
   container:
     name: lockserv 
-    base: fpco/stack-run
+    base: distr-filesystem-base
     
 
 # User packages to be built.
