@@ -7,7 +7,7 @@ license:             BSD3
 license-file:        LICENSE
 author:              Jibin
 maintainer:          Jibin
-copyright:           2016
+copyright:           2017
 category:            test
 build-type:          Simple
 extra-source-files:  README.md

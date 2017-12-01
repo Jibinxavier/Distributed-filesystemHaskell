@@ -1,4 +1,3 @@
-
 {-# LANGUAGE DataKinds            #-}
 {-# LANGUAGE DeriveAnyClass       #-}
 {-# LANGUAGE DeriveGeneric        #-}
@@ -25,18 +24,20 @@ import qualified Data.ByteString.Lazy         as L
 import qualified Data.List                    as DL
 import           Data.Maybe
 import           Data.Text                    (pack, unpack)
-import           Data.Time.Clock              (UTCTime, getCurrentTime)
+import           Data.Time.Clock              (UTCTime, getCurrentTime, addUTCTime)
+import           Data.Time.Clock.POSIX
 import           Data.Time.Format             (defaultTimeLocale, formatTime)
 import           Database.MongoDB
 import           GHC.Generics
 import           Network.HTTP.Client          (defaultManagerSettings,
                                                newManager)
+
+
+
 import           Network.Wai
 import           Network.Wai.Handler.Warp
 import           Network.Wai.Logger
-
 import           Servant
-import           Network.Socket
 import qualified Servant.API                  as SC
 import qualified Servant.Client               as SC
 import           System.Environment           (getArgs, getProgName, lookupEnv)
@@ -46,111 +47,138 @@ import           System.Log.Handler.Simple
 import           System.Log.Handler.Syslog
 import           System.Log.Logger
 import           Crypto.BCrypt
+import           Codec.Crypto.RSA
+import qualified System.Random  as R
 
 import qualified Data.ByteString.Char8        as BS
+import qualified Data.ByteString.Lazy.Char8 as C
+import           Codec.Binary.UTF8.String as S
+import           Crypto.Random.DRBG
 import           FilesystemAPI
-
 import           Datatypes 
 import           EncryptionAPI
 
-
  
-type API1 =  "lock"                 :> RemoteHost :> ReqBody '[JSON] Message3  :> Post '[JSON] (Bool,Bool) 
-        :<|> "unlock"               :> RemoteHost :> ReqBody '[JSON] Message3  :> Post '[JSON]  Bool  
-        :<|> "islocked"             :> QueryParam "filename" String :> Get '[JSON] Bool 
+
+type API1 =  "login"                      :> ReqBody '[JSON] UserInfo  :> Post '[JSON] [ResponseData]
+      :<|> "signup"                     :> ReqBody '[JSON] UserInfo  :> Post '[JSON]  ResponseData --storemessage 
+      :<|> "loadPublicKey"              :> Get '[JSON] [ResponseData]
+
 
 startApp :: IO ()    -- set up wai logger for service to output apache style logging for rest calls
 startApp = withLogging $ \ aplogger -> do
- 
-  
+
   warnLog "Starting filesystem"
 
-  let settings = setPort 8077 $ setLogger aplogger defaultSettings
+  let settings = setPort 8076 $ setLogger aplogger defaultSettings
   runSettings settings app
 
-nextUser :: [[String]] -> ([String], [[String]])
-nextUser (x:xs) = (x,xs)
-nextUser [] = ([],[])
--- of that type is out previously defined REST API) and the second parameter defines the implementation of the REST service.
+
 app :: Application
 app = serve api server
 
 api :: Proxy API1
-api = Proxy 
+api = Proxy
 
+-- | And now we implement the REST service by matching the API type, providing a Handler method for each endpoint
+-- defined in the API type. Normally we would implement each endpoint using a unique method definition, but this need
+-- not be so. To add a news endpoint, define it in type API above, and add and implement a handler here.
 server :: Server API1
-server = lock 
-        :<|> unlock
-        :<|> islocked 
+server = login
+    :<|> signup 
+    :<|> loadPublicKey
+
+
   where
+    
+    decryptPass :: String ->  IO String
+    decryptPass password =   do
+        let auth=  "auth" :: String
+        withMongoDbConnection $ do
+          keypair <- find (select ["owner" =: auth] "Keys") >>= drainCursor
+          let [(Keys _ pub prv)]= catMaybes $ DL.map (\ b -> fromBSON b :: Maybe Keys) keypair
+          let prvKey= toPrivateKey prv
+          let pass=  C.pack password
+          let decPass=decrypt prvKey pass
+          return $ C.unpack decPass
+  
+    toResponseData :: PubKeyInfo -> [ResponseData]
+    toResponseData msg@(PubKeyInfo strKey strN strE)=((ResponseData $ strKey):(ResponseData $ strN):(ResponseData $ strE):[])
+
+    loadPublicKey :: Handler [ResponseData]
+    loadPublicKey= liftIO $ do
+      withMongoDbConnection $ do
+        let auth=  "auth" :: String
+
+        docs <- find (select ["owner" =: auth] "Keys") >>= drainCursor
+
+        let pubKey= catMaybes $ DL.map (\ b -> fromBSON b :: Maybe Keys) docs
+        case pubKey of
+          [(Keys _ pub prv)]-> return $ toResponseData pub
+          [] -> liftIO $ do
+            r1 <- newGenIO :: IO HashDRBG
+            let (pub,priv,g2) = generateKeyPair r1 1024
+            let strPubKey = fromPublicKey pub
+            let strPrvKey = fromPrivateKey priv
+            let key = Keys auth strPubKey strPrvKey
+            withMongoDbConnection $ upsert (select  ["owner" =: auth] "Keys") $ toBSON key
+            return $ toResponseData strPubKey
+
 
     
-    -- need to store information about the client 
-    -- port number and ip
 
-    lock :: SockAddr -> Message3  -> Handler (Bool,Bool)
-    lock addr msg = liftIO $ do
-      let (file,username) = decryptMessage3 msg
-          addrstr = show addr
-      warnLog $ "Trying to lock " ++ file ++ "."
-      warnLog $  show addr
 
+
+    signup :: UserInfo -> Handler ResponseData
+    signup msg@(UserInfo key password) = liftIO $ do
+      decPassStr <- decryptPass password
+      warnLog $ "Storing UserInfo under key " ++ key ++ "."
       withMongoDbConnection $ do
-        docs <- find (select ["filename" =: file] "LockService_RECORD") >>= drainCursor
-        let lock =  catMaybes $ DL.map (\ b -> fromBSON b :: Maybe Lock) docs
-        case lock of
-            [ curLock@(Lock _ True _ queue)] ->liftIO $ do -- locked and adding user to the queue
-              let updatedQ = queue ++ [[username,addrstr]]
-              withMongoDbConnection $ upsert (select ["filename" =: file] "LockService_RECORD") $ toBSON $ (curLock{ queue = updatedQ})
-              return (True,False)    -- inqueue and lock
-            [(Lock _ False _ _ )] -> liftIO $ do
-              withMongoDbConnection $ upsert (select ["filename" =: file] "LockService_RECORD") $ toBSON $ (Lock file True username [])
-              return(True,False)    -- not inqueue and lock available
-            [] -> liftIO $ do -- there is no file
-                withMongoDbConnection $ upsert (select ["filename" =: file] "LockService_RECORD") $ toBSON $ (Lock file True username [])
-                return (True,False)
-      
-      
+        docs <- findOne (select ["username" =: key] "Users")
 
-    unlock :: SockAddr ->Message3 -> Handler Bool
-    unlock addr msg= liftIO $ do
-  
-      let(file,username) = decryptMessage3 msg  
 
-      --- after unlocking empyty the queue and 
-      withMongoDbConnection $ do -- get the lock and update it
-        docs <- find (select ["filename" =: file] "LockService_RECORD") >>= drainCursor
-        let lockStatus = take 1 $ catMaybes $ DL.map (\ b -> fromBSON b :: Maybe Lock) docs
-        case lockStatus of
-            [(Lock _ True storedUser q)]  ->liftIO $ do
-              case (storedUser==username) of
-                (True)-> do
-                    let ([nextuser, addr], updatedQueue) = nextUser q
-                    ---- do call with addr
-                    case nextuser of 
-                      [] -> liftIO $ do -- no user
-                        withMongoDbConnection $ upsert (select ["filename" =: file] "LockService_RECORD") $ toBSON (Lock file False "" [])
-                      otherwise -> liftIO $ do
-                        withMongoDbConnection $ upsert (select ["filename" =: file] "LockService_RECORD") $ toBSON (Lock file False nextuser updatedQueue)
-                    return True  
-                (False)-> return False
-            
-            [] -> return False
-  
-  
-    islocked :: Maybe String -> Handler Bool
-    islocked (Just key) = liftIO $ do
-      
-      warnLog $ "Searching if locked " ++ key
+        case docs of
+          (Just _) -> return $ ResponseData $  "Already signed up "
+          (Nothing) -> liftIO $ do
+            hash <- hashPasswordUsingPolicy slowerBcryptHashingPolicy (BS.pack decPassStr)
+            let passChars= BS.unpack $ fromJust hash      -- converted from bytestring to [char]( string)
+            withMongoDbConnection $ upsert (select ["username" =: key] "Users") $ toBSON msg {password = passChars}
+            return $ ResponseData $  "Signed up "
+
+
+
+    
+    isValid :: [UserInfo] -> String -> Bool
+    isValid ((UserInfo _ hash):_) password = validatePassword (BS.pack hash) (BS.pack password)
+    isValid _ _=False
+
+    login :: UserInfo -> Handler [ResponseData]
+    login msg@(UserInfo key password) =  liftIO $ do
+      warnLog $ "Searching for user  for key: " ++ key
+      decPassStr <- decryptPass password
       withMongoDbConnection $ do
-        docs <- find (select ["filename" =: key] "LockService_RECORD") >>= drainCursor
-        let lock =  catMaybes $ DL.map (\ b -> fromBSON b :: Maybe Lock) docs
-        case ( lock) of
-          [(Lock _ True _ _)] -> return True
-          [(Lock _ False _ _)]-> return False
-          otherwise -> return False
+        docs <- find (select ["username" =: key] "Users") >>= drainCursor
+        let userInfo = take 1 $ catMaybes $ DL.map (\ b -> fromBSON b :: Maybe UserInfo) docs
+        let validity=  isValid userInfo decPassStr
+
+
+        case  validity of
+          True ->  liftIO $   do
+            expirydate <- getExpirydate
+            let ss = (aesPad sharedSeed)
+            let ticket= myEncryptAES ss seshSeed
+
+            let encExpirydate = myEncryptAES (aesPad decPassStr) (expirydate)  
+            let encSesh= myEncryptAES (aesPad decPassStr) (seshSeed)  
+           
+            return $ ((ResponseData $ ticket):(ResponseData $ encSesh):(ResponseData   encExpirydate):[]) -- RETURN 'TOKEN' WITH HASHED CONTENTS
+          False  ->return $ ((ResponseData $ "Hmm.. Sketchy password "):[])
+
+
   
-    islocked Nothing = liftIO $ do
-        
-        warnLog $ " incorrect format for islocked api: "
-        return False
+getExpirydate :: IO String
+getExpirydate = do
+  let daylength = posixDayLength
+  curtime <- getCurrentTime
+  let lifespan= show $ addUTCTime daylength curtime
+  return lifespan
