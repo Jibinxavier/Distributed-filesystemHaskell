@@ -1,7 +1,0 @@
-pymongo
-flask_pymongo
-gitpython
-requests
-lizard
-pyyaml
-pycrypto
