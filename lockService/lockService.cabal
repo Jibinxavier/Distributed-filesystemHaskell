@@ -47,6 +47,8 @@ library
                      , warp-tls
                      , filesystem-api 
                      , network        
+                     , random
+                      
                      
 
   default-language:    Haskell2010
