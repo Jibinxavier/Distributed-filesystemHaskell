@@ -12,3 +12,9 @@
 2. Locks file if available and returns a tuple (inqueue, lockavailable)
 3. If it is already locked, the user is added to the queue
 4. When a user unlocks, the server assigns the lock to the user in the queue if there is one, and notifies it.
+
+##### Fileserver service
+1. Stores the files
+2. It also sends heartbeats to the directory service. Which at start registers itself with directory service
+
+##### Directory service

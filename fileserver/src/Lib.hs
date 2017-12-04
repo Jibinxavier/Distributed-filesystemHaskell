@@ -49,6 +49,21 @@ import           FilesystemAPI
 import           FilesystemAPIServer  
 import           Datatypes 
 import           EncryptionAPI
+ 
+noHeartBeats=20
+type API1 = "upload"                      :> ReqBody '[JSON] FileContents   :> Post '[JSON] Bool
+        :<|> "broadcastedUpload"          :> ReqBody '[JSON] FileContents   :> Post '[JSON] Bool
+        :<|> "getFile"                    :> ReqBody '[JSON] Message        :> Get '[JSON] [FileContents]
+        :<|> "uploadToshadow"             :> ReqBody '[JSON] TransactionInfoTransfer   :> Post '[JSON] Bool
+        :<|> "updateRealDB"               :> ReqBody '[JSON] String         :> Post '[JSON] Bool
 
-someFunc :: IO ()
-someFunc = putStrLn "someFunc"
+startApp :: IO ()    -- set up wai logger for service to output apache style logging for rest calls
+startApp = withLogging $ \ aplogger -> do
+    warnLog "Starting filesystem"  
+    fport <- fileserverPort --- environment variable in docker-compose up
+    let fSort=(read fport) :: Int
+    fileserverHost <- defaultHost 
+    let settings = setPort fSort $ setLogger aplogger defaultSettings
+    myapp<- app
+    forkIO $ sendHeartBeat noHeartBeats fileserverHost fport
+    runSettings settings myapp
