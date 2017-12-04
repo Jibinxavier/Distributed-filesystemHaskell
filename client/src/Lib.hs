@@ -208,8 +208,8 @@ doUploadWithTransaction localfilePath  dir fname  usern = do
 
 
 
-doUploadFile:: String -> String  -> String ->  String -> IO ()
-doUploadFile localfilePath dir  fname usern = do   -- call to the directory server saying this file has been updated
+doCloseFile:: String -> String  -> String ->  String -> IO ()
+doCloseFile localfilePath dir  fname usern = do   -- call to the directory server saying this file has been updated
   let filePath =dir ++ fname
   contents <- readFile localfilePath
   state <- isFileLocked filePath  
@@ -249,10 +249,42 @@ doUploadFile localfilePath dir  fname usern = do   -- call to the directory serv
 -- client
 
 
-      
+
 -- filepath :- id fileserver'
 -- dir has to be the name
 -- fname    : filename
+
+-- 
+displayFile :: String -> IO ()
+displayFile filepath = do
+  putStrLn "Printing contents of the file"
+  handle <- openFile filepath ReadMode
+  contents <- hGetContents handle
+  print contents
+  hClose handle   
+doWriteFile :: String -> String -> String-> IO ()
+doWriteFile dir fname usern = do 
+  --- write to file and upload to filserver
+  putStrLn $ "" 
+
+doOpenFile :: String -> String -> String-> IO ()
+doOpenFile dir fname usern = do 
+  -- talk to the directory service to get the file details
+  res <- mydoCalMsg3WithEnc filesearch dir fname usern ((read dirPortStr):: Int) decryptFInfoTransfer
+  case res of
+    Nothing ->  putStrLn $ "download call failed" 
+    (Just fileinfo@resp) ->   do 
+      case resp of
+        [FInfoTransfer filepath dirname fileid ipadr portadr servTm1 ] -> do 
+          putStrLn $ portadr ++ "file id "++ fileid
+
+          status <- isDated filepath servTm1  --check with timestamp in the database 
+          case status of
+            True ->  getFileFromFS  fileinfo usern
+            False -> putStrLn "You have most up to date  version" 
+        [] -> putStrLn " The file might not be in the fileserver directory" 
+        
+        displayFile fname
 doDownloadFile:: String -> String -> String-> IO ()
 doDownloadFile dir fname usern = do -- need to download file 
   
@@ -314,9 +346,8 @@ doLogin userN pass  = do
 
 -- First we invoke the options on the entry point.
 someFunc :: IO ()
-someFunc = do
-  banner
-  forever $ do
+someFunc = do 
+    banner 
     join $ execParser =<< opts
 
 -- | Defined in the applicative style, opts provides a declaration of the entire command line
@@ -330,7 +361,7 @@ opts = do
   return $ info (   helper
                 <*> subparser
                        (  command "upload-file"
-                                  (withInfo ( doUploadFile   
+                                  (withInfo ( doCloseFile   
                                           <$> argument str (metavar "local file path")
                                           <*> argument str (metavar "dir")  
                                           <*> argument str (metavar "fname") 

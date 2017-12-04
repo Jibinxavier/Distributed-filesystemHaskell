@@ -5,9 +5,9 @@ description:         Please see README.md
 homepage:            https://github.com/githubuser/client#readme
 license:             BSD3
 license-file:        LICENSE
-author:              Author name here
+author:              Jibin
 maintainer:          example@example.com
-copyright:           2017 Author name here
+copyright:           2017 Jibin
 category:            Web
 build-type:          Simple
 extra-source-files:  README.md
