@@ -21,8 +21,7 @@ library
                      , servant
                      , servant-client
                      , http-client
-                     , optparse-applicative
-                     , filesystem-api
+                     , optparse-applicative 
                      , cabal-file-th >= 0.2.4
                      , pretty
                      , Cabal
@@ -36,6 +35,7 @@ library
                      , bson-generic
                      , aeson
                      , text
+                     , filesystem-api
   default-language:    Haskell2010
 
 executable client-exe

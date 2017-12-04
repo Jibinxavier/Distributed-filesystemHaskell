@@ -13,8 +13,11 @@
 3. If it is already locked, the user is added to the queue
 4. When a user unlocks, the server assigns the lock to the user in the queue if there is one, and notifies it.
 
-##### Fileserver service
-1. Stores the files
-2. It also sends heartbeats to the directory service. Which at start registers itself with directory service
-
 ##### Directory service
+
+##### Fileserver service
+ The directory will point client to primary server for writes and reads to the secondary ones.
+1. Stores the files
+2. Starts by registering itself then it regularly sends heartbeats to the directory service. 
+3. Each fileserver represent a directory. The directory name is passed in an environment variable
+4. Asynchronously sends the copy (if primary copy)

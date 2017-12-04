@@ -30,7 +30,7 @@ import qualified Servant.API                        as SC
 import qualified Servant.Client                     as SC
 import           System.Console.ANSI
 import           System.Environment
-import           FilesystemAPI
+import qualified FilesystemAPI as FSA  
 import           FilesystemAPIClient 
 import           Data.Time.Clock
 import qualified Data.List                    as DL
@@ -40,7 +40,7 @@ import           GHC.Generics
 import           Data.Text                    (pack, unpack)
 import           Datatypes 
 import           EncryptionAPI
-import           Helpers
+import           Helpers         
 
 
    
@@ -54,7 +54,7 @@ doFileLock fpath usern= do
     (Just (ticket,seshkey) ) -> do 
       let encFpath = myEncryptAES (aesPad seshkey) (fpath)
       let encUname = myEncryptAES (aesPad seshkey) (usern)
-      doCall  (lock $ Message3  encFpath encUname ticket) lockIP lockPort seshkey
+      doCall  (lock $ Message3  encFpath encUname ticket) FSA.lockIP FSA.lockPort seshkey
 
     (Nothing) -> putStrLn $ "Expired token . Sigin in again.  " 
   
@@ -66,11 +66,11 @@ doFileUnLock fpath usern= do
     (Just (ticket,seshkey) ) -> do 
       let encFpath = myEncryptAES (aesPad seshkey) (fpath)
       let encUname = myEncryptAES (aesPad seshkey) (usern)
-      doCall (unlock  $ Message3 encFpath encUname ticket) lockIP lockPort seshkey
+      doCall (unlock  $ Message3 encFpath encUname ticket) FSA.lockIP FSA.lockPort seshkey
     (Nothing) -> putStrLn $ " Expired token  .Sigin in again. " 
 
 doIsLocked :: String  ->  IO ()
-doIsLocked fpath  = doCall (islocked $ Just fpath) lockIP lockPort $  seshNop
+doIsLocked fpath  = doCall (islocked $ Just fpath) FSA.lockIP FSA.lockPort $  seshNop
 ---------------------------------
 -- Directory services
 ---------------------------------
@@ -83,17 +83,17 @@ doListDirs usern=  do
   authInfo <- getAuthClientInfo usern
   case authInfo of 
     (Just (ticket,seshkey) ) -> do 
-      doCall (listdirs $ Just ticket) dirHost dirPort seshkey
+      doCall (listdirs $ Just ticket) FSA.dirHost FSA.dirPort seshkey
     (Nothing) -> putStrLn $ "Expired token . Sigin in again.  " 
-   --  dirPort in filesystem api
+   --  FSA.dirPort in filesystem api
 
 doLSFileServerContents :: String  -> String -> IO ()
-doLSFileServerContents dir usern=docallMsg1WithEnc listfscontents dir usern dirHost dirPort 
+doLSFileServerContents dir usern=docallMsg1WithEnc listfscontents dir usern FSA.dirHost FSA.dirPort 
 
 
 
 doFileSearch :: String -> String -> String -> IO ()
-doFileSearch dir fname usern = docallMsg3WithEnc  filesearch dir fname usern dirHost dirPort
+doFileSearch dir fname usern = docallMsg3WithEnc  filesearch dir fname usern FSA.dirHost FSA.dirPort
  
 
 -----------------------------
@@ -103,7 +103,7 @@ doFileSearch dir fname usern = docallMsg3WithEnc  filesearch dir fname usern dir
 -- Checks the database if there is an transaction running, it would abort and continue with new transaction  
 doGetTransId :: String-> IO ()
 doGetTransId usern=  do
-  res <-  mydoCalMsg1WithEnc getTransId usern ((read $ transPorStr):: Int)
+  res <-  mydoCalMsg1WithEnc getTransId usern ((read $ FSA.transPorStr):: Int)
   case res of
     Nothing ->   putStrLn $ "get file call to fileserver  failed with error: "  
     Just (ResponseData enctrId) -> do 
@@ -115,13 +115,13 @@ doGetTransId usern=  do
           let trId =  myDecryptAES (aesPad seshkey)  (enctrId)
            
           let key = "client1":: String --- maybe an environment variable in the docker compose
-          docs <- withMongoDbConnectionForClient $ find  (select ["key1" =: key] "Transaction_RECORD")  >>= drainCursor -- getting previous transaction id of the client
+          docs <- withMongoDbConnectionForClient $ find  (select ["key1" =: key] "Transaction_RECORD")  >>= FSA.drainCursor -- getting previous transaction id of the client
           let  clientTrans= take 1 $ catMaybes $ DL.map (\ b -> fromBSON b :: Maybe LocalTransInfo) docs 
           case clientTrans of 
             [LocalTransInfo _  prevId] -> liftIO $ do  -- abort and update
                 putStrLn $ "Aborting old transaction and starting new " 
       
-                docallMsg1WithEnc abort prevId usern transIP transPort
+                docallMsg1WithEnc abort prevId usern FSA.transIP FSA.transPort
                 
               
                 withMongoDbConnectionForClient $ upsert (select ["key1" =: key] "Transaction_RECORD") $ toBSON $ LocalTransInfo key trId -- store the transaction id
@@ -138,7 +138,7 @@ doCommit usern = do
   localTransactionInfo <- getLocalTrId
   case localTransactionInfo of        
     [ LocalTransInfo _ trId] -> liftIO $ do  
-      docallMsg1WithEnc commit trId usern transIP transPort 
+      docallMsg1WithEnc commit trId usern FSA.transIP FSA.transPort 
       unlockLockedFiles trId usern
       clearTransaction-- clearing after commiting the transaction
     [] -> putStrLn "No transactions to  commit"
@@ -148,7 +148,7 @@ doAbort usern  = do
   localTransactionInfo <- getLocalTrId
   case localTransactionInfo of 
     [LocalTransInfo _ trId] -> liftIO $ do   
-      docallMsg1WithEnc abort trId usern transIP transPort
+      docallMsg1WithEnc abort trId usern FSA.transIP FSA.transPort
       unlockLockedFiles trId usern
       clearTransaction -- clearing after aborting the transaction
     [] -> putStrLn "No transactions to  abort"
@@ -173,8 +173,8 @@ doUploadWithTransaction localfilePath  dir fname  usern = do
 
           doFileLock filepath usern -- lock the file
           appendToLockedFiles filepath trId -- list of locked files which the client keeps a record of
-          res <- mydoCalMsg4WithEnc uploadToShadowDir dir fname trId usern ((read $ dirPortStr):: Int) decryptFInfoTransfer -- uploading info to shadow directory
-          --res <- mydoCall (uploadToShadowDir $  Message3 dir fname trId ) ((read $ fromJust dirPort):: Int) -- uploading info to shadow directory
+          res <- mydoCalMsg4WithEnc uploadToShadowDir dir fname trId usern ((read $ FSA.dirServPort):: Int) decryptFInfoTransfer -- uploading info to shadow directory
+          --res <- FSA.mydoCall (uploadToShadowDir $  Message3 dir fname trId ) ((read $ fromJust FSA.dirPort):: Int) -- uploading info to shadow directory
 
           case res of
             Nothing -> putStrLn $ "Upload to transaction failed"  
@@ -191,7 +191,7 @@ doUploadWithTransaction localfilePath  dir fname  usern = do
                     (Just (ticket,seshkey) ) -> do 
                       let msg = encryptTransactionContents transactionContent seshkey ticket
                        
-                      doCall (uploadToTransaction $ msg) transIP transPort $  seshNop
+                      doCall (uploadToTransaction $ msg) FSA.transIP FSA.transPort $  seshNop
                     (Nothing) -> putStrLn $ " Expired token  .Sigin in again. " 
                 [] -> putStrLn "doUploadWithTransaction: Error getting fileinfo "
 
@@ -216,7 +216,7 @@ doCloseFile localfilePath dir  fname usern = do   -- call to the directory serve
   case state of 
     (False) -> do 
          
-        res <- mydoCalMsg3WithEnc updateUploadInfo dir fname usern ((read dirPortStr):: Int) decryptFInfoTransfer
+        res <- mydoCalMsg3WithEnc updateUploadInfo dir fname usern ((read FSA.dirServPort):: Int) decryptFInfoTransfer
         case res of
           Nothing -> putStrLn $ "Upload file failed call failed " 
           (Just a) ->   do 
@@ -257,11 +257,12 @@ doCloseFile localfilePath dir  fname usern = do   -- call to the directory serve
 -- 
 displayFile :: String -> IO ()
 displayFile filepath = do
-  putStrLn "Printing contents of the file"
+  putStrLn $ "Printing contents of the file"
   handle <- openFile filepath ReadMode
   contents <- hGetContents handle
   print contents
   hClose handle   
+
 doWriteFile :: String -> String -> String-> IO ()
 doWriteFile dir fname usern = do 
   --- write to file and upload to filserver
@@ -270,7 +271,7 @@ doWriteFile dir fname usern = do
 doOpenFile :: String -> String -> String-> IO ()
 doOpenFile dir fname usern = do 
   -- talk to the directory service to get the file details
-  res <- mydoCalMsg3WithEnc filesearch dir fname usern ((read dirPortStr):: Int) decryptFInfoTransfer
+  res <- mydoCalMsg3WithEnc filesearch dir fname usern ((read FSA.dirServPort):: Int) decryptFInfoTransfer
   case res of
     Nothing ->  putStrLn $ "download call failed" 
     (Just fileinfo@resp) ->   do 
@@ -284,12 +285,12 @@ doOpenFile dir fname usern = do
             False -> putStrLn "You have most up to date  version" 
         [] -> putStrLn " The file might not be in the fileserver directory" 
         
-        displayFile fname
+      displayFile fname
 doDownloadFile:: String -> String -> String-> IO ()
 doDownloadFile dir fname usern = do -- need to download file 
   
-  --res <- mydoCall (filesearch $  Message3 dir fname "some") ((read dirPortStr):: Int) --- gets file meta from the directory server
-  res <- mydoCalMsg3WithEnc filesearch dir fname usern ((read dirPortStr):: Int) decryptFInfoTransfer
+  --res <- FSA.mydoCall (filesearch $  Message3 dir fname "some") ((read FSA.dirServPort):: Int) --- gets file meta from the directory server
+  res <- mydoCalMsg3WithEnc filesearch dir fname usern ((read FSA.dirServPort):: Int) decryptFInfoTransfer
   case res of
     Nothing ->  putStrLn $ "download call failed" 
     (Just fileinfo@resp) ->   do 
@@ -306,7 +307,7 @@ doDownloadFile dir fname usern = do -- need to download file
 -- gets the public key of the auth server and encrypts message and sends it over 
 doSignup:: String -> String -> IO ()
 doSignup userN pass =  do
-  resp <- mydoCall (loadPublicKey) ((read authPortStr):: Int)
+  resp <- FSA.mydoCall (loadPublicKey) ((read FSA.authPortStr):: Int)
   case resp of
     Left err -> do
       putStrLn $ "failed to get public key... " ++  show err
@@ -315,13 +316,13 @@ doSignup userN pass =  do
       cryptPass <- encryptPass authKey pass
       putStrLn "got the public key!"
       
-      doCall (signup $ UserInfo userN cryptPass) authIP authPort $  seshNop
+      doCall (signup $ UserInfo userN cryptPass) FSA.authIP FSA.authPort $  seshNop
       putStrLn "Sent encrypted username and password to authserver"
 
 
 doLogin:: String -> String-> IO ()
 doLogin userN pass  = do
-  resp <- mydoCall (loadPublicKey) ((read authPortStr):: Int)
+  resp <- FSA.mydoCall (loadPublicKey) ((read FSA.authPortStr):: Int)
   case resp of
     Left err -> do
       putStrLn "failed to get public key..."
@@ -329,7 +330,7 @@ doLogin userN pass  = do
       let authKey = toPublicKey (PubKeyInfo a b c)
       cryptPass <- encryptPass authKey pass
       putStrLn "got the public key!"
-      mydoCall2  (storeClientAuthInfo userN pass) (login $ UserInfo userN cryptPass) ((read authPortStr):: Int)
+      mydoCall2  (storeClientAuthInfo userN pass) (login $ UserInfo userN cryptPass) ((read FSA.authPortStr):: Int)
       putStrLn "Sending client info (pass and username) to authserver"
       
 
@@ -451,7 +452,7 @@ opts = do
 
 unlockLockedFiles :: String  -> String -> IO() 
 unlockLockedFiles  tid  usern= liftIO $ do
-   docs <- withMongoDbConnectionForClient $ find (select ["tid5" =: tid] "LockedFiles_RECORD") >>= drainCursor
+   docs <- withMongoDbConnectionForClient $ find (select ["tid5" =: tid] "LockedFiles_RECORD") >>= FSA.drainCursor
    let  contents= take 1 $ catMaybes $ DL.map (\ b -> fromBSON b :: Maybe LockedFiles) docs 
    case contents of 
     [] -> return ()

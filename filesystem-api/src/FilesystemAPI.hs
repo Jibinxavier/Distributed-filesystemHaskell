@@ -75,8 +75,8 @@ defaultHost = do
  return $ filter (/= '\n') getHost
 
 systemHost="127.0.0.1"
-dirPortStr= "8070"
-dirPort= Just dirPortStr
+dirServPort= "8070"
+dirPort= Just dirServPort
 dirHost = Just systemHost
 
 transPorStr ="8078"
