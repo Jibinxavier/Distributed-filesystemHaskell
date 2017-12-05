@@ -207,42 +207,56 @@ doUploadWithTransaction localfilePath  dir fname  usern = do
 
 ---------------------------------
 
+{-
+  doWriteFileworkflow
+  1.check if the file is locked
+  2.if not send the file metadata to the directory service
+  3.Lock the file
+  4.Update file local copy 
+  5.Encrypt the contents and send it to the fileserver 
+-}
 
 
-
-doCloseFile:: String -> String  -> String ->  String -> IO ()
-doCloseFile localfilePath dir  fname usern = do   -- call to the directory server saying this file has been updated
-  let filePath =dir ++ fname
-  contents <- readFile localfilePath
-  state <- isFileLocked filePath  
+doWriteFile::  String  -> String ->  String -> IO ()
+doWriteFile  remoteFPath usern newcontent = do   -- call to the directory server saying this file has been updated 
+  
+  let remotedir =head $ splitOn "/" remoteFPath
+      fname = last $ splitOn "/" remoteFPath  
+      localfilePath = "./" ++ fname
+  
+  state <- isFileLocked remoteFPath  
   case state of 
     (False) -> do 
-         
-        res <- mydoCalMsg3WithEnc updateUploadInfo dir fname usern ((read FSA.dirServPort):: Int) decryptFInfoTransfer
+      
+        
+        res <- mydoCalMsg3WithEnc updateUploadInfo remotedir fname usern ((read FSA.dirServPort):: Int) decryptFInfoTransfer
         case res of
           Nothing -> putStrLn $ "Upload file failed call failed " 
           (Just a) ->   do 
             case a of 
-              [(fileinfotransfer@(FInfoTransfer _ _ fileid h p _ ))] -> do   
+              [(fileinfotransfer@(FInfoTransfer _ _ fileid h p ts ))] -> do   
                 case  p =="none" of
                   (True)->  putStrLn "Upload failed : No fileservers available."
                   (False)-> do
-                    doFileLock filePath usern -- lock file before storing
-                    putStrLn $ "file locked " 
+                    doFileLock remoteFPath usern -- lock file before storing
+                    putStrLn $ "Recieved file lock" 
+                    -- update local file and push the changes up
+                    
+
+
+                    appendFile localfilePath $ newcontent
+                    contents <- readFile localfilePath
 
                     authInfo <- getAuthClientInfo usern
                     case authInfo of 
                       (Just (ticket,seshkey) ) -> do 
                         let msg = encryptFileContents  (FileContents fileid contents "") seshkey ticket -- encrypted message
                         doCall (upload  msg) (Just h) (Just p)  seshkey -- uploading file
-                        doFileUnLock filePath usern
+                        doFileUnLock remoteFPath usern
+                        -- store the metadata about the file
+                        updateLocalMeta remoteFPath $ FInfo remoteFPath remotedir fileid ts
                         putStrLn "file unlocked "
-                      (Nothing) -> putStrLn $ "Expired token . Sigin in again.  " 
-
-
-
-                    
-
+                      (Nothing) -> putStrLn $ "Expired token . Sigin in again.  "  
               [] -> putStrLn "Upload file : Error getting fileinfo from directory service"
 
          
@@ -255,8 +269,7 @@ doCloseFile localfilePath dir  fname usern = do   -- call to the directory serve
 -- filepath :- id fileserver'
 -- dir has to be the name
 -- fname    : filename
-
--- 
+ 
 displayFile :: String -> IO ()
 displayFile filepath = do
   putStrLn $ "Printing contents of the file"
@@ -265,15 +278,14 @@ displayFile filepath = do
   print contents
   hClose handle   
 
-doWriteFile :: String -> String -> String-> IO ()
-doWriteFile dir fname usern = do 
-  --- write to file and upload to filserver
-  putStrLn $ "" 
+ 
 
-doOpenFile :: String -> String -> String-> IO ()
-doOpenFile dir fname usern = do 
+doReadFile :: String -> String-> IO ()
+doReadFile remoteFPath usern = do 
   -- talk to the directory service to get the file details
-  res <- mydoCalMsg3WithEnc filesearch dir fname usern ((read FSA.dirServPort):: Int) decryptFInfoTransfer
+  let remotedir =head $ splitOn "/" remoteFPath
+      fname = last $ splitOn "/" remoteFPath
+  res <- mydoCalMsg3WithEnc filesearch remotedir fname usern ((read FSA.dirServPort):: Int) decryptFInfoTransfer
   case res of
     Nothing ->  putStrLn $ "download call failed" 
     (Just fileinfo@resp) ->   do 
@@ -283,28 +295,13 @@ doOpenFile dir fname usern = do
 
           status <- isDated filepath servTm1  --check with timestamp in the database 
           case status of
-            True ->  getFileFromFS  fileinfo usern
+            True ->  getFileFromFS  fileinfo usern -- it also updates local file metadata
             False -> putStrLn "You have most up to date  version" 
+          displayFile fname
         [] -> putStrLn " The file might not be in the fileserver directory" 
         
-      displayFile fname
-doDownloadFile:: String -> String -> String-> IO ()
-doDownloadFile dir fname usern = do -- need to download file 
-  
-  --res <- FSA.mydoCall (filesearch $  Message3 dir fname "some") ((read FSA.dirServPort):: Int) --- gets file meta from the directory server
-  res <- mydoCalMsg3WithEnc filesearch dir fname usern ((read FSA.dirServPort):: Int) decryptFInfoTransfer
-  case res of
-    Nothing ->  putStrLn $ "download call failed" 
-    (Just fileinfo@resp) ->   do 
-      case resp of
-        [FInfoTransfer filepath dirname fileid ipadr portadr servTm1 ] -> do 
-          putStrLn $ portadr ++ "file id "++ fileid
-
-          status <- isDated filepath servTm1  --check with timestamp in the database 
-          case status of
-            True ->  getFileFromFS  fileinfo usern
-            False -> putStrLn "You have most up to date  version" 
-        [] -> putStrLn " The file might not be in the directory" 
+      
+ 
 
 -- gets the public key of the auth server and encrypts message and sends it over 
 doSignup:: String -> String -> IO ()
@@ -336,17 +333,6 @@ doLogin userN pass  = do
       putStrLn "Sending client info (pass and username) to authserver"
       
 
-      
--- | The options handling
-
-
-
-
-
-
-
-
-
 -- First we invoke the options on the entry point.
 someFunc :: IO ()
 someFunc = do 
@@ -366,16 +352,16 @@ menu = do
       let cmds =  splitOn " " contents
       --"User name" password"
       doSignup  (cmds !! 1) (cmds !! 2)
-  else if DL.isPrefixOf  "openfile" contents
+  else if DL.isPrefixOf  "readfile" contents
     then do
       let cmds =  splitOn " " contents
-      -- "remote dir"  "fname" "username"
-      doOpenFile  (cmds !! 1) (cmds !! 2) (cmds !! 3)
-  else if DL.isPrefixOf  "closefile" contents
+      -- "remote dir/fname (filepath)"    "username"
+      doReadFile  (cmds !! 1) (cmds !! 2) 
+  else if DL.isPrefixOf  "write" contents
     then do
       let cmds =  splitOn " " contents
-      -- "local file path" "remote dir" "file name" "user name"
-      doCloseFile  (cmds !! 1) (cmds !! 2) (cmds !! 3) (cmds !! 4)
+      -- "remote dir/fname (filepath)" "user name" "content to add"
+      doWriteFile  (cmds !! 1) (cmds !! 2) (cmds !! 3)  
   else if DL.isPrefixOf  "lockfile" contents
     then do
       let cmds =  splitOn " " contents

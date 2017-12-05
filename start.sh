@@ -8,7 +8,7 @@ docker pull fpco/stack-build:lts-7.12
 docker pull fpco/stack-run  
 docker pull mongo:3.0.2
 # transactionservice directoryservice fileserver
-services=( auth-server lockService  )
+services=( auth-server lockService  directoryservice fileserver)
 echo "Starting services"
 # creating containers and starting them
 for serv in ${services[@]}

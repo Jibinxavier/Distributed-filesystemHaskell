@@ -291,3 +291,110 @@ Starting lockservice_lockserv_1
 Stopping lockservice_lockserv_1   ... 
 Stopping lockservice_database22_1 ... 
 [2A[2KStopping lockservice_lockserv_1   ... [32mdone[0m[2B[1A[2KStopping lockservice_database22_1 ... [32mdone[0m[1BGracefully stopping... (press Ctrl+C again to force)
+Creating lockservice_database22_1 ... 
+Creating lockservice_database22_1
+[1A[2KCreating lockservice_database22_1 ... [32mdone[0m[1BCreating lockservice_lockserv_1 ... 
+Creating lockservice_lockserv_1
+[1A[2KCreating lockservice_lockserv_1 ... [32mdone[0m[1BAttaching to lockservice_database22_1, lockservice_lockserv_1
+[36mdatabase22_1  |[0m 2017-12-05T14:57:41.142+0000 I JOURNAL  [initandlisten] journal dir=/data/db/journal
+[36mdatabase22_1  |[0m 2017-12-05T14:57:41.142+0000 I JOURNAL  [initandlisten] recover : no journal files present, no recovery needed
+[36mdatabase22_1  |[0m 2017-12-05T14:57:41.625+0000 I JOURNAL  [initandlisten] preallocateIsFaster=true 6.38
+[33mlockserv_1    |[0m 2017-12-05T14:57:41687649099000+0000 Starting Lock server
+[36mdatabase22_1  |[0m 2017-12-05T14:57:42.732+0000 I JOURNAL  [initandlisten] preallocateIsFaster=true 18.8
+[36mdatabase22_1  |[0m 2017-12-05T14:57:45.059+0000 I JOURNAL  [initandlisten] preallocateIsFaster=true 22.24
+[36mdatabase22_1  |[0m 2017-12-05T14:57:45.059+0000 I JOURNAL  [initandlisten] preallocateIsFaster check took 3.917 secs
+[36mdatabase22_1  |[0m 2017-12-05T14:57:45.059+0000 I JOURNAL  [initandlisten] preallocating a journal file /data/db/journal/prealloc.0
+[36mdatabase22_1  |[0m 2017-12-05T14:57:46.784+0000 I JOURNAL  [initandlisten] preallocating a journal file /data/db/journal/prealloc.1
+[36mdatabase22_1  |[0m 2017-12-05T14:57:48.850+0000 I JOURNAL  [initandlisten] preallocating a journal file /data/db/journal/prealloc.2
+[36mdatabase22_1  |[0m 2017-12-05T14:57:50.938+0000 I JOURNAL  [durability] Durability thread started
+[36mdatabase22_1  |[0m 2017-12-05T14:57:50.938+0000 I JOURNAL  [journal writer] Journal writer thread started
+[36mdatabase22_1  |[0m 2017-12-05T14:57:50.953+0000 I CONTROL  [initandlisten] MongoDB starting : pid=1 port=27017 dbpath=/data/db 64-bit host=45f32adbec39
+[36mdatabase22_1  |[0m 2017-12-05T14:57:50.953+0000 I CONTROL  [initandlisten] 
+[36mdatabase22_1  |[0m 2017-12-05T14:57:50.953+0000 I CONTROL  [initandlisten] ** WARNING: /sys/kernel/mm/transparent_hugepage/enabled is 'always'.
+[36mdatabase22_1  |[0m 2017-12-05T14:57:50.953+0000 I CONTROL  [initandlisten] **        We suggest setting it to 'never'
+[36mdatabase22_1  |[0m 2017-12-05T14:57:50.953+0000 I CONTROL  [initandlisten] 
+[36mdatabase22_1  |[0m 2017-12-05T14:57:50.953+0000 I CONTROL  [initandlisten] db version v3.0.2
+[36mdatabase22_1  |[0m 2017-12-05T14:57:50.953+0000 I CONTROL  [initandlisten] git version: 6201872043ecbbc0a4cc169b5482dcf385fc464f
+[36mdatabase22_1  |[0m 2017-12-05T14:57:50.954+0000 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1e 11 Feb 2013
+[36mdatabase22_1  |[0m 2017-12-05T14:57:50.954+0000 I CONTROL  [initandlisten] build info: Linux ip-10-171-120-232 3.2.0-4-amd64 #1 SMP Debian 3.2.46-1 x86_64 BOOST_LIB_VERSION=1_49
+[36mdatabase22_1  |[0m 2017-12-05T14:57:50.954+0000 I CONTROL  [initandlisten] allocator: tcmalloc
+[36mdatabase22_1  |[0m 2017-12-05T14:57:50.954+0000 I CONTROL  [initandlisten] options: {}
+[36mdatabase22_1  |[0m 2017-12-05T14:57:50.954+0000 I INDEX    [initandlisten] allocating new ns file /data/db/local.ns, filling with zeroes...
+[36mdatabase22_1  |[0m 2017-12-05T14:57:51.017+0000 I STORAGE  [FileAllocator] allocating new datafile /data/db/local.0, filling with zeroes...
+[36mdatabase22_1  |[0m 2017-12-05T14:57:51.018+0000 I STORAGE  [FileAllocator] creating directory /data/db/_tmp
+[36mdatabase22_1  |[0m 2017-12-05T14:57:51.032+0000 I STORAGE  [FileAllocator] done allocating datafile /data/db/local.0, size: 64MB,  took 0.008 secs
+[36mdatabase22_1  |[0m 2017-12-05T14:57:51.040+0000 I NETWORK  [initandlisten] waiting for connections on port 27017
+Stopping lockservice_lockserv_1   ... 
+Stopping lockservice_database22_1 ... 
+[2A[2KStopping lockservice_lockserv_1   ... [32mdone[0m[2B[1A[2KStopping lockservice_database22_1 ... [32mdone[0m[1BGracefully stopping... (press Ctrl+C again to force)
+Starting lockservice_database22_1 ... 
+Starting lockservice_database22_1
+[1A[2KStarting lockservice_database22_1 ... [32mdone[0m[1BStarting lockservice_lockserv_1 ... 
+Starting lockservice_lockserv_1
+[1A[2KStarting lockservice_lockserv_1 ... [32mdone[0m[1BAttaching to lockservice_database22_1, lockservice_lockserv_1
+[36mdatabase22_1  |[0m 2017-12-05T15:32:20.182+0000 I JOURNAL  [initandlisten] journal dir=/data/db/journal
+[36mdatabase22_1  |[0m 2017-12-05T15:32:20.182+0000 I JOURNAL  [initandlisten] recover : no journal files present, no recovery needed
+[36mdatabase22_1  |[0m 2017-12-05T15:32:20.200+0000 I JOURNAL  [durability] Durability thread started
+[36mdatabase22_1  |[0m 2017-12-05T15:32:20.200+0000 I JOURNAL  [journal writer] Journal writer thread started
+[36mdatabase22_1  |[0m 2017-12-05T15:32:20.210+0000 I CONTROL  [initandlisten] MongoDB starting : pid=1 port=27017 dbpath=/data/db 64-bit host=45f32adbec39
+[36mdatabase22_1  |[0m 2017-12-05T15:32:20.210+0000 I CONTROL  [initandlisten] 
+[36mdatabase22_1  |[0m 2017-12-05T15:32:20.211+0000 I CONTROL  [initandlisten] ** WARNING: /sys/kernel/mm/transparent_hugepage/enabled is 'always'.
+[36mdatabase22_1  |[0m 2017-12-05T15:32:20.211+0000 I CONTROL  [initandlisten] **        We suggest setting it to 'never'
+[33mlockserv_1    |[0m 2017-12-05T15:32:20492003604000+0000 Starting Lock server
+[36mdatabase22_1  |[0m 2017-12-05T15:32:20.211+0000 I CONTROL  [initandlisten] 
+[36mdatabase22_1  |[0m 2017-12-05T15:32:20.211+0000 I CONTROL  [initandlisten] db version v3.0.2
+[36mdatabase22_1  |[0m 2017-12-05T15:32:20.211+0000 I CONTROL  [initandlisten] git version: 6201872043ecbbc0a4cc169b5482dcf385fc464f
+[36mdatabase22_1  |[0m 2017-12-05T15:32:20.211+0000 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1e 11 Feb 2013
+[36mdatabase22_1  |[0m 2017-12-05T15:32:20.211+0000 I CONTROL  [initandlisten] build info: Linux ip-10-171-120-232 3.2.0-4-amd64 #1 SMP Debian 3.2.46-1 x86_64 BOOST_LIB_VERSION=1_49
+[36mdatabase22_1  |[0m 2017-12-05T15:32:20.211+0000 I CONTROL  [initandlisten] allocator: tcmalloc
+[36mdatabase22_1  |[0m 2017-12-05T15:32:20.211+0000 I CONTROL  [initandlisten] options: {}
+[36mdatabase22_1  |[0m 2017-12-05T15:32:20.216+0000 I NETWORK  [initandlisten] waiting for connections on port 27017
+[36mlockservice_database22_1 exited with code 137
+[0m[33mlockservice_lockserv_1 exited with code 137
+[0mCreating lockservice_database22_1 ... 
+Creating lockservice_database22_1
+[1A[2KCreating lockservice_database22_1 ... [32mdone[0m[1BCreating lockservice_lockserv_1 ... 
+Creating lockservice_lockserv_1
+[1A[2KCreating lockservice_lockserv_1 ... [32mdone[0m[1BAttaching to lockservice_database22_1, lockservice_lockserv_1
+[36mdatabase22_1  |[0m 2017-12-05T19:10:52.572+0000 I JOURNAL  [initandlisten] journal dir=/data/db/journal
+[36mdatabase22_1  |[0m 2017-12-05T19:10:52.573+0000 I JOURNAL  [initandlisten] recover : no journal files present, no recovery needed
+[36mdatabase22_1  |[0m 2017-12-05T19:10:53.015+0000 I JOURNAL  [initandlisten] preallocateIsFaster=true 3.52
+[33mlockserv_1    |[0m 2017-12-05T19:10:53112424949000+0000 Starting Lock server
+[36mdatabase22_1  |[0m 2017-12-05T19:10:53.376+0000 I JOURNAL  [initandlisten] preallocateIsFaster=true 4.84
+[36mdatabase22_1  |[0m 2017-12-05T19:10:54.666+0000 I JOURNAL  [initandlisten] preallocateIsFaster=true 2.36
+[36mdatabase22_1  |[0m 2017-12-05T19:10:54.666+0000 I JOURNAL  [initandlisten] preallocating a journal file /data/db/journal/prealloc.0
+Stopping lockservice_lockserv_1   ... 
+Stopping lockservice_database22_1 ... 
+Aborting.
+Gracefully stopping... (press Ctrl+C again to force)
+lockservice_database22_1 is up-to-date
+Starting lockservice_lockserv_1 ... 
+Starting lockservice_lockserv_1
+[1A[2KStarting lockservice_lockserv_1 ... [32mdone[0m[1BAttaching to lockservice_database22_1, lockservice_lockserv_1
+[33mlockserv_1    |[0m 2017-12-05T19:15:20903215024000+0000 Starting Lock server
+[36mdatabase22_1  |[0m 2017-12-05T19:10:52.572+0000 I JOURNAL  [initandlisten] journal dir=/data/db/journal
+[36mdatabase22_1  |[0m 2017-12-05T19:10:52.573+0000 I JOURNAL  [initandlisten] recover : no journal files present, no recovery needed
+[36mdatabase22_1  |[0m 2017-12-05T19:10:53.015+0000 I JOURNAL  [initandlisten] preallocateIsFaster=true 3.52
+[36mdatabase22_1  |[0m 2017-12-05T19:10:53.376+0000 I JOURNAL  [initandlisten] preallocateIsFaster=true 4.84
+[36mdatabase22_1  |[0m 2017-12-05T19:10:54.666+0000 I JOURNAL  [initandlisten] preallocateIsFaster=true 2.36
+[36mdatabase22_1  |[0m 2017-12-05T19:10:54.666+0000 I JOURNAL  [initandlisten] preallocating a journal file /data/db/journal/prealloc.0
+[36mdatabase22_1  |[0m 2017-12-05T19:10:56.133+0000 I JOURNAL  [initandlisten] preallocating a journal file /data/db/journal/prealloc.1
+[36mdatabase22_1  |[0m 2017-12-05T19:11:00.553+0000 I JOURNAL  [initandlisten] preallocating a journal file /data/db/journal/prealloc.2
+[36mdatabase22_1  |[0m 2017-12-05T19:11:03.448+0000 I JOURNAL  [durability] Durability thread started
+[36mdatabase22_1  |[0m 2017-12-05T19:11:03.449+0000 I JOURNAL  [journal writer] Journal writer thread started
+[36mdatabase22_1  |[0m 2017-12-05T19:11:03.468+0000 I CONTROL  [initandlisten] MongoDB starting : pid=1 port=27017 dbpath=/data/db 64-bit host=dff33df101fb
+[36mdatabase22_1  |[0m 2017-12-05T19:11:03.468+0000 I CONTROL  [initandlisten] 
+[36mdatabase22_1  |[0m 2017-12-05T19:11:03.468+0000 I CONTROL  [initandlisten] ** WARNING: /sys/kernel/mm/transparent_hugepage/enabled is 'always'.
+[36mdatabase22_1  |[0m 2017-12-05T19:11:03.468+0000 I CONTROL  [initandlisten] **        We suggest setting it to 'never'
+[36mdatabase22_1  |[0m 2017-12-05T19:11:03.468+0000 I CONTROL  [initandlisten] 
+[36mdatabase22_1  |[0m 2017-12-05T19:11:03.468+0000 I CONTROL  [initandlisten] db version v3.0.2
+[36mdatabase22_1  |[0m 2017-12-05T19:11:03.468+0000 I CONTROL  [initandlisten] git version: 6201872043ecbbc0a4cc169b5482dcf385fc464f
+[36mdatabase22_1  |[0m 2017-12-05T19:11:03.468+0000 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1e 11 Feb 2013
+[36mdatabase22_1  |[0m 2017-12-05T19:11:03.468+0000 I CONTROL  [initandlisten] build info: Linux ip-10-171-120-232 3.2.0-4-amd64 #1 SMP Debian 3.2.46-1 x86_64 BOOST_LIB_VERSION=1_49
+[36mdatabase22_1  |[0m 2017-12-05T19:11:03.468+0000 I CONTROL  [initandlisten] allocator: tcmalloc
+[36mdatabase22_1  |[0m 2017-12-05T19:11:03.468+0000 I CONTROL  [initandlisten] options: {}
+[36mdatabase22_1  |[0m 2017-12-05T19:11:03.469+0000 I INDEX    [initandlisten] allocating new ns file /data/db/local.ns, filling with zeroes...
+[36mdatabase22_1  |[0m 2017-12-05T19:11:03.536+0000 I STORAGE  [FileAllocator] allocating new datafile /data/db/local.0, filling with zeroes...
+[36mdatabase22_1  |[0m 2017-12-05T19:11:03.537+0000 I STORAGE  [FileAllocator] creating directory /data/db/_tmp
+[36mdatabase22_1  |[0m 2017-12-05T19:11:03.564+0000 I STORAGE  [FileAllocator] done allocating datafile /data/db/local.0, size: 64MB,  took 0.018 secs
+[36mdatabase22_1  |[0m 2017-12-05T19:11:03.579+0000 I NETWORK  [initandlisten] waiting for connections on port 27017

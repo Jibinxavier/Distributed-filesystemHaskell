@@ -269,14 +269,19 @@ isDated filepath servTm1 = do
           docs <- find (select ["filepath" =: filepath] "CLIENTFileMap_RECORD") >>= drainCursor
           let  contents= take 1 $ catMaybes $ DL.map (\ b -> fromBSON b :: Maybe FInfo) docs 
           case contents of 
-              [(FInfo _ _ _  strTm2)]-> liftIO $ do -- it  need IO
+              [(FInfo _ _ _  strTm2)]-> liftIO $ do 
                  let tm1= (read servTm1) :: UTCTime
                  let tm2= (read strTm2) :: UTCTime
                  let diff = realToFrac (diffUTCTime tm1 tm2 ) :: Double  
                  return (diff >0  ) :: IO (Bool)--- if old
 
-              [] -> return True -- previously was not downloaded
+              [] -> return True -- return true if it is not found locally
 
+
+updateLocalMeta :: String ->FInfo -> IO ()
+updateLocalMeta filepath fileinfo = do
+  withMongoDbConnectionForClient $ upsert (select ["filepath" =: filepath] "CLIENTFileMap_RECORD") $ toBSON $ fileinfo
+  return ()              
 
 
 isFileLocked :: String -> IO Bool

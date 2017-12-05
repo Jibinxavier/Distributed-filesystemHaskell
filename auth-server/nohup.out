@@ -19773,3 +19773,144 @@ Starting authserver_authserver_1
 Stopping authserver_authserver_1 ... 
 Stopping authserver_database_1   ... 
 [2A[2KStopping authserver_authserver_1 ... [32mdone[0m[2B[1A[2KStopping authserver_database_1   ... [32mdone[0m[1BGracefully stopping... (press Ctrl+C again to force)
+Creating authserver_database_1 ... 
+Creating authserver_database_1
+[1A[2KCreating authserver_database_1 ... [32mdone[0m[1BCreating authserver_authserver_1 ... 
+Creating authserver_authserver_1
+[1A[2KCreating authserver_authserver_1 ... [32mdone[0m[1BAttaching to authserver_database_1, authserver_authserver_1
+[36mdatabase_1    |[0m 2017-12-05T14:57:39.298+0000 I JOURNAL  [initandlisten] journal dir=/data/db/journal
+[36mdatabase_1    |[0m 2017-12-05T14:57:39.298+0000 I JOURNAL  [initandlisten] recover : no journal files present, no recovery needed
+[36mdatabase_1    |[0m 2017-12-05T14:57:39.630+0000 I JOURNAL  [initandlisten] preallocateIsFaster=true 3.64
+[33mauthserver_1  |[0m 2017-12-05T14:57:39776003637000+0000 Starting filesystem
+[36mdatabase_1    |[0m 2017-12-05T14:57:39.930+0000 I JOURNAL  [initandlisten] preallocateIsFaster=true 3.54
+[36mdatabase_1    |[0m 2017-12-05T14:57:41.340+0000 I JOURNAL  [initandlisten] preallocateIsFaster=true 2.3
+[36mdatabase_1    |[0m 2017-12-05T14:57:41.341+0000 I JOURNAL  [initandlisten] preallocating a journal file /data/db/journal/prealloc.0
+[36mdatabase_1    |[0m 2017-12-05T14:57:42.504+0000 I JOURNAL  [initandlisten] preallocating a journal file /data/db/journal/prealloc.1
+[36mdatabase_1    |[0m 2017-12-05T14:57:43.587+0000 I JOURNAL  [initandlisten] preallocating a journal file /data/db/journal/prealloc.2
+[36mdatabase_1    |[0m 2017-12-05T14:57:44.900+0000 I JOURNAL  [durability] Durability thread started
+[36mdatabase_1    |[0m 2017-12-05T14:57:44.901+0000 I JOURNAL  [journal writer] Journal writer thread started
+[36mdatabase_1    |[0m 2017-12-05T14:57:44.914+0000 I CONTROL  [initandlisten] MongoDB starting : pid=1 port=27017 dbpath=/data/db 64-bit host=a64856593495
+[36mdatabase_1    |[0m 2017-12-05T14:57:44.914+0000 I CONTROL  [initandlisten] 
+[36mdatabase_1    |[0m 2017-12-05T14:57:44.914+0000 I CONTROL  [initandlisten] ** WARNING: /sys/kernel/mm/transparent_hugepage/enabled is 'always'.
+[36mdatabase_1    |[0m 2017-12-05T14:57:44.914+0000 I CONTROL  [initandlisten] **        We suggest setting it to 'never'
+[36mdatabase_1    |[0m 2017-12-05T14:57:44.914+0000 I CONTROL  [initandlisten] 
+[36mdatabase_1    |[0m 2017-12-05T14:57:44.914+0000 I CONTROL  [initandlisten] db version v3.0.2
+[36mdatabase_1    |[0m 2017-12-05T14:57:44.914+0000 I CONTROL  [initandlisten] git version: 6201872043ecbbc0a4cc169b5482dcf385fc464f
+[36mdatabase_1    |[0m 2017-12-05T14:57:44.914+0000 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1e 11 Feb 2013
+[36mdatabase_1    |[0m 2017-12-05T14:57:44.914+0000 I CONTROL  [initandlisten] build info: Linux ip-10-171-120-232 3.2.0-4-amd64 #1 SMP Debian 3.2.46-1 x86_64 BOOST_LIB_VERSION=1_49
+[36mdatabase_1    |[0m 2017-12-05T14:57:44.914+0000 I CONTROL  [initandlisten] allocator: tcmalloc
+[36mdatabase_1    |[0m 2017-12-05T14:57:44.914+0000 I CONTROL  [initandlisten] options: {}
+[36mdatabase_1    |[0m 2017-12-05T14:57:44.916+0000 I INDEX    [initandlisten] allocating new ns file /data/db/local.ns, filling with zeroes...
+[36mdatabase_1    |[0m 2017-12-05T14:57:44.984+0000 I STORAGE  [FileAllocator] allocating new datafile /data/db/local.0, filling with zeroes...
+[36mdatabase_1    |[0m 2017-12-05T14:57:44.984+0000 I STORAGE  [FileAllocator] creating directory /data/db/_tmp
+[36mdatabase_1    |[0m 2017-12-05T14:57:45.000+0000 I STORAGE  [FileAllocator] done allocating datafile /data/db/local.0, size: 64MB,  took 0.007 secs
+[36mdatabase_1    |[0m 2017-12-05T14:57:45.006+0000 I NETWORK  [initandlisten] waiting for connections on port 27017
+Stopping authserver_authserver_1 ... 
+Stopping authserver_database_1   ... 
+[2A[2KStopping authserver_authserver_1 ... [32mdone[0m[2B[1A[2KStopping authserver_database_1   ... [32mdone[0m[1BGracefully stopping... (press Ctrl+C again to force)
+Starting authserver_database_1 ... 
+Starting authserver_database_1
+[1A[2KStarting authserver_database_1 ... [32mdone[0m[1BStarting authserver_authserver_1 ... 
+Starting authserver_authserver_1
+[1A[2KStarting authserver_authserver_1 ... [32mdone[0m[1BAttaching to authserver_database_1, authserver_authserver_1
+[36mdatabase_1    |[0m 2017-12-05T15:32:18.386+0000 I JOURNAL  [initandlisten] journal dir=/data/db/journal
+[36mdatabase_1    |[0m 2017-12-05T15:32:18.386+0000 I JOURNAL  [initandlisten] recover : no journal files present, no recovery needed
+[36mdatabase_1    |[0m 2017-12-05T15:32:18.395+0000 I JOURNAL  [durability] Durability thread started
+[36mdatabase_1    |[0m 2017-12-05T15:32:18.395+0000 I JOURNAL  [journal writer] Journal writer thread started
+[36mdatabase_1    |[0m 2017-12-05T15:32:18.402+0000 I CONTROL  [initandlisten] MongoDB starting : pid=1 port=27017 dbpath=/data/db 64-bit host=a64856593495
+[36mdatabase_1    |[0m 2017-12-05T15:32:18.402+0000 I CONTROL  [initandlisten] 
+[36mdatabase_1    |[0m 2017-12-05T15:32:18.402+0000 I CONTROL  [initandlisten] ** WARNING: /sys/kernel/mm/transparent_hugepage/enabled is 'always'.
+[36mdatabase_1    |[0m 2017-12-05T15:32:18.402+0000 I CONTROL  [initandlisten] **        We suggest setting it to 'never'
+[33mauthserver_1  |[0m 2017-12-05T15:32:18710122926000+0000 Starting filesystem
+[36mdatabase_1    |[0m 2017-12-05T15:32:18.402+0000 I CONTROL  [initandlisten] 
+[36mdatabase_1    |[0m 2017-12-05T15:32:18.402+0000 I CONTROL  [initandlisten] db version v3.0.2
+[36mdatabase_1    |[0m 2017-12-05T15:32:18.402+0000 I CONTROL  [initandlisten] git version: 6201872043ecbbc0a4cc169b5482dcf385fc464f
+[36mdatabase_1    |[0m 2017-12-05T15:32:18.402+0000 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1e 11 Feb 2013
+[36mdatabase_1    |[0m 2017-12-05T15:32:18.402+0000 I CONTROL  [initandlisten] build info: Linux ip-10-171-120-232 3.2.0-4-amd64 #1 SMP Debian 3.2.46-1 x86_64 BOOST_LIB_VERSION=1_49
+[36mdatabase_1    |[0m 2017-12-05T15:32:18.402+0000 I CONTROL  [initandlisten] allocator: tcmalloc
+[36mdatabase_1    |[0m 2017-12-05T15:32:18.402+0000 I CONTROL  [initandlisten] options: {}
+[36mdatabase_1    |[0m 2017-12-05T15:32:18.404+0000 I NETWORK  [initandlisten] waiting for connections on port 27017
+[33mauthserver_1  |[0m 2017-12-05T15:34:19987531161000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1    |[0m 2017-12-05T15:34:19.993+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.3:40352 #1 (1 connection now open)
+[33mauthserver_1  |[0m 2017-12-05T15:34:19995211649000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1    |[0m 2017-12-05T15:34:19.997+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.3:40354 #2 (2 connections now open)
+[36mdatabase_1    |[0m 2017-12-05T15:34:20.117+0000 I INDEX    [conn2] allocating new ns file /data/db/USEHASKELLDB.ns, filling with zeroes...
+[36mdatabase_1    |[0m 2017-12-05T15:34:20.155+0000 I STORAGE  [FileAllocator] allocating new datafile /data/db/USEHASKELLDB.0, filling with zeroes...
+[36mdatabase_1    |[0m 2017-12-05T15:34:20.155+0000 I STORAGE  [FileAllocator] creating directory /data/db/_tmp
+[36mdatabase_1    |[0m 2017-12-05T15:34:20.162+0000 I STORAGE  [FileAllocator] done allocating datafile /data/db/USEHASKELLDB.0, size: 64MB,  took 0.003 secs
+[36mdatabase_1    |[0m 2017-12-05T15:34:20.168+0000 I NETWORK  [conn2] end connection 172.17.0.3:40354 (1 connection now open)
+[36mdatabase_1    |[0m 2017-12-05T15:34:20.168+0000 I NETWORK  [conn1] end connection 172.17.0.3:40352 (1 connection now open)
+[33mauthserver_1  |[0m 172.17.0.1 - - [05/Dec/2017:15:34:20 +0000] "GET /loadPublicKey HTTP/1.1" 200 - "" ""
+[33mauthserver_1  |[0m 2017-12-05T15:34:20176693329000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1    |[0m 2017-12-05T15:34:20.178+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.3:40360 #3 (1 connection now open)
+[36mdatabase_1    |[0m 2017-12-05T15:34:20.179+0000 I NETWORK  [conn3] end connection 172.17.0.3:40360 (0 connections now open)
+[33mauthserver_1  |[0m 2017-12-05T15:34:20179895356000+0000 Storing UserInfo under key hello.
+[36mdatabase_1    |[0m 2017-12-05T15:34:20.181+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.3:40362 #4 (1 connection now open)
+[33mauthserver_1  |[0m 2017-12-05T15:34:20180593632000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[33mauthserver_1  |[0m 2017-12-05T15:34:20182993860000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1    |[0m 2017-12-05T15:34:20.185+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.3:40364 #5 (2 connections now open)
+[36mdatabase_1    |[0m 2017-12-05T15:34:21.013+0000 I NETWORK  [conn5] end connection 172.17.0.3:40364 (1 connection now open)
+[36mdatabase_1    |[0m 2017-12-05T15:34:21.014+0000 I NETWORK  [conn4] end connection 172.17.0.3:40362 (1 connection now open)
+[33mauthserver_1  |[0m 172.17.0.1 - - [05/Dec/2017:15:34:20 +0000] "POST /signup HTTP/1.1" 200 - "" ""
+[33mauthserver_1  |[0m 2017-12-05T15:34:36559722633000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1    |[0m 2017-12-05T15:34:36.561+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.3:40372 #6 (1 connection now open)
+[36mdatabase_1    |[0m 2017-12-05T15:34:36.562+0000 I NETWORK  [conn6] end connection 172.17.0.3:40372 (0 connections now open)
+[33mauthserver_1  |[0m 172.17.0.1 - - [05/Dec/2017:15:34:36 +0000] "GET /loadPublicKey HTTP/1.1" 200 - "" ""
+[33mauthserver_1  |[0m 2017-12-05T15:34:36566811022000+0000 Searching for user  for key: hello
+[33mauthserver_1  |[0m 2017-12-05T15:34:36567777893000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1    |[0m 2017-12-05T15:34:36.569+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.3:40378 #7 (1 connection now open)
+[36mdatabase_1    |[0m 2017-12-05T15:34:36.571+0000 I NETWORK  [conn7] end connection 172.17.0.3:40378 (0 connections now open)
+[36mdatabase_1    |[0m 2017-12-05T15:34:36.572+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.3:40380 #8 (1 connection now open)
+[33mauthserver_1  |[0m 2017-12-05T15:34:36571244607000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1    |[0m 2017-12-05T15:34:37.408+0000 I NETWORK  [conn8] end connection 172.17.0.3:40380 (0 connections now open)
+[33mauthserver_1  |[0m 172.17.0.1 - - [05/Dec/2017:15:34:36 +0000] "POST /login HTTP/1.1" 200 - "" ""
+[36mauthserver_database_1 exited with code 137
+[0m[33mauthserver_authserver_1 exited with code 137
+[0mCreating authserver_database_1 ... 
+Creating authserver_database_1
+[1A[2KCreating authserver_database_1 ... [32mdone[0m[1BCreating authserver_authserver_1 ... 
+Creating authserver_authserver_1
+[1A[2KCreating authserver_authserver_1 ... [32mdone[0m[1BAttaching to authserver_database_1, authserver_authserver_1
+[36mdatabase_1    |[0m 2017-12-05T19:10:51.111+0000 I JOURNAL  [initandlisten] journal dir=/data/db/journal
+[36mdatabase_1    |[0m 2017-12-05T19:10:51.111+0000 I JOURNAL  [initandlisten] recover : no journal files present, no recovery needed
+[36mdatabase_1    |[0m 2017-12-05T19:10:51.462+0000 I JOURNAL  [initandlisten] preallocateIsFaster=true 4.04
+[33mauthserver_1  |[0m 2017-12-05T19:10:51547715024000+0000 Starting filesystem
+[36mdatabase_1    |[0m 2017-12-05T19:10:51.756+0000 I JOURNAL  [initandlisten] preallocateIsFaster=true 2.92
+[36mdatabase_1    |[0m 2017-12-05T19:10:53.271+0000 I JOURNAL  [initandlisten] preallocateIsFaster=true 5.18
+[36mdatabase_1    |[0m 2017-12-05T19:10:53.271+0000 I JOURNAL  [initandlisten] preallocating a journal file /data/db/journal/prealloc.0
+[36mdatabase_1    |[0m 2017-12-05T19:10:54.430+0000 I JOURNAL  [initandlisten] preallocating a journal file /data/db/journal/prealloc.1
+Stopping authserver_authserver_1 ... 
+Stopping authserver_database_1   ... 
+Aborting.
+Gracefully stopping... (press Ctrl+C again to force)
+authserver_database_1 is up-to-date
+Starting authserver_authserver_1 ... 
+Starting authserver_authserver_1
+[1A[2KStarting authserver_authserver_1 ... [32mdone[0m[1BAttaching to authserver_database_1, authserver_authserver_1
+[33mauthserver_1  |[0m 2017-12-05T19:15:19353959623000+0000 Starting filesystem
+[36mdatabase_1    |[0m 2017-12-05T19:10:51.111+0000 I JOURNAL  [initandlisten] journal dir=/data/db/journal
+[36mdatabase_1    |[0m 2017-12-05T19:10:51.111+0000 I JOURNAL  [initandlisten] recover : no journal files present, no recovery needed
+[36mdatabase_1    |[0m 2017-12-05T19:10:51.462+0000 I JOURNAL  [initandlisten] preallocateIsFaster=true 4.04
+[36mdatabase_1    |[0m 2017-12-05T19:10:51.756+0000 I JOURNAL  [initandlisten] preallocateIsFaster=true 2.92
+[36mdatabase_1    |[0m 2017-12-05T19:10:53.271+0000 I JOURNAL  [initandlisten] preallocateIsFaster=true 5.18
+[36mdatabase_1    |[0m 2017-12-05T19:10:53.271+0000 I JOURNAL  [initandlisten] preallocating a journal file /data/db/journal/prealloc.0
+[36mdatabase_1    |[0m 2017-12-05T19:10:54.430+0000 I JOURNAL  [initandlisten] preallocating a journal file /data/db/journal/prealloc.1
+[36mdatabase_1    |[0m 2017-12-05T19:10:55.978+0000 I JOURNAL  [initandlisten] preallocating a journal file /data/db/journal/prealloc.2
+[36mdatabase_1    |[0m 2017-12-05T19:11:00.571+0000 I JOURNAL  [durability] Durability thread started
+[36mdatabase_1    |[0m 2017-12-05T19:11:00.571+0000 I JOURNAL  [journal writer] Journal writer thread started
+[36mdatabase_1    |[0m 2017-12-05T19:11:00.720+0000 I CONTROL  [initandlisten] MongoDB starting : pid=1 port=27017 dbpath=/data/db 64-bit host=fddfdb662af5
+[36mdatabase_1    |[0m 2017-12-05T19:11:00.720+0000 I CONTROL  [initandlisten] 
+[36mdatabase_1    |[0m 2017-12-05T19:11:00.720+0000 I CONTROL  [initandlisten] ** WARNING: /sys/kernel/mm/transparent_hugepage/enabled is 'always'.
+[36mdatabase_1    |[0m 2017-12-05T19:11:00.720+0000 I CONTROL  [initandlisten] **        We suggest setting it to 'never'
+[36mdatabase_1    |[0m 2017-12-05T19:11:00.720+0000 I CONTROL  [initandlisten] 
+[36mdatabase_1    |[0m 2017-12-05T19:11:00.720+0000 I CONTROL  [initandlisten] db version v3.0.2
+[36mdatabase_1    |[0m 2017-12-05T19:11:00.720+0000 I CONTROL  [initandlisten] git version: 6201872043ecbbc0a4cc169b5482dcf385fc464f
+[36mdatabase_1    |[0m 2017-12-05T19:11:00.720+0000 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1e 11 Feb 2013
+[36mdatabase_1    |[0m 2017-12-05T19:11:00.720+0000 I CONTROL  [initandlisten] build info: Linux ip-10-171-120-232 3.2.0-4-amd64 #1 SMP Debian 3.2.46-1 x86_64 BOOST_LIB_VERSION=1_49
+[36mdatabase_1    |[0m 2017-12-05T19:11:00.720+0000 I CONTROL  [initandlisten] allocator: tcmalloc
+[36mdatabase_1    |[0m 2017-12-05T19:11:00.720+0000 I CONTROL  [initandlisten] options: {}
+[36mdatabase_1    |[0m 2017-12-05T19:11:00.720+0000 I INDEX    [initandlisten] allocating new ns file /data/db/local.ns, filling with zeroes...
+[36mdatabase_1    |[0m 2017-12-05T19:11:02.133+0000 I STORAGE  [FileAllocator] allocating new datafile /data/db/local.0, filling with zeroes...
+[36mdatabase_1    |[0m 2017-12-05T19:11:02.133+0000 I STORAGE  [FileAllocator] creating directory /data/db/_tmp
+[36mdatabase_1    |[0m 2017-12-05T19:11:03.420+0000 I STORAGE  [FileAllocator] done allocating datafile /data/db/local.0, size: 64MB,  took 0.012 secs
+[36mdatabase_1    |[0m 2017-12-05T19:11:03.430+0000 I NETWORK  [initandlisten] waiting for connections on port 27017

@@ -1,4 +1,6 @@
 # Distributed-filesystem
+##### Client Service
+Act as a proxy between user interface and filesystem. Client will allow users to read file content and write to it. The write encapsulates both opening the file and writing to it. As a result at no point the client will keep the file open.
 
 ##### Security Service
 1. Client asks for the public key, (ideally the client would already know). It uses this key to encrypt its first interactions with authentication server.
