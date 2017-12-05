@@ -35,6 +35,7 @@ library
                      , bson-generic
                      , aeson
                      , text
+                     , split
                      , filesystem-api
   default-language:    Haskell2010
 

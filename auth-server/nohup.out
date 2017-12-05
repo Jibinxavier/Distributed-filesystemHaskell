@@ -19736,3 +19736,40 @@ Stopping authserver_database_1   ...
 [36mdatabase_1    |[0m 2017-12-04T21:49:36.337+0000 I CONTROL  [signalProcessingThread] dbexit:  rc: 0
 [36mauthserver_database_1 exited with code 0
 [0m[1A[2KStopping authserver_database_1   ... [32mdone[0m[1BGracefully stopping... (press Ctrl+C again to force)
+Starting authserver_database_1 ... 
+Starting authserver_database_1
+[1A[2KStarting authserver_database_1 ... [32mdone[0m[1BStarting authserver_authserver_1 ... 
+Starting authserver_authserver_1
+[1A[2KStarting authserver_authserver_1 ... [32mdone[0m[1BAttaching to authserver_database_1, authserver_authserver_1
+[36mdatabase_1    |[0m 2017-12-04T23:22:34.884+0000 I JOURNAL  [initandlisten] journal dir=/data/db/journal
+[36mdatabase_1    |[0m 2017-12-04T23:22:34.885+0000 I JOURNAL  [initandlisten] recover : no journal files present, no recovery needed
+[36mdatabase_1    |[0m 2017-12-04T23:22:34.894+0000 I JOURNAL  [durability] Durability thread started
+[36mdatabase_1    |[0m 2017-12-04T23:22:34.894+0000 I JOURNAL  [journal writer] Journal writer thread started
+[33mauthserver_1  |[0m 2017-12-04T23:22:35138567285000+0000 Starting filesystem
+[36mdatabase_1    |[0m 2017-12-04T23:22:34.901+0000 I CONTROL  [initandlisten] MongoDB starting : pid=1 port=27017 dbpath=/data/db 64-bit host=8f5dc5baf358
+[36mdatabase_1    |[0m 2017-12-04T23:22:34.901+0000 I CONTROL  [initandlisten] 
+[36mdatabase_1    |[0m 2017-12-04T23:22:34.901+0000 I CONTROL  [initandlisten] ** WARNING: /sys/kernel/mm/transparent_hugepage/enabled is 'always'.
+[36mdatabase_1    |[0m 2017-12-04T23:22:34.901+0000 I CONTROL  [initandlisten] **        We suggest setting it to 'never'
+[36mdatabase_1    |[0m 2017-12-04T23:22:34.901+0000 I CONTROL  [initandlisten] 
+[36mdatabase_1    |[0m 2017-12-04T23:22:34.901+0000 I CONTROL  [initandlisten] db version v3.0.2
+[36mdatabase_1    |[0m 2017-12-04T23:22:34.901+0000 I CONTROL  [initandlisten] git version: 6201872043ecbbc0a4cc169b5482dcf385fc464f
+[36mdatabase_1    |[0m 2017-12-04T23:22:34.901+0000 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1e 11 Feb 2013
+[36mdatabase_1    |[0m 2017-12-04T23:22:34.901+0000 I CONTROL  [initandlisten] build info: Linux ip-10-171-120-232 3.2.0-4-amd64 #1 SMP Debian 3.2.46-1 x86_64 BOOST_LIB_VERSION=1_49
+[36mdatabase_1    |[0m 2017-12-04T23:22:34.901+0000 I CONTROL  [initandlisten] allocator: tcmalloc
+[36mdatabase_1    |[0m 2017-12-04T23:22:34.901+0000 I CONTROL  [initandlisten] options: {}
+[36mdatabase_1    |[0m 2017-12-04T23:22:34.904+0000 I NETWORK  [initandlisten] waiting for connections on port 27017
+[33mauthserver_1  |[0m 2017-12-04T23:22:55687342890000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1    |[0m 2017-12-04T23:22:55.688+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.3:46508 #1 (1 connection now open)
+[36mdatabase_1    |[0m 2017-12-04T23:22:55.688+0000 I NETWORK  [conn1] end connection 172.17.0.3:46508 (0 connections now open)
+[33mauthserver_1  |[0m 172.17.0.1 - - [04/Dec/2017:23:22:55 +0000] "GET /loadPublicKey HTTP/1.1" 200 - "" ""
+[33mauthserver_1  |[0m 2017-12-04T23:22:55697495060000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1    |[0m 2017-12-04T23:22:55.698+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.3:46514 #2 (1 connection now open)
+[36mdatabase_1    |[0m 2017-12-04T23:22:55.698+0000 I NETWORK  [conn2] end connection 172.17.0.3:46514 (0 connections now open)
+[33mauthserver_1  |[0m 2017-12-04T23:22:55698429725000+0000 Storing UserInfo under key username.
+[33mauthserver_1  |[0m 2017-12-04T23:22:55698879282000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1    |[0m 2017-12-04T23:22:55.699+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.3:46516 #3 (1 connection now open)
+[36mdatabase_1    |[0m 2017-12-04T23:22:55.699+0000 I NETWORK  [conn3] end connection 172.17.0.3:46516 (0 connections now open)
+[33mauthserver_1  |[0m 172.17.0.1 - - [04/Dec/2017:23:22:55 +0000] "POST /signup HTTP/1.1" 200 - "" ""
+Stopping authserver_authserver_1 ... 
+Stopping authserver_database_1   ... 
+[2A[2KStopping authserver_authserver_1 ... [32mdone[0m[2B[1A[2KStopping authserver_database_1   ... [32mdone[0m[1BGracefully stopping... (press Ctrl+C again to force)

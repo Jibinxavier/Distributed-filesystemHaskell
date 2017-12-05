@@ -40,7 +40,9 @@ import           GHC.Generics
 import           Data.Text                    (pack, unpack)
 import           Datatypes 
 import           EncryptionAPI
-import           Helpers         
+import           Helpers        
+import           Data.List.Split
+import           Data.Char 
 
 
    
@@ -449,6 +451,28 @@ opts = do
                           "source < (" ++ progName ++ " --bash-completion-script `which " ++ progName ++ "`)" ++
                           resetCode )
              <> header  (redCode ++ "Git revision : " ++ gitRev ++ ", branch: " ++ gitBranch ++ resetCode))
+
+
+
+run = do
+  contents <- getLine 
+  if DL.isPrefixOf "login" contents
+    then do
+      let cmds =  splitOn " " contents
+      doLogin (cmds !! 1) (cmds !! 2)
+  else if DL.isPrefixOf  "signup" contents
+    then do
+      let cmds =  splitOn " " contents
+      doSignup  (cmds !! 1) (cmds !! 2)
+  else if DL.isPrefixOf  "start-trans" contents
+    then do
+      let cmds =  splitOn " " contents
+      doSignup  (cmds !! 1) (cmds !! 2)
+
+  else
+    putStrLn $"no command specified"
+  run
+
 
 unlockLockedFiles :: String  -> String -> IO() 
 unlockLockedFiles  tid  usern= liftIO $ do

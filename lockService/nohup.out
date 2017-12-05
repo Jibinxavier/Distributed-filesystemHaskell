@@ -266,4 +266,28 @@ Stopping lockservice_database22_1 ...
 [36mdatabase22_1  |[0m 2017-12-04T21:49:36.351+0000 I CONTROL  [signalProcessingThread] dbexit:  rc: 0
 [1A[2KStopping lockservice_database22_1 ... [32mdone[0m[1BGracefully stopping... (press Ctrl+C again to force)
 [36mlockservice_database22_1 exited with code 0
-[0m
+[0mStarting lockservice_database22_1 ... 
+Starting lockservice_database22_1
+[1A[2KStarting lockservice_database22_1 ... [32mdone[0m[1BStarting lockservice_lockserv_1 ... 
+Starting lockservice_lockserv_1
+[1A[2KStarting lockservice_lockserv_1 ... [32mdone[0m[1BAttaching to lockservice_database22_1, lockservice_lockserv_1
+[36mdatabase22_1  |[0m 2017-12-04T23:22:36.640+0000 I JOURNAL  [initandlisten] journal dir=/data/db/journal
+[36mdatabase22_1  |[0m 2017-12-04T23:22:36.641+0000 I JOURNAL  [initandlisten] recover : no journal files present, no recovery needed
+[36mdatabase22_1  |[0m 2017-12-04T23:22:36.656+0000 I JOURNAL  [durability] Durability thread started
+[36mdatabase22_1  |[0m 2017-12-04T23:22:36.656+0000 I JOURNAL  [journal writer] Journal writer thread started
+[36mdatabase22_1  |[0m 2017-12-04T23:22:36.662+0000 I CONTROL  [initandlisten] MongoDB starting : pid=1 port=27017 dbpath=/data/db 64-bit host=3ac81add309d
+[36mdatabase22_1  |[0m 2017-12-04T23:22:36.662+0000 I CONTROL  [initandlisten] 
+[33mlockserv_1    |[0m 2017-12-04T23:22:37091722852000+0000 Starting Lock server
+[36mdatabase22_1  |[0m 2017-12-04T23:22:36.662+0000 I CONTROL  [initandlisten] ** WARNING: /sys/kernel/mm/transparent_hugepage/enabled is 'always'.
+[36mdatabase22_1  |[0m 2017-12-04T23:22:36.662+0000 I CONTROL  [initandlisten] **        We suggest setting it to 'never'
+[36mdatabase22_1  |[0m 2017-12-04T23:22:36.662+0000 I CONTROL  [initandlisten] 
+[36mdatabase22_1  |[0m 2017-12-04T23:22:36.662+0000 I CONTROL  [initandlisten] db version v3.0.2
+[36mdatabase22_1  |[0m 2017-12-04T23:22:36.662+0000 I CONTROL  [initandlisten] git version: 6201872043ecbbc0a4cc169b5482dcf385fc464f
+[36mdatabase22_1  |[0m 2017-12-04T23:22:36.662+0000 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1e 11 Feb 2013
+[36mdatabase22_1  |[0m 2017-12-04T23:22:36.662+0000 I CONTROL  [initandlisten] build info: Linux ip-10-171-120-232 3.2.0-4-amd64 #1 SMP Debian 3.2.46-1 x86_64 BOOST_LIB_VERSION=1_49
+[36mdatabase22_1  |[0m 2017-12-04T23:22:36.662+0000 I CONTROL  [initandlisten] allocator: tcmalloc
+[36mdatabase22_1  |[0m 2017-12-04T23:22:36.662+0000 I CONTROL  [initandlisten] options: {}
+[36mdatabase22_1  |[0m 2017-12-04T23:22:36.664+0000 I NETWORK  [initandlisten] waiting for connections on port 27017
+Stopping lockservice_lockserv_1   ... 
+Stopping lockservice_database22_1 ... 
+[2A[2KStopping lockservice_lockserv_1   ... [32mdone[0m[2B[1A[2KStopping lockservice_database22_1 ... [32mdone[0m[1BGracefully stopping... (press Ctrl+C again to force)
