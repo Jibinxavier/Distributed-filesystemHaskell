@@ -350,128 +350,81 @@ doLogin userN pass  = do
 -- First we invoke the options on the entry point.
 someFunc :: IO ()
 someFunc = do 
-    banner 
-    join $ execParser =<< opts
-
--- | Defined in the applicative style, opts provides a declaration of the entire command line
---   parser structure. To add a new command just follow the example of the existing commands. A
---   new 'doCall' function should be defined for your new command line option, with a type matching the
---   ordering of the application of arguments in the <$> arg1 <*> arg2 .. <*> argN style below.
-opts :: IO (ParserInfo (IO ()))
-opts = do
-  progName <- getProgName
-
-  return $ info (   helper
-                <*> subparser
-                       (  command "upload-file"
-                                  (withInfo ( doCloseFile   
-                                          <$> argument str (metavar "local file path")
-                                          <*> argument str (metavar "dir")  
-                                          <*> argument str (metavar "fname") 
-                                          <*> argument str (metavar "usrname")) "Upload a file to  remote server." )
-                        <> command "download-file"
-                                   (withInfo ( doDownloadFile
-                                           <$> argument str (metavar "directory/fileserver")
-                                           <*> argument str (metavar "file name") 
-                                           <*> argument str (metavar "usern name") 
-                                           ) "download a file from  remote server." )
-                        <> command "lock-file"
-                                   (withInfo ( doFileLock
-                                           <$> argument str (metavar "file path")
-                                           <*> argument str (metavar " user name") 
-                                           ) "locking a file" )
-
-                        <> command "unlock-file"
-                                    (withInfo ( doFileUnLock
-                                            <$> argument str (metavar "file path")
-                                            <*> argument str (metavar "usern name") 
-                                            ) "Unlocking a file." )
-                        <> command "islocked-file"
-                                   (withInfo ( doIsLocked
-                                           <$> argument str (metavar "file path") 
-                                           ) "Is locked " )
-
-                      <> command "listdirs"
-                                  (withInfo ( doListDirs 
-                                          <$> argument str (metavar "user name")
-                                         ) "List all directories" )
-                       
-                      <> command "listfscontents"
-                                (withInfo ( doLSFileServerContents
-                                        <$> argument str (metavar "file server / directory") 
-                                        <*> argument str (metavar "usern name")
-                                         ) "List files in a file server" )
-                      <> command "filesearch"
-                                (withInfo ( doFileSearch
-                                        <$> argument str (metavar "file server / directory")
-                                        <*> argument str (metavar "file name") 
-                                        <*> argument str (metavar "usern name")
-                                        ) "Get file info" )
-                    
-
-                      <> command "start-trans"
-                                    (withInfo ( doGetTransId 
-                                            <$> argument str (metavar "usern name")
-                                            ) "Begin transaction" )
-                        
-                        <> command "commit"
-                                  (withInfo ( doCommit
-                                          <$> argument str (metavar "usern") 
-                                          ) "Commiting transaction" )
-                        <> command "abort"
-                                  (withInfo ( doAbort
-                                          <$> argument str (metavar "usern") 
-                                          ) "Aborting transaction" )
-                        <> command "upload-trans"
-                                  (withInfo ( doUploadWithTransaction
-                                          <$> argument str (metavar "localfilePath")
-                                          <*> argument str (metavar "dir") 
-                                          <*> argument str (metavar "file name") 
-                                          <*> argument str (metavar "usern") 
-                                          ) "Upload to transaction" ) 
-                        <> command "sign-up"
-                                   (withInfo ( doSignup
-                                           <$> argument str (metavar "User name")
-                                           <*> argument str (metavar "password")
-                                           ) "Upload a file to  remote server." )
-                         <> command "log-in"
-                                    (withInfo ( doLogin 
-                                            <$> argument str (metavar "User name")
-                                            <*> argument str (metavar "password")
-                                            ) "Upload a file to  remote server." )
-                                           ))
-             (  fullDesc
-             <> progDesc (progName ++ " is a simple test client for the use-haskell service." ++
-                          " Try " ++ whiteCode ++ progName ++ " --help " ++ resetCode ++ " for more information. To " ++
-                          " see the details of any command, " ++  "try " ++ whiteCode ++ progName ++ " COMMAND --help" ++
-                          resetCode ++ ". The application supports bash completion. To enable, " ++
-                          "ensure you have bash-completion installed and enabled (see your OS for details), the " ++
-                          whiteCode ++ progName ++ resetCode ++
-                          " application in your PATH, and place the following in your ~/.bash_profile : " ++ whiteCode ++
-                          "source < (" ++ progName ++ " --bash-completion-script `which " ++ progName ++ "`)" ++
-                          resetCode )
-             <> header  (redCode ++ "Git revision : " ++ gitRev ++ ", branch: " ++ gitBranch ++ resetCode))
+    menu
 
 
 
-run = do
+menu = do
   contents <- getLine 
   if DL.isPrefixOf "login" contents
     then do
       let cmds =  splitOn " " contents
+      --"User name" password"
       doLogin (cmds !! 1) (cmds !! 2)
   else if DL.isPrefixOf  "signup" contents
     then do
       let cmds =  splitOn " " contents
+      --"User name" password"
       doSignup  (cmds !! 1) (cmds !! 2)
-  else if DL.isPrefixOf  "start-trans" contents
+  else if DL.isPrefixOf  "openfile" contents
     then do
       let cmds =  splitOn " " contents
-      doSignup  (cmds !! 1) (cmds !! 2)
+      -- "remote dir"  "fname" "username"
+      doOpenFile  (cmds !! 1) (cmds !! 2) (cmds !! 3)
+  else if DL.isPrefixOf  "closefile" contents
+    then do
+      let cmds =  splitOn " " contents
+      -- "local file path" "remote dir" "file name" "user name"
+      doCloseFile  (cmds !! 1) (cmds !! 2) (cmds !! 3) (cmds !! 4)
+  else if DL.isPrefixOf  "lockfile" contents
+    then do
+      let cmds =  splitOn " " contents
+      -- "remote dir/filename"   "user name"
+      doFileLock  (cmds !! 1) (cmds !! 2) 
+  else if DL.isPrefixOf  "unlockfile" contents
+    then do
+      let cmds =  splitOn " " contents
+      -- "remote dir/filename"   "user name"
+      doFileUnLock  (cmds !! 1) (cmds !! 2) 
+  else if DL.isPrefixOf  "listdirs" contents
+    then do
+      let cmds =  splitOn " " contents
+      --   "user name"
+      doListDirs  (cmds !! 1) 
+  else if DL.isPrefixOf  "lsdircontents" contents
+    then do
+      let cmds =  splitOn " " contents
+      --   "remote dir/filename" "user name"
+      doLSFileServerContents  (cmds !! 1)    (cmds !! 2) 
+  else if DL.isPrefixOf  "filesearch" contents
+    then do
+      let cmds =  splitOn " " contents
+      --  "remote dir"  "remote dir/filename"   "user name"
+      doFileSearch  (cmds !! 1) (cmds !! 2) (cmds !! 3) 
 
+  else if DL.isPrefixOf  "startTrans" contents
+    then do
+      let cmds =  splitOn " " contents
+      --    "user name"
+      doGetTransId  (cmds !! 1) 
+  else if DL.isPrefixOf  "commit" contents
+    then do
+      let cmds =  splitOn " " contents
+      --    "user name"
+      doCommit  (cmds !! 1) 
+  else if DL.isPrefixOf  "abort" contents
+    then do
+      let cmds =  splitOn " " contents
+      --    "user name"
+      doAbort  (cmds !! 1) 
+  else if DL.isPrefixOf  "writeT" contents
+    then do
+      let cmds =  splitOn " " contents
+     -- "local file path" "remote dir" "file name" "user name"
+      doUploadWithTransaction  (cmds !! 1) (cmds !! 2) (cmds !! 3) (cmds !! 4)
   else
     putStrLn $"no command specified"
-  run
+  menu
 
 
 unlockLockedFiles :: String  -> String -> IO() 
