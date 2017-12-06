@@ -25,9 +25,19 @@ heartbeat:: Message -> ClientM Bool
 getAllReplicas:: Maybe String -> ClientM [FServer]  
 broadcastedUpload :: FileContents -> ClientM Bool
 readyToCommit  :: Message -> ClientM Bool  
+
 -- | The following provides the implementations of these types 
 
 (add_dir :<|> heartbeat :<|> getAllReplicas :<|> broadcastedUpload :<|> readyToCommit) = client restFSAPI
+
+-- lock server
+restLOCKAPI :: Proxy LOCKAPI
+restLOCKAPI = Proxy
+
+
+lockAvailable :: LockTransfer -> ClientM Bool
+
+(lockAvailable) =  client restLOCKAPI
 
 
 

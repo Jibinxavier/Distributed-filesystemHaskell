@@ -261,4 +261,5 @@ type TSAPI = "uploadToshadow"        :> ReqBody '[JSON] TransactionInfoTransfer 
            :<|> "updateRealDB"       :> ReqBody '[JSON] String        :> Post '[JSON] Bool -- commit changes from shadow space to actual thing
            :<|> "commitDirChanges"   :> ReqBody '[JSON] Message1  :> Post '[JSON] Bool
            :<|> "abortDirChanges"    :> ReqBody '[JSON] Message1  :> Post '[JSON] Bool
-             
+type LOCKAPI = "lockAvailable"         :> ReqBody '[JSON] LockTransfer  :> Post '[JSON] Bool
+ 
