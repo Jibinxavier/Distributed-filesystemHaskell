@@ -53,9 +53,11 @@ import           Crypto.Random.DRBG
 import           Crypto.Cipher.AES
 import           System.Process
 import           System.IO
+data LockTransfer = LockTransfer { filepathL :: String -- used for transfering the lock to the client
+                  , lstatus :: Bool 
+                 }deriving (Show, Generic, FromJSON, ToJSON, ToBSON, FromBSON)
 
-
-data Lock = Lock { filename :: String 
+data Lock = Lock { filename :: String -- for storing lock in lock database
                   , status :: Bool
                   , usern:: String
                   , queue:: [[String]] -- (usern, addr)

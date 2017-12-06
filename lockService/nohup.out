@@ -398,3 +398,95 @@ Starting lockservice_lockserv_1
 [36mdatabase22_1  |[0m 2017-12-05T19:11:03.537+0000 I STORAGE  [FileAllocator] creating directory /data/db/_tmp
 [36mdatabase22_1  |[0m 2017-12-05T19:11:03.564+0000 I STORAGE  [FileAllocator] done allocating datafile /data/db/local.0, size: 64MB,  took 0.018 secs
 [36mdatabase22_1  |[0m 2017-12-05T19:11:03.579+0000 I NETWORK  [initandlisten] waiting for connections on port 27017
+Stopping lockservice_lockserv_1   ... 
+Stopping lockservice_database22_1 ... 
+[1A[2KStopping lockservice_database22_1 ... [31merror[0mException in thread Thread-4:
+Traceback (most recent call last):
+  File "/home/jibin/anaconda2/lib/python2.7/threading.py", line 801, in __bootstrap_inner
+    self.run()
+  File "/home/jibin/anaconda2/lib/python2.7/threading.py", line 754, in run
+    self.__target(*self.__args, **self.__kwargs)
+  File "/home/jibin/anaconda2/lib/python2.7/site-packages/compose/cli/log_printer.py", line 166, in tail_container_logs
+    queue.put(QueueItem.new(presenter.color_func(wait_on_exit(container))))
+  File "/home/jibin/anaconda2/lib/python2.7/site-packages/compose/cli/log_printer.py", line 197, in wait_on_exit
+    exit_code = container.wait()
+  File "/home/jibin/anaconda2/lib/python2.7/site-packages/compose/container.py", line 243, in wait
+    return self.client.wait(self.id)
+  File "/home/jibin/anaconda2/lib/python2.7/site-packages/docker/utils/decorators.py", line 19, in wrapped
+    return f(self, resource_id, *args, **kwargs)
+  File "/home/jibin/anaconda2/lib/python2.7/site-packages/docker/api/container.py", line 1257, in wait
+    res = self._post(url, timeout=timeout)
+  File "/home/jibin/anaconda2/lib/python2.7/site-packages/docker/utils/decorators.py", line 46, in inner
+    return f(self, *args, **kwargs)
+  File "/home/jibin/anaconda2/lib/python2.7/site-packages/docker/api/client.py", line 187, in _post
+    return self.post(url, **self._set_request_timeout(kwargs))
+  File "/home/jibin/anaconda2/lib/python2.7/site-packages/requests/sessions.py", line 522, in post
+    return self.request('POST', url, data=data, json=json, **kwargs)
+  File "/home/jibin/anaconda2/lib/python2.7/site-packages/requests/sessions.py", line 475, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/jibin/anaconda2/lib/python2.7/site-packages/requests/sessions.py", line 596, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/jibin/anaconda2/lib/python2.7/site-packages/requests/adapters.py", line 473, in send
+    raise ConnectionError(err, request=request)
+ConnectionError: ('Connection aborted.', error(104, 'Connection reset by peer'))
+
+[1B
+ERROR: for lockservice_lockserv_1  ('Connection aborted.', error(104, 'Connection reset by peer'))
+Exception in thread Thread-5:
+Traceback (most recent call last):
+  File "/home/jibin/anaconda2/lib/python2.7/threading.py", line 801, in __bootstrap_inner
+    self.run()
+  File "/home/jibin/anaconda2/lib/python2.7/threading.py", line 754, in run
+    self.__target(*self.__args, **self.__kwargs)
+  File "/home/jibin/anaconda2/lib/python2.7/site-packages/compose/cli/log_printer.py", line 166, in tail_container_logs
+    queue.put(QueueItem.new(presenter.color_func(wait_on_exit(container))))
+  File "/home/jibin/anaconda2/lib/python2.7/site-packages/compose/cli/log_printer.py", line 197, in wait_on_exit
+    exit_code = container.wait()
+  File "/home/jibin/anaconda2/lib/python2.7/site-packages/compose/container.py", line 243, in wait
+    return self.client.wait(self.id)
+  File "/home/jibin/anaconda2/lib/python2.7/site-packages/docker/utils/decorators.py", line 19, in wrapped
+    return f(self, resource_id, *args, **kwargs)
+  File "/home/jibin/anaconda2/lib/python2.7/site-packages/docker/api/container.py", line 1257, in wait
+    res = self._post(url, timeout=timeout)
+  File "/home/jibin/anaconda2/lib/python2.7/site-packages/docker/utils/decorators.py", line 46, in inner
+    return f(self, *args, **kwargs)
+  File "/home/jibin/anaconda2/lib/python2.7/site-packages/docker/api/client.py", line 187, in _post
+    return self.post(url, **self._set_request_timeout(kwargs))
+  File "/home/jibin/anaconda2/lib/python2.7/site-packages/requests/sessions.py", line 522, in post
+    return self.request('POST', url, data=data, json=json, **kwargs)
+  File "/home/jibin/anaconda2/lib/python2.7/site-packages/requests/sessions.py", line 475, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/jibin/anaconda2/lib/python2.7/site-packages/requests/sessions.py", line 596, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/jibin/anaconda2/lib/python2.7/site-packages/requests/adapters.py", line 473, in send
+    raise ConnectionError(err, request=request)
+ConnectionError: ('Connection aborted.', error(104, 'Connection reset by peer'))
+
+Exception in thread Thread-6:
+Traceback (most recent call last):
+  File "/home/jibin/anaconda2/lib/python2.7/threading.py", line 801, in __bootstrap_inner
+    self.run()
+  File "/home/jibin/anaconda2/lib/python2.7/threading.py", line 754, in run
+    self.__target(*self.__args, **self.__kwargs)
+  File "/home/jibin/anaconda2/lib/python2.7/site-packages/compose/cli/log_printer.py", line 213, in watch_events
+    for event in event_stream:
+  File "/home/jibin/anaconda2/lib/python2.7/site-packages/compose/project.py", line 386, in events
+    decode=True
+  File "/home/jibin/anaconda2/lib/python2.7/site-packages/docker/api/client.py", line 298, in _stream_helper
+    for chunk in json_stream(self._stream_helper(response, False)):
+  File "/home/jibin/anaconda2/lib/python2.7/site-packages/docker/utils/json_stream.py", line 66, in split_buffer
+    for data in stream_as_text(stream):
+  File "/home/jibin/anaconda2/lib/python2.7/site-packages/docker/utils/json_stream.py", line 22, in stream_as_text
+    for data in stream:
+  File "/home/jibin/anaconda2/lib/python2.7/site-packages/docker/api/client.py", line 304, in _stream_helper
+    data = reader.read(1)
+  File "/home/jibin/anaconda2/lib/python2.7/site-packages/requests/packages/urllib3/response.py", line 324, in read
+    flush_decoder = True
+  File "/home/jibin/anaconda2/lib/python2.7/contextlib.py", line 35, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "/home/jibin/anaconda2/lib/python2.7/site-packages/requests/packages/urllib3/response.py", line 250, in _error_catcher
+    raise ProtocolError('Connection broken: %r' % e, e)
+ProtocolError: ('Connection broken: IncompleteRead(0 bytes read)', IncompleteRead(0 bytes read))
+
+Couldn't connect to Docker daemon - you might need to run `docker-machine start default`.
+Gracefully stopping... (press Ctrl+C again to force)

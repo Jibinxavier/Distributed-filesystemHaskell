@@ -126,7 +126,7 @@ server = lock
               case (storedUser==username) of
                 (True)-> do
                     let ([nextuser, addr], updatedQueue) = nextUser q
-                    ---- do call with addr
+                    ---- do call with addr (filepath )
                     case nextuser of 
                       [] -> liftIO $ do -- no user
                         withMongoDbConnection $ upsert (select ["filename" =: file] "LockService_RECORD") $ toBSON (Lock file False "" [])

@@ -14,7 +14,9 @@
 {-# LANGUAGE TypeSynonymInstances #-}
 module Lib
     ( someFunc
+
     ) where
+import           Control.Concurrent           (forkIO, threadDelay)
 import           System.IO
 import           Control.Monad                 
 import           Control.Monad.IO.Class
@@ -23,11 +25,14 @@ import           Control.Monad.Trans.Resource
 import           Data.Bson.Generic 
 import           Distribution.PackageDescription.TH
 import           Git.Embed
-import           Network.HTTP.Client                (defaultManagerSettings,
-                                                     newManager)
-import           Options.Applicative
-import qualified Servant.API                        as SC
-import qualified Servant.Client                     as SC
+import           Network.HTTP.Client          (defaultManagerSettings,newManager)
+
+import           Network.Wai
+import           Network.Wai.Handler.Warp
+import           Network.Wai.Logger
+import           Servant
+import qualified Servant.API                  as SC
+import qualified Servant.Client               as SC
 import           System.Console.ANSI
 import           System.Environment
 import qualified FilesystemAPI as FSA  
@@ -43,9 +48,68 @@ import           EncryptionAPI
 import           Helpers        
 import           Data.List.Split
 import           Data.Char 
+import           Datatypes
+
+import           System.Log.Formatter
+import           System.Log.Handler           (setFormatter)
+import           System.Log.Handler.Simple
+import           System.Log.Handler.Syslog
+import           System.Log.Logger
+-- write to db
+-- sleep and read from db
+-- 
+
+type API1 =  "lockAvailable"         :> ReqBody '[JSON] LockTransfer  :> Post '[JSON] Bool
+ 
+
+startApp :: IO ()    -- set up wai logger for service to output apache style logging for rest calls
+startApp = FSA.withLogging $ \ aplogger -> do 
+  FSA.warnLog "Starting client"
+
+  let settings = setPort 8050 $ setLogger aplogger defaultSettings
+  forkIO $ menu  
+  runSettings settings app
 
 
-   
+app :: Application
+app = serve api server
+
+api :: Proxy API1
+api = Proxy
+
+-- | And now we implement the REST service by matching the API type, providing a Handler method for each endpoint
+-- defined in the API type. Normally we would implement each endpoint using a unique method definition, but this need
+-- not be so. To add a news endpoint, define it in type API above, and add and implement a handler here.
+server :: Server API1
+server = lockAvailable
+  where
+    lockAvailable :: LockTransfer -> Handler Bool
+    lockAvailable lockdetails@(LockTransfer filepath _ ) =  liftIO $ do 
+      withMongoDbConnectionForClient $ upsert (select ["filepathq" =: filepath] "LockAvailability_RECORD") $ toBSON $ lockdetails
+      return True
+
+
+{-
+    Checks every 10 seconds if the client is allocated a lock
+-}
+
+islockAvailable :: String ->  IO (Bool)
+islockAvailable  filepath = liftIO $ do
+  docs <- withMongoDbConnectionForClient $ find  (select ["filepathq" =: filepath] "Transaction_RECORD")  >>= FSA.drainCursor 
+  let  lock= take 1 $ catMaybes $ DL.map (\ b -> fromBSON b :: Maybe LockTransfer) docs 
+  case lock of 
+    ([LockTransfer _ True]) -> do 
+      putStrLn "CLIENT: LOCK AVAILABLE YAY!!"
+      return True
+    ([LockTransfer _ False] ) -> do 
+      putStrLn "CLIENT: Going to sleep as lock is not available"
+      threadDelay $ 10 * 1000000
+      islockAvailable filepath 
+    otherwise  -> do 
+      putStrLn "CLIENT: Lock details are not available locally"
+      return False
+  
+  
 -- Locking file
 ---------------------------------------------------
  

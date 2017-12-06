@@ -36,6 +36,11 @@ library
                      , aeson
                      , text
                      , split
+                     , servant-server
+                     , hslogger
+                     , wai-logger
+                     , warp
+                     , wai
                      , filesystem-api
   default-language:    Haskell2010
 
