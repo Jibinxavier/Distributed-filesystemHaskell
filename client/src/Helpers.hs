@@ -124,7 +124,7 @@ getFileFromFS fileinfo@[FInfoTransfer filepath dirname fileid _ portadr servTm1 
             [resp] -> do
               let mg@(FileContents fName contents _) =  decryptFileContents resp seshkey
               -- updating the file info in the local record
-              withMongoDbConnectionForClient $ upsert (select ["filepath" =: filepath] "CLIENTFileMap_RECORD") $ toBSON $ FInfo filepath dirname fileid servTm1
+              withMongoDbConnection $ upsert (select ["filepath" =: filepath] "CLIENTFileMap_RECORD") $ toBSON $ FInfo filepath dirname fileid servTm1
               writeFile fName contents 
             [] -> putStrLn "Incorrect filepath and filename  "
     (Nothing) -> putStrLn $ "Expired token . Sigin in again.  " 
@@ -134,12 +134,12 @@ getFileFromFS fileinfo@[FInfoTransfer filepath dirname fileid _ portadr servTm1 
 getLocalTrId ::IO ([LocalTransInfo])
 getLocalTrId = do
   let key = "client1":: String --- maybe an environment variable in the docker compose
-  docs <- withMongoDbConnectionForClient $ find  (select ["key1" =: key] "Transaction_RECORD")  >>= drainCursor -- getting previous transaction id of the client
+  docs <- withMongoDbConnection $ find  (select ["key1" =: key] "Transaction_RECORD")  >>= drainCursor -- getting previous transaction id of the client
   return $ take 1 $ catMaybes $ DL.map (\ b -> fromBSON b :: Maybe LocalTransInfo) docs 
 clearTransaction :: IO ()
 clearTransaction = do
   let key = "client1":: String --- maybe an environment variable in the docker compose
-  withMongoDbConnectionForClient $ delete  (select ["key1" =: key] "Transaction_RECORD")
+  withMongoDbConnection $ delete  (select ["key1" =: key] "Transaction_RECORD")
 gitRev, gitBranch, cabalAuthor, cabalVersion, cabalCopyright :: String
 gitRev = $(embedGitShortRevision)
 gitBranch = $(embedGitBranch)
@@ -153,14 +153,6 @@ whiteCode = setSGRCode [SetConsoleIntensity BoldIntensity , SetColor Foreground 
 blueCode  = setSGRCode [SetConsoleIntensity BoldIntensity , SetColor Foreground Vivid Blue]
 resetCode = setSGRCode [Reset]
 
-withMongoDbConnectionForClient :: Action IO a -> IO a
-withMongoDbConnectionForClient act  = do 
-  let port =27017
-  let database ="USEHASKELLDB"   
-  pipe <- connect (host "127.0.0.1")
-  ret <- runResourceT $ liftIO $ access pipe master (pack database) act
-  close pipe
-  return ret
 
 
 
@@ -186,12 +178,11 @@ storeClientAuthInfo cname pass ((ResponseData ticket):(ResponseData seskey):(Res
   let decSesh = myDecryptAES (aesPad pass) (seskey)
       decexpiryDate = myDecryptAES (aesPad pass) (expiryDate)
   putStrLn "CLIENT: Logged in successfully"
-  (withMongoDbConnectionForClient $ upsert (select ["cname" =: cname] "ClientInfo_RECORD") $ toBSON $ ClientInfo cname decSesh ticket decexpiryDate)
+  (withMongoDbConnection $ upsert (select ["cname" =: cname] "ClientInfo_RECORD") $ toBSON $ ClientInfo cname decSesh ticket decexpiryDate)
    
   
 
 storeClientAuthInfo _ _ [ResponseData errmsg] = putStrLn $ " Auth error . " ++  errmsg
-
 
 
 
@@ -268,7 +259,7 @@ env host port = SC.ClientEnv <$> newManager defaultManagerSettings
 -- helpers 
 isDated :: String ->String -> IO Bool
 isDated filepath servTm1 = do
-  withMongoDbConnectionForClient $ do
+  withMongoDbConnection $ do
           docs <- find (select ["filepath" =: filepath] "CLIENTFileMap_RECORD") >>= drainCursor
           let  contents= take 1 $ catMaybes $ DL.map (\ b -> fromBSON b :: Maybe FInfo) docs 
           case contents of 
@@ -283,7 +274,7 @@ isDated filepath servTm1 = do
 
 updateLocalMeta :: String ->FInfo -> IO ()
 updateLocalMeta filepath fileinfo = do
-  withMongoDbConnectionForClient $ upsert (select ["filepath" =: filepath] "CLIENTFileMap_RECORD") $ toBSON $ fileinfo
+  withMongoDbConnection $ upsert (select ["filepath" =: filepath] "CLIENTFileMap_RECORD") $ toBSON $ fileinfo
   return ()              
 
 
@@ -299,15 +290,15 @@ isFileLocked filepath  = liftIO $ do
       return state
 appendToLockedFiles :: String  -> String-> IO()
 appendToLockedFiles filepath tid = liftIO $ do
-   docs <- withMongoDbConnectionForClient $ find (select ["tid5" =: tid] "LockedFiles_RECORD") >>= drainCursor
+   docs <- withMongoDbConnection $ find (select ["tid5" =: tid] "LockedFiles_RECORD") >>= drainCursor
    let  contents= take 1 $ catMaybes $ DL.map (\ b -> fromBSON b :: Maybe LockedFiles) docs 
    case contents of 
     [] ->  do -- new transaction
-      withMongoDbConnectionForClient $ upsert (select ["tid5" =: tid] "LockedFiles_RECORD") $ toBSON $ LockedFiles tid [filepath]
+      withMongoDbConnection $ upsert (select ["tid5" =: tid] "LockedFiles_RECORD") $ toBSON $ LockedFiles tid [filepath]
       return ()
     [LockedFiles _ files] -> do -- adding to existing transaction
       let updatedList=files ++ [filepath]
-      withMongoDbConnectionForClient $ upsert (select ["tid5" =: tid] "LockedFiles_RECORD") $ toBSON $ LockedFiles tid updatedList
+      withMongoDbConnection $ upsert (select ["tid5" =: tid] "LockedFiles_RECORD") $ toBSON $ LockedFiles tid updatedList
 
 
 isvalidSession :: String -> IO Bool
@@ -319,7 +310,7 @@ isvalidSession expiryDate = do
 
 getAuthClientInfo :: String  -> IO(Maybe (String , String) )   
 getAuthClientInfo cname =  do
-   docs <- withMongoDbConnectionForClient $ find (select ["cname" =: cname] "ClientInfo_RECORD")   >>= drainCursor -- getting previous transaction id of the client
+   docs <- withMongoDbConnection $ find (select ["cname" =: cname] "ClientInfo_RECORD")   >>= drainCursor -- getting previous transaction id of the client
   
    let  clientInfo= take 1 $ catMaybes $ DL.map (\ b -> fromBSON b :: Maybe ClientInfo) docs 
   

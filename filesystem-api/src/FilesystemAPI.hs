@@ -177,7 +177,8 @@ fileserverPort = defEnv "FILESERVER_Port" id "8080" True
 fileserverName :: IO String
 fileserverName = defEnv "FILESERVER_Name" id "F1" True
 
-
+getClientPort :: IO (String)
+getClientPort = defEnv "CLIENT_PORT" id "8079" True
 
 mongoDbIp :: IO String
 mongoDbIp = defEnv "MONGODB_IP" id "localhost" True
@@ -194,7 +195,8 @@ mongoDbDatabase = defEnv "MONGODB_DATABASE" id "USEHASKELLDB" True
 -- provided by the hslogger library.
 logLevel :: IO String
 logLevel = defEnv "LOG_LEVEL" id "DEBUG" True
-
+clientPort :: IO String
+clientPort = defEnv "CLIENT_PORT" id "8800" True
 
 -- | Helper function to simplify the setting of environment variables
 -- function that looks up environment variable and returns the result of running funtion fn over it
@@ -221,7 +223,7 @@ type API = "load_environment_variables" :> QueryParam "name" String :> Get '[JSO
       :<|> "upload"                     :> ReqBody '[JSON] FileContents  :> Post '[JSON] Bool
       :<|> "download"                   :> ReqBody '[JSON] Message   :> Get '[JSON] [FInfo]
 
-      :<|> "lock"                       :> ReqBody '[JSON] Message3  :> Post '[JSON] [Bool]
+      :<|> "lock"                       :> ReqBody '[JSON] Message4  :> Post '[JSON] [Bool]
       :<|> "unlock"                     :> ReqBody '[JSON] Message3  :> Post '[JSON] Bool
       :<|> "islocked"                   :> QueryParam "filename" String :> Get '[JSON] Bool
 

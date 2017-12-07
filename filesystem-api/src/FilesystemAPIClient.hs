@@ -29,7 +29,7 @@ performRestCall :: Maybe String -> ClientM ResponseData
 upload :: FileContents -> ClientM Bool
 download:: Message-> ClientM [FInfo]
 
-lock:: Message3-> ClientM [Bool]
+lock:: Message4-> ClientM [Bool]
 unlock:: Message3->ClientM Bool
 islocked::  Maybe String-> ClientM Bool
 

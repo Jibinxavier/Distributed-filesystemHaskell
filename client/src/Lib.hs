@@ -25,6 +25,7 @@ import           Control.Monad.Trans.Resource
 import           Data.Bson.Generic 
 import           Distribution.PackageDescription.TH
 import           Git.Embed
+
 import           Network.HTTP.Client          (defaultManagerSettings,newManager)
 
 import           Network.Wai
@@ -62,11 +63,12 @@ import           System.Log.Logger
 type API1 =  "lockAvailable"         :> ReqBody '[JSON] LockTransfer  :> Post '[JSON] Bool
  
 
-startApp :: IO ()    -- set up wai logger for service to output apache style logging for rest calls
-startApp = FSA.withLogging $ \ aplogger -> do 
-  FSA.warnLog "Starting client"
+startApp :: String -> IO ()    -- set up wai logger for service to output apache style logging for rest calls
+startApp port = FSA.withLogging $ \ aplogger -> do 
+  FSA.warnLog $ "Starting client " ++port
+   
 
-  let settings = setLogger aplogger defaultSettings
+  let settings =setPort (read port) $ setLogger aplogger defaultSettings
   forkIO $ menu  
   runSettings settings app
 
@@ -85,7 +87,7 @@ server = lockAvailable
   where
     lockAvailable :: LockTransfer -> Handler Bool
     lockAvailable lockdetails@(LockTransfer filepath _ ) =  liftIO $ do 
-      withMongoDbConnectionForClient $ upsert (select ["filepathq" =: filepath] "LockAvailability_RECORD") $ toBSON $ lockdetails
+      FSA.withMongoDbConnection $ upsert (select ["filepathq" =: filepath] "LockAvailability_RECORD") $ toBSON $ lockdetails
       return True
 
 
@@ -96,7 +98,7 @@ server = lockAvailable
 waitOnLock :: String ->  IO (Bool)
 waitOnLock  filepath = liftIO $ do
   putStrLn "waiting for lock"
-  docs <- withMongoDbConnectionForClient $ find  (select ["filepathq" =: filepath] "Transaction_RECORD")  >>= FSA.drainCursor 
+  docs <- FSA.withMongoDbConnection $ find  (select ["filepathq" =: filepath] "Transaction_RECORD")  >>= FSA.drainCursor 
   let  lock= take 1 $ catMaybes $ DL.map (\ b -> fromBSON b :: Maybe LockTransfer) docs 
   case lock of 
     ([LockTransfer _ True]) -> do 
@@ -104,7 +106,7 @@ waitOnLock  filepath = liftIO $ do
       return True
     ([LockTransfer _ False] ) -> do 
       putStrLn "CLIENT: Going to sleep as lock is not available"
-      threadDelay $ 10 * 1000000
+      -- threadDelay $ 10 * 1000000
       waitOnLock filepath 
     otherwise  -> do 
       putStrLn "CLIENT: Lock details are not available locally"
@@ -119,10 +121,13 @@ doFileLock fpath usern= do
   authInfo <- getAuthClientInfo usern
   case authInfo of 
     (Just (ticket,seshkey) ) -> do 
+      lockport <- FSA.lockPortStr
+      clientport <- FSA.getClientPort
       let encFpath = myEncryptAES (aesPad seshkey) (fpath)
       let encUname = myEncryptAES (aesPad seshkey) (usern)
-      lockport <- FSA.lockPortStr
-      resp <- FSA.mydoCall  (lock $ Message3  encFpath encUname ticket) 8080
+      let encClientport = myEncryptAES (aesPad seshkey) (clientport)
+      
+      resp <- FSA.mydoCall  (lock $ Message4  encClientport encFpath encUname ticket) (read lockport)
       case resp of
         Left err -> do 
           putStrLn $ "failed to lock ... " ++  show err
@@ -206,7 +211,7 @@ doGetTransId usern=  do
           let trId =  myDecryptAES (aesPad seshkey)  (enctrId)
            
           let key = "client1":: String --- maybe an environment variable in the docker compose
-          docs <- withMongoDbConnectionForClient $ find  (select ["key1" =: key] "Transaction_RECORD")  >>= FSA.drainCursor -- getting previous transaction id of the client
+          docs <- FSA.withMongoDbConnection $ find  (select ["key1" =: key] "Transaction_RECORD")  >>= FSA.drainCursor -- getting previous transaction id of the client
           let  clientTrans= take 1 $ catMaybes $ DL.map (\ b -> fromBSON b :: Maybe LocalTransInfo) docs 
           case clientTrans of 
             [LocalTransInfo _  prevId] -> liftIO $ do  -- abort and update
@@ -215,10 +220,10 @@ doGetTransId usern=  do
                 docallMsg1WithEnc abort prevId usern FSA.transIP (Just trsport)
                 
               
-                withMongoDbConnectionForClient $ upsert (select ["key1" =: key] "Transaction_RECORD") $ toBSON $ LocalTransInfo key trId -- store the transaction id
+                FSA.withMongoDbConnection $ upsert (select ["key1" =: key] "Transaction_RECORD") $ toBSON $ LocalTransInfo key trId -- store the transaction id
             [] -> liftIO $ do 
               putStrLn $ "Starting new transaction " ++trId
-              withMongoDbConnectionForClient $ upsert (select ["key1" =: key] "Transaction_RECORD") $ toBSON $ LocalTransInfo key trId -- store the transaction id
+              FSA.withMongoDbConnection $ upsert (select ["key1" =: key] "Transaction_RECORD") $ toBSON $ LocalTransInfo key trId -- store the transaction id
  
         (Nothing) -> putStrLn $ " Expired token  .Sigin in again. " 
       
@@ -436,7 +441,18 @@ doLogin userN pass  = do
 -- First we invoke the options on the entry point.
 someFunc :: IO ()
 someFunc = do 
-  startApp
+  args <- getArgs
+  
+  case args of
+    [clientport,mongoport] -> do
+      
+       
+      setEnv "CLIENT_PORT" clientport
+      setEnv "MONGODB_PORT" mongoport
+   
+      startApp clientport
+    _ -> putStrLn "Bad parameters. Port numbers for client and MongoDB expected"
+  
 
 
 
@@ -517,10 +533,10 @@ menu = do
 
 unlockLockedFiles :: String  -> String -> IO() 
 unlockLockedFiles  tid  usern= liftIO $ do
-   docs <- withMongoDbConnectionForClient $ find (select ["tid5" =: tid] "LockedFiles_RECORD") >>= FSA.drainCursor
+   docs <- FSA.withMongoDbConnection $ find (select ["tid5" =: tid] "LockedFiles_RECORD") >>= FSA.drainCursor
    let  contents= take 1 $ catMaybes $ DL.map (\ b -> fromBSON b :: Maybe LockedFiles) docs 
    case contents of 
     [] -> return ()
     [LockedFiles _ files] -> do -- adding to existing transaction 
       foldM (\ a filepath -> doFileUnLock filepath usern) () files
-      withMongoDbConnectionForClient $ delete (select ["tid5" =: tid] "LockedFiles_RECORD")  
+      FSA.withMongoDbConnection $ delete (select ["tid5" =: tid] "LockedFiles_RECORD")  

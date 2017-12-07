@@ -56,7 +56,7 @@ import           FilesystemAPIServer
 
 
  
-type API1 =  "lock"                 :> RemoteHost :> ReqBody '[JSON] Message3  :> Post '[JSON] [Bool] 
+type API1 =  "lock"                 :> RemoteHost :> ReqBody '[JSON] Message4 :> Post '[JSON] [Bool] 
         :<|> "unlock"               :> RemoteHost :> ReqBody '[JSON] Message3  :> Post '[JSON]  Bool  
         :<|> "islocked"             :> QueryParam "filename" String :> Get '[JSON] Bool 
 
@@ -87,9 +87,9 @@ server = lock
     -- need to store information about the client 
     -- port number and ip
 
-    lock :: SockAddr -> Message3  -> Handler [Bool] 
+    lock :: SockAddr -> Message4  -> Handler [Bool] 
     lock addr msg = liftIO $ do
-      let (file,username) = decryptMessage3 msg
+      let (port,file,username) = decryptMessage4 msg
           addrstr = show addr
       FSA.warnLog $ "Trying to lock " ++ file ++ "."
       FSA.warnLog $  show addr
@@ -99,7 +99,7 @@ server = lock
         let lock =  catMaybes $ DL.map (\ b -> fromBSON b :: Maybe Lock) docs
         case lock of
             [ curLock@(Lock _ True _ queue)] ->liftIO $ do -- locked and adding user to the queue
-              let updatedQ = queue ++ [[username,addrstr]]
+              let updatedQ = queue ++ [[username,port]]
               FSA.withMongoDbConnection $ upsert (select ["filename" =: file] "LockService_RECORD") $ toBSON $ (curLock{ queue = updatedQ})
               return [True,False]    -- inqueue and lock
             [(Lock _ False _ _ )] -> liftIO $ do
@@ -126,8 +126,8 @@ server = lock
                 (True)-> do
                     FSA.warnLog $ " queue"  ++ show queue
                     let updatedQueue = drop 1 queue
-                        (nextuser,addr) = case (take 1 queue) of  
-                          ([[u,a]]) ->(u,a) 
+                        (nextuser,clientport) = case (take 1 queue) of  
+                          ([[u,port]]) ->(u,port) 
                           otherwise -> ("", "")  
                     
                     
@@ -137,7 +137,7 @@ server = lock
                         FSA.warnLog $ "no user"
                         FSA.withMongoDbConnection $ upsert (select ["filename" =: file] "LockService_RECORD") $ toBSON (Lock file False "" [])
                       otherwise -> liftIO $ do
-                        let clientport = last $ splitOn ":" addr
+                       
                          ---- inform the client that the lock is available
                         FSA.warnLog $ "Assigning lock to client on port "++ clientport
                         FSA.mydoCall (lockAvailable  (LockTransfer file True)) ((read clientport)::Int)

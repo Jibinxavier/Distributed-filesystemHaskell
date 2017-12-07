@@ -2,8 +2,8 @@ lockserv:
   image: lockserv
   environment:
     # The start of active environment variables. Set as needed.
-    - MONGODB_IP=database22
-    # - MONGODB_PORT
+    - MONGODB_IP=localhost
+    - MONGODB_PORT=27890
     # - MONGODB_DATABASE=USE_HASKELL_DB
     - LOG_LEVEL=DEBUG
     # - https_proxy=http://www-proxy.scss.tcd.ie:8080
@@ -11,8 +11,8 @@ lockserv:
   command:  /usr/local/bin/lockService-exe
   ports:
     - "8080:8080"
-  links:
-    - database22
+  net: "host"
+ 
 database22:
   image: mongo:3.0.2
   ports:
