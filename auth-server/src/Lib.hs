@@ -54,7 +54,7 @@ import qualified Data.ByteString.Char8        as BS
 import qualified Data.ByteString.Lazy.Char8 as C
 import           Codec.Binary.UTF8.String as S
 import           Crypto.Random.DRBG
-import           FilesystemAPI
+import qualified FilesystemAPI as FSA  
 import           Datatypes 
 import           EncryptionAPI
 
@@ -66,11 +66,11 @@ type API1 =  "login"                      :> ReqBody '[JSON] UserInfo  :> Post '
 
 
 startApp :: IO ()    -- set up wai logger for service to output apache style logging for rest calls
-startApp = withLogging $ \ aplogger -> do
+startApp = FSA.withLogging $ \ aplogger -> do
 
-  warnLog "Starting filesystem"
-
-  let settings = setPort 8076 $ setLogger aplogger defaultSettings
+  FSA.warnLog "Starting filesystem"
+  port <- FSA.authPortStr
+  let settings = setPort ((read $ port):: Int) $ setLogger aplogger defaultSettings
   runSettings settings app
 
 
@@ -94,8 +94,8 @@ server = login
     decryptPass :: String ->  IO String
     decryptPass password =   do
         let auth=  "auth" :: String
-        withMongoDbConnection $ do
-          keypair <- find (select ["owner" =: auth] "Keys") >>= drainCursor
+        FSA.withMongoDbConnection $ do
+          keypair <- find (select ["owner" =: auth] "Keys") >>= FSA.drainCursor
           let [(Keys _ pub prv)]= catMaybes $ DL.map (\ b -> fromBSON b :: Maybe Keys) keypair
           let prvKey= toPrivateKey prv
           let pass=  C.pack password
@@ -107,10 +107,10 @@ server = login
 
     loadPublicKey :: Handler [ResponseData]
     loadPublicKey= liftIO $ do
-      withMongoDbConnection $ do
+      FSA.withMongoDbConnection $ do
         let auth=  "auth" :: String
 
-        docs <- find (select ["owner" =: auth] "Keys") >>= drainCursor
+        docs <- find (select ["owner" =: auth] "Keys") >>= FSA.drainCursor
 
         let pubKey= catMaybes $ DL.map (\ b -> fromBSON b :: Maybe Keys) docs
         case pubKey of
@@ -121,7 +121,7 @@ server = login
             let strPubKey = fromPublicKey pub
             let strPrvKey = fromPrivateKey priv
             let key = Keys auth strPubKey strPrvKey
-            withMongoDbConnection $ upsert (select  ["owner" =: auth] "Keys") $ toBSON key
+            FSA.withMongoDbConnection $ upsert (select  ["owner" =: auth] "Keys") $ toBSON key
             return $ toResponseData strPubKey
 
 
@@ -132,8 +132,8 @@ server = login
     signup :: UserInfo -> Handler ResponseData
     signup msg@(UserInfo key password) = liftIO $ do
       decPassStr <- decryptPass password
-      warnLog $ "Storing UserInfo under key " ++ key ++ "."
-      withMongoDbConnection $ do
+      FSA.warnLog $ "Storing UserInfo under key " ++ key ++ "."
+      FSA.withMongoDbConnection $ do
         docs <- findOne (select ["username" =: key] "Users")
 
 
@@ -142,7 +142,7 @@ server = login
           (Nothing) -> liftIO $ do
             hash <- hashPasswordUsingPolicy slowerBcryptHashingPolicy (BS.pack decPassStr)
             let passChars= BS.unpack $ fromJust hash      -- converted from bytestring to [char]( string)
-            withMongoDbConnection $ upsert (select ["username" =: key] "Users") $ toBSON msg {password = passChars}
+            FSA.withMongoDbConnection $ upsert (select ["username" =: key] "Users") $ toBSON msg {password = passChars}
             return $ ResponseData $  "Signed up "
 
 
@@ -154,10 +154,10 @@ server = login
 
     login :: UserInfo -> Handler [ResponseData]
     login msg@(UserInfo key password) =  liftIO $ do
-      warnLog $ "Searching for user  for key: " ++ key
+      FSA.warnLog $ "Searching for user  for key: " ++ key
       decPassStr <- decryptPass password
-      withMongoDbConnection $ do
-        docs <- find (select ["username" =: key] "Users") >>= drainCursor
+      FSA.withMongoDbConnection $ do
+        docs <- find (select ["username" =: key] "Users") >>= FSA.drainCursor
         let userInfo = take 1 $ catMaybes $ DL.map (\ b -> fromBSON b :: Maybe UserInfo) docs
         let validity=  isValid userInfo decPassStr
 

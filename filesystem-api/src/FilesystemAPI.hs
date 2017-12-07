@@ -75,20 +75,20 @@ defaultHost = do
  return $ filter (/= '\n') getHost
 
 systemHost="127.0.0.1"
-dirServPort= "8070"
+dirServPort= defEnv "DIRSERV_PORT" id "8082" True
 dirPort= Just dirServPort
 dirHost = Just systemHost
 
-transPorStr ="8078"
+transPorStr = defEnv "TRANSERV_PORT" id "8083" True
 transPort= Just transPorStr
 transIP = Just systemHost
 
  
-lockPortStr ="8077"
+lockPortStr = defEnv "LOCKSERV_PORT" id "8080" True
 lockPort= Just lockPortStr
 lockIP = Just systemHost
 
-authPortStr ="8076"
+authPortStr = defEnv "AUTHSERV_PORT" id "8081" True
 authPort= Just authPortStr
 authIP = Just systemHost
 --- they will be communicating on the same ip but different ports
@@ -177,15 +177,10 @@ fileserverPort = defEnv "FILESERVER_Port" id "8080" True
 fileserverName :: IO String
 fileserverName = defEnv "FILESERVER_Name" id "F1" True
 
-ipadddress :: IO String
-ipadddress = defEnv "ipaddress" id "F1" True
 
-
-fileserverType :: IO String
-fileserverType = defEnv "FILESERVER_Type" id "8080" True
 
 mongoDbIp :: IO String
-mongoDbIp = defEnv "MONGODB_IP" id "database" True
+mongoDbIp = defEnv "MONGODB_IP" id "localhost" True
 
 -- | The port number of the mongoDB database that devnostics-rest uses to store and access data
 mongoDbPort :: IO Integer
@@ -226,7 +221,7 @@ type API = "load_environment_variables" :> QueryParam "name" String :> Get '[JSO
       :<|> "upload"                     :> ReqBody '[JSON] FileContents  :> Post '[JSON] Bool
       :<|> "download"                   :> ReqBody '[JSON] Message   :> Get '[JSON] [FInfo]
 
-      :<|> "lock"                       :> ReqBody '[JSON] Message3  :> Post '[JSON] Bool
+      :<|> "lock"                       :> ReqBody '[JSON] Message3  :> Post '[JSON] [Bool]
       :<|> "unlock"                     :> ReqBody '[JSON] Message3  :> Post '[JSON] Bool
       :<|> "islocked"                   :> QueryParam "filename" String :> Get '[JSON] Bool
 

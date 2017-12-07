@@ -10,10 +10,10 @@ lockserv:
     # - http_proxy=http://www-proxy.scss.tcd.ie:8080
   command:  /usr/local/bin/lockService-exe
   ports:
-    - "8077:8081"
+    - "8080:8080"
   links:
     - database22
 database22:
   image: mongo:3.0.2
   ports:
-    - "27010:27017"
+    - "27890:27017"

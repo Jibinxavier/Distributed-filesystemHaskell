@@ -74,8 +74,8 @@ startApp = FSA.withLogging $ \ aplogger -> do
 broadcast ::FileContents -> IO ()
 broadcast filecontents =do
   dirname <- FSA.fileserverName
-  
-  res <- FSA.mydoCall (getAllReplicas ( Just dirname))  ((read FSA.dirServPort)::Int)
+  dirport <- FSA.dirServPort
+  res <- FSA.mydoCall (getAllReplicas ( Just dirname))  ((read dirport)::Int)
   case res of
     Left err -> do
       FSA.warnLog $ " getAllReplicas failed with error: " ++ show err
@@ -93,8 +93,8 @@ sendBroadcast  ((FServer  _ port ):xs) msg  =   do
 sendHeartBeat :: Int ->  String ->String  -> IO ()
 sendHeartBeat delay host port= do
   FSA.warnLog $ "Sending heart beat to directory." 
-  
-  FSA.mydoCall (heartbeat $  Message host port) ((read FSA.dirServPort)::Int )
+  dirport <- FSA.dirServPort
+  FSA.mydoCall (heartbeat $  Message host port)  ((read dirport)::Int)
   threadDelay $ delay * 1000000
   sendHeartBeat delay host port -- tail recursion
 
@@ -105,7 +105,8 @@ registerWDir= do
   fport <- FSA.fileserverPort
   fileserverHost <- FSA.defaultHost 
   FSA.warnLog "Registering with directory service at port "    
-  res <- FSA.mydoCall (add_dir $  Message3 fileserverHost fport dirname ) ((read FSA.dirServPort)::Int )
+  port <- FSA.dirServPort
+  res <- FSA.mydoCall (add_dir $  Message3 fileserverHost fport dirname ) ((read port)::Int )
   case res of
     Left err -> do
       FSA.warnLog $ " register failed with error: " ++ show err
@@ -182,7 +183,8 @@ server = upload
       dirname <- FSA.fileserverName
       let fileid= dirname++id
       let msgToTrans = Message trid fileid -- 
-      FSA.mydoCall   (readyToCommit $  msgToTrans) ((read FSA.transPorStr)::Int) 
+      port <-  FSA.transPorStr
+      FSA.mydoCall   (readyToCommit $  msgToTrans) ((read port)::Int) 
       return True  
      
     updateRealDB :: String -> Handler Bool

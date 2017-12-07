@@ -185,7 +185,10 @@ reportExceptionOr act b =  b >>= \ b' ->
 storeClientAuthInfo cname pass ((ResponseData ticket):(ResponseData seskey):(ResponseData expiryDate):rest) = do
   let decSesh = myDecryptAES (aesPad pass) (seskey)
       decexpiryDate = myDecryptAES (aesPad pass) (expiryDate)
+  putStrLn "CLIENT: Logged in successfully"
   (withMongoDbConnectionForClient $ upsert (select ["cname" =: cname] "ClientInfo_RECORD") $ toBSON $ ClientInfo cname decSesh ticket decexpiryDate)
+   
+  
 
 storeClientAuthInfo _ _ [ResponseData errmsg] = putStrLn $ " Auth error . " ++  errmsg
 
@@ -286,7 +289,8 @@ updateLocalMeta filepath fileinfo = do
 
 isFileLocked :: String -> IO Bool
 isFileLocked filepath  = liftIO $ do
-  res <- mydoCall (islocked $ Just filepath) ((read lockPortStr):: Int)
+  port <- lockPortStr
+  res <- mydoCall (islocked $ Just filepath) ((read port):: Int)
   case res of
     Left err -> do
       putStrLn $ " call to lock server  failed with error: " ++ show err
@@ -316,8 +320,9 @@ isvalidSession expiryDate = do
 getAuthClientInfo :: String  -> IO(Maybe (String , String) )   
 getAuthClientInfo cname =  do
    docs <- withMongoDbConnectionForClient $ find (select ["cname" =: cname] "ClientInfo_RECORD")   >>= drainCursor -- getting previous transaction id of the client
-    
+  
    let  clientInfo= take 1 $ catMaybes $ DL.map (\ b -> fromBSON b :: Maybe ClientInfo) docs 
+  
    case clientInfo of 
     [] -> return Nothing
     [ClientInfo cname seskey ticket expiryDate] -> do

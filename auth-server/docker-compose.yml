@@ -3,17 +3,22 @@ authserver:
   environment:
     # The start of active environment variables. Set as needed.
     - MONGODB_IP=database
-    # - MONGODB_PORT
+    # - MONGODB_PORT=27000
     # - MONGODB_DATABASE=USE_HASKELL_DB
     - LOG_LEVEL=DEBUG
     # - https_proxy=http://www-proxy.scss.tcd.ie:8080
     # - http_proxy=http://www-proxy.scss.tcd.ie:8080
+  env_file: ../all_env.env
+
   command:  /usr/local/bin/auth-server-exe
   ports:
-    - "8076:8076"
+    -  "${AUTHSERV_PORT}:${AUTHSERV_PORT}"
   links:
     - database
+  container_name: authserver
+   
 database:
+   
   image: mongo:3.0.2
   ports:
     - "27000:27017"
