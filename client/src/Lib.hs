@@ -449,7 +449,8 @@ someFunc = do
        
       setEnv "CLIENT_PORT" clientport
       setEnv "MONGODB_PORT" mongoport
-   
+      setEnv "MONGODB_IP" "localhost"
+      setEnv "MONGODB_DATABASE" "USE_HASKELL_DB"
       startApp clientport
     _ -> putStrLn "Bad parameters. Port numbers for client and MongoDB expected"
   

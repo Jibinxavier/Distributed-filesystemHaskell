@@ -74,7 +74,7 @@ defaultHost = do
  getHost <- hGetContents hout
  return $ filter (/= '\n') getHost
 
-systemHost="127.0.0.1"
+systemHost="172.17.0.1"
 dirServPort= defEnv "DIRSERV_PORT" id "8082" True
 dirPort= Just dirServPort
 dirHost = Just systemHost
