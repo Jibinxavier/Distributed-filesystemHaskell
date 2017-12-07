@@ -1,0 +1,17 @@
+fileserver :
+  image: fileserver
+  environment:
+    # The start of active environment variables. Set as needed.
+  command:  /usr/local/bin/fileserver-exe 
+  env_file: ../all_env.env
+  ports:
+    - "8081:8081"
+
+  container_name: fileserver
+  
+database :
+  image: mongo:3.0.2
+  ports:
+    - "27333:27017" 
+
+    
