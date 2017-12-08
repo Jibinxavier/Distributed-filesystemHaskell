@@ -26,13 +26,28 @@ from bson import json_util
 #         print(document)
 
 # print("client record")
-allports = [27000,27017,27222,27890]
+ 
+allports = {"authserver": 27000, "client":27017,"directoryservice":27222 ,"lock": 27890,"fileserver_0":27090, "fileserver_1": 27091, "fileserver_2":27092}
 for x in allports:      
-        client = MongoClient("localhost",x)
+        print(x)
+        client = MongoClient("localhost",allports[x])
 
         
         db = client.USEHASKELLDB
         print(db.collection_names())
+        print("\n \n")
+
+print("\n checking client db")
+client = MongoClient("localhost",27890) 
+
+db = client.USEHASKELLDB
+
+
+cursor = db.LockService_RECORD.find({})
+for document in cursor:
+        print(document)
+ 
+
 
 
 client = MongoClient("localhost",27017)

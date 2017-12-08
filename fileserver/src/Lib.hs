@@ -94,10 +94,15 @@ sendBroadcast  ((FServer  _ port ):xs) msg  =   do
 
 sendHeartBeat :: Int ->  String ->String  -> IO ()
 sendHeartBeat delay host port= do
-  FSA.warnLog $ "Sending heart beat to directory." 
+  
   dirport <- FSA.dirServPort
   let dirhost = "directory_server"
-  FSA.myrestfullCall (heartbeat $  Message host port)  ((read dirport)::Int) dirhost
+  systemHost_ <- FSA.defaultHost
+  res <-FSA.myrestfullCall (heartbeat $  Message host port)  ((read dirport)::Int) systemHost_
+  case res of
+    Left err -> do
+      FSA.warnLog $ "sendHeartBeat: connection error" ++ show err
+    Right (replicas) -> FSA.warnLog $ "Sending heart beat to directory." 
   threadDelay $ delay * 1000000
   sendHeartBeat delay host port -- tail recursion
 

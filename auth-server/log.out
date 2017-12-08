@@ -3,71 +3,91 @@ Creating authserver_database_1
 [1A[2KCreating authserver_database_1 ... [32mdone[0m[1BCreating authserver ... 
 Creating authserver
 [1A[2KCreating authserver ... [32mdone[0m[1BAttaching to authserver_database_1, authserver
-[36mdatabase_1    |[0m 2017-12-08T14:16:25.122+0000 I JOURNAL  [initandlisten] journal dir=/data/db/journal
-[36mdatabase_1    |[0m 2017-12-08T14:16:25.122+0000 I JOURNAL  [initandlisten] recover : no journal files present, no recovery needed
-[36mdatabase_1    |[0m 2017-12-08T14:16:25.425+0000 I JOURNAL  [initandlisten] preallocateIsFaster=true 2.98
-[33mauthserver    |[0m 2017-12-08T14:16:25643278668000+0000 Starting filesystem
-[36mdatabase_1    |[0m 2017-12-08T14:16:25.740+0000 I JOURNAL  [initandlisten] preallocateIsFaster=true 3.96
-[36mdatabase_1    |[0m 2017-12-08T14:16:27.050+0000 I JOURNAL  [initandlisten] preallocateIsFaster=true 3.76
-[36mdatabase_1    |[0m 2017-12-08T14:16:27.050+0000 I JOURNAL  [initandlisten] preallocating a journal file /data/db/journal/prealloc.0
-[36mdatabase_1    |[0m 2017-12-08T14:16:28.174+0000 I JOURNAL  [initandlisten] preallocating a journal file /data/db/journal/prealloc.1
-[36mdatabase_1    |[0m 2017-12-08T14:16:29.060+0000 I JOURNAL  [initandlisten] preallocating a journal file /data/db/journal/prealloc.2
-[36mdatabase_1    |[0m 2017-12-08T14:16:29.910+0000 I JOURNAL  [durability] Durability thread started
-[36mdatabase_1    |[0m 2017-12-08T14:16:29.910+0000 I JOURNAL  [journal writer] Journal writer thread started
-[36mdatabase_1    |[0m 2017-12-08T14:16:29.919+0000 I CONTROL  [initandlisten] MongoDB starting : pid=1 port=27017 dbpath=/data/db 64-bit host=f8a8e7757779
-[36mdatabase_1    |[0m 2017-12-08T14:16:29.919+0000 I CONTROL  [initandlisten] 
-[36mdatabase_1    |[0m 2017-12-08T14:16:29.919+0000 I CONTROL  [initandlisten] ** WARNING: /sys/kernel/mm/transparent_hugepage/enabled is 'always'.
-[36mdatabase_1    |[0m 2017-12-08T14:16:29.919+0000 I CONTROL  [initandlisten] **        We suggest setting it to 'never'
-[36mdatabase_1    |[0m 2017-12-08T14:16:29.919+0000 I CONTROL  [initandlisten] 
-[36mdatabase_1    |[0m 2017-12-08T14:16:29.919+0000 I CONTROL  [initandlisten] db version v3.0.2
-[36mdatabase_1    |[0m 2017-12-08T14:16:29.919+0000 I CONTROL  [initandlisten] git version: 6201872043ecbbc0a4cc169b5482dcf385fc464f
-[36mdatabase_1    |[0m 2017-12-08T14:16:29.919+0000 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1e 11 Feb 2013
-[36mdatabase_1    |[0m 2017-12-08T14:16:29.919+0000 I CONTROL  [initandlisten] build info: Linux ip-10-171-120-232 3.2.0-4-amd64 #1 SMP Debian 3.2.46-1 x86_64 BOOST_LIB_VERSION=1_49
-[36mdatabase_1    |[0m 2017-12-08T14:16:29.919+0000 I CONTROL  [initandlisten] allocator: tcmalloc
-[36mdatabase_1    |[0m 2017-12-08T14:16:29.919+0000 I CONTROL  [initandlisten] options: {}
-[36mdatabase_1    |[0m 2017-12-08T14:16:29.919+0000 I INDEX    [initandlisten] allocating new ns file /data/db/local.ns, filling with zeroes...
-[36mdatabase_1    |[0m 2017-12-08T14:16:29.945+0000 I STORAGE  [FileAllocator] allocating new datafile /data/db/local.0, filling with zeroes...
-[36mdatabase_1    |[0m 2017-12-08T14:16:29.945+0000 I STORAGE  [FileAllocator] creating directory /data/db/_tmp
-[36mdatabase_1    |[0m 2017-12-08T14:16:29.957+0000 I STORAGE  [FileAllocator] done allocating datafile /data/db/local.0, size: 64MB,  took 0.006 secs
-[36mdatabase_1    |[0m 2017-12-08T14:16:29.962+0000 I NETWORK  [initandlisten] waiting for connections on port 27017
-[33mauthserver    |[0m 2017-12-08T14:17:41074086075000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1    |[0m 2017-12-08T14:17:41.082+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.3:50488 #1 (1 connection now open)
-[33mauthserver    |[0m 2017-12-08T14:17:41090143478000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1    |[0m 2017-12-08T14:17:41.091+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.3:50490 #2 (2 connections now open)
-[36mdatabase_1    |[0m 2017-12-08T14:17:41.210+0000 I INDEX    [conn2] allocating new ns file /data/db/USEHASKELLDB.ns, filling with zeroes...
-[36mdatabase_1    |[0m 2017-12-08T14:17:41.260+0000 I STORAGE  [FileAllocator] allocating new datafile /data/db/USEHASKELLDB.0, filling with zeroes...
-[36mdatabase_1    |[0m 2017-12-08T14:17:41.266+0000 I STORAGE  [FileAllocator] done allocating datafile /data/db/USEHASKELLDB.0, size: 64MB,  took 0.006 secs
-[36mdatabase_1    |[0m 2017-12-08T14:17:41.274+0000 I NETWORK  [conn2] end connection 172.17.0.3:50490 (1 connection now open)
-[36mdatabase_1    |[0m 2017-12-08T14:17:41.274+0000 I NETWORK  [conn1] end connection 172.17.0.3:50488 (0 connections now open)
-[33mauthserver    |[0m 172.17.0.1 - - [08/Dec/2017:14:17:41 +0000] "GET /loadPublicKey HTTP/1.1" 200 - "" ""
-[33mauthserver    |[0m 2017-12-08T14:17:41307067474000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1    |[0m 2017-12-08T14:17:41.309+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.3:50494 #3 (1 connection now open)
-[36mdatabase_1    |[0m 2017-12-08T14:17:41.310+0000 I NETWORK  [conn3] end connection 172.17.0.3:50494 (0 connections now open)
-[33mauthserver    |[0m 2017-12-08T14:17:41310312915000+0000 Storing UserInfo under key hello.
-[33mauthserver    |[0m 2017-12-08T14:17:41311182492000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1    |[0m 2017-12-08T14:17:41.312+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.3:50496 #4 (1 connection now open)
-[33mauthserver    |[0m 2017-12-08T14:17:41313903658000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1    |[0m 2017-12-08T14:17:41.315+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.3:50498 #5 (2 connections now open)
-[36mdatabase_1    |[0m 2017-12-08T14:17:42.168+0000 I NETWORK  [conn5] end connection 172.17.0.3:50498 (1 connection now open)
-[36mdatabase_1    |[0m 2017-12-08T14:17:42.168+0000 I NETWORK  [conn4] end connection 172.17.0.3:50496 (1 connection now open)
-[33mauthserver    |[0m 172.17.0.1 - - [08/Dec/2017:14:17:41 +0000] "POST /signup HTTP/1.1" 200 - "" ""
-[33mauthserver    |[0m 2017-12-08T14:17:46098646119000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1    |[0m 2017-12-08T14:17:46.100+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.3:50504 #6 (1 connection now open)
-[36mdatabase_1    |[0m 2017-12-08T14:17:46.101+0000 I NETWORK  [conn6] end connection 172.17.0.3:50504 (0 connections now open)
-[33mauthserver    |[0m 172.17.0.1 - - [08/Dec/2017:14:17:46 +0000] "GET /loadPublicKey HTTP/1.1" 200 - "" ""
-[33mauthserver    |[0m 2017-12-08T14:17:46108965389000+0000 Searching for user  for key: hello
-[33mauthserver    |[0m 2017-12-08T14:17:46109229345000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1    |[0m 2017-12-08T14:17:46.109+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.3:50510 #7 (1 connection now open)
-[36mdatabase_1    |[0m 2017-12-08T14:17:46.110+0000 I NETWORK  [conn7] end connection 172.17.0.3:50510 (0 connections now open)
-[33mauthserver    |[0m 2017-12-08T14:17:46109993491000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1    |[0m 2017-12-08T14:17:46.110+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.3:50512 #8 (1 connection now open)
-[36mdatabase_1    |[0m 2017-12-08T14:17:46.940+0000 I NETWORK  [conn8] end connection 172.17.0.3:50512 (0 connections now open)
-[33mauthserver    |[0m 172.17.0.1 - - [08/Dec/2017:14:17:46 +0000] "POST /login HTTP/1.1" 200 - "" ""
-[36mdatabase_1    |[0m 2017-12-08T14:20:30.868+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.1:36132 #9 (1 connection now open)
-[36mdatabase_1    |[0m 2017-12-08T14:20:30.868+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.1:36136 #10 (2 connections now open)
-[36mdatabase_1    |[0m 2017-12-08T14:20:30.870+0000 I NETWORK  [conn10] end connection 172.17.0.1:36136 (1 connection now open)
-[36mdatabase_1    |[0m 2017-12-08T14:20:30.870+0000 I NETWORK  [conn9] end connection 172.17.0.1:36132 (1 connection now open)
-[36mdatabase_1    |[0m 2017-12-08T14:50:37.684+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.1:36676 #11 (1 connection now open)
-[36mdatabase_1    |[0m 2017-12-08T14:50:37.685+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.1:36680 #12 (2 connections now open)
-[36mdatabase_1    |[0m 2017-12-08T14:50:37.687+0000 I NETWORK  [conn12] end connection 172.17.0.1:36680 (1 connection now open)
-[36mdatabase_1    |[0m 2017-12-08T14:50:37.687+0000 I NETWORK  [conn11] end connection 172.17.0.1:36676 (1 connection now open)
+[36mdatabase_1    |[0m 2017-12-08T16:45:39.254+0000 I JOURNAL  [initandlisten] journal dir=/data/db/journal
+[36mdatabase_1    |[0m 2017-12-08T16:45:39.254+0000 I JOURNAL  [initandlisten] recover : no journal files present, no recovery needed
+[36mdatabase_1    |[0m 2017-12-08T16:45:39.575+0000 I JOURNAL  [initandlisten] preallocateIsFaster=true 3.6
+[33mauthserver    |[0m 2017-12-08T16:45:39791984330000+0000 Starting filesystem
+[36mdatabase_1    |[0m 2017-12-08T16:45:39.880+0000 I JOURNAL  [initandlisten] preallocateIsFaster=true 2.66
+[36mdatabase_1    |[0m 2017-12-08T16:45:41.148+0000 I JOURNAL  [initandlisten] preallocateIsFaster=true 2.02
+[36mdatabase_1    |[0m 2017-12-08T16:45:41.148+0000 I JOURNAL  [initandlisten] preallocating a journal file /data/db/journal/prealloc.0
+[36mdatabase_1    |[0m 2017-12-08T16:45:42.105+0000 I JOURNAL  [initandlisten] preallocating a journal file /data/db/journal/prealloc.1
+[36mdatabase_1    |[0m 2017-12-08T16:45:43.100+0000 I JOURNAL  [initandlisten] preallocating a journal file /data/db/journal/prealloc.2
+[36mdatabase_1    |[0m 2017-12-08T16:45:44.015+0000 I JOURNAL  [durability] Durability thread started
+[36mdatabase_1    |[0m 2017-12-08T16:45:44.015+0000 I JOURNAL  [journal writer] Journal writer thread started
+[36mdatabase_1    |[0m 2017-12-08T16:45:44.026+0000 I CONTROL  [initandlisten] MongoDB starting : pid=1 port=27017 dbpath=/data/db 64-bit host=1cb952f0d91a
+[36mdatabase_1    |[0m 2017-12-08T16:45:44.027+0000 I CONTROL  [initandlisten] 
+[36mdatabase_1    |[0m 2017-12-08T16:45:44.027+0000 I CONTROL  [initandlisten] ** WARNING: /sys/kernel/mm/transparent_hugepage/enabled is 'always'.
+[36mdatabase_1    |[0m 2017-12-08T16:45:44.027+0000 I CONTROL  [initandlisten] **        We suggest setting it to 'never'
+[36mdatabase_1    |[0m 2017-12-08T16:45:44.027+0000 I CONTROL  [initandlisten] 
+[36mdatabase_1    |[0m 2017-12-08T16:45:44.027+0000 I CONTROL  [initandlisten] db version v3.0.2
+[36mdatabase_1    |[0m 2017-12-08T16:45:44.027+0000 I CONTROL  [initandlisten] git version: 6201872043ecbbc0a4cc169b5482dcf385fc464f
+[36mdatabase_1    |[0m 2017-12-08T16:45:44.027+0000 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1e 11 Feb 2013
+[36mdatabase_1    |[0m 2017-12-08T16:45:44.027+0000 I CONTROL  [initandlisten] build info: Linux ip-10-171-120-232 3.2.0-4-amd64 #1 SMP Debian 3.2.46-1 x86_64 BOOST_LIB_VERSION=1_49
+[36mdatabase_1    |[0m 2017-12-08T16:45:44.027+0000 I CONTROL  [initandlisten] allocator: tcmalloc
+[36mdatabase_1    |[0m 2017-12-08T16:45:44.027+0000 I CONTROL  [initandlisten] options: {}
+[36mdatabase_1    |[0m 2017-12-08T16:45:44.028+0000 I INDEX    [initandlisten] allocating new ns file /data/db/local.ns, filling with zeroes...
+[36mdatabase_1    |[0m 2017-12-08T16:45:44.074+0000 I STORAGE  [FileAllocator] allocating new datafile /data/db/local.0, filling with zeroes...
+[36mdatabase_1    |[0m 2017-12-08T16:45:44.074+0000 I STORAGE  [FileAllocator] creating directory /data/db/_tmp
+[36mdatabase_1    |[0m 2017-12-08T16:45:44.088+0000 I STORAGE  [FileAllocator] done allocating datafile /data/db/local.0, size: 64MB,  took 0.007 secs
+[36mdatabase_1    |[0m 2017-12-08T16:45:44.095+0000 I NETWORK  [initandlisten] waiting for connections on port 27017
+[33mauthserver    |[0m 2017-12-08T16:46:42109339546000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1    |[0m 2017-12-08T16:46:42.116+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.3:58790 #1 (1 connection now open)
+[33mauthserver    |[0m 2017-12-08T16:46:42123657033000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1    |[0m 2017-12-08T16:46:42.125+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.3:58792 #2 (2 connections now open)
+[36mdatabase_1    |[0m 2017-12-08T16:46:42.248+0000 I INDEX    [conn2] allocating new ns file /data/db/USEHASKELLDB.ns, filling with zeroes...
+[36mdatabase_1    |[0m 2017-12-08T16:46:42.313+0000 I STORAGE  [FileAllocator] allocating new datafile /data/db/USEHASKELLDB.0, filling with zeroes...
+[36mdatabase_1    |[0m 2017-12-08T16:46:42.322+0000 I STORAGE  [FileAllocator] done allocating datafile /data/db/USEHASKELLDB.0, size: 64MB,  took 0.007 secs
+[36mdatabase_1    |[0m 2017-12-08T16:46:42.331+0000 I NETWORK  [conn2] end connection 172.17.0.3:58792 (1 connection now open)
+[36mdatabase_1    |[0m 2017-12-08T16:46:42.332+0000 I NETWORK  [conn1] end connection 172.17.0.3:58790 (0 connections now open)
+[33mauthserver    |[0m 172.17.0.1 - - [08/Dec/2017:16:46:42 +0000] "GET /loadPublicKey HTTP/1.1" 200 - "" ""
+[33mauthserver    |[0m 2017-12-08T16:46:42345722628000+0000 Searching for user  for key: hello
+[33mauthserver    |[0m 2017-12-08T16:46:42346950935000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1    |[0m 2017-12-08T16:46:42.348+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.3:58798 #3 (1 connection now open)
+[36mdatabase_1    |[0m 2017-12-08T16:46:42.350+0000 I NETWORK  [conn3] end connection 172.17.0.3:58798 (0 connections now open)
+[36mdatabase_1    |[0m 2017-12-08T16:46:42.351+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.3:58800 #4 (1 connection now open)
+[33mauthserver    |[0m 2017-12-08T16:46:42350024617000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1    |[0m 2017-12-08T16:46:42.352+0000 I NETWORK  [conn4] end connection 172.17.0.3:58800 (0 connections now open)
+[33mauthserver    |[0m 172.17.0.1 - - [08/Dec/2017:16:46:42 +0000] "POST /login HTTP/1.1" 200 - "" ""
+[33mauthserver    |[0m 2017-12-08T16:46:47420835754000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1    |[0m 2017-12-08T16:46:47.422+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.3:58822 #5 (1 connection now open)
+[36mdatabase_1    |[0m 2017-12-08T16:46:47.423+0000 I NETWORK  [conn5] end connection 172.17.0.3:58822 (0 connections now open)
+[33mauthserver    |[0m 172.17.0.1 - - [08/Dec/2017:16:46:47 +0000] "GET /loadPublicKey HTTP/1.1" 200 - "" ""
+[33mauthserver    |[0m 2017-12-08T16:46:47437855538000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1    |[0m 2017-12-08T16:46:47.439+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.3:58826 #6 (1 connection now open)
+[36mdatabase_1    |[0m 2017-12-08T16:46:47.440+0000 I NETWORK  [conn6] end connection 172.17.0.3:58826 (0 connections now open)
+[33mauthserver    |[0m 2017-12-08T16:46:47440726864000+0000 Storing UserInfo under key hello.
+[33mauthserver    |[0m 2017-12-08T16:46:47441732033000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1    |[0m 2017-12-08T16:46:47.443+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.3:58828 #7 (1 connection now open)
+[33mauthserver    |[0m 2017-12-08T16:46:47444853007000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1    |[0m 2017-12-08T16:46:47.446+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.3:58830 #8 (2 connections now open)
+[36mdatabase_1    |[0m 2017-12-08T16:46:48.309+0000 I NETWORK  [conn8] end connection 172.17.0.3:58830 (1 connection now open)
+[36mdatabase_1    |[0m 2017-12-08T16:46:48.309+0000 I NETWORK  [conn7] end connection 172.17.0.3:58828 (1 connection now open)
+[33mauthserver    |[0m 172.17.0.1 - - [08/Dec/2017:16:46:47 +0000] "POST /signup HTTP/1.1" 200 - "" ""
+[33mauthserver    |[0m 2017-12-08T16:46:55968512277000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1    |[0m 2017-12-08T16:46:55.970+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.3:58836 #9 (1 connection now open)
+[36mdatabase_1    |[0m 2017-12-08T16:46:55.971+0000 I NETWORK  [conn9] end connection 172.17.0.3:58836 (0 connections now open)
+[33mauthserver    |[0m 172.17.0.1 - - [08/Dec/2017:16:46:55 +0000] "GET /loadPublicKey HTTP/1.1" 200 - "" ""
+[33mauthserver    |[0m 2017-12-08T16:46:55990910070000+0000 Searching for user  for key: hello
+[33mauthserver    |[0m 2017-12-08T16:46:55991899016000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1    |[0m 2017-12-08T16:46:55.993+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.3:58842 #10 (1 connection now open)
+[36mdatabase_1    |[0m 2017-12-08T16:46:55.994+0000 I NETWORK  [conn10] end connection 172.17.0.3:58842 (0 connections now open)
+[36mdatabase_1    |[0m 2017-12-08T16:46:55.996+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.3:58844 #11 (1 connection now open)
+[33mauthserver    |[0m 2017-12-08T16:46:55994936575000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1    |[0m 2017-12-08T16:46:56.837+0000 I NETWORK  [conn11] end connection 172.17.0.3:58844 (0 connections now open)
+[33mauthserver    |[0m 172.17.0.1 - - [08/Dec/2017:16:46:55 +0000] "POST /login HTTP/1.1" 200 - "" ""
+[36mdatabase_1    |[0m 2017-12-08T16:48:19.674+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.1:44638 #12 (1 connection now open)
+[36mdatabase_1    |[0m 2017-12-08T16:48:19.674+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.1:44642 #13 (2 connections now open)
+[36mdatabase_1    |[0m 2017-12-08T16:48:19.676+0000 I NETWORK  [conn13] end connection 172.17.0.1:44642 (1 connection now open)
+[36mdatabase_1    |[0m 2017-12-08T16:48:19.676+0000 I NETWORK  [conn12] end connection 172.17.0.1:44638 (0 connections now open)
+[36mdatabase_1    |[0m 2017-12-08T16:59:02.381+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.1:45510 #14 (1 connection now open)
+[36mdatabase_1    |[0m 2017-12-08T16:59:02.382+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.1:45514 #15 (2 connections now open)
+[36mdatabase_1    |[0m 2017-12-08T16:59:02.384+0000 I NETWORK  [conn15] end connection 172.17.0.1:45514 (1 connection now open)
+[36mdatabase_1    |[0m 2017-12-08T16:59:02.384+0000 I NETWORK  [conn14] end connection 172.17.0.1:45510 (0 connections now open)
+[36mdatabase_1    |[0m 2017-12-08T16:59:25.637+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.1:45630 #16 (1 connection now open)
+[36mdatabase_1    |[0m 2017-12-08T16:59:25.637+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.1:45634 #17 (2 connections now open)
+[36mdatabase_1    |[0m 2017-12-08T16:59:25.639+0000 I NETWORK  [conn17] end connection 172.17.0.1:45634 (1 connection now open)
+[36mdatabase_1    |[0m 2017-12-08T16:59:25.639+0000 I NETWORK  [conn16] end connection 172.17.0.1:45630 (1 connection now open)
+[36mdatabase_1    |[0m 2017-12-08T17:01:39.465+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.1:45864 #18 (1 connection now open)
+[36mdatabase_1    |[0m 2017-12-08T17:01:39.466+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.1:45868 #19 (2 connections now open)
+[36mdatabase_1    |[0m 2017-12-08T17:01:39.467+0000 I NETWORK  [conn19] end connection 172.17.0.1:45868 (1 connection now open)
+[36mdatabase_1    |[0m 2017-12-08T17:01:39.467+0000 I NETWORK  [conn18] end connection 172.17.0.1:45864 (1 connection now open)

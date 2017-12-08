@@ -4,7 +4,7 @@ authserver:
     # The start of active environment variables. Set as needed.
     - MONGODB_IP=database
     # - MONGODB_PORT=27000
-    # - MONGODB_DATABASE=USE_HASKELL_DB
+    # - MONGODB_DATABASE=USEHASKELLDB
     - LOG_LEVEL=DEBUG
     # - https_proxy=http://www-proxy.scss.tcd.ie:8080
     # - http_proxy=http://www-proxy.scss.tcd.ie:8080

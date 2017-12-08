@@ -87,7 +87,7 @@ server = lockAvailable
   where
     lockAvailable :: LockTransfer -> Handler Bool
     lockAvailable lockdetails@(LockTransfer filepath _ ) =  liftIO $ do 
-      FSA.withMongoDbConnection  $ upsert (select ["filepathq" =: filepath] "LockAvailability_RECORD") $ toBSON $ lockdetails
+      FSA.withMongoDbConnection  $ upsert (select ["filepathL" =: filepath] "LockAvailability_RECORD") $ toBSON $ lockdetails
       return True
 
 
@@ -97,9 +97,9 @@ server = lockAvailable
 
 waitOnLock :: String ->  IO (Bool)
 waitOnLock  filepath = liftIO $ do
-  putStrLn "waiting for lock"
+  putStrLn $ "waiting for lock" ++ filepath
  
-  docs <- FSA.withMongoDbConnection  $ find  (select ["filepathq" =: filepath] "LockAvailability_RECORD")  >>= FSA.drainCursor 
+  docs <- FSA.withMongoDbConnection  $ find  (select ["filepathL" =: filepath] "LockAvailability_RECORD")  >>= FSA.drainCursor 
   let  lock= take 1 $ catMaybes $ DL.map (\ b -> fromBSON b :: Maybe LockTransfer) docs 
   case lock of 
     ([LockTransfer _ True]) -> do 
@@ -110,7 +110,7 @@ waitOnLock  filepath = liftIO $ do
       threadDelay $ 10 * 1000000
       waitOnLock filepath 
     otherwise  -> do 
-      putStrLn "CLIENT: Lock details are not available locally"
+      putStrLn $ "CLIENT: Lock details are not available locally" ++ show lock
 
       return False
   
@@ -140,8 +140,8 @@ doFileLock fpath usern= do
           return True
         Right ([True, _]) -> do 
           putStrLn "On queue now"
-          FSA.withMongoDbConnection $ insert "LockAvailability_RECORD" $ toBSON $ LockTransfer fpath False
-          --FSA.withMongoDbConnection  $ upsert (select ["filepathq" =: fpath] "LockAvailability_RECORD") $ toBSON $ LockTransfer fpath False
+          --FSA.withMongoDbConnection $ insert "LockAvailability_RECORD" $ toBSON $ LockTransfer fpath False
+          FSA.withMongoDbConnection  $ upsert (select ["filepathL" =: fpath] "LockAvailability_RECORD") $ toBSON $ LockTransfer fpath False
           waitOnLock fpath  
     (Nothing) -> do 
       putStrLn $ "Expired token . Sigin in again.  " 
@@ -453,17 +453,17 @@ someFunc = do
        
       setEnv "CLIENT_PORT" clientport
       setEnv "MONGODB_PORT" mongoport
-      setEnv "MONGODB_IP" "localhost"
-      setEnv "MONGODB_DATABASE" "USE_HASKELL_DB"
+      setEnv "MONGODB_IP" "127.0.0.1"
+      setEnv "MONGODB_DATABASE" "USEHASKELLDB"
       let key = "nee":: String
       
-      FSA.withMongoDbConnection $ insert "TEST"   ["owner" =: key]
-      FSA.withMongoDbConnection $ do
-        docs <- findOne (select ["owner" =: key] "TEST")
+      -- FSA.withMongoDbConnection $ insert "TEST1"   ["owner" =: key]
+      -- FSA.withMongoDbConnection $ do
+      --   docs <- findOne (select ["owner" =: key] "TEST1")
         
-        case docs of
-          (Just _) -> liftIO $ putStrLn "got it"
-          (Nothing) -> liftIO $ putStrLn "nothing"
+      --   case docs of
+      --     (Just _) -> liftIO $ putStrLn "got it"
+      --     (Nothing) -> liftIO $ putStrLn "nothing"
       -- putStrLn "here"
       startApp clientport
     _ -> putStrLn "Bad parameters. Port numbers for client and MongoDB expected"
@@ -555,3 +555,4 @@ unlockLockedFiles  tid  usern= liftIO $ do
     [LockedFiles _ files] -> do -- adding to existing transaction 
       foldM (\ a filepath -> doFileUnLock filepath usern) () files
       FSA.withMongoDbConnection $ delete (select ["tid5" =: tid] "LockedFiles_RECORD")  
+ 

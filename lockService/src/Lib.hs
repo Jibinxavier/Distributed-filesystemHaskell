@@ -140,7 +140,8 @@ server = lock
                        
                          ---- inform the client that the lock is available
                         FSA.warnLog $ "Assigning lock to client on port "++ clientport
-                        FSA.myrestfullCall (lockAvailable  (LockTransfer file True)) ((read clientport)::Int) FSA.localhost
+                        res <- FSA.myrestfullCall (lockAvailable  (LockTransfer file True)) ((read clientport)::Int) FSA.systemHost
+                        printResp res "lockAvailable"
                         FSA.withMongoDbConnection $ upsert (select ["filename" =: file] "LockService_RECORD") $ toBSON (Lock file True nextuser updatedQueue)
                     return True  
                 (False)-> return False
@@ -164,3 +165,8 @@ server = lock
         
         FSA.warnLog $ " incorrect format for islocked api: "
         return False
+printResp res cmd = do 
+  case res of
+    Left err -> do
+      FSA.warnLog $ "connection error" ++ show err
+    Right (replicas) -> FSA.warnLog $ cmd++ " successfull" 
