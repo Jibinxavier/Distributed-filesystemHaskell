@@ -112,7 +112,7 @@ instance PrintResponse [FInfoTransfer] where
 -------------------------------------------------------------------
 --------   Helpers  ------------------
 getFileFromFS ::  [FInfoTransfer]-> String -> IO ()
-getFileFromFS fileinfo@[FInfoTransfer filepath dirname fileid _ portadr servTm1 ] usern= do 
+getFileFromFS fileinfo@[FInfoTransfer remotefilepath dirname fileid _ portadr servTm1 ] usern= do 
 
   authInfo <- getAuthClientInfo usern
   case authInfo of 
@@ -129,7 +129,8 @@ getFileFromFS fileinfo@[FInfoTransfer filepath dirname fileid _ portadr servTm1 
             [resp] -> do
               let mg@(FileContents fName contents _) =  decryptFileContents resp seshkey
               -- updating the file info in the local record
-              withMongoDbConnection $ upsert (select ["filepath" =: filepath] "CLIENTFileMap_RECORD") $ toBSON $ FInfo filepath dirname fileid servTm1
+              let fpath = usern++ remotefilepath -- this is to allow multiple users to use the same database
+              withMongoDbConnection $ upsert (select ["filepath" =: fpath] "CLIENTFileMap_RECORD") $ toBSON $ FInfo fpath dirname fileid servTm1
               writeFile fName contents 
             [] -> putStrLn "Incorrect filepath and filename  "
     (Nothing) -> putStrLn $ "Expired token . Sigin in again.  " 

@@ -359,7 +359,8 @@ doWriteFile  remoteFPath usern newcontent = do   -- call to the directory server
                         doFileUnLock remoteFPath usern
                         putStrLn "after unlock"
                         -- store the metadata about the file
-                        updateLocalMeta remoteFPath $ FInfo remoteFPath remotedir fileid ts
+                        let fpath =  usern ++ remoteFPath -- this is to allow multiple users to use the same database
+                        updateLocalMeta fpath $ FInfo fpath remotedir fileid ts
                         putStrLn "file unlocked "
                       (Nothing) -> putStrLn $ "Expired token . Sigin in again.  "  
               [] -> putStrLn "Upload file : Error getting fileinfo from directory service"
@@ -396,10 +397,10 @@ doReadFile remoteFPath usern = do
     Nothing ->  putStrLn $ "download call failed" 
     (Just fileinfo@resp) ->   do 
       case resp of
-        [FInfoTransfer filepath dirname fileid ipadr portadr servTm1 ] -> do 
+        [FInfoTransfer remotefilepath dirname fileid ipadr portadr servTm1 ] -> do 
           putStrLn $ portadr ++ "file id "++ fileid
-
-          status <- isDated filepath servTm1  --check with timestamp in the database 
+          let fpath = usern ++ remotefilepath
+          status <- isDated fpath servTm1  --check with timestamp in the database 
           case status of
             True ->  getFileFromFS  fileinfo usern -- it also updates local file metadata
             False -> putStrLn "You have most up to date  version" 

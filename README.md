@@ -15,7 +15,8 @@ Act as a proxy between user interface and filesystem. Client will allow users to
 3. If it is already locked, the user is added to the queue
 4. When a user unlocks, the server assigns the lock to the user in the queue if there is one, and notifies it.
 
-##### Directory service
+##### Directory service 
+
 
 ##### Fileserver service
  The directory will point client to primary server for writes and reads to the secondary ones.

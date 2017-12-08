@@ -1,19 +1,19 @@
 from pymongo import MongoClient
 from bson import json_util
-# client = MongoClient("localhost",27222)
-# print(client.database_names())
-# db = client.USEHASKELLDB
+client = MongoClient("localhost",27222)
+print(client.database_names())
+db = client.USEHASKELLDB
 
-# cursor = db.Directory_RECORD.find({})
-# for document in cursor:
-#         print(document)
-# print("filservers")
-# cursor = db.DirHealth_RECORD.find({})
-# for document in cursor:
-#         print(document)
-# cursor = db.Files_RECORD.find({})
-# for document in cursor:
-#         print(document)
+cursor = db.Directory_RECORD.find({})
+for document in cursor:
+        print(document)
+print("filservers")
+cursor = db.DirHealth_RECORD.find({})
+for document in cursor:
+        print(document)
+cursor = db.Files_RECORD.find({})
+for document in cursor:
+        print(document)
         
 
 
