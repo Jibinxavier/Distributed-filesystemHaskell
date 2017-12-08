@@ -1,0 +1,155 @@
+Creating directoryservice_database_1 ... 
+Creating directoryservice_database_1
+[1A[2KCreating directoryservice_database_1 ... [32mdone[0m[1BCreating directory_server ... 
+Creating directory_server
+[1A[2KCreating directory_server ... [32mdone[0m[1BAttaching to directoryservice_database_1, directory_server
+[36mdatabase_1          |[0m 2017-12-08T14:16:37.812+0000 I JOURNAL  [initandlisten] journal dir=/data/db/journal
+[36mdatabase_1          |[0m 2017-12-08T14:16:37.813+0000 I JOURNAL  [initandlisten] recover : no journal files present, no recovery needed
+[33mdirectory_server    |[0m 2017-12-08T14:16:38672511338000+0000 Starting directory service
+[36mdatabase_1          |[0m 2017-12-08T14:16:38.586+0000 I JOURNAL  [initandlisten] preallocateIsFaster=true 8.72
+[36mdatabase_1          |[0m 2017-12-08T14:16:39.246+0000 I JOURNAL  [initandlisten] preallocateIsFaster=true 4.78
+[36mdatabase_1          |[0m 2017-12-08T14:16:40.816+0000 I JOURNAL  [initandlisten] preallocateIsFaster=true 3.88
+[36mdatabase_1          |[0m 2017-12-08T14:16:40.816+0000 I JOURNAL  [initandlisten] preallocateIsFaster check took 3.003 secs
+[36mdatabase_1          |[0m 2017-12-08T14:16:40.816+0000 I JOURNAL  [initandlisten] preallocating a journal file /data/db/journal/prealloc.0
+[36mdatabase_1          |[0m 2017-12-08T14:16:42.811+0000 I JOURNAL  [initandlisten] preallocating a journal file /data/db/journal/prealloc.1
+[36mdatabase_1          |[0m 2017-12-08T14:16:44.549+0000 I JOURNAL  [initandlisten] preallocating a journal file /data/db/journal/prealloc.2
+[36mdatabase_1          |[0m 2017-12-08T14:16:46.415+0000 I JOURNAL  [durability] Durability thread started
+[36mdatabase_1          |[0m 2017-12-08T14:16:46.416+0000 I JOURNAL  [journal writer] Journal writer thread started
+[36mdatabase_1          |[0m 2017-12-08T14:16:46.431+0000 I CONTROL  [initandlisten] MongoDB starting : pid=1 port=27017 dbpath=/data/db 64-bit host=96f37dbed25e
+[36mdatabase_1          |[0m 2017-12-08T14:16:46.431+0000 I CONTROL  [initandlisten] 
+[36mdatabase_1          |[0m 2017-12-08T14:16:46.431+0000 I CONTROL  [initandlisten] ** WARNING: /sys/kernel/mm/transparent_hugepage/enabled is 'always'.
+[36mdatabase_1          |[0m 2017-12-08T14:16:46.431+0000 I CONTROL  [initandlisten] **        We suggest setting it to 'never'
+[36mdatabase_1          |[0m 2017-12-08T14:16:46.431+0000 I CONTROL  [initandlisten] 
+[36mdatabase_1          |[0m 2017-12-08T14:16:46.431+0000 I CONTROL  [initandlisten] db version v3.0.2
+[36mdatabase_1          |[0m 2017-12-08T14:16:46.431+0000 I CONTROL  [initandlisten] git version: 6201872043ecbbc0a4cc169b5482dcf385fc464f
+[36mdatabase_1          |[0m 2017-12-08T14:16:46.431+0000 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1e 11 Feb 2013
+[36mdatabase_1          |[0m 2017-12-08T14:16:46.431+0000 I CONTROL  [initandlisten] build info: Linux ip-10-171-120-232 3.2.0-4-amd64 #1 SMP Debian 3.2.46-1 x86_64 BOOST_LIB_VERSION=1_49
+[36mdatabase_1          |[0m 2017-12-08T14:16:46.431+0000 I CONTROL  [initandlisten] allocator: tcmalloc
+[36mdatabase_1          |[0m 2017-12-08T14:16:46.431+0000 I CONTROL  [initandlisten] options: {}
+[36mdatabase_1          |[0m 2017-12-08T14:16:46.432+0000 I INDEX    [initandlisten] allocating new ns file /data/db/local.ns, filling with zeroes...
+[36mdatabase_1          |[0m 2017-12-08T14:16:46.503+0000 I STORAGE  [FileAllocator] allocating new datafile /data/db/local.0, filling with zeroes...
+[36mdatabase_1          |[0m 2017-12-08T14:16:46.503+0000 I STORAGE  [FileAllocator] creating directory /data/db/_tmp
+[36mdatabase_1          |[0m 2017-12-08T14:16:46.526+0000 I STORAGE  [FileAllocator] done allocating datafile /data/db/local.0, size: 64MB,  took 0.015 secs
+[36mdatabase_1          |[0m 2017-12-08T14:16:46.540+0000 I NETWORK  [initandlisten] waiting for connections on port 27017
+[33mdirectory_server    |[0m 2017-12-08T14:17:58158243965000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1          |[0m 2017-12-08T14:17:58.162+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:58748 #1 (1 connection now open)
+[36mdatabase_1          |[0m 2017-12-08T14:17:58.164+0000 I NETWORK  [conn1] end connection 172.17.0.7:58748 (0 connections now open)
+[33mdirectory_server    |[0m 172.17.0.1 - - [08/Dec/2017:14:17:58 +0000] "POST /updateUploadInfo HTTP/1.1" 200 - "" ""
+[36mdatabase_1          |[0m 2017-12-08T14:20:30.871+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.1:37510 #2 (1 connection now open)
+[36mdatabase_1          |[0m 2017-12-08T14:20:30.871+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.1:37514 #3 (2 connections now open)
+[36mdatabase_1          |[0m 2017-12-08T14:20:30.872+0000 I NETWORK  [conn3] end connection 172.17.0.1:37514 (1 connection now open)
+[36mdatabase_1          |[0m 2017-12-08T14:20:30.872+0000 I NETWORK  [conn2] end connection 172.17.0.1:37510 (1 connection now open)
+[33mdirectory_server    |[0m 2017-12-08T14:24:58297070557000+0000 Storing new file server to  f_1  directory
+[33mdirectory_server    |[0m 2017-12-08T14:24:58297345595000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1          |[0m 2017-12-08T14:24:58.297+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:58826 #4 (1 connection now open)
+[36mdatabase_1          |[0m 2017-12-08T14:24:58.298+0000 I NETWORK  [conn4] end connection 172.17.0.7:58826 (0 connections now open)
+[33mdirectory_server    |[0m 2017-12-08T14:24:58298196785000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1          |[0m 2017-12-08T14:24:58.298+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:58828 #5 (1 connection now open)
+[36mdatabase_1          |[0m 2017-12-08T14:24:58.298+0000 I INDEX    [conn5] allocating new ns file /data/db/USEHASKELLDB.ns, filling with zeroes...
+[36mdatabase_1          |[0m 2017-12-08T14:24:58.339+0000 I STORAGE  [FileAllocator] allocating new datafile /data/db/USEHASKELLDB.0, filling with zeroes...
+[36mdatabase_1          |[0m 2017-12-08T14:24:58.345+0000 I STORAGE  [FileAllocator] done allocating datafile /data/db/USEHASKELLDB.0, size: 64MB,  took 0.005 secs
+[36mdatabase_1          |[0m 2017-12-08T14:24:58.351+0000 I NETWORK  [conn5] end connection 172.17.0.7:58828 (0 connections now open)
+[33mdirectory_server    |[0m 172.17.0.1 - - [08/Dec/2017:14:24:58 +0000] "POST /add_dir HTTP/1.1" 200 - "" ""
+[33mdirectory_server    |[0m 2017-12-08T14:24:58407071890000+0000 Storing new file server to  f_1  directory
+[33mdirectory_server    |[0m 2017-12-08T14:24:58407475640000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1          |[0m 2017-12-08T14:24:58.422+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:58834 #6 (1 connection now open)
+[33mdirectory_server    |[0m 2017-12-08T14:24:58422550433000+0000 IS NEW DIRECTORY     172.17.0.18001True
+[36mdatabase_1          |[0m 2017-12-08T14:24:58.422+0000 I NETWORK  [conn6] end connection 172.17.0.7:58834 (0 connections now open)
+[33mdirectory_server    |[0m 2017-12-08T14:24:58423080820000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1          |[0m 2017-12-08T14:24:58.423+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:58836 #7 (1 connection now open)
+[36mdatabase_1          |[0m 2017-12-08T14:24:58.424+0000 I NETWORK  [conn7] end connection 172.17.0.7:58836 (0 connections now open)
+[33mdirectory_server    |[0m 2017-12-08T14:24:58446080977000+0000 Storing new file server to  f_1  directory
+[33mdirectory_server    |[0m 2017-12-08T14:24:58446315498000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1          |[0m 2017-12-08T14:24:58.446+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:58842 #8 (1 connection now open)
+[36mdatabase_1          |[0m 2017-12-08T14:24:58.447+0000 I NETWORK  [conn8] end connection 172.17.0.7:58842 (0 connections now open)
+[33mdirectory_server    |[0m 2017-12-08T14:24:58447248651000+0000 IS NEW DIRECTORY     172.17.0.18000True
+[33mdirectory_server    |[0m 2017-12-08T14:24:58447544009000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1          |[0m 2017-12-08T14:24:58.448+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:58844 #9 (1 connection now open)
+[36mdatabase_1          |[0m 2017-12-08T14:24:58.449+0000 I NETWORK  [conn9] end connection 172.17.0.7:58844 (0 connections now open)
+[33mdirectory_server    |[0m 172.17.0.1 - - [08/Dec/2017:14:24:58 +0000] "POST /add_dir HTTP/1.1" 200 - "" ""
+[33mdirectory_server    |[0m 172.17.0.1 - - [08/Dec/2017:14:24:58 +0000] "POST /add_dir HTTP/1.1" 200 - "" ""
+[33mdirectory_server    |[0m 2017-12-08T14:35:18510052923000+0000 Storing new file server to  f_1  directory
+[33mdirectory_server    |[0m 2017-12-08T14:35:18510371808000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1          |[0m 2017-12-08T14:35:18.541+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:58932 #10 (1 connection now open)
+[33mdirectory_server    |[0m 2017-12-08T14:35:18541966456000+0000 Storing new file server to  f_1  directory
+[36mdatabase_1          |[0m 2017-12-08T14:35:18.542+0000 I NETWORK  [conn10] end connection 172.17.0.7:58932 (0 connections now open)
+[33mdirectory_server    |[0m 2017-12-08T14:35:18542272516000+0000 IS NEW DIRECTORY     172.17.0.18001False
+[33mdirectory_server    |[0m 2017-12-08T14:35:185172.17.0.1 - - [08/Dec/2017:14:35:18 +0000] "POST /add_dir HTTP/1.1" 200 - "" ""
+[33mdirectory_server    |[0m 42433444000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1          |[0m 2017-12-08T14:35:18.543+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:58936 #11 (1 connection now open)
+[36mdatabase_1          |[0m 2017-12-08T14:35:18.548+0000 I NETWORK  [conn11] end connection 172.17.0.7:58936 (0 connections now open)
+[33mdirectory_server    |[0m 2017-12-08T14:35:18548530759000+0000 IS NEW DIRECTORY     172.17.0.18000False
+[33mdirectory_server    |[0m 2017-12-08T14:35:18681398504000+0000 Storing new file server to  f_1  directory
+[33mdirectory_server    |[0m 2017-12-08T14:35:18682139508000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1          |[0m 2017-12-08T14:35:18.683+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:58942 #12 (1 connection now open)
+[36mdatabase_1          |[0m 2017-12-08T14:35:18.684+0000 I NETWORK  [conn12] end connection 172.17.0.7:58942 (0 connections now open)
+[33mdirectory_server    |[0m 2017-12-08T14:35:18684855222000+0000 IS NEW DIRECTORY     172.17.0.18002False
+[33mdirectory_server    |[0m 172.17.0.1 - - [08/Dec/2017:14:35:18 +0000] "POST /add_dir HTTP/1.1" 200 - "" ""
+[33mdirectory_server    |[0m 172.17.0.1 - - [08/Dec/2017:14:35:18 +0000] "POST /add_dir HTTP/1.1" 200 - "" ""
+[33mdirectory_server    |[0m 2017-12-08T14:49:28314809639000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1          |[0m 2017-12-08T14:49:28.316+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59176 #13 (1 connection now open)
+[36mdatabase_1          |[0m 2017-12-08T14:49:28.318+0000 I NETWORK  [conn13] end connection 172.17.0.7:59176 (0 connections now open)
+[33mdirectory_server    |[0m 2017-12-08T14:49:28317945811000+0000  clearing dead nodes .
+[33mdirectory_server    |[0m 2017-12-08T14:49:28318808810000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1          |[0m 2017-12-08T14:49:28.321+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59178 #14 (1 connection now open)
+[36mdatabase_1          |[0m 2017-12-08T14:49:28.322+0000 I NETWORK  [conn14] end connection 172.17.0.7:59178 (0 connections now open)
+[33mdirectory_server    |[0m 2017-12-08T14:49:28322331092000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1          |[0m 2017-12-08T14:49:28.324+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59180 #15 (1 connection now open)
+[36mdatabase_1          |[0m 2017-12-08T14:49:28.326+0000 I NETWORK  [conn15] end connection 172.17.0.7:59180 (0 connections now open)
+[33mdirectory_server    |[0m 2017-12-08T14:49:28326169157000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1          |[0m 2017-12-08T14:49:28.328+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59182 #16 (1 connection now open)
+[36mdatabase_1          |[0m 2017-12-08T14:49:28.329+0000 I NETWORK  [conn16] end connection 172.17.0.7:59182 (0 connections now open)
+[33mdirectory_server    |[0m 2017-12-08T14:49:28329665620000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1          |[0m 2017-12-08T14:49:28.341+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59184 #17 (1 connection now open)
+[36mdatabase_1          |[0m 2017-12-08T14:49:28.342+0000 I NETWORK  [conn17] end connection 172.17.0.7:59184 (0 connections now open)
+[33mdirectory_server    |[0m 2017-12-08T14:49:28342400246000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1          |[0m 2017-12-08T14:49:28.343+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59186 #18 (1 connection now open)
+[33mdirectory_server    |[0m 2017-12-08T14:49:28343435700000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1          |[0m 2017-12-08T14:49:28.344+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59188 #19 (2 connections now open)
+[36mdatabase_1          |[0m 2017-12-08T14:49:28.344+0000 I NETWORK  [conn19] end connection 172.17.0.7:59188 (1 connection now open)
+[36mdatabase_1          |[0m 2017-12-08T14:49:28.344+0000 I NETWORK  [conn18] end connection 172.17.0.7:59186 (1 connection now open)
+[33mdirectory_server    |[0m 2017-12-08T14:49:28344916742000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1          |[0m 2017-12-08T14:49:28.345+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59190 #20 (1 connection now open)
+[36mdatabase_1          |[0m 2017-12-08T14:49:28.346+0000 I NETWORK  [conn20] end connection 172.17.0.7:59190 (0 connections now open)
+[33mdirectory_server    |[0m 2017-12-08T14:49:28346053808000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1          |[0m 2017-12-08T14:49:28.346+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59192 #21 (1 connection now open)
+[36mdatabase_1          |[0m 2017-12-08T14:49:28.347+0000 I NETWORK  [conn21] end connection 172.17.0.7:59192 (0 connections now open)
+[33mdirectory_server    |[0m 2017-12-08T14:49:28347475922000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1          |[0m 2017-12-08T14:49:28.348+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59194 #22 (1 connection now open)
+[36mdatabase_1          |[0m 2017-12-08T14:49:28.348+0000 I NETWORK  [conn22] end connection 172.17.0.7:59194 (0 connections now open)
+[33mdirectory_server    |[0m 2017-12-08T14:49:28348756399000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1          |[0m 2017-12-08T14:49:28.349+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59196 #23 (1 connection now open)
+[36mdatabase_1          |[0m 2017-12-08T14:49:28.349+0000 I NETWORK  [conn23] end connection 172.17.0.7:59196 (0 connections now open)
+[33mdirectory_server    |[0m 2017-12-08T14:49:28349883785000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1          |[0m 2017-12-08T14:49:28.350+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59198 #24 (1 connection now open)
+[36mdatabase_1          |[0m 2017-12-08T14:49:28.351+0000 I NETWORK  [conn24] end connection 172.17.0.7:59198 (0 connections now open)
+[33mdirectory_server    |[0m 2017-12-08T14:49:28350989216000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1          |[0m 2017-12-08T14:49:28.351+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59200 #25 (1 connection now open)
+[36mdatabase_1          |[0m 2017-12-08T14:49:28.352+0000 I NETWORK  [conn25] end connection 172.17.0.7:59200 (0 connections now open)
+[33mdirectory_server    |[0m 172.17.0.1 - - [08/Dec/2017:14:49:28 +0000] "POST /updateUploadInfo HTTP/1.1" 200 - "" ""
+[33mdirectory_server    |[0m 2017-12-08T14:49:28361369823000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1          |[0m 2017-12-08T14:49:28.361+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59214 #26 (1 connection now open)
+[36mdatabase_1          |[0m 2017-12-08T14:49:28.362+0000 I NETWORK  [conn26] end connection 172.17.0.7:59214 (0 connections now open)
+[33mdirectory_server    |[0m 172.17.0.1 - - [08/Dec/2017:14:49:28 +0000] "GET /getAllReplicas HTTP/1.1" 200 - "" ""
+[33mdirectory_server    |[0m 2017-12-08T14:49:43730622514000+0000 Searching for file: 
+[33mdirectory_server    |[0m 2017-12-08T14:49:43731207919000+0000  clearing dead nodes .
+[36mdatabase_1          |[0m 2017-12-08T14:49:43.732+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59248 #27 (1 connection now open)
+[33mdirectory_server    |[0m 2017-12-08T14:49:43731657955000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[33mdirectory_server    |[0m 2017-12-08T14:49:43734427965000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1          |[0m 2017-12-08T14:49:43.734+0000 I NETWORK  [conn27] end connection 172.17.0.7:59248 (0 connections now open)
+[36mdatabase_1          |[0m 2017-12-08T14:49:43.736+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59250 #28 (1 connection now open)
+[36mdatabase_1          |[0m 2017-12-08T14:49:43.737+0000 I NETWORK  [conn28] end connection 172.17.0.7:59250 (0 connections now open)
+[33mdirectory_server    |[0m 2017-12-08T14:49:43737182633000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1          |[0m 2017-12-08T14:49:43.738+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59252 #29 (1 connection now open)
+[36mdatabase_1          |[0m 2017-12-08T14:49:43.740+0000 I NETWORK  [conn29] end connection 172.17.0.7:59252 (0 connections now open)
+[33mdirectory_server    |[0m 2017-12-08T14:49:43740206467000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1          |[0m 2017-12-08T14:49:43.742+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59254 #30 (1 connection now open)
+[36mdatabase_1          |[0m 2017-12-08T14:49:43.743+0000 I NETWORK  [conn30] end connection 172.17.0.7:59254 (0 connections now open)
+[36mdatabase_1          |[0m 2017-12-08T14:49:43.744+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59256 #31 (1 connection now open)
+[33mdirectory_server    |[0m 2017-12-08T14:49:43743177518000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1          |[0m 2017-12-08T14:49:43.748+0000 I NETWORK  [conn31] end connection 172.17.0.7:59256 (0 connections now open)
+[33mdirectory_server    |[0m 172.17.0.1 - - [08/Dec/2017:14:49:43 +0000] "POST /filesearch HTTP/1.1" 200 - "" ""
+[36mdatabase_1          |[0m 2017-12-08T14:50:37.688+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.1:38054 #32 (1 connection now open)
+[36mdatabase_1          |[0m 2017-12-08T14:50:37.689+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.1:38058 #33 (2 connections now open)
+[36mdatabase_1          |[0m 2017-12-08T14:50:37.690+0000 I NETWORK  [conn33] end connection 172.17.0.1:38058 (1 connection now open)
+[36mdatabase_1          |[0m 2017-12-08T14:50:37.690+0000 I NETWORK  [conn32] end connection 172.17.0.1:38054 (1 connection now open)

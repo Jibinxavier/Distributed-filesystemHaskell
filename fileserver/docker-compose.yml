@@ -1,0 +1,51 @@
+database_0:
+  image: mongo:3.0.2
+  ports:
+  - 27090:27017
+database_1:
+  image: mongo:3.0.2
+  ports:
+  - 27091:27017
+database_2:
+  image: mongo:3.0.2
+  ports:
+  - 27092:27017
+fileserver_0:
+  command: /usr/local/bin/fileserver-exe
+  container_name: fileserver_0
+  env_file: ../all_env.env
+  environment:
+  - MONGODB_IP=database_0
+  - FILESERVER_Port=8000
+  - FILESERVER_Name=f_1
+  image: fileserver
+  links:
+  - database_0
+  ports:
+  - 8000:8000
+fileserver_1:
+  command: /usr/local/bin/fileserver-exe
+  container_name: fileserver_1
+  env_file: ../all_env.env
+  environment:
+  - MONGODB_IP=database_1
+  - FILESERVER_Port=8001
+  - FILESERVER_Name=f_1
+  image: fileserver
+  links:
+  - database_1
+  ports:
+  - 8001:8001
+fileserver_2:
+  command: /usr/local/bin/fileserver-exe
+  container_name: fileserver_2
+  env_file: ../all_env.env
+  environment:
+  - MONGODB_IP=database_2
+  - FILESERVER_Port=8002
+  - FILESERVER_Name=f_1
+  image: fileserver
+  links:
+  - database_2
+  ports:
+  - 8002:8002

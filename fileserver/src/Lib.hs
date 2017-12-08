@@ -75,7 +75,8 @@ broadcast ::FileContents -> IO ()
 broadcast filecontents =do
   dirname <- FSA.fileserverName
   dirport <- FSA.dirServPort
-  res <- FSA.mydoCall (getAllReplicas ( Just dirname))  ((read dirport)::Int)
+  systemHost_ <- FSA.defaultHost 
+  res <- FSA.myrestfullCall (getAllReplicas ( Just dirname))  ((read dirport)::Int) systemHost_
   case res of
     Left err -> do
       FSA.warnLog $ " getAllReplicas failed with error: " ++ show err
@@ -87,14 +88,16 @@ broadcast filecontents =do
 sendBroadcast :: [FServer]-> FileContents -> IO ()
 sendBroadcast  [] _=  return () 
 sendBroadcast  ((FServer  _ port ):xs) msg  =   do 
-  FSA.mydoCall (FilesystemAPIServer.broadcastedUpload $  msg) ((read port)::Int) 
+  systemHost_ <- FSA.defaultHost
+  FSA.myrestfullCall (FilesystemAPIServer.broadcastedUpload $  msg) ((read port)::Int) systemHost_
   sendBroadcast xs msg
 
 sendHeartBeat :: Int ->  String ->String  -> IO ()
 sendHeartBeat delay host port= do
   FSA.warnLog $ "Sending heart beat to directory." 
   dirport <- FSA.dirServPort
-  FSA.mydoCall (heartbeat $  Message host port)  ((read dirport)::Int)
+  let dirhost = "directory_server"
+  FSA.myrestfullCall (heartbeat $  Message host port)  ((read dirport)::Int) dirhost
   threadDelay $ delay * 1000000
   sendHeartBeat delay host port -- tail recursion
 
@@ -103,10 +106,11 @@ registerWDir= do
    -----------------------------------------------------------------------------------------
   dirname <- FSA.fileserverName
   fport <- FSA.fileserverPort
-  fileserverHost <- FSA.defaultHost 
+  systemHost_ <- FSA.defaultHost 
   FSA.warnLog "Registering with directory service at port "    
   port <- FSA.dirServPort
-  res <- FSA.mydoCall (add_dir $  Message3 fileserverHost fport dirname ) ((read port)::Int )
+  let dirhost = "directory_server"
+  res <- FSA.myrestfullCall (add_dir $  Message3 systemHost_ fport dirname ) ((read port)::Int ) systemHost_
   case res of
     Left err -> do
       FSA.warnLog $ " register failed with error: " ++ show err
@@ -184,7 +188,8 @@ server = upload
       let fileid= dirname++id
       let msgToTrans = Message trid fileid -- 
       port <-  FSA.transPorStr
-      FSA.mydoCall   (readyToCommit $  msgToTrans) ((read port)::Int) 
+      let transhost ="transaction_server"
+      FSA.myrestfullCall   (readyToCommit $  msgToTrans) ((read port)::Int) transhost
       return True  
      
     updateRealDB :: String -> Handler Bool

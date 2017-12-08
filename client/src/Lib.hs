@@ -87,7 +87,7 @@ server = lockAvailable
   where
     lockAvailable :: LockTransfer -> Handler Bool
     lockAvailable lockdetails@(LockTransfer filepath _ ) =  liftIO $ do 
-      FSA.withMongoDbConnection $ upsert (select ["filepathq" =: filepath] "LockAvailability_RECORD") $ toBSON $ lockdetails
+      FSA.withMongoDbConnection  $ upsert (select ["filepathq" =: filepath] "LockAvailability_RECORD") $ toBSON $ lockdetails
       return True
 
 
@@ -98,7 +98,8 @@ server = lockAvailable
 waitOnLock :: String ->  IO (Bool)
 waitOnLock  filepath = liftIO $ do
   putStrLn "waiting for lock"
-  docs <- FSA.withMongoDbConnection $ find  (select ["filepathq" =: filepath] "Transaction_RECORD")  >>= FSA.drainCursor 
+ 
+  docs <- FSA.withMongoDbConnection  $ find  (select ["filepathq" =: filepath] "LockAvailability_RECORD")  >>= FSA.drainCursor 
   let  lock= take 1 $ catMaybes $ DL.map (\ b -> fromBSON b :: Maybe LockTransfer) docs 
   case lock of 
     ([LockTransfer _ True]) -> do 
@@ -106,10 +107,11 @@ waitOnLock  filepath = liftIO $ do
       return True
     ([LockTransfer _ False] ) -> do 
       putStrLn "CLIENT: Going to sleep as lock is not available"
-      -- threadDelay $ 10 * 1000000
+      threadDelay $ 10 * 1000000
       waitOnLock filepath 
     otherwise  -> do 
       putStrLn "CLIENT: Lock details are not available locally"
+
       return False
   
   
@@ -127,7 +129,7 @@ doFileLock fpath usern= do
       let encUname = myEncryptAES (aesPad seshkey) (usern)
       let encClientport = myEncryptAES (aesPad seshkey) (clientport)
       
-      resp <- FSA.mydoCall  (lock $ Message4  encClientport encFpath encUname ticket) (read lockport)
+      resp <- FSA.myrestfullCall  (lock $ Message4  encClientport encFpath encUname ticket) (read lockport) FSA.localhost
       case resp of
         Left err -> do 
           putStrLn $ "failed to lock ... " ++  show err
@@ -138,6 +140,8 @@ doFileLock fpath usern= do
           return True
         Right ([True, _]) -> do 
           putStrLn "On queue now"
+          FSA.withMongoDbConnection $ insert "LockAvailability_RECORD" $ toBSON $ LockTransfer fpath False
+          --FSA.withMongoDbConnection  $ upsert (select ["filepathq" =: fpath] "LockAvailability_RECORD") $ toBSON $ LockTransfer fpath False
           waitOnLock fpath  
     (Nothing) -> do 
       putStrLn $ "Expired token . Sigin in again.  " 
@@ -153,13 +157,13 @@ doFileUnLock fpath usern= do
       let encFpath = myEncryptAES (aesPad seshkey) (fpath)
       let encUname = myEncryptAES (aesPad seshkey) (usern)
       -- sesh to decrpt message sent back
-      doCall (unlock  $ Message3 encFpath encUname ticket) FSA.lockIP (Just lockport)seshkey
+      restfullCall (unlock  $ Message3 encFpath encUname ticket) FSA.lockIP (Just lockport)seshkey
     (Nothing) -> putStrLn $ " Expired token  .Sigin in again. " 
 
 doIsLocked :: String  ->  IO ()
 doIsLocked fpath  = do
   lockport <- FSA.lockPortStr
-  doCall (islocked $ Just fpath) FSA.lockIP (Just lockport) $  seshNop
+  restfullCall (islocked $ Just fpath) FSA.lockIP (Just lockport) $  seshNop
 ---------------------------------
 -- Directory services
 ---------------------------------
@@ -174,21 +178,21 @@ doListDirs usern=  do
     (Just (ticket,seshkey) ) -> do 
       dirP <-FSA.dirServPort
       -- sesh to decrpt message sent back
-      doCall (listdirs $ Just ticket) FSA.dirHost (Just dirP) seshkey
+      restfullCall (listdirs $ Just ticket) FSA.dirHost (Just dirP) seshkey
     (Nothing) -> putStrLn $ "Expired token . Sigin in again.  " 
    
 
 doLSFileServerContents :: String  -> String -> IO ()
 doLSFileServerContents dir usern=do
   dirP <-FSA.dirServPort
-  docallMsg1WithEnc listfscontents dir usern FSA.dirHost (Just dirP)
+  restfullCallMsg1WithEnc listfscontents dir usern FSA.dirHost (Just dirP)
 
 
 
 doFileSearch :: String -> String -> String -> IO ()
 doFileSearch dir fname usern = do 
   dirP <-FSA.dirServPort
-  docallMsg3WithEnc  filesearch dir fname usern FSA.dirHost (Just dirP)
+  restfullCallMsg3WithEnc  filesearch dir fname usern FSA.dirHost (Just dirP)
  
 
 -----------------------------
@@ -217,7 +221,7 @@ doGetTransId usern=  do
             [LocalTransInfo _  prevId] -> liftIO $ do  -- abort and update
                 putStrLn $ "Aborting old transaction and starting new " 
       
-                docallMsg1WithEnc abort prevId usern FSA.transIP (Just trsport)
+                restfullCallMsg1WithEnc abort prevId usern FSA.transIP (Just trsport)
                 
               
                 FSA.withMongoDbConnection $ upsert (select ["key1" =: key] "Transaction_RECORD") $ toBSON $ LocalTransInfo key trId -- store the transaction id
@@ -235,7 +239,7 @@ doCommit usern = do
   localTransactionInfo <- getLocalTrId
   case localTransactionInfo of        
     [ LocalTransInfo _ trId] -> liftIO $ do  
-      docallMsg1WithEnc commit trId usern FSA.transIP (Just trsport)
+      restfullCallMsg1WithEnc commit trId usern FSA.transIP (Just trsport)
       unlockLockedFiles trId usern
       clearTransaction-- clearing after commiting the transaction
     [] -> putStrLn "No transactions to  commit"
@@ -246,7 +250,7 @@ doAbort usern  = do
   localTransactionInfo <- getLocalTrId
   case localTransactionInfo of 
     [LocalTransInfo _ trId] -> liftIO $ do   
-      docallMsg1WithEnc abort trId usern FSA.transIP (Just trsport)
+      restfullCallMsg1WithEnc abort trId usern FSA.transIP (Just trsport)
       unlockLockedFiles trId usern
       clearTransaction -- clearing after aborting the transaction
     [] -> putStrLn "No transactions to  abort"
@@ -274,7 +278,7 @@ doUploadWithTransaction localfilePath  dir fname  usern = do
           appendToLockedFiles filepath trId -- list of locked files which the client keeps a record of
           dirport <- FSA.dirServPort
           res <- mydoCalMsg4WithEnc uploadToShadowDir dir fname trId usern ((read $ dirport):: Int) decryptFInfoTransfer -- uploading info to shadow directory
-          --res <- FSA.mydoCall (uploadToShadowDir $  Message3 dir fname trId ) ((read $ fromJust FSA.dirPort):: Int) -- uploading info to shadow directory
+          --res <- FSA.myrestfullCall (uploadToShadowDir $  Message3 dir fname trId ) ((read $ fromJust FSA.dirPort):: Int) -- uploading info to shadow directory
 
           case res of
             Nothing -> putStrLn $ "Upload to transaction failed"  
@@ -291,7 +295,7 @@ doUploadWithTransaction localfilePath  dir fname  usern = do
                     (Just (ticket,seshkey) ) -> do 
                       let msg = encryptTransactionContents transactionContent seshkey ticket
                       
-                      doCall (uploadToTransaction $ msg) FSA.transIP  (Just trsport) $  seshNop
+                      restfullCall (uploadToTransaction $ msg) FSA.transIP  (Just trsport) $  seshNop
                     (Nothing) -> putStrLn $ " Expired token  .Sigin in again. " 
                 [] -> putStrLn "doUploadWithTransaction: Error getting fileinfo "
 
@@ -350,7 +354,7 @@ doWriteFile  remoteFPath usern newcontent = do   -- call to the directory server
                     case authInfo of 
                       (Just (ticket,seshkey) ) -> do 
                         let msg = encryptFileContents  (FileContents fileid contents "") seshkey ticket -- encrypted message
-                        doCall (upload  msg) (Just "localhost") (Just p)  seshkey -- uploading file
+                        restfullCall (upload  msg) (Just "localhost") (Just p)  seshkey -- uploading file
                         putStrLn "after uploading"
                         doFileUnLock remoteFPath usern
                         putStrLn "after unlock"
@@ -409,7 +413,7 @@ doReadFile remoteFPath usern = do
 doSignup:: String -> String -> IO ()
 doSignup userN pass =  do
   authport <-FSA.authPortStr
-  resp <- FSA.mydoCall (loadPublicKey) ((read authport):: Int)
+  resp <- FSA.myrestfullCall (loadPublicKey) ((read authport):: Int) FSA.localhost
   case resp of
     Left err -> do
       putStrLn $ "failed to get public key... " ++  show err
@@ -418,14 +422,14 @@ doSignup userN pass =  do
       cryptPass <- encryptPass authKey pass
       putStrLn "got the public key!"
       putStrLn "Sent encrypted username and password to authserver"
-      doCall (signup $ UserInfo userN cryptPass) FSA.authIP (Just authport) $  seshNop
+      restfullCall (signup $ UserInfo userN cryptPass) FSA.authIP (Just authport) $  seshNop
       
 
 
 doLogin:: String -> String-> IO ()
 doLogin userN pass  = do
   authport <-FSA.authPortStr
-  resp <- FSA.mydoCall (loadPublicKey) ((read authport ):: Int)
+  resp <- FSA.myrestfullCall (loadPublicKey) ((read authport ):: Int) FSA.localhost
   case resp of
     Left err -> do
       putStrLn "failed to get public key..."
@@ -434,7 +438,7 @@ doLogin userN pass  = do
       cryptPass <- encryptPass authKey pass
       
      
-      mydoCall2  (storeClientAuthInfo userN pass) (login $ UserInfo userN cryptPass) ((read authport):: Int)
+      myrestfullCall2  (storeClientAuthInfo userN pass) (login $ UserInfo userN cryptPass) ((read authport):: Int)
      
       
 
@@ -451,6 +455,16 @@ someFunc = do
       setEnv "MONGODB_PORT" mongoport
       setEnv "MONGODB_IP" "localhost"
       setEnv "MONGODB_DATABASE" "USE_HASKELL_DB"
+      let key = "nee":: String
+      
+      FSA.withMongoDbConnection $ insert "TEST"   ["owner" =: key]
+      FSA.withMongoDbConnection $ do
+        docs <- findOne (select ["owner" =: key] "TEST")
+        
+        case docs of
+          (Just _) -> liftIO $ putStrLn "got it"
+          (Nothing) -> liftIO $ putStrLn "nothing"
+      -- putStrLn "here"
       startApp clientport
     _ -> putStrLn "Bad parameters. Port numbers for client and MongoDB expected"
   

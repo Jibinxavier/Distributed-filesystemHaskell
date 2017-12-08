@@ -1,8 +1,5 @@
-client_database1:
+database:
   image: mongo:3.0.2
   ports:
     - "27017:27017"
-client_database2:
-  image: mongo:3.0.2
-  ports:
-    - "27014:27017"
+ 

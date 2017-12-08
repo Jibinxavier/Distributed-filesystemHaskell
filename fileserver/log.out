@@ -1,0 +1,271 @@
+Creating fileserver_database_2_1 ... 
+Creating fileserver_database_1_1 ... 
+Creating fileserver_database_0_1 ... 
+Creating fileserver_database_2_1
+Creating fileserver_database_1_1
+Creating fileserver_database_0_1
+[1A[2KCreating fileserver_database_1_1 ... [32mdone[0m[1BCreating fileserver_1 ... 
+Creating fileserver_1
+[1A[2KCreating fileserver_database_0_1 ... [32mdone[0m[1BCreating fileserver_0 ... 
+[1A[2KCreating fileserver_database_2_1 ... [32mdone[0m[1BCreating fileserver_2 ... 
+Creating fileserver_0
+Creating fileserver_2
+[1A[2KCreating fileserver_1 ... [32mdone[0m[1B[1A[2KCreating fileserver_2 ... [32mdone[0m[1B[1A[2KCreating fileserver_0 ... [32mdone[0m[1BAttaching to fileserver_database_1_1, fileserver_database_0_1, fileserver_database_2_1, fileserver_1, fileserver_2, fileserver_0
+[36mdatabase_1_1    |[0m 2017-12-08T14:16:47.335+0000 I JOURNAL  [initandlisten] journal dir=/data/db/journal
+[36mdatabase_1_1    |[0m 2017-12-08T14:16:47.335+0000 I JOURNAL  [initandlisten] recover : no journal files present, no recovery needed
+[36mdatabase_1_1    |[0m 2017-12-08T14:16:48.859+0000 I JOURNAL  [initandlisten] preallocateIsFaster=true 10.38
+[33mdatabase_0_1    |[0m 2017-12-08T14:16:47.516+0000 I JOURNAL  [initandlisten] journal dir=/data/db/journal
+[33mdatabase_0_1    |[0m 2017-12-08T14:16:47.517+0000 I JOURNAL  [initandlisten] recover : no journal files present, no recovery needed
+[32mdatabase_2_1    |[0m 2017-12-08T14:16:47.521+0000 I JOURNAL  [initandlisten] journal dir=/data/db/journal
+[35mfileserver_1    |[0m 2017-12-08T14:16:48375594037000+0000 Environment variable: LOG_LEVEL is not set. Defaulting to "DEBUG"
+[35mfileserver_1    |[0m 2017-12-08T14:16:48415695391000+0000 Starting filesystem
+[32mdatabase_2_1    |[0m 2017-12-08T14:16:47.522+0000 I JOURNAL  [initandlisten] recover : no journal files present, no recovery needed
+[35mfileserver_1    |[0m 2017-12-08T14:16:48440904994000+0000 Registering with directory service at port 
+[34mfileserver_0    |[0m 2017-12-08T14:16:48895913852000+0000 Environment variable: LOG_LEVEL is not set. Defaulting to "DEBUG"
+[34mfileserver_0    |[0m 2017-12-08T14:16:48897216093000+0000 Starting filesystem
+[31mfileserver_2    |[0m 2017-12-08T14:16:48827381073000+0000 Environment variable: LOG_LEVEL is not set. Defaulting to "DEBUG"
+[34mfileserver_0    |[0m 2017-12-08T14:16:48898758949000+0000 Registering with directory service at port 
+[31mfileserver_2    |[0m 2017-12-08T14:16:48828793316000+0000 Starting filesystem
+[31mfileserver_2    |[0m 2017-12-08T14:16:48830286179000+0000 Registering with directory service at port 
+[33mdatabase_0_1    |[0m 2017-12-08T14:16:49.064+0000 I JOURNAL  [initandlisten] preallocateIsFaster=true 13.06
+[32mdatabase_2_1    |[0m 2017-12-08T14:16:49.102+0000 I JOURNAL  [initandlisten] preallocateIsFaster=true 12.08
+[36mdatabase_1_1    |[0m 2017-12-08T14:16:50.195+0000 I JOURNAL  [initandlisten] preallocateIsFaster=true 12.68
+[33mdatabase_0_1    |[0m 2017-12-08T14:16:50.321+0000 I JOURNAL  [initandlisten] preallocateIsFaster=true 12.8
+[32mdatabase_2_1    |[0m 2017-12-08T14:16:50.337+0000 I JOURNAL  [initandlisten] preallocateIsFaster=true 12.78
+[36mdatabase_1_1    |[0m 2017-12-08T14:16:53.861+0000 I JOURNAL  [initandlisten] preallocateIsFaster=true 43.2
+[36mdatabase_1_1    |[0m 2017-12-08T14:16:53.862+0000 I JOURNAL  [initandlisten] preallocateIsFaster check took 6.526 secs
+[36mdatabase_1_1    |[0m 2017-12-08T14:16:53.862+0000 I JOURNAL  [initandlisten] preallocating a journal file /data/db/journal/prealloc.0
+[33mdatabase_0_1    |[0m 2017-12-08T14:16:54.022+0000 I JOURNAL  [initandlisten] preallocateIsFaster=true 44.76
+[33mdatabase_0_1    |[0m 2017-12-08T14:16:54.022+0000 I JOURNAL  [initandlisten] preallocateIsFaster check took 6.505 secs
+[33mdatabase_0_1    |[0m 2017-12-08T14:16:54.022+0000 I JOURNAL  [initandlisten] preallocating a journal file /data/db/journal/prealloc.0
+[32mdatabase_2_1    |[0m 2017-12-08T14:16:54.060+0000 I JOURNAL  [initandlisten] preallocateIsFaster=true 43.94
+[32mdatabase_2_1    |[0m 2017-12-08T14:16:54.060+0000 I JOURNAL  [initandlisten] preallocateIsFaster check took 6.538 secs
+[32mdatabase_2_1    |[0m 2017-12-08T14:16:54.060+0000 I JOURNAL  [initandlisten] preallocating a journal file /data/db/journal/prealloc.0
+[32mdatabase_2_1    |[0m 2017-12-08T14:16:57.007+0000 I -        [initandlisten]   File Preallocator Progress: 964689920/1073741824 89%
+[33mdatabase_0_1    |[0m 2017-12-08T14:16:57.023+0000 I -        [initandlisten]   File Preallocator Progress: 1059061760/1073741824 98%
+[36mdatabase_1_1    |[0m 2017-12-08T14:16:59.826+0000 I JOURNAL  [initandlisten] preallocating a journal file /data/db/journal/prealloc.1
+[33mdatabase_0_1    |[0m 2017-12-08T14:17:01.752+0000 I JOURNAL  [initandlisten] preallocating a journal file /data/db/journal/prealloc.1
+[32mdatabase_2_1    |[0m 2017-12-08T14:17:02.793+0000 I JOURNAL  [initandlisten] preallocating a journal file /data/db/journal/prealloc.1
+[36mdatabase_1_1    |[0m 2017-12-08T14:17:06.168+0000 I JOURNAL  [initandlisten] preallocating a journal file /data/db/journal/prealloc.2
+[33mdatabase_0_1    |[0m 2017-12-08T14:17:07.862+0000 I JOURNAL  [initandlisten] preallocating a journal file /data/db/journal/prealloc.2
+[32mdatabase_2_1    |[0m 2017-12-08T14:17:09.048+0000 I JOURNAL  [initandlisten] preallocating a journal file /data/db/journal/prealloc.2
+[36mdatabase_1_1    |[0m 2017-12-08T14:17:11.640+0000 I JOURNAL  [durability] Durability thread started
+[36mdatabase_1_1    |[0m 2017-12-08T14:17:11.641+0000 I JOURNAL  [journal writer] Journal writer thread started
+[36mdatabase_1_1    |[0m 2017-12-08T14:17:12.029+0000 I CONTROL  [initandlisten] MongoDB starting : pid=1 port=27017 dbpath=/data/db 64-bit host=0cd9cc9bbb15
+[36mdatabase_1_1    |[0m 2017-12-08T14:17:12.030+0000 I CONTROL  [initandlisten] 
+[36mdatabase_1_1    |[0m 2017-12-08T14:17:12.030+0000 I CONTROL  [initandlisten] ** WARNING: /sys/kernel/mm/transparent_hugepage/enabled is 'always'.
+[36mdatabase_1_1    |[0m 2017-12-08T14:17:12.030+0000 I CONTROL  [initandlisten] **        We suggest setting it to 'never'
+[36mdatabase_1_1    |[0m 2017-12-08T14:17:12.030+0000 I CONTROL  [initandlisten] 
+[36mdatabase_1_1    |[0m 2017-12-08T14:17:12.030+0000 I CONTROL  [initandlisten] db version v3.0.2
+[36mdatabase_1_1    |[0m 2017-12-08T14:17:12.030+0000 I CONTROL  [initandlisten] git version: 6201872043ecbbc0a4cc169b5482dcf385fc464f
+[36mdatabase_1_1    |[0m 2017-12-08T14:17:12.030+0000 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1e 11 Feb 2013
+[36mdatabase_1_1    |[0m 2017-12-08T14:17:12.030+0000 I CONTROL  [initandlisten] build info: Linux ip-10-171-120-232 3.2.0-4-amd64 #1 SMP Debian 3.2.46-1 x86_64 BOOST_LIB_VERSION=1_49
+[36mdatabase_1_1    |[0m 2017-12-08T14:17:12.030+0000 I CONTROL  [initandlisten] allocator: tcmalloc
+[36mdatabase_1_1    |[0m 2017-12-08T14:17:12.030+0000 I CONTROL  [initandlisten] options: {}
+[36mdatabase_1_1    |[0m 2017-12-08T14:17:12.032+0000 I INDEX    [initandlisten] allocating new ns file /data/db/local.ns, filling with zeroes...
+[33mdatabase_0_1    |[0m 2017-12-08T14:17:12.203+0000 I JOURNAL  [durability] Durability thread started
+[33mdatabase_0_1    |[0m 2017-12-08T14:17:12.204+0000 I JOURNAL  [journal writer] Journal writer thread started
+[36mdatabase_1_1    |[0m 2017-12-08T14:17:12.250+0000 I STORAGE  [FileAllocator] allocating new datafile /data/db/local.0, filling with zeroes...
+[36mdatabase_1_1    |[0m 2017-12-08T14:17:12.250+0000 I STORAGE  [FileAllocator] creating directory /data/db/_tmp
+[33mdatabase_0_1    |[0m 2017-12-08T14:17:12.438+0000 I CONTROL  [initandlisten] MongoDB starting : pid=1 port=27017 dbpath=/data/db 64-bit host=671c3a0055f5
+[33mdatabase_0_1    |[0m 2017-12-08T14:17:12.439+0000 I CONTROL  [initandlisten] 
+[33mdatabase_0_1    |[0m 2017-12-08T14:17:12.439+0000 I CONTROL  [initandlisten] ** WARNING: /sys/kernel/mm/transparent_hugepage/enabled is 'always'.
+[33mdatabase_0_1    |[0m 2017-12-08T14:17:12.439+0000 I CONTROL  [initandlisten] **        We suggest setting it to 'never'
+[33mdatabase_0_1    |[0m 2017-12-08T14:17:12.439+0000 I CONTROL  [initandlisten] 
+[33mdatabase_0_1    |[0m 2017-12-08T14:17:12.439+0000 I CONTROL  [initandlisten] db version v3.0.2
+[33mdatabase_0_1    |[0m 2017-12-08T14:17:12.439+0000 I CONTROL  [initandlisten] git version: 6201872043ecbbc0a4cc169b5482dcf385fc464f
+[33mdatabase_0_1    |[0m 2017-12-08T14:17:12.439+0000 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1e 11 Feb 2013
+[33mdatabase_0_1    |[0m 2017-12-08T14:17:12.439+0000 I CONTROL  [initandlisten] build info: Linux ip-10-171-120-232 3.2.0-4-amd64 #1 SMP Debian 3.2.46-1 x86_64 BOOST_LIB_VERSION=1_49
+[33mdatabase_0_1    |[0m 2017-12-08T14:17:12.439+0000 I CONTROL  [initandlisten] allocator: tcmalloc
+[33mdatabase_0_1    |[0m 2017-12-08T14:17:12.439+0000 I CONTROL  [initandlisten] options: {}
+[33mdatabase_0_1    |[0m 2017-12-08T14:17:12.452+0000 I INDEX    [initandlisten] allocating new ns file /data/db/local.ns, filling with zeroes...
+[36mdatabase_1_1    |[0m 2017-12-08T14:17:12.474+0000 I STORAGE  [FileAllocator] done allocating datafile /data/db/local.0, size: 64MB,  took 0.035 secs
+[36mdatabase_1_1    |[0m 2017-12-08T14:17:12.482+0000 I NETWORK  [initandlisten] waiting for connections on port 27017
+[33mdatabase_0_1    |[0m 2017-12-08T14:17:12.562+0000 I STORAGE  [FileAllocator] allocating new datafile /data/db/local.0, filling with zeroes...
+[33mdatabase_0_1    |[0m 2017-12-08T14:17:12.562+0000 I STORAGE  [FileAllocator] creating directory /data/db/_tmp
+[33mdatabase_0_1    |[0m 2017-12-08T14:17:12.634+0000 I STORAGE  [FileAllocator] done allocating datafile /data/db/local.0, size: 64MB,  took 0.04 secs
+[33mdatabase_0_1    |[0m 2017-12-08T14:17:12.642+0000 I NETWORK  [initandlisten] waiting for connections on port 27017
+[32mdatabase_2_1    |[0m 2017-12-08T14:17:12.756+0000 I JOURNAL  [durability] Durability thread started
+[32mdatabase_2_1    |[0m 2017-12-08T14:17:12.757+0000 I JOURNAL  [journal writer] Journal writer thread started
+[32mdatabase_2_1    |[0m 2017-12-08T14:17:12.772+0000 I CONTROL  [initandlisten] MongoDB starting : pid=1 port=27017 dbpath=/data/db 64-bit host=28df5ae51175
+[32mdatabase_2_1    |[0m 2017-12-08T14:17:12.773+0000 I CONTROL  [initandlisten] 
+[32mdatabase_2_1    |[0m 2017-12-08T14:17:12.773+0000 I CONTROL  [initandlisten] ** WARNING: /sys/kernel/mm/transparent_hugepage/enabled is 'always'.
+[32mdatabase_2_1    |[0m 2017-12-08T14:17:12.773+0000 I CONTROL  [initandlisten] **        We suggest setting it to 'never'
+[32mdatabase_2_1    |[0m 2017-12-08T14:17:12.773+0000 I CONTROL  [initandlisten] 
+[32mdatabase_2_1    |[0m 2017-12-08T14:17:12.773+0000 I CONTROL  [initandlisten] db version v3.0.2
+[32mdatabase_2_1    |[0m 2017-12-08T14:17:12.773+0000 I CONTROL  [initandlisten] git version: 6201872043ecbbc0a4cc169b5482dcf385fc464f
+[32mdatabase_2_1    |[0m 2017-12-08T14:17:12.773+0000 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1e 11 Feb 2013
+[32mdatabase_2_1    |[0m 2017-12-08T14:17:12.773+0000 I CONTROL  [initandlisten] build info: Linux ip-10-171-120-232 3.2.0-4-amd64 #1 SMP Debian 3.2.46-1 x86_64 BOOST_LIB_VERSION=1_49
+[32mdatabase_2_1    |[0m 2017-12-08T14:17:12.773+0000 I CONTROL  [initandlisten] allocator: tcmalloc
+[32mdatabase_2_1    |[0m 2017-12-08T14:17:12.773+0000 I CONTROL  [initandlisten] options: {}
+[32mdatabase_2_1    |[0m 2017-12-08T14:17:12.774+0000 I INDEX    [initandlisten] allocating new ns file /data/db/local.ns, filling with zeroes...
+[32mdatabase_2_1    |[0m 2017-12-08T14:17:12.843+0000 I STORAGE  [FileAllocator] allocating new datafile /data/db/local.0, filling with zeroes...
+[32mdatabase_2_1    |[0m 2017-12-08T14:17:12.843+0000 I STORAGE  [FileAllocator] creating directory /data/db/_tmp
+[32mdatabase_2_1    |[0m 2017-12-08T14:17:12.865+0000 I STORAGE  [FileAllocator] done allocating datafile /data/db/local.0, size: 64MB,  took 0.01 secs
+[32mdatabase_2_1    |[0m 2017-12-08T14:17:12.875+0000 I NETWORK  [initandlisten] waiting for connections on port 27017
+[31mfileserver_2    |[0m 2017-12-08T14:17:28987920817000+0000  register failed with error: ConnectionError {connectionError = ConnectionError {connectionError = FailedConnectionException2 "directory_server" 8082 False getAddrInfo: does not exist (Temporary failure in name resolution)}}
+[34mfileserver_0    |[0m 2017-12-08T14:17:28987938383000+0000  register failed with error: ConnectionError {connectionError = ConnectionError {connectionError = FailedConnectionException2 "directory_server" 8082 False getAddrInfo: does not exist (Temporary failure in name resolution)}}
+[31mfileserver_2    |[0m 2017-12-08T14:17:28992003992000+0000 Sending heart beat to directory.
+[35mfileserver_1    |[0m 2017-12-08T14:17:28987895865000+0000  register failed with error: ConnectionError {connectionError = ConnectionError {connectionError = FailedConnectionException2 "directory_server" 8082 False getAddrInfo: does not exist (Temporary failure in name resolution)}}
+[34mfileserver_0    |[0m 2017-12-08T14:17:28992045566000+0000 Sending heart beat to directory.
+[35mfileserver_1    |[0m 2017-12-08T14:17:28991882433000+0000 Sending heart beat to directory.
+[31mfileserver_2    |[0m 2017-12-08T14:18:29055290566000+0000 Sending heart beat to directory.
+[34mfileserver_0    |[0m 2017-12-08T14:18:29061158088000+0000 Sending heart beat to directory.
+[35mfileserver_1    |[0m 2017-12-08T14:18:29055802550000+0000 Sending heart beat to directory.
+[34mfileserver_0    |[0m 2017-12-08T14:19:29112036572000+0000 Sending heart beat to directory.
+[31mfileserver_2    |[0m 2017-12-08T14:19:29112036584000+0000 Sending heart beat to directory.
+[35mfileserver_1    |[0m 2017-12-08T14:19:29112067345000+0000 Sending heart beat to directory.
+[35mfileserver_1    |[0m 2017-12-08T14:20:24164956217000+0000 Sending heart beat to directory.
+[34mfileserver_0    |[0m 2017-12-08T14:20:24185186815000+0000 Sending heart beat to directory.
+[31mfileserver_2    |[0m 2017-12-08T14:20:29155173181000+0000 Sending heart beat to directory.
+[35mfileserver_1    |[0m 2017-12-08T14:21:24214777909000+0000 Sending heart beat to directory.
+[34mfileserver_0    |[0m 2017-12-08T14:21:24224787459000+0000 Sending heart beat to directory.
+[31mfileserver_2    |[0m 2017-12-08T14:21:29211490309000+0000 Sending heart beat to directory.
+[34mfileserver_0    |[0m 2017-12-08T14:22:24257225340000+0000 Sending heart beat to directory.
+[35mfileserver_1    |[0m 2017-12-08T14:22:24269210072000+0000 Sending heart beat to directory.
+[31mfileserver_2    |[0m 2017-12-08T14:22:29274918409000+0000 Sending heart beat to directory.
+[35mfileserver_1    |[0m 2017-12-08T14:23:24303763639000+0000 Sending heart beat to directory.
+[34mfileserver_0    |[0m 2017-12-08T14:23:24321842655000+0000 Sending heart beat to directory.
+[31mfileserver_2    |[0m 2017-12-08T14:23:29324776811000+0000 Sending heart beat to directory.
+[35mfileserver_1    |[0m 2017-12-08T14:24:24358462368000+0000 Sending heart beat to directory.
+[34mfileserver_0    |[0m 2017-12-08T14:24:24365020646000+0000 Sending heart beat to directory.
+[31mfileserver_2    |[0m 2017-12-08T14:24:29373626697000+0000 Sending heart beat to directory.
+[31mfileserver_2 exited with code 143
+[0m[34mfileserver_0 exited with code 143
+[0m[35mfileserver_1 exited with code 143
+[0m[36;1mfileserver_2    |[0m 2017-12-08T14:24:58285394733000+0000 Environment variable: LOG_LEVEL is not set. Defaulting to "DEBUG"
+[36;1mfileserver_2    |[0m 2017-12-08T14:24:58285768567000+0000 Starting filesystem
+[36;1mfileserver_2    |[0m 2017-12-08T14:24:58286404907000+0000 Registering with directory service at port 
+[36;1mfileserver_2    |[0m 2017-12-08T14:24:58352138483000+0000 Sucessfully registered with directory service
+[36;1mfileserver_2    |[0m 2017-12-08T14:24:58353861127000+0000 Sending heart beat to directory.
+[33;1mfileserver_1    |[0m 2017-12-08T14:24:58382591101000+0000 Environment variable: LOG_LEVEL is not set. Defaulting to "DEBUG"
+[33;1mfileserver_1    |[0m 2017-12-08T14:24:58383136791000+0000 Starting filesystem
+[33;1mfileserver_1    |[0m 2017-12-08T14:24:58383828814000+0000 Registering with directory service at port 
+[32;1mfileserver_0    |[0m 2017-12-08T14:24:58400965647000+0000 Environment variable: LOG_LEVEL is not set. Defaulting to "DEBUG"
+[32;1mfileserver_0    |[0m 2017-12-08T14:24:58401611200000+0000 Starting filesystem
+[32;1mfileserver_0    |[0m 2017-12-08T14:24:58402714745000+0000 Registering with directory service at port 
+[33;1mfileserver_1    |[0m 2017-12-08T14:24:58425104362000+0000 Sucessfully registered with directory service
+[33;1mfileserver_1    |[0m 2017-12-08T14:24:58425502663000+0000 Sending heart beat to directory.
+[32;1mfileserver_0    |[0m 2017-12-08T14:24:58449381549000+0000 Sucessfully registered with directory service
+[32;1mfileserver_0    |[0m 2017-12-08T14:24:58449663478000+0000 Sending heart beat to directory.
+[36;1mfileserver_2    |[0m 2017-12-08T14:25:53409462329000+0000 Sending heart beat to directory.
+[33;1mfileserver_1    |[0m 2017-12-08T14:25:53517188064000+0000 Sending heart beat to directory.
+[32;1mfileserver_0    |[0m 2017-12-08T14:25:58483979266000+0000 Sending heart beat to directory.
+[36;1mfileserver_2    |[0m 2017-12-08T14:26:53461602215000+0000 Sending heart beat to directory.
+[33;1mfileserver_1    |[0m 2017-12-08T14:26:53554315350000+0000 Sending heart beat to directory.
+[32;1mfileserver_0    |[0m 2017-12-08T14:26:58537168966000+0000 Sending heart beat to directory.
+[36;1mfileserver_2    |[0m 2017-12-08T14:27:53512025801000+0000 Sending heart beat to directory.
+[32;1mfileserver_0    |[0m 2017-12-08T14:27:53581203546000+0000 Sending heart beat to directory.
+[33;1mfileserver_1    |[0m 2017-12-08T14:27:53601411084000+0000 Sending heart beat to directory.
+[36;1mfileserver_2    |[0m 2017-12-08T14:28:53565199579000+0000 Sending heart beat to directory.
+[32;1mfileserver_0    |[0m 2017-12-08T14:28:53635518167000+0000 Sending heart beat to directory.
+[33;1mfileserver_1    |[0m 2017-12-08T14:28:53654932011000+0000 Sending heart beat to directory.
+[36;1mfileserver_2    |[0m 2017-12-08T14:29:48631904756000+0000 Sending heart beat to directory.
+[32;1mfileserver_0    |[0m 2017-12-08T14:29:53679877676000+0000 Sending heart beat to directory.
+[33;1mfileserver_1    |[0m 2017-12-08T14:29:53700150404000+0000 Sending heart beat to directory.
+[36;1mfileserver_2    |[0m 2017-12-08T14:30:48679357875000+0000 Sending heart beat to directory.
+[32;1mfileserver_0    |[0m 2017-12-08T14:30:53724337611000+0000 Sending heart beat to directory.
+[33;1mfileserver_1    |[0m 2017-12-08T14:30:53744578699000+0000 Sending heart beat to directory.
+[36;1mfileserver_2    |[0m 2017-12-08T14:31:48743628041000+0000 Sending heart beat to directory.
+[32;1mfileserver_0    |[0m 2017-12-08T14:31:53773335375000+0000 Sending heart beat to directory.
+[33;1mfileserver_1    |[0m 2017-12-08T14:31:53797211042000+0000 Sending heart beat to directory.
+[36;1mfileserver_2    |[0m 2017-12-08T14:32:43796400190000+0000 Sending heart beat to directory.
+[32;1mfileserver_0    |[0m 2017-12-08T14:32:53813138413000+0000 Sending heart beat to directory.
+[33;1mfileserver_1    |[0m 2017-12-08T14:32:53831145670000+0000 Sending heart beat to directory.
+[36;1mfileserver_2    |[0m 2017-12-08T14:33:43848687852000+0000 Sending heart beat to directory.
+[32;1mfileserver_0    |[0m 2017-12-08T14:33:53850218104000+0000 Sending heart beat to directory.
+[33;1mfileserver_1    |[0m 2017-12-08T14:33:53870319698000+0000 Sending heart beat to directory.
+[36;1mfileserver_2    |[0m 2017-12-08T14:34:38917917613000+0000 Sending heart beat to directory.
+[32;1mfileserver_0    |[0m 2017-12-08T14:34:48898650266000+0000 Sending heart beat to directory.
+[33;1mfileserver_1    |[0m 2017-12-08T14:34:53923488904000+0000 Sending heart beat to directory.
+[32;1mfileserver_0 exited with code 143
+[0m[33;1mfileserver_1 exited with code 143
+[0m[36;1mfileserver_2 exited with code 143
+[0m[35;1mfileserver_1    |[0m 2017-12-08T14:35:18445260597000+0000 Environment variable: LOG_LEVEL is not set. Defaulting to "DEBUG"
+[35;1mfileserver_1    |[0m 2017-12-08T14:35:18446787316000+0000 Starting filesystem
+[35;1mfileserver_1    |[0m 2017-12-08T14:35:18450866205000+0000 Registering with directory service at port 
+[31;1mfileserver_0    |[0m 2017-12-08T14:35:18455704950000+0000 Environment variable: LOG_LEVEL is not set. Defaulting to "DEBUG"
+[31;1mfileserver_0    |[0m 2017-12-08T14:35:18456887093000+0000 Starting filesystem
+[31;1mfileserver_0    |[0m 2017-12-08T14:35:18458665697000+0000 Registering with directory service at port 
+[35;1mfileserver_1    |[0m 2017-12-08T14:35:18543079802000+0000 Sucessfully registered with directory service
+[35;1mfileserver_1    |[0m 2017-12-08T14:35:18543381337000+0000 Sending heart beat to directory.
+[31;1mfileserver_0    |[0m 2017-12-08T14:35:18549547452000+0000 Sucessfully registered with directory service
+[31;1mfileserver_0    |[0m 2017-12-08T14:35:18550164591000+0000 Sending heart beat to directory.
+[34;1mfileserver_2    |[0m 2017-12-08T14:35:18656118952000+0000 Environment variable: LOG_LEVEL is not set. Defaulting to "DEBUG"
+[34;1mfileserver_2    |[0m 2017-12-08T14:35:18657019111000+0000 Starting filesystem
+[34;1mfileserver_2    |[0m 2017-12-08T14:35:18661834517000+0000 Registering with directory service at port 
+[34;1mfileserver_2    |[0m 2017-12-08T14:35:18686329851000+0000 Sucessfully registered with directory service
+[34;1mfileserver_2    |[0m 2017-12-08T14:35:18687382277000+0000 Sending heart beat to directory.
+[31;1mfileserver_0    |[0m 2017-12-08T14:36:18608389340000+0000 Sending heart beat to directory.
+[35;1mfileserver_1    |[0m 2017-12-08T14:36:18608389708000+0000 Sending heart beat to directory.
+[34;1mfileserver_2    |[0m 2017-12-08T14:36:18744753327000+0000 Sending heart beat to directory.
+[35;1mfileserver_1    |[0m 2017-12-08T14:37:13671981816000+0000 Sending heart beat to directory.
+[31;1mfileserver_0    |[0m 2017-12-08T14:37:18660688965000+0000 Sending heart beat to directory.
+[34;1mfileserver_2    |[0m 2017-12-08T14:37:18802291017000+0000 Sending heart beat to directory.
+[35;1mfileserver_1    |[0m 2017-12-08T14:38:13709124842000+0000 Sending heart beat to directory.
+[31;1mfileserver_0    |[0m 2017-12-08T14:38:18699004430000+0000 Sending heart beat to directory.
+[34;1mfileserver_2    |[0m 2017-12-08T14:38:18864354556000+0000 Sending heart beat to directory.
+[35;1mfileserver_1    |[0m 2017-12-08T14:39:13746518929000+0000 Sending heart beat to directory.
+[31;1mfileserver_0    |[0m 2017-12-08T14:39:13751351864000+0000 Sending heart beat to directory.
+[34;1mfileserver_2    |[0m 2017-12-08T14:39:18919983398000+0000 Sending heart beat to directory.
+[31;1mfileserver_0    |[0m 2017-12-08T14:40:13788569313000+0000 Sending heart beat to directory.
+[35;1mfileserver_1    |[0m 2017-12-08T14:40:13788576130000+0000 Sending heart beat to directory.
+[34;1mfileserver_2    |[0m 2017-12-08T14:40:18975681898000+0000 Sending heart beat to directory.
+[31;1mfileserver_0    |[0m 2017-12-08T14:41:13827093023000+0000 Sending heart beat to directory.
+[35;1mfileserver_1    |[0m 2017-12-08T14:41:13837221122000+0000 Sending heart beat to directory.
+[34;1mfileserver_2    |[0m 2017-12-08T14:41:19032791432000+0000 Sending heart beat to directory.
+[31;1mfileserver_0    |[0m 2017-12-08T14:42:13850999688000+0000 Sending heart beat to directory.
+[35;1mfileserver_1    |[0m 2017-12-08T14:42:13881227455000+0000 Sending heart beat to directory.
+[34;1mfileserver_2    |[0m 2017-12-08T14:42:19073855493000+0000 Sending heart beat to directory.
+[31;1mfileserver_0    |[0m 2017-12-08T14:43:13906126245000+0000 Sending heart beat to directory.
+[35;1mfileserver_1    |[0m 2017-12-08T14:43:13936514007000+0000 Sending heart beat to directory.
+[34;1mfileserver_2    |[0m 2017-12-08T14:43:14134254083000+0000 Sending heart beat to directory.
+[31;1mfileserver_0    |[0m 2017-12-08T14:44:13960277362000+0000 Sending heart beat to directory.
+[35;1mfileserver_1    |[0m 2017-12-08T14:44:13989233764000+0000 Sending heart beat to directory.
+[34;1mfileserver_2    |[0m 2017-12-08T14:44:14193327600000+0000 Sending heart beat to directory.
+[34;1mfileserver_2    |[0m 2017-12-08T14:45:09242072808000+0000 Sending heart beat to directory.
+[31;1mfileserver_0    |[0m 2017-12-08T14:45:14020291931000+0000 Sending heart beat to directory.
+[35;1mfileserver_1    |[0m 2017-12-08T14:45:14046707487000+0000 Sending heart beat to directory.
+[31;1mfileserver_0    |[0m 2017-12-08T14:46:09059594155000+0000 Sending heart beat to directory.
+[34;1mfileserver_2    |[0m 2017-12-08T14:46:09281342836000+0000 Sending heart beat to directory.
+[35;1mfileserver_1    |[0m 2017-12-08T14:46:14096626350000+0000 Sending heart beat to directory.
+[31;1mfileserver_0    |[0m 2017-12-08T14:47:04130838409000+0000 Sending heart beat to directory.
+[34;1mfileserver_2    |[0m 2017-12-08T14:47:04329783147000+0000 Sending heart beat to directory.
+[35;1mfileserver_1    |[0m 2017-12-08T14:47:14133346156000+0000 Sending heart beat to directory.
+[31;1mfileserver_0    |[0m 2017-12-08T14:47:59197347295000+0000 Sending heart beat to directory.
+[34;1mfileserver_2    |[0m 2017-12-08T14:48:04374237782000+0000 Sending heart beat to directory.
+[35;1mfileserver_1    |[0m 2017-12-08T14:48:14172967016000+0000 Sending heart beat to directory.
+[31;1mfileserver_0    |[0m 2017-12-08T14:48:59260239345000+0000 Sending heart beat to directory.
+[34;1mfileserver_2    |[0m 2017-12-08T14:49:04438647199000+0000 Sending heart beat to directory.
+[35;1mfileserver_1    |[0m 2017-12-08T14:49:14229501768000+0000 Sending heart beat to directory.
+[35;1mfileserver_1    |[0m 2017-12-08T14:49:28354251118000+0000  Storing file  0.
+[31;1mfileserver_0    |[0m 2017-12-08T14:49:28372794087000+0000  Storing file  0.
+[31;1mfileserver_0    |[0m 2017-12-08T14:49:28373088588000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[33mdatabase_0_1    |[0m 2017-12-08T14:49:28.373+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.12:50366 #1 (1 connection now open)
+[33mdatabase_0_1    |[0m 2017-12-08T14:49:28.374+0000 I INDEX    [conn1] allocating new ns file /data/db/USEHASKELLDB.ns, filling with zeroes...
+[33mdatabase_0_1    |[0m 2017-12-08T14:49:28.404+0000 I STORAGE  [FileAllocator] allocating new datafile /data/db/USEHASKELLDB.0, filling with zeroes...
+[33mdatabase_0_1    |[0m 2017-12-08T14:49:28.409+0000 I STORAGE  [FileAllocator] done allocating datafile /data/db/USEHASKELLDB.0, size: 64MB,  took 0.003 secs
+[33mdatabase_0_1    |[0m 2017-12-08T14:49:28.415+0000 I NETWORK  [conn1] end connection 172.17.0.12:50366 (0 connections now open)
+[31;1mfileserver_0    |[0m 172.17.0.1 - - [08/Dec/2017:14:49:28 +0000] "POST /broadcastedUpload HTTP/1.1" 200 - "" ""
+[35;1mfileserver_1    |[0m 2017-12-08T14:49:28415694869000+0000 Sucessfully sent
+[35;1mfileserver_1    |[0m 2017-12-08T14:49:28416627334000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1_1    |[0m 2017-12-08T14:49:28.419+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.13:52152 #1 (1 connection now open)
+[36mdatabase_1_1    |[0m 2017-12-08T14:49:28.420+0000 I INDEX    [conn1] allocating new ns file /data/db/USEHASKELLDB.ns, filling with zeroes...
+[36mdatabase_1_1    |[0m 2017-12-08T14:49:28.462+0000 I STORAGE  [FileAllocator] allocating new datafile /data/db/USEHASKELLDB.0, filling with zeroes...
+[36mdatabase_1_1    |[0m 2017-12-08T14:49:28.466+0000 I STORAGE  [FileAllocator] done allocating datafile /data/db/USEHASKELLDB.0, size: 64MB,  took 0.003 secs
+[36mdatabase_1_1    |[0m 2017-12-08T14:49:28.472+0000 I NETWORK  [conn1] end connection 172.17.0.13:52152 (0 connections now open)
+[35;1mfileserver_1    |[0m 172.17.0.1 - - [08/Dec/2017:14:49:28 +0000] "POST /upload HTTP/1.1" 200 - "" ""
+[31;1mfileserver_0    |[0m 2017-12-08T14:49:43763887641000+0000 Searching the file0.
+[31;1mfileserver_0    |[0m 2017-12-08T14:49:43764432392000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[33mdatabase_0_1    |[0m 2017-12-08T14:49:43.765+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.12:50416 #2 (1 connection now open)
+[33mdatabase_0_1    |[0m 2017-12-08T14:49:43.765+0000 I NETWORK  [conn2] end connection 172.17.0.12:50416 (0 connections now open)
+[31;1mfileserver_0    |[0m 172.17.0.1 - - [08/Dec/2017:14:49:43 +0000] "GET /getFile HTTP/1.1" 200 - "" ""
+[31;1mfileserver_0    |[0m 2017-12-08T14:49:59298191521000+0000 Sending heart beat to directory.
+[34;1mfileserver_2    |[0m 2017-12-08T14:50:04476350995000+0000 Sending heart beat to directory.
+[35;1mfileserver_1    |[0m 2017-12-08T14:50:14284877578000+0000 Sending heart beat to directory.
+[31;1mfileserver_0    |[0m 2017-12-08T14:50:59333172793000+0000 Sending heart beat to directory.
+[34;1mfileserver_2    |[0m 2017-12-08T14:51:04537991000000+0000 Sending heart beat to directory.
+[35;1mfileserver_1    |[0m 2017-12-08T14:51:14331919939000+0000 Sending heart beat to directory.
+[31;1mfileserver_0    |[0m 2017-12-08T14:51:59382539106000+0000 Sending heart beat to directory.
+[34;1mfileserver_2    |[0m 2017-12-08T14:52:04593986461000+0000 Sending heart beat to directory.
+[35;1mfileserver_1    |[0m 2017-12-08T14:52:14381629373000+0000 Sending heart beat to directory.

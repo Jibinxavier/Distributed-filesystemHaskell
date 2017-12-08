@@ -41,10 +41,15 @@ import           EncryptionAPI
 -- | to embed git and cabal details for this build into the executable (just for the fun of it)
 -- The code inside $( ) gets run at compile time. The functions run extract data from project files, both .git files and
 -- the .cabal file.
-mydoCall2 act f port= reportExceptionOr (act) (SC.runClientM f =<< envFileApi port) 
+myrestfullCall2 act f port= reportExceptionOr (act) (SC.runClientM f =<< envFileApi port localhost) 
 -- | a simple handler class to print the response. We can pass this as the first parameter of calls to
 -- reportOrException. It will call the appropriate version depending on the type of the returned results.
-doCall f h p seshkey= reportExceptionOr (putStrLn . resp seshkey) (SC.runClientM f =<< env h p)
+
+{-
+  Takes in function host port and a session key. This executes the restfull call and uses session 
+  key to decrypt resutl
+-}
+restfullCall f h p seshkey= reportExceptionOr (putStrLn . resp seshkey) (SC.runClientM f =<< env h p)
 
 
 --- to format File server information
@@ -114,7 +119,7 @@ getFileFromFS fileinfo@[FInfoTransfer filepath dirname fileid _ portadr servTm1 
     (Just (ticket,seshkey) ) -> do 
       let encFid= myEncryptAES (aesPad seshkey) (fileid) 
 
-      res <- mydoCall (getFile $ Message encFid ticket ) ((read portadr):: Int)
+      res <- myrestfullCall (getFile $ Message encFid ticket ) ((read portadr):: Int) localhost
       
       case res of
         Left err -> do
@@ -281,7 +286,7 @@ updateLocalMeta filepath fileinfo = do
 isFileLocked :: String -> IO Bool
 isFileLocked filepath  = liftIO $ do
   port <- lockPortStr
-  res <- mydoCall (islocked $ Just filepath) ((read port):: Int)
+  res <- myrestfullCall (islocked $ Just filepath) ((read port):: Int) localhost
   case res of
     Left err -> do
       putStrLn $ " call to lock server  failed with error: " ++ show err
@@ -321,20 +326,20 @@ getAuthClientInfo cname =  do
       case status of
         True -> return $ Just (ticket,  seskey)
         False -> return $ Nothing
-docallMsg3WithEnc restCall str1 str2 usern ip port= do
+restfullCallMsg3WithEnc restCall str1 str2 usern ip port= do
   authInfo <- getAuthClientInfo usern
   case authInfo of 
     (Just (ticket,seshkey) ) -> do 
       let msg =encryptMesg str1 str2 seshkey ticket
-      doCall  (restCall $ msg) ip port seshkey
+      restfullCall  (restCall $ msg) ip port seshkey
     (Nothing) -> putStrLn $ "Expired token . Sigin in again.  " 
 
-docallMsg1WithEnc restCall str1 usern ip port= do
+restfullCallMsg1WithEnc restCall str1 usern ip port= do
   authInfo <- getAuthClientInfo usern
   case authInfo of 
     (Just (ticket,seshkey) ) -> do 
       let msg =encryptMesg1 str1  seshkey ticket
-      doCall  (restCall $ msg) ip port seshkey
+      restfullCall  (restCall $ msg) ip port seshkey
     (Nothing) -> putStrLn $ "Expired token . Sigin in again.  " 
 
 mydoCalMsg3WithEnc restCall str1 str2 usern port decryptFunc= do
@@ -342,7 +347,7 @@ mydoCalMsg3WithEnc restCall str1 str2 usern port decryptFunc= do
   case authInfo of 
     (Just (ticket,seshkey) ) -> liftIO $ do 
       let msg =encryptMesg str1 str2 seshkey ticket
-      res <- mydoCall  (restCall $ msg)  port 
+      res <- myrestfullCall  (restCall $ msg)  port localhost
       case res of
         Left err -> do
           putStrLn $ " call failed with error: " ++ show err
@@ -359,7 +364,7 @@ mydoCalMsg4WithEnc restCall str1 str2  str3 usern port decryptFunc= do
     (Just (ticket,seshkey) ) -> liftIO $ do 
     
       let msg = encryptMesg3 str1 str2 str3 seshkey ticket
-      res <- mydoCall  (restCall $ msg)  port 
+      res <- myrestfullCall  (restCall $ msg)  port localhost
       case res of
         Left err -> do
           putStrLn $ " call failed with error: " ++ show err
@@ -373,7 +378,7 @@ mydoCalMsg1WithEnc restCall   usern port= do
   case authInfo of 
     (Just (ticket,seshkey) ) -> liftIO $ do 
      
-      res <- mydoCall  (restCall $ Message1 ticket)  port 
+      res <- myrestfullCall  (restCall $ Message1 ticket)  port localhost
       case res of
         Left err -> do
           putStrLn $ " call failed with error: " ++ show err
@@ -382,3 +387,12 @@ mydoCalMsg1WithEnc restCall   usern port= do
     (Nothing) -> do 
       putStrLn $ "Expired token . Sigin in again.  "
       return Nothing
+-- withMongoDbConnectionForClient :: Action IO a -> IO a
+-- withMongoDbConnectionForClient act  = do 
+--   let port =27017
+--   let database ="USEHASKELLDB"   
+--   pipe <- connect (host "127.0.0.1")
+--   ret <- runResourceT $ liftIO $ access pipe master (pack database) act
+--   close pipe
+--   return ret
+      

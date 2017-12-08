@@ -73,7 +73,7 @@ defaultHost = do
 
  getHost <- hGetContents hout
  return $ filter (/= '\n') getHost
-
+localhost = "127.0.0.1"
 systemHost="172.17.0.1"
 dirServPort= defEnv "DIRSERV_PORT" id "8082" True
 dirPort= Just dirServPort
@@ -92,12 +92,12 @@ authPortStr = defEnv "AUTHSERV_PORT" id "8081" True
 authPort= Just authPortStr
 authIP = Just systemHost
 --- they will be communicating on the same ip but different ports
-mydoCall f port= (SC.runClientM f =<< envFileApi port) 
+myrestfullCall f port host= (SC.runClientM f =<< envFileApi port host) 
 
-envFileApi :: Int -> IO SC.ClientEnv
-envFileApi  port=do
+envFileApi :: Int -> String -> IO SC.ClientEnv
+envFileApi  port host=do
      manager <- newManager defaultManagerSettings
-     return (SC.ClientEnv manager (SC.BaseUrl SC.Http systemHost port ""))
+     return (SC.ClientEnv manager (SC.BaseUrl SC.Http host port ""))
  
  
 ------------------------communication between services------------------

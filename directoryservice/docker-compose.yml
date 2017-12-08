@@ -1,0 +1,26 @@
+
+directoryservice:
+  image: directoryservice
+    
+  environment:
+    # The start of active environment variables. Set as needed.
+    - MONGODB_IP=database
+    # - MONGODB_PORT=27222 
+    # - MONGODB_DATABASE=USE_HASKELL_DB
+    - LOG_LEVEL=DEBUG
+    # - https_proxy=http://www-proxy.scss.tcd.ie:8080
+    # - http_proxy=http://www-proxy.scss.tcd.ie:8080
+  command:  /usr/local/bin/directoryservice-exe
+  env_file: ../all_env.env
+  ports:
+    -  "${DIRSERV_PORT}:${DIRSERV_PORT}"
+  links:
+    - database
+  container_name: directory_server
+   
+database:
+  image: mongo:3.0.2
+ 
+  ports:
+    - "27222:27017"
+ 

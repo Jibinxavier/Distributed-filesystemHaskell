@@ -140,7 +140,7 @@ server = lock
                        
                          ---- inform the client that the lock is available
                         FSA.warnLog $ "Assigning lock to client on port "++ clientport
-                        FSA.mydoCall (lockAvailable  (LockTransfer file True)) ((read clientport)::Int)
+                        FSA.myrestfullCall (lockAvailable  (LockTransfer file True)) ((read clientport)::Int) FSA.localhost
                         FSA.withMongoDbConnection $ upsert (select ["filename" =: file] "LockService_RECORD") $ toBSON (Lock file True nextuser updatedQueue)
                     return True  
                 (False)-> return False

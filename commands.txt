@@ -1,0 +1,18 @@
+# For testing the system
+######################################
+# login + write
+signup hello world
+login hello world
+# reading non existent file
+readfile f_1/testfile hello
+# wrrting to a file ile
+write f_1/testfile hello hi
+
+lockfile f_1/testfile hello
+unlockfile f_1/testfile hello
+
+authserver 27000 
+client 27014 27017
+dirserver 27222
+filserver 27090 27091 27092
+lockserver 27890
