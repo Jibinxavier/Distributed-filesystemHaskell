@@ -21,8 +21,8 @@ else
     python create_fileservers.py $1
 fi
 
-# transactionservice 
-services=( auth-server lockService  directoryservice fileserver)
+#  
+services=( auth-server lockService  directoryservice fileserver transactionservice)
 echo "Starting services"
 # creating containers and starting them
 for serv in ${services[@]}
@@ -38,4 +38,4 @@ do
 done
 
 cd client
-nohup docker-compose up &
+nohup docker-compose up client_database1 client_database2 & 

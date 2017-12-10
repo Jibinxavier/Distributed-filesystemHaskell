@@ -68,7 +68,7 @@ type API1 =  "login"                      :> ReqBody '[JSON] UserInfo  :> Post '
 startApp :: IO ()    -- set up wai logger for service to output apache style logging for rest calls
 startApp = FSA.withLogging $ \ aplogger -> do
 
-  FSA.warnLog "Starting filesystem"
+  FSA.warnLog "Starting authserver"
   port <- FSA.authPortStr
   let settings = setPort ((read $ port):: Int) $ setLogger aplogger defaultSettings
   runSettings settings app

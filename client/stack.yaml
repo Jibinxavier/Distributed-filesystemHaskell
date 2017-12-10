@@ -23,7 +23,7 @@ docker:
 image:
   container:
     name: client 
-    base: fpco/stack-run
+    base: distr-filesystem-base
     
 # User packages to be built.
 # Various formats can be used as shown in the example below.

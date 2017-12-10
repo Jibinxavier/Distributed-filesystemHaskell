@@ -1,7 +1,17 @@
 # Distributed-filesystem
+##### Usage
+Current configuration has two clients. The start.sh accepts parameter that will determine number fileserver.
+``` bash
+./start.sh # start all the services with 1 primary fileserver and 2 secondary
+docker-compose run client1 # start client 1
+docker-compose run client2 # start client 2
+```
+
 ##### Client Service
 Act as a proxy between user interface and filesystem. Client will allow users to read file content and write to it. The write encapsulates both opening the file and writing to it. As a result at no point the client will keep the file open.
-
+```docker
+ docker run -it -e MONGODB_IP=client_database1 -e MONGODB_DATABASE=USEHASKELLDB client  /usr/local/bin/client-exe 8400
+ ```
 ##### Security Service
 1. Client asks for the public key, (ideally the client would already know). It uses this key to encrypt its first interactions with authentication server.
 2. A user signs up with a user_name and password

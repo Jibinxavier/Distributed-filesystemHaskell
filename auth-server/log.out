@@ -1,12 +1,9 @@
-Creating authserver_database_1 ... 
-Creating authserver_database_1
-[1A[2KCreating authserver_database_1 ... [32mdone[0m[1BCreating authserver ... 
-Creating authserver
-[1A[2KCreating authserver ... [32mdone[0m[1BAttaching to authserver_database_1, authserver
+authserver_database_1 is up-to-date
+authserver is up-to-date
+Attaching to authserver_database_1, authserver
 [36mdatabase_1    |[0m 2017-12-08T16:45:39.254+0000 I JOURNAL  [initandlisten] journal dir=/data/db/journal
 [36mdatabase_1    |[0m 2017-12-08T16:45:39.254+0000 I JOURNAL  [initandlisten] recover : no journal files present, no recovery needed
 [36mdatabase_1    |[0m 2017-12-08T16:45:39.575+0000 I JOURNAL  [initandlisten] preallocateIsFaster=true 3.6
-[33mauthserver    |[0m 2017-12-08T16:45:39791984330000+0000 Starting filesystem
 [36mdatabase_1    |[0m 2017-12-08T16:45:39.880+0000 I JOURNAL  [initandlisten] preallocateIsFaster=true 2.66
 [36mdatabase_1    |[0m 2017-12-08T16:45:41.148+0000 I JOURNAL  [initandlisten] preallocateIsFaster=true 2.02
 [36mdatabase_1    |[0m 2017-12-08T16:45:41.148+0000 I JOURNAL  [initandlisten] preallocating a journal file /data/db/journal/prealloc.0
@@ -20,6 +17,7 @@ Creating authserver
 [36mdatabase_1    |[0m 2017-12-08T16:45:44.027+0000 I CONTROL  [initandlisten] **        We suggest setting it to 'never'
 [36mdatabase_1    |[0m 2017-12-08T16:45:44.027+0000 I CONTROL  [initandlisten] 
 [36mdatabase_1    |[0m 2017-12-08T16:45:44.027+0000 I CONTROL  [initandlisten] db version v3.0.2
+[33mauthserver    |[0m 2017-12-08T20:55:24705895446000+0000 Starting authserver
 [36mdatabase_1    |[0m 2017-12-08T16:45:44.027+0000 I CONTROL  [initandlisten] git version: 6201872043ecbbc0a4cc169b5482dcf385fc464f
 [36mdatabase_1    |[0m 2017-12-08T16:45:44.027+0000 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1e 11 Feb 2013
 [36mdatabase_1    |[0m 2017-12-08T16:45:44.027+0000 I CONTROL  [initandlisten] build info: Linux ip-10-171-120-232 3.2.0-4-amd64 #1 SMP Debian 3.2.46-1 x86_64 BOOST_LIB_VERSION=1_49
@@ -30,51 +28,31 @@ Creating authserver
 [36mdatabase_1    |[0m 2017-12-08T16:45:44.074+0000 I STORAGE  [FileAllocator] creating directory /data/db/_tmp
 [36mdatabase_1    |[0m 2017-12-08T16:45:44.088+0000 I STORAGE  [FileAllocator] done allocating datafile /data/db/local.0, size: 64MB,  took 0.007 secs
 [36mdatabase_1    |[0m 2017-12-08T16:45:44.095+0000 I NETWORK  [initandlisten] waiting for connections on port 27017
-[33mauthserver    |[0m 2017-12-08T16:46:42109339546000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
 [36mdatabase_1    |[0m 2017-12-08T16:46:42.116+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.3:58790 #1 (1 connection now open)
-[33mauthserver    |[0m 2017-12-08T16:46:42123657033000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
 [36mdatabase_1    |[0m 2017-12-08T16:46:42.125+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.3:58792 #2 (2 connections now open)
 [36mdatabase_1    |[0m 2017-12-08T16:46:42.248+0000 I INDEX    [conn2] allocating new ns file /data/db/USEHASKELLDB.ns, filling with zeroes...
 [36mdatabase_1    |[0m 2017-12-08T16:46:42.313+0000 I STORAGE  [FileAllocator] allocating new datafile /data/db/USEHASKELLDB.0, filling with zeroes...
 [36mdatabase_1    |[0m 2017-12-08T16:46:42.322+0000 I STORAGE  [FileAllocator] done allocating datafile /data/db/USEHASKELLDB.0, size: 64MB,  took 0.007 secs
 [36mdatabase_1    |[0m 2017-12-08T16:46:42.331+0000 I NETWORK  [conn2] end connection 172.17.0.3:58792 (1 connection now open)
 [36mdatabase_1    |[0m 2017-12-08T16:46:42.332+0000 I NETWORK  [conn1] end connection 172.17.0.3:58790 (0 connections now open)
-[33mauthserver    |[0m 172.17.0.1 - - [08/Dec/2017:16:46:42 +0000] "GET /loadPublicKey HTTP/1.1" 200 - "" ""
-[33mauthserver    |[0m 2017-12-08T16:46:42345722628000+0000 Searching for user  for key: hello
-[33mauthserver    |[0m 2017-12-08T16:46:42346950935000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
 [36mdatabase_1    |[0m 2017-12-08T16:46:42.348+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.3:58798 #3 (1 connection now open)
 [36mdatabase_1    |[0m 2017-12-08T16:46:42.350+0000 I NETWORK  [conn3] end connection 172.17.0.3:58798 (0 connections now open)
 [36mdatabase_1    |[0m 2017-12-08T16:46:42.351+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.3:58800 #4 (1 connection now open)
-[33mauthserver    |[0m 2017-12-08T16:46:42350024617000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
 [36mdatabase_1    |[0m 2017-12-08T16:46:42.352+0000 I NETWORK  [conn4] end connection 172.17.0.3:58800 (0 connections now open)
-[33mauthserver    |[0m 172.17.0.1 - - [08/Dec/2017:16:46:42 +0000] "POST /login HTTP/1.1" 200 - "" ""
-[33mauthserver    |[0m 2017-12-08T16:46:47420835754000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
 [36mdatabase_1    |[0m 2017-12-08T16:46:47.422+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.3:58822 #5 (1 connection now open)
 [36mdatabase_1    |[0m 2017-12-08T16:46:47.423+0000 I NETWORK  [conn5] end connection 172.17.0.3:58822 (0 connections now open)
-[33mauthserver    |[0m 172.17.0.1 - - [08/Dec/2017:16:46:47 +0000] "GET /loadPublicKey HTTP/1.1" 200 - "" ""
-[33mauthserver    |[0m 2017-12-08T16:46:47437855538000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
 [36mdatabase_1    |[0m 2017-12-08T16:46:47.439+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.3:58826 #6 (1 connection now open)
 [36mdatabase_1    |[0m 2017-12-08T16:46:47.440+0000 I NETWORK  [conn6] end connection 172.17.0.3:58826 (0 connections now open)
-[33mauthserver    |[0m 2017-12-08T16:46:47440726864000+0000 Storing UserInfo under key hello.
-[33mauthserver    |[0m 2017-12-08T16:46:47441732033000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
 [36mdatabase_1    |[0m 2017-12-08T16:46:47.443+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.3:58828 #7 (1 connection now open)
-[33mauthserver    |[0m 2017-12-08T16:46:47444853007000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
 [36mdatabase_1    |[0m 2017-12-08T16:46:47.446+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.3:58830 #8 (2 connections now open)
 [36mdatabase_1    |[0m 2017-12-08T16:46:48.309+0000 I NETWORK  [conn8] end connection 172.17.0.3:58830 (1 connection now open)
 [36mdatabase_1    |[0m 2017-12-08T16:46:48.309+0000 I NETWORK  [conn7] end connection 172.17.0.3:58828 (1 connection now open)
-[33mauthserver    |[0m 172.17.0.1 - - [08/Dec/2017:16:46:47 +0000] "POST /signup HTTP/1.1" 200 - "" ""
-[33mauthserver    |[0m 2017-12-08T16:46:55968512277000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
 [36mdatabase_1    |[0m 2017-12-08T16:46:55.970+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.3:58836 #9 (1 connection now open)
 [36mdatabase_1    |[0m 2017-12-08T16:46:55.971+0000 I NETWORK  [conn9] end connection 172.17.0.3:58836 (0 connections now open)
-[33mauthserver    |[0m 172.17.0.1 - - [08/Dec/2017:16:46:55 +0000] "GET /loadPublicKey HTTP/1.1" 200 - "" ""
-[33mauthserver    |[0m 2017-12-08T16:46:55990910070000+0000 Searching for user  for key: hello
-[33mauthserver    |[0m 2017-12-08T16:46:55991899016000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
 [36mdatabase_1    |[0m 2017-12-08T16:46:55.993+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.3:58842 #10 (1 connection now open)
 [36mdatabase_1    |[0m 2017-12-08T16:46:55.994+0000 I NETWORK  [conn10] end connection 172.17.0.3:58842 (0 connections now open)
 [36mdatabase_1    |[0m 2017-12-08T16:46:55.996+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.3:58844 #11 (1 connection now open)
-[33mauthserver    |[0m 2017-12-08T16:46:55994936575000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
 [36mdatabase_1    |[0m 2017-12-08T16:46:56.837+0000 I NETWORK  [conn11] end connection 172.17.0.3:58844 (0 connections now open)
-[33mauthserver    |[0m 172.17.0.1 - - [08/Dec/2017:16:46:55 +0000] "POST /login HTTP/1.1" 200 - "" ""
 [36mdatabase_1    |[0m 2017-12-08T16:48:19.674+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.1:44638 #12 (1 connection now open)
 [36mdatabase_1    |[0m 2017-12-08T16:48:19.674+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.1:44642 #13 (2 connections now open)
 [36mdatabase_1    |[0m 2017-12-08T16:48:19.676+0000 I NETWORK  [conn13] end connection 172.17.0.1:44642 (1 connection now open)
@@ -99,3 +77,160 @@ Creating authserver
 [36mdatabase_1    |[0m 2017-12-08T17:51:17.103+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.1:49584 #23 (2 connections now open)
 [36mdatabase_1    |[0m 2017-12-08T17:51:17.104+0000 I NETWORK  [conn22] end connection 172.17.0.1:49580 (1 connection now open)
 [36mdatabase_1    |[0m 2017-12-08T17:51:17.104+0000 I NETWORK  [conn23] end connection 172.17.0.1:49584 (1 connection now open)
+[33mauthserver    |[0m 2017-12-08T20:59:57953121741000+0000 Environment vari[33mauthserver    |[0m 2017-12-08T20:59:57953121741000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1    |[0m 2017-12-08T20:59:57.954+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.3:48432 #24 (1 connection now open)
+[36mdatabase_1    |[0m 2017-12-08T20:59:57.955+0000 I NETWORK  [conn24] end connection 172.17.0.3:48432 (0 connections now open)
+[33mauthserver    |[0m 172.17.0.1 - - [08/Dec/2017:20:59:57 +0000] "GET /loadPublicKey HTTP/1.1" 200 - "" ""
+[33mauthserver    |[0m 2017-12-08T20:59:57965060111000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1    |[0m 2017-12-08T20:59:57.965+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.3:48438 #25 (1 connection now open)
+[36mdatabase_1    |[0m 2017-12-08T20:59:57.966+0000 I NETWORK  [conn25] end connection 172.17.0.3:48438 (0 connections now open)
+[33mauthserver    |[0m 2017-12-08T20:59:57966272201000+0000 Storing UserInfo under key hello.
+[33mauthserver    |[0m 2017-12-08T20:59:57966615232000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1    |[0m 2017-12-08T20:59:57.967+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.3:48440 #26 (1 connection now open)
+[36mdatabase_1    |[0m 2017-12-08T20:59:57.967+0000[33mauthserver    |[0m 172.17.0.1 - - [08/Dec/2017:20:59:57 +0000] "POST /si[33mauthserver    |[0m 17[33mauthserver    |[0m 2017-12-08T21:00:08931172695000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1    |[0m 2017-12-08T21:00:08.932+0000 I NETWORK  [initandliste[36mdatabase_1    |[0m 2017-12-08T21:00:08.932+0000 I NETWORK  [initand[36mdatabase_1    |[0m 2017-12-08T21:00:08.933+0000 I NETWORK  [conn27] end connection 172.17.0.3:48464 (0 connections now open)
+[33mauthserver    |[0m 172.17.0.1 - - [08/Dec/2017:21:00:08 +0000] "GET /loadPublicKey HTTP/1.1" 200 - "" ""
+[33mauthserver    |[0m 2017-12-08T21:01:19746487869000+0000 Environment vari[33mauthserver    |[0m 2017-12-08T21:01:19746487869000+0000 En[36mdatabase_1    |[0m 2017-12-08T21:01:19.748+0000 I NETWORK  [initandliste[36mdatabase_1    |[0m 2017-12-08T21:01:19.748+0000 I NETWORK  [initand[36mdatabase_1    |[0m 2017-12-08T21:01:19.750+0000 I NETWORK  [conn28] end connection 172.17.0.3:48548 (0 connections now open)
+[33mauthserver    |[0m 172.17.0.1 - - [08/Dec/2017:21:01:19 +0000] "GET /loa[33mauthserver    |[0m 172.17.0[33mauthserver    |[0m 2017-12-08T21:01:19762856590000+0000 Searching for user  for key: hello
+[33mauthserver    |[0m 2017-12-08T21:01:19763737355000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1    |[0m 2017-12-08T21:01:19.765+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.3:48554 #29 (1 connection now open)
+[36mdatabase_1    |[0m 2017-12-08T21:01:19.767+0000 I NETWORK  [conn29] end [36mdatabase_1    |[0m 2017-12-08T21:01:19.767+0000 I NETWORK  [conn29] end connection 172.17.0.3:48554 (0 connections now open)
+[33mauthserver    |[0m 2017-12-08T21:01:19767293253000+0000 En[36mdatabase_1    |[0m 2017-12-08T21:01:19.769+0000 I NETWORK  [initandliste[36mdatabase_1    |[0m 2017-12-08T21:01:19.769+0000 I NETWORK  [initand[36mdatabase_1    |[0m 2017-12-08T21:01:20.624+0000 I NETWORK  [conn30] end [36mdatabase_1    |[0m 2017-12-08T21:01:20.624+0000[33mauthserver    |[0m 172.17.0.1 - - [08/Dec/2017:21:01:19 +0000] "POST /login HTTP/1.1" 200 - "" ""
+Stopping authserver            ... 
+Stopping authserver_database_1 ... 
+Exception in thread Thread-5:
+Traceback (most recent call last):
+  File "/home/jibin/anaconda2/lib/python2.7/threading.py", line 801, in __bootstrap_inner
+    self.run()
+  File "/home/jibin/anaconda2/lib/python2.7/threading.py", line 754, in run
+    self.__target(*self.__args, **self.__kwargs)
+  File "/home/jibin/anaconda2/lib/python2.7/site-packages/compose/cli/log_printer.py", line 213, in watch_events
+    for event in event_stream:
+  File "/home/jibin/anaconda2/lib/python2.7/site-packages/compose/project.py", line 399, in events
+    container = Container.from_id(self.client, event['id'])
+  File "/home/jibin/anaconda2/lib/python2.7/site-packages/compose/container.py", line 42, in from_id
+    return cls(client, client.inspect_container(id), has_been_inspected=True)
+  File "/home/jibin/anaconda2/lib/python2.7/site-packages/docker/utils/decorators.py", line 19, in wrapped
+    return f(self, resource_id, *args, **kwargs)
+  File "/home/jibin/anaconda2/lib/python2.7/site-packages/docker/api/container.py", line 760, in inspect_container
+    self._get(self._url("/containers/{0}/json", container)), True
+  File "/home/jibin/anaconda2/lib/python2.7/site-packages/docker/utils/decorators.py", line 46, in inner
+    return f(self, *args, **kwargs)
+  File "/home/jibin/anaconda2/lib/python2.7/site-packages/docker/api/client.py", line 191, in _get
+    return self.get(url, **self._set_request_timeout(kwargs))
+  File "/home/jibin/anaconda2/lib/python2.7/site-packages/requests/sessions.py", line 488, in get
+    return self.request('GET', url, **kwargs)
+  File "/home/jibin/anaconda2/lib/python2.7/site-packages/requests/sessions.py", line 475, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/jibin/anaconda2/lib/python2.7/site-packages/requests/sessions.py", line 596, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/jibin/anaconda2/lib/python2.7/site-packages/requests/adapters.py", line 473, in send
+    raise ConnectionError(err, request=request)
+ConnectionError: ('Connection aborted.', error(104, 'Connection reset by peer'))
+
+Exception in thread Thread-3:
+Traceback (most recent call last):
+  File "/home/jibin/anaconda2/lib/python2.7/threading.py", line 801, in __bootstrap_inner
+    self.run()
+  File "/home/jibin/anaconda2/lib/python2.7/threading.py", line 754, in run
+    self.__target(*self.__args, **self.__kwargs)
+  File "/home/jibin/anaconda2/lib/python2.7/site-packages/compose/cli/log_printer.py", line 166, in tail_container_logs
+    queue.put(QueueItem.new(presenter.color_func(wait_on_exit(container))))
+  File "/home/jibin/anaconda2/lib/python2.7/site-packages/compose/cli/log_printer.py", line 197, in wait_on_exit
+    exit_code = container.wait()
+  File "/home/jibin/anaconda2/lib/python2.7/site-packages/compose/container.py", line 243, in wait
+    return self.client.wait(self.id)
+  File "/home/jibin/anaconda2/lib/python2.7/site-packages/docker/utils/decorators.py", line 19, in wrapped
+    return f(self, resource_id, *args, **kwargs)
+  File "/home/jibin/anaconda2/lib/python2.7/site-packages/docker/api/container.py", line 1257, in wait
+    res = self._post(url, timeout=timeout)
+  File "/home/jibin/anaconda2/lib/python2.7/site-packages/docker/utils/decorators.py", line 46, in inner
+    return f(self, *args, **kwargs)
+  File "/home/jibin/anaconda2/lib/python2.7/site-packages/docker/api/client.py", line 187, in _post
+    return self.post(url, **self._set_request_timeout(kwargs))
+  File "/home/jibin/anaconda2/lib/python2.7/site-packages/requests/sessions.py", line 522, in post
+    return self.request('POST', url, data=data, json=json, **kwargs)
+  File "/home/jibin/anaconda2/lib/python2.7/site-packages/requests/sessions.py", line 475, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/jibin/anaconda2/lib/python2.7/site-packages/requests/sessions.py", line 596, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/jibin/anaconda2/lib/python2.7/site-packages/requests/adapters.py", line 473, in send
+    raise ConnectionError(err, request=request)
+ConnectionError: ('Connection aborted.', error(104, 'Connection reset by peer'))
+
+Exception in thread Thread-4:
+Traceback (most recent call last):
+  File "/home/jibin/anaconda2/lib/python2.7/threading.py", line 801, in __bootstrap_inner
+    self.run()
+  File "/home/jibin/anaconda2/lib/python2.7/threading.py", line 754, in run
+    self.__target(*self.__args, **self.__kwargs)
+  File "/home/jibin/anaconda2/lib/python2.7/site-packages/compose/cli/log_printer.py", line 166, in tail_container_logs
+    queue.put(QueueItem.new(presenter.color_func(wait_on_exit(container))))
+  File "/home/jibin/anaconda2/lib/python2.7/site-packages/compose/cli/log_printer.py", line 197, in wait_on_exit
+    exit_code = container.wait()
+  File "/home/jibin/anaconda2/lib/python2.7/site-packages/compose/container.py", line 243, in wait
+    return self.client.wait(self.id)
+  File "/home/jibin/anaconda2/lib/python2.7/site-packages/docker/utils/decorators.py", line 19, in wrapped
+    return f(self, resource_id, *args, **kwargs)
+  File "/home/jibin/anaconda2/lib/python2.7/site-packages/docker/api/container.py", line 1257, in wait
+    res = self._post(url, timeout=timeout)
+  File "/home/jibin/anaconda2/lib/python2.7/site-packages/docker/utils/decorators.py", line 46, in inner
+    return f(self, *args, **kwargs)
+  File "/home/jibin/anaconda2/lib/python2.7/site-packages/docker/api/client.py", line 187, in _post
+    return self.post(url, **self._set_request_timeout(kwargs))
+  File "/home/jibin/anaconda2/lib/python2.7/site-packages/requests/sessions.py", line 522, in post
+    return self.request('POST', url, data=data, json=json, **kwargs)
+  File "/home/jibin/anaconda2/lib/python2.7/site-packages/requests/sessions.py", line 475, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/jibin/anaconda2/lib/python2.7/site-packages/requests/sessions.py", line 596, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/jibin/anaconda2/lib/python2.7/site-packages/requests/adapters.py", line 473, in send
+    raise ConnectionError(err, request=request)
+ConnectionError: ('Connection aborted.', error(104, 'Connection reset by peer'))
+
+[1A[2KStopping authserver_database_1 ... [31merror[0m[1B
+ERROR: for authserver  ('Connection aborted.', error(104, 'Connection reset by peer'))
+Couldn't connect to Docker daemon - you might need to run `docker-machine start default`.
+Gracefully stopping... (press Ctrl+C again to force)
+", line 475, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/jibin/anaconda2/lib/python2.7/site-packages/requests/sessions.py", line 596, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/jibin/anaconda2/lib/python2.7/site-packages/requests/adapters.py", line 473, in send
+    raise ConnectionError(err, request=request)
+ConnectionError: ('Connection aborted.', error(104, 'Connection reset by peer'))
+
+Exception in thread Thread-5:
+Traceback (most recent call last):
+  File "/home/jibin/anaconda2/lib/python2.7/threading.py", line 801, in __bootstrap_inner
+    self.run()
+  File "/home/jibin/anaconda2/lib/python2.7/threading.py", line 754, in run
+    self.__target(*self.__args, **self.__kwargs)
+  File "/home/jibin/anaconda2/lib/python2.7/site-packages/compose/cli/log_printer.py", line 166, in tail_container_logs
+    queue.put(QueueItem.new(presenter.color_func(wait_on_exit(container))))
+  File "/home/jibin/anaconda2/lib/python2.7/site-packages/compose/cli/log_printer.py", line 197, in wait_on_exit
+    exit_code = container.wait()
+  File "/home/jibin/anaconda2/lib/python2.7/site-packages/compose/container.py", line 243, in wait
+    return self.client.wait(self.id)
+  File "/home/jibin/anaconda2/lib/python2.7/site-packages/docker/utils/decorators.py", line 19, in wrapped
+    return f(self, resource_id, *args, **kwargs)
+  File "/home/jibin/anaconda2/lib/python2.7/site-packages/docker/api/container.py", line 1257, in wait
+    res = self._post(url, timeout=timeout)
+  File "/home/jibin/anaconda2/lib/python2.7/site-packages/docker/utils/decorators.py", line 46, in inner
+    return f(self, *args, **kwargs)
+  File "/home/jibin/anaconda2/lib/python2.7/site-packages/docker/api/client.py", line 187, in _post
+    return self.post(url, **self._set_request_timeout(kwargs))
+  File "/home/jibin/anaconda2/lib/python2.7/site-packages/requests/sessions.py", line 522, in post
+    return self.request('POST', url, data=data, json=json, **kwargs)
+  File "/home/jibin/anaconda2/lib/python2.7/site-packages/requests/sessions.py", line 475, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/jibin/anaconda2/lib/python2.7/site-packages/requests/sessions.py", line 596, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/jibin/anaconda2/lib/python2.7/site-packages/requests/adapters.py", line 473, in send
+    raise ConnectionError(err, request=request)
+ConnectionError: ('Connection aborted.', error(104, 'Connection reset by peer'))
+
+[1A[2KStopping authserver_database_1 ... [31merror[0m[1B
+ERROR: for authserver  ('Connection aborted.', error(104, 'Connection reset by peer'))
+Couldn't connect to Docker daemon - you might need to run `docker-machine start default`.
+Gracefully stopping... (press Ctrl+C again to force)

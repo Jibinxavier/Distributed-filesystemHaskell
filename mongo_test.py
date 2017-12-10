@@ -27,7 +27,7 @@ for document in cursor:
 
 # print("client record")
  
-allports = {"authserver": 27000, "client":27017,"directoryservice":27222 ,"lock": 27890,"fileserver_0":27090, "fileserver_1": 27091, "fileserver_2":27092}
+allports = {"authserver": 27000, "client":27017,"directoryservice":27222 ,"lock": 27890,"fileserver_0":27090, "fileserver_1": 27091, "fileserver_2":27092, "transactionservice":27984}
 for x in allports:      
         print(x)
         client = MongoClient("localhost",allports[x])

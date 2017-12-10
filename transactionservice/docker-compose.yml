@@ -1,0 +1,20 @@
+filesystem:
+  image: transactionservice
+  environment:
+    # The start of active environment variables. Set as needed.
+    - MONGODB_IP=database
+    # - MONGODB_PORT
+    # - MONGODB_DATABASE=USE_HASKELL_DB
+    - LOG_LEVEL=DEBUG
+    # - https_proxy=http://www-proxy.scss.tcd.ie:8080
+    # - http_proxy=http://www-proxy.scss.tcd.ie:8080
+  command:  /usr/local/bin/transactionservice-exe
+  ports:
+    -  "${TRANSERV_PORT}:${TRANSERV_PORT}"
+ 
+  links:
+    - database
+database:
+  image: mongo:3.0.2
+  ports:
+    - "27984:27017"

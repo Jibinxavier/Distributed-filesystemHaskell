@@ -41,7 +41,7 @@ import           EncryptionAPI
 -- | to embed git and cabal details for this build into the executable (just for the fun of it)
 -- The code inside $( ) gets run at compile time. The functions run extract data from project files, both .git files and
 -- the .cabal file.
-myrestfullCall2 act f port= reportExceptionOr (act) (SC.runClientM f =<< envFileApi port localhost) 
+myrestfullCall2 act f port= reportExceptionOr (act) (SC.runClientM f =<< envFileApi port systemHost) 
 -- | a simple handler class to print the response. We can pass this as the first parameter of calls to
 -- reportOrException. It will call the appropriate version depending on the type of the returned results.
 
@@ -137,15 +137,15 @@ getFileFromFS fileinfo@[FInfoTransfer remotefilepath dirname fileid _ portadr se
 
   
     
-getLocalTrId ::IO ([LocalTransInfo])
-getLocalTrId = do
-  let key = "client1":: String --- maybe an environment variable in the docker compose
-  docs <- withMongoDbConnection $ find  (select ["key1" =: key] "Transaction_RECORD")  >>= drainCursor -- getting previous transaction id of the client
+getLocalTrId ::String -> IO ([LocalTransInfo])
+getLocalTrId usern= do
+   
+  docs <- withMongoDbConnection $ find  (select ["key1" =: usern] "Transaction_RECORD")  >>= drainCursor -- getting previous transaction id of the client
   return $ take 1 $ catMaybes $ DL.map (\ b -> fromBSON b :: Maybe LocalTransInfo) docs 
-clearTransaction :: IO ()
-clearTransaction = do
-  let key = "client1":: String --- maybe an environment variable in the docker compose
-  withMongoDbConnection $ delete  (select ["key1" =: key] "Transaction_RECORD")
+clearTransaction :: String -> IO ()
+clearTransaction usern= do
+ 
+  withMongoDbConnection $ delete  (select ["key1" =: usern] "Transaction_RECORD")
 gitRev, gitBranch, cabalAuthor, cabalVersion, cabalCopyright :: String
 gitRev = $(embedGitShortRevision)
 gitBranch = $(embedGitBranch)

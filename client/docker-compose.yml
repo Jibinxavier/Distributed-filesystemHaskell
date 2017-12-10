@@ -1,6 +1,35 @@
-database:
-  net: "host"
-  image: mongo:3.0.2
-  ports:
-    - "27017:27017"
  
+client_database1:
+  image: mongo:3.0.2 
+  stdin_open: false
+  tty: false
+  ports:
+    - "27223:27017"
+
+client_database2:
+   
+  image: mongo:3.0.2 
+  ports:
+    - "27224:27017"
+client1:
+  image: client
+    
+  environment:
+    # The start of active environment variables. Set as needed.
+    - MONGODB_IP=client_database1
+    - MONGODB_PORT=27223 
+    - MONGODB_DATABASE=USEHASKELLDB
+    - LOG_LEVEL=DEBUG
+    
+    
+  command:  /usr/local/bin/client-exe 8400
+  env_file: ../all_env.env
+  ports:
+    -  "8400:8400"
+  links:
+    - client_database1
+  stdin_open: true
+  tty: true
+  container_name: client
+   
+

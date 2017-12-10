@@ -129,7 +129,7 @@ doFileLock fpath usern= do
       let encUname = myEncryptAES (aesPad seshkey) (usern)
       let encClientport = myEncryptAES (aesPad seshkey) (clientport)
       
-      resp <- FSA.myrestfullCall  (lock $ Message4  encClientport encFpath encUname ticket) (read lockport) FSA.localhost
+      resp <- FSA.myrestfullCall  (lock $ Message4  encClientport encFpath encUname ticket) (read lockport) FSA.systemHost
       case resp of
         Left err -> do 
           putStrLn $ "failed to lock ... " ++  show err
@@ -212,22 +212,19 @@ doGetTransId usern=  do
       authInfo <- getAuthClientInfo usern
       case authInfo of 
         (Just (ticket,seshkey) ) -> do
-          let trId =  myDecryptAES (aesPad seshkey)  (enctrId)
+          let trId =  myDecryptAES (aesPad seshkey)  (enctrId) 
            
-          let key = "client1":: String --- maybe an environment variable in the docker compose
-          docs <- FSA.withMongoDbConnection $ find  (select ["key1" =: key] "Transaction_RECORD")  >>= FSA.drainCursor -- getting previous transaction id of the client
-          let  clientTrans= take 1 $ catMaybes $ DL.map (\ b -> fromBSON b :: Maybe LocalTransInfo) docs 
+           -- getting previous transaction id of the client
+          clientTrans <- getLocalTrId usern
           case clientTrans of 
             [LocalTransInfo _  prevId] -> liftIO $ do  -- abort and update
                 putStrLn $ "Aborting old transaction and starting new " 
       
-                restfullCallMsg1WithEnc abort prevId usern FSA.transIP (Just trsport)
-                
-              
-                FSA.withMongoDbConnection $ upsert (select ["key1" =: key] "Transaction_RECORD") $ toBSON $ LocalTransInfo key trId -- store the transaction id
-            [] -> liftIO $ do 
-              putStrLn $ "Starting new transaction " ++trId
-              FSA.withMongoDbConnection $ upsert (select ["key1" =: key] "Transaction_RECORD") $ toBSON $ LocalTransInfo key trId -- store the transaction id
+                restfullCallMsg1WithEnc abort prevId usern FSA.transIP (Just trsport) -- notifying transaction server to abort 
+                FSA.withMongoDbConnection $ upsert (select ["key1" =: usern] "Transaction_RECORD") $ toBSON $ LocalTransInfo usern trId -- store the transaction id
+            [] ->  putStrLn $ "Starting new transaction " ++trId
+            
+          FSA.withMongoDbConnection $ upsert (select ["key1" =: usern] "Transaction_RECORD") $ toBSON $ LocalTransInfo usern trId -- store the transaction id
  
         (Nothing) -> putStrLn $ " Expired token  .Sigin in again. " 
       
@@ -236,49 +233,51 @@ doGetTransId usern=  do
 doCommit :: String -> IO ()
 doCommit usern = do 
   trsport <-FSA.transPorStr
-  localTransactionInfo <- getLocalTrId
+  localTransactionInfo <- getLocalTrId usern
   case localTransactionInfo of        
     [ LocalTransInfo _ trId] -> liftIO $ do  
       restfullCallMsg1WithEnc commit trId usern FSA.transIP (Just trsport)
       unlockLockedFiles trId usern
-      clearTransaction-- clearing after commiting the transaction
+      clearTransaction usern-- clearing after commiting the transaction
     [] -> putStrLn "No transactions to  commit"
 
 doAbort :: String -> IO ()
 doAbort usern  = do 
   trsport <-FSA.transPorStr
-  localTransactionInfo <- getLocalTrId
+  localTransactionInfo <- getLocalTrId usern
   case localTransactionInfo of 
     [LocalTransInfo _ trId] -> liftIO $ do   
       restfullCallMsg1WithEnc abort trId usern FSA.transIP (Just trsport)
       unlockLockedFiles trId usern
-      clearTransaction -- clearing after aborting the transaction
+      clearTransaction usern-- clearing after aborting the transaction
     [] -> putStrLn "No transactions to  abort"
 -- localfilePath : file path in the client
 -- dir           : fileserver name
 -- fname         : filename 
 
-doUploadWithTransaction:: String-> String -> String ->  String -> IO ()
-doUploadWithTransaction localfilePath  dir fname  usern = do
+doWriteWithTransaction:: String-> String -> String -> IO ()
+doWriteWithTransaction remoteFPath usern newcontent  = do
+  let remotedir =head $ splitOn "/" remoteFPath
+      fname = last $ splitOn "/" remoteFPath  
+      localfilePath = "./" ++ fname
+  
   trsport <-FSA.transPorStr
-  localTransactionInfo <- getLocalTrId 
-  --  Client will just tell the where they want to store the file 
+  localTransactionInfo <- getLocalTrId  usern
+  --  Client will just specify where it wants to store the file 
   -- transaction has to figure out the file info and update directory info  
-  let filepath=  dir ++fname
-  status <- isFileLocked filepath
+ 
+  status <- isFileLocked remoteFPath
   case status of  --- if the file is locked it cannot be added to the transaction
     (False) -> do
       case localTransactionInfo of  -- get local transaction info
         [LocalTransInfo _ trId] -> liftIO $ do     
-          contents <- readFile localfilePath
-          let filepath = dir++fname
-          
-
-          doFileLock filepath usern -- lock the file
-          appendToLockedFiles filepath trId -- list of locked files which the client keeps a record of
+          existingContent <- readFile localfilePath
+          let contents = existingContent ++ newcontent
+       
+          doFileLock remoteFPath usern -- lock the file
+          appendToLockedFiles remoteFPath trId -- list of locked files which the client keeps a record of
           dirport <- FSA.dirServPort
-          res <- mydoCalMsg4WithEnc uploadToShadowDir dir fname trId usern ((read $ dirport):: Int) decryptFInfoTransfer -- uploading info to shadow directory
-          --res <- FSA.myrestfullCall (uploadToShadowDir $  Message3 dir fname trId ) ((read $ fromJust FSA.dirPort):: Int) -- uploading info to shadow directory
+          res <- mydoCalMsg4WithEnc uploadToShadowDir remotedir fname trId usern ((read $ dirport):: Int) decryptFInfoTransfer -- uploading info to shadow directory 
 
           case res of
             Nothing -> putStrLn $ "Upload to transaction failed"  
@@ -289,7 +288,7 @@ doUploadWithTransaction localfilePath  dir fname  usern = do
                 
                   let transactionContent=TransactionContents trId (TChanges fileinfotransfer filecontents ) ""
                   
-                  --- encrypting transaction information before uploading
+                  --- encrypting transaction information before uploading to the transaction  server
                   authInfo <- getAuthClientInfo usern
                   case authInfo of 
                     (Just (ticket,seshkey) ) -> do 
@@ -297,10 +296,10 @@ doUploadWithTransaction localfilePath  dir fname  usern = do
                       
                       restfullCall (uploadToTransaction $ msg) FSA.transIP  (Just trsport) $  seshNop
                     (Nothing) -> putStrLn $ " Expired token  .Sigin in again. " 
-                [] -> putStrLn "doUploadWithTransaction: Error getting fileinfo "
+                [] -> putStrLn "doWriteWithTransaction: Error getting fileinfo "
 
 
-          -- call the directory service get info 
+        
           
         [] -> putStrLn "No ongoing transaction"
 
@@ -354,13 +353,13 @@ doWriteFile  remoteFPath usern newcontent = do   -- call to the directory server
                     case authInfo of 
                       (Just (ticket,seshkey) ) -> do 
                         let msg = encryptFileContents  (FileContents fileid contents "") seshkey ticket -- encrypted message
-                        restfullCall (upload  msg) (Just "localhost") (Just p)  seshkey -- uploading file
+                        restfullCall (upload  msg) (Just "systemHost") (Just p)  seshkey -- uploading file
                         putStrLn "after uploading"
                         doFileUnLock remoteFPath usern
                         putStrLn "after unlock"
                         -- store the metadata about the file
-                        let fpath =  usern ++ remoteFPath -- this is to allow multiple users to use the same database
-                        updateLocalMeta fpath $ FInfo fpath remotedir fileid ts
+                        -- let fpath =  usern ++ remoteFPath -- this is to allow multiple users to use the same database
+                        updateLocalMeta remoteFPath $ FInfo remoteFPath remotedir fileid ts
                         putStrLn "file unlocked "
                       (Nothing) -> putStrLn $ "Expired token . Sigin in again.  "  
               [] -> putStrLn "Upload file : Error getting fileinfo from directory service"
@@ -399,8 +398,8 @@ doReadFile remoteFPath usern = do
       case resp of
         [FInfoTransfer remotefilepath dirname fileid ipadr portadr servTm1 ] -> do 
           putStrLn $ portadr ++ "file id "++ fileid
-          let fpath = usern ++ remotefilepath
-          status <- isDated fpath servTm1  --check with timestamp in the database 
+           
+          status <- isDated remotefilepath servTm1  --check with timestamp in the database 
           case status of
             True ->  getFileFromFS  fileinfo usern -- it also updates local file metadata
             False -> putStrLn "You have most up to date  version" 
@@ -414,7 +413,7 @@ doReadFile remoteFPath usern = do
 doSignup:: String -> String -> IO ()
 doSignup userN pass =  do
   authport <-FSA.authPortStr
-  resp <- FSA.myrestfullCall (loadPublicKey) ((read authport):: Int) FSA.localhost
+  resp <- FSA.myrestfullCall (loadPublicKey) ((read authport):: Int) FSA.systemHost
   case resp of
     Left err -> do
       putStrLn $ "failed to get public key... " ++  show err
@@ -430,7 +429,7 @@ doSignup userN pass =  do
 doLogin:: String -> String-> IO ()
 doLogin userN pass  = do
   authport <-FSA.authPortStr
-  resp <- FSA.myrestfullCall (loadPublicKey) ((read authport ):: Int) FSA.localhost
+  resp <- FSA.myrestfullCall (loadPublicKey) ((read authport ):: Int) FSA.systemHost
   case resp of
     Left err -> do
       putStrLn "failed to get public key..."
@@ -449,13 +448,13 @@ someFunc = do
   args <- getArgs
   
   case args of
-    [clientport,mongoport] -> do
+    [clientport] -> do
       
        
       setEnv "CLIENT_PORT" clientport
-      setEnv "MONGODB_PORT" mongoport
-      setEnv "MONGODB_IP" "127.0.0.1"
-      setEnv "MONGODB_DATABASE" "USEHASKELLDB"
+      -- setEnv "MONGODB_PORT" mongoport
+      -- setEnv "MONGODB_IP" "127.0.0.1"
+      -- setEnv "MONGODB_DATABASE" "USEHASKELLDB"
       let key = "nee":: String
       
       -- FSA.withMongoDbConnection $ insert "TEST1"   ["owner" =: key]
@@ -467,7 +466,7 @@ someFunc = do
       --     (Nothing) -> liftIO $ putStrLn "nothing"
       -- putStrLn "here"
       startApp clientport
-    _ -> putStrLn "Bad parameters. Port numbers for client and MongoDB expected"
+    _ -> putStrLn "Bad parameters. Port number for client expected"
   
 
 
@@ -540,8 +539,8 @@ menu = do
   else if DL.isPrefixOf  "writeT" contents
     then do
       let cmds =  splitOn " " contents
-     -- "local file path" "remote dir" "file name" "user name"
-      doUploadWithTransaction  (cmds !! 1) (cmds !! 2) (cmds !! 3) (cmds !! 4)
+     --  "remote dir/fname (filepath)" "user name" "content to add"
+      doWriteWithTransaction  (cmds !! 1) (cmds !! 2) (cmds !! 3) 
   else
     putStrLn $"no command specified"
   menu
