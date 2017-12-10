@@ -1,4 +1,4 @@
-filesystem:
+transactionservice:
   image: transactionservice
   environment:
     # The start of active environment variables. Set as needed.
@@ -8,6 +8,8 @@ filesystem:
     - LOG_LEVEL=DEBUG
     # - https_proxy=http://www-proxy.scss.tcd.ie:8080
     # - http_proxy=http://www-proxy.scss.tcd.ie:8080
+
+  env_file: ../all_env.env
   command:  /usr/local/bin/transactionservice-exe
   ports:
     -  "${TRANSERV_PORT}:${TRANSERV_PORT}"

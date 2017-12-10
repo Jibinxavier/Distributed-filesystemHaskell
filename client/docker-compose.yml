@@ -33,3 +33,23 @@ client1:
   container_name: client
    
 
+client2:
+  image: client
+    
+  environment:
+    # The start of active environment variables. Set as needed.
+    - MONGODB_IP=client_database2
+    - MONGODB_PORT=27224 
+    - MONGODB_DATABASE=USEHASKELLDB
+    - LOG_LEVEL=DEBUG
+    
+    
+  command:  /usr/local/bin/client-exe 8500
+  env_file: ../all_env.env
+  ports:
+    -  "8500:8500"
+  links:
+    - client_database2
+  stdin_open: true
+  tty: true
+  container_name: client2

@@ -1,874 +1,247 @@
-Starting fileserver_database_2_1 ... 
-Starting fileserver_database_1_1 ... 
-Starting fileserver_database_2_1
-Starting fileserver_database_0_1 ... 
-Starting fileserver_database_1_1
-Starting fileserver_database_0_1
-[1A[2KStarting fileserver_database_1_1 ... [32mdone[0m[1BStarting fileserver_1 ... 
-Starting fileserver_1
-[1A[2KStarting fileserver_database_2_1 ... [32mdone[0m[1B[1A[2KStarting fileserver_database_0_1 ... [32mdone[0m[1BStarting fileserver_2 ... 
-Starting fileserver_0 ... 
-Starting fileserver_0
-Starting fileserver_2
-[1A[2KStarting fileserver_1 ... [32mdone[0m[1B[1A[2KStarting fileserver_2 ... [32mdone[0m[1B[1A[2KStarting fileserver_0 ... [32mdone[0m[1BAttaching to fileserver_database_1_1, fileserver_database_2_1, fileserver_database_0_1, fileserver_1, fileserver_2, fileserver_0
-[32mdatabase_0_1    |[0m 2017-12-10T11:52:34.172+0000 I JOURNAL  [initandlisten] journal dir=/data/db/journal
-[32mdatabase_0_1    |[0m 2017-12-10T11:52:34.172+0000 I JOURNAL  [initandlisten] recover : no journal files present, no recovery needed
-[36mdatabase_1_1    |[0m 2017-12-10T11:52:34.052+0000 I JOURNAL  [initandlisten] journal dir=/data/db/journal
-[36mdatabase_1_1    |[0m 2017-12-10T11:52:34.052+0000 I JOURNAL  [initandlisten] recover : no journal files present, no recovery needed
-[33mdatabase_2_1    |[0m 2017-12-10T11:52:34.182+0000 I JOURNAL  [initandlisten] journal dir=/data/db/journal
-[36mdatabase_1_1    |[0m 2017-12-10T11:52:34.065+0000 I JOURNAL  [durability] Durability thread started
-[33mdatabase_2_1    |[0m 2017-12-10T11:52:34.182+0000 I JOURNAL  [initandlisten] recover : no journal files present, no recovery needed
-[32mdatabase_0_1    |[0m 2017-12-10T11:52:34.182+0000 I JOURNAL  [durability] Durability thread started
-[36mdatabase_1_1    |[0m 2017-12-10T11:52:34.066+0000 I JOURNAL  [journal writer] Journal writer thread started
-[35mfileserver_1    |[0m 2017-12-10T11:52:34464577968000+0000 Environment variable: LOG_LEVEL is not set. Defaulting to "DEBUG"
-[36mdatabase_1_1    |[0m 2017-12-10T11:52:34.072+0000 I CONTROL  [initandlisten] MongoDB starting : pid=1 port=27017 dbpath=/data/db 64-bit host=d1b92e6725b2
-[33mdatabase_2_1    |[0m 2017-12-10T11:52:34.196+0000 I JOURNAL  [durability] Durability thread started
-[32mdatabase_0_1    |[0m 2017-12-10T11:52:34.182+0000 I JOURNAL  [journal writer] Journal writer thread started
-[36mdatabase_1_1    |[0m 2017-12-10T11:52:34.072+0000 I CONTROL  [initandlisten] 
-[31mfileserver_2    |[0m 2017-12-10T11:52:34504003891000+0000 Environment variable: LOG_LEVEL is not set. Defaulting to "DEBUG"
-[36mdatabase_1_1    |[0m 2017-12-10T11:52:34.072+0000 I CONTROL  [initandlisten] ** WARNING: /sys/kernel/mm/transparent_hugepage/enabled is 'always'.
-[31mfileserver_2    |[0m 2017-12-10T11:52:34504393402000+0000 Starting filesystem
-[33mdatabase_2_1    |[0m 2017-12-10T11:52:34.196+0000 I JOURNAL  [journal writer] Journal writer thread started
-[32mdatabase_0_1    |[0m 2017-12-10T11:52:34.189+0000 I CONTROL  [initandlisten] MongoDB starting : pid=1 port=27017 dbpath=/data/db 64-bit host=92bed2256e9e
-[36mdatabase_1_1    |[0m 2017-12-10T11:52:34.072+0000 I CONTROL  [initandlisten] **        We suggest setting it to 'never'
-[35mfileserver_1    |[0m 2017-12-10T11:52:34471596683000+0000 Starting filesystem
-[33mdatabase_2_1    |[0m 2017-12-10T11:52:34.205+0000 I CONTROL  [initandlisten] MongoDB starting : pid=1 port=27017 dbpath=/data/db 64-bit host=243476d1dfb4
-[32mdatabase_0_1    |[0m 2017-12-10T11:52:34.189+0000 I CONTROL  [initandlisten] 
-[34mfileserver_0    |[0m 2017-12-10T11:52:34676960400000+0000 Environment variable: LOG_LEVEL is not set. Defaulting to "DEBUG"
-[36mdatabase_1_1    |[0m 2017-12-10T11:52:34.072+0000 I CONTROL  [initandlisten] 
-[33mdatabase_2_1    |[0m 2017-12-10T11:52:34.205+0000 I CONTROL  [initandlisten] 
-[35mfileserver_1    |[0m 2017-12-10T11:52:34474491516000+0000 Registering with directory service at port 
-[33mdatabase_2_1    |[0m 2017-12-10T11:52:34.206+0000 I CONTROL  [initandlisten] ** WARNING: /sys/kernel/mm/transparent_hugepage/enabled is 'always'.
-[32mdatabase_0_1    |[0m 2017-12-10T11:52:34.189+0000 I CONTROL  [initandlisten] ** WARNING: /sys/kernel/mm/transparent_hugepage/enabled is 'always'.
-[33mdatabase_2_1    |[0m 2017-12-10T11:52:34.206+0000 I CONTROL  [initandlisten] **        We suggest setting it to 'never'
-[36mdatabase_1_1    |[0m 2017-12-10T11:52:34.072+0000 I CONTROL  [initandlisten] db version v3.0.2
-[31mfileserver_2    |[0m 2017-12-10T11:52:34506102757000+0000 Registering with directory service at port 
-[32mdatabase_0_1    |[0m 2017-12-10T11:52:34.189+0000 I CONTROL  [initandlisten] **        We suggest setting it to 'never'
-[33mdatabase_2_1    |[0m 2017-12-10T11:52:34.206+0000 I CONTROL  [initandlisten] 
-[36mdatabase_1_1    |[0m 2017-12-10T11:52:34.072+0000 I CONTROL  [initandlisten] git version: 6201872043ecbbc0a4cc169b5482dcf385fc464f
-[35mfileserver_1    |[0m 2017-12-10T11:52:34611695551000+0000 Sucessfully registered with directory service
-[32mdatabase_0_1    |[0m 2017-12-10T11:52:34.189+0000 I CONTROL  [initandlisten] 
-[34mfileserver_0    |[0m 2017-12-10T11:52:34677310776000+0000 Starting filesystem
-[33mdatabase_2_1    |[0m 2017-12-10T11:52:34.206+0000 I CONTROL  [initandlisten] db version v3.0.2
-[36mdatabase_1_1    |[0m 2017-12-10T11:52:34.073+0000 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1e 11 Feb 2013
-[31mfileserver_2    |[0m 2017-12-10T11:52:34611582576000+0000 Sucessfully registered with directory service
-[32mdatabase_0_1    |[0m 2017-12-10T11:52:34.189+0000 I CONTROL  [initandlisten] db version v3.0.2
-[33mdatabase_2_1    |[0m 2017-12-10T11:52:34.206+0000 I CONTROL  [initandlisten] git version: 6201872043ecbbc0a4cc169b5482dcf385fc464f
-[36mdatabase_1_1    |[0m 2017-12-10T11:52:34.073+0000 I CONTROL  [initandlisten] build info: Linux ip-10-171-120-232 3.2.0-4-amd64 #1 SMP Debian 3.2.46-1 x86_64 BOOST_LIB_VERSION=1_49
-[32mdatabase_0_1    |[0m 2017-12-10T11:52:34.189+0000 I CONTROL  [initandlisten] git version: 6201872043ecbbc0a4cc169b5482dcf385fc464f
-[33mdatabase_2_1    |[0m 2017-12-10T11:52:34.206+0000 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1e 11 Feb 2013
-[34mfileserver_0    |[0m 2017-12-10T11:52:34677771039000+0000 Registering with directory service at port 
-[32mdatabase_0_1    |[0m 2017-12-10T11:52:34.189+0000 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1e 11 Feb 2013
-[36mdatabase_1_1    |[0m 2017-12-10T11:52:34.073+0000 I CONTROL  [initandlisten] allocator: tcmalloc
-[33mdatabase_2_1    |[0m 2017-12-10T11:52:34.206+0000 I CONTROL  [initandlisten] build info: Linux ip-10-171-120-232 3.2.0-4-amd64 #1 SMP Debian 3.2.46-1 x86_64 BOOST_LIB_VERSION=1_49
-[31mfileserver_2    |[0m 2017-12-10T11:52:34626537923000+0000 Sending heart beat to directory.
-[32mdatabase_0_1    |[0m 2017-12-10T11:52:34.189+0000 I CONTROL  [initandlisten] build info: Linux ip-10-171-120-232 3.2.0-4-amd64 #1 SMP Debian 3.2.46-1 x86_64 BOOST_LIB_VERSION=1_49
-[36mdatabase_1_1    |[0m 2017-12-10T11:52:34.073+0000 I CONTROL  [initandlisten] options: {}
-[33mdatabase_2_1    |[0m 2017-12-10T11:52:34.206+0000 I CONTROL  [initandlisten] allocator: tcmalloc
-[35mfileserver_1    |[0m 2017-12-10T11:52:34622788696000+0000 Sending heart beat to directory.
-[32mdatabase_0_1    |[0m 2017-12-10T11:52:34.189+0000 I CONTROL  [initandlisten] allocator: tcmalloc
-[33mdatabase_2_1    |[0m 2017-12-10T11:52:34.206+0000 I CONTROL  [initandlisten] options: {}
-[32mdatabase_0_1    |[0m 2017-12-10T11:52:34.189+0000 I CONTROL  [initandlisten] options: {}
-[36mdatabase_1_1    |[0m 2017-12-10T11:52:34.137+0000 I NETWORK  [initandlisten] waiting for connections on port 27017
-[33mdatabase_2_1    |[0m 2017-12-10T11:52:34.327+0000 I NETWORK  [initandlisten] waiting for connections on port 27017
-[32mdatabase_0_1    |[0m 2017-12-10T11:52:34.318+0000 I NETWORK  [initandlisten] waiting for connections on port 27017
-[34mfileserver_0    |[0m 2017-12-10T11:52:34688321481000+0000 Sucessfully registered with directory service
-[34mfileserver_0    |[0m 2017-12-10T11:52:34698811630000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T11:52:54634848611000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T11:52:54654189045000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T11:52:54720197781000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T11:53:14661743576000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T11:53:14681148104000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T11:53:14744161579000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T11:53:34681366011000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T11:53:34707177802000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T11:53:34771434066000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T11:53:54698108666000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T11:53:54728086593000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T11:53:54792832839000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T11:54:14722617808000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T11:54:14752534919000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T11:54:14818599097000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T11:54:34746172284000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T11:54:34776870888000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T11:54:34847771014000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T11:54:54778209874000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T11:54:54794352940000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T11:54:54867171454000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T11:55:14803625705000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T11:55:14825365862000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T11:55:14893108366000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T11:55:34825987564000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T11:55:34859610494000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T11:55:34918156770000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T11:55:54849734340000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T11:55:54886043401000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T11:55:54942260942000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T11:56:14871844552000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T11:56:14915158830000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T11:56:14967086482000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T11:56:34904215412000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T11:56:34942098441000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T11:56:34992179882000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T11:56:54925415029000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T11:56:54967760122000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T11:56:55014452857000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T11:57:14938488218000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T11:57:14991737206000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T11:57:15039220072000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T11:57:34951528835000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T11:57:35015244848000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T11:57:35063080615000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T11:57:54964399522000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T11:57:55044253944000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T11:57:55086205540000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T11:58:14983496508000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T11:58:15076895937000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T11:58:15105691609000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T11:58:35008345390000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T11:58:35103709879000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T11:58:35132880435000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T11:58:55028704652000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T11:58:55146418062000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T11:58:55161610850000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T11:59:15058461621000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T11:59:15161088936000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T11:59:15191032861000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T11:59:35084669228000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T11:59:35185244626000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T11:59:35219381089000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T11:59:55107754627000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T11:59:55207844008000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T11:59:55242250364000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:00:15134158545000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:00:15234260388000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:00:15277329367000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:00:35158572164000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:00:35258329347000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:00:35305794908000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:00:55183964909000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:00:55284091455000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:00:55331903079000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:01:15216530680000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:01:15298210593000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:01:15354566695000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:01:35243757612000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:01:35326358893000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:01:35378197507000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:01:55263301439000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:01:55350986065000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:01:55408447080000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:02:15289200926000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:02:15379094602000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:02:15427341360000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:02:35312819511000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:02:35410658255000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:02:35450932589000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:02:55329709732000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:02:55430365893000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:02:55476574627000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:03:15354404261000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:03:15456090494000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:03:15503978178000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:03:35372576909000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:03:35474492704000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:03:35531414401000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:03:55400585595000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:03:55500443210000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:03:55557185314000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:04:15428029923000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:04:15525875899000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:04:15579361185000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:04:35439434974000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:04:35550971815000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:04:35601663369000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:04:55466467127000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:04:55580898148000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:04:55619309836000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:05:15486055755000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:05:15607468633000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:05:15641512507000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:05:35510938050000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:05:35633227407000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:05:35666591730000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:05:55536850875000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:05:55654653175000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:05:55686949005000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:06:15567641784000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:06:15679191958000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:06:15711326644000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:06:35591242503000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:06:35703479892000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:06:35736484305000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:06:55606633370000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:06:55732509194000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:06:55761718886000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:07:15628755331000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:07:15755922149000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:07:15786467344000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:07:35653980811000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:07:35779206775000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:07:35805218613000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:07:55667834540000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:07:55800137700000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:07:55832154047000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:08:15695497972000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:08:15837760125000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:08:15856640317000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:08:35716261355000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:08:35858795501000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:08:35881942415000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:08:55739181799000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:08:55884037012000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:08:55909052904000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:09:15767272046000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:09:15911312301000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:09:15939781999000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:09:35781093121000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:09:35933610927000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:09:35966868235000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:09:55804379390000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:09:55958943779000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:09:55996261141000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:10:15828734594000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:10:15990901728000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:10:16016627124000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:10:35851571279000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:10:36021576782000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:10:36050091153000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:10:55866562361000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:10:56041282080000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:10:56076480642000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:11:15892784960000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:11:16061118523000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:11:16097227744000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:11:35910484193000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:11:36087654451000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:11:36125269174000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:11:55928001117000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:11:56110588520000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:11:56151762665000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:12:15948312105000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:12:16137295234000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:12:16178281500000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:12:35959610927000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:12:36161883478000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:12:36204049119000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:12:55976659432000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:12:56188912816000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:12:56229390146000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:13:16001395607000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:13:16211507634000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:13:16251121929000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:13:36012840566000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:13:36238768920000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:13:36270437467000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:13:56038844169000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:13:56260952816000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:13:56297559138000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:14:16060611925000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:14:16288535458000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:14:16319568866000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:14:36084686470000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:14:36312714236000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:14:36340921739000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:14:56112539658000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:14:56337999793000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:14:56367653433000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:15:16137529226000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:15:16363888936000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:15:16395230022000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:15:36160378302000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:15:36388932120000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:15:36422611153000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:15:56181086759000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:15:56414775468000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:15:56448033544000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:16:16204132251000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:16:16446469847000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:16:16476324998000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:16:36225235174000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:16:36472607892000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:16:36501982582000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:16:56248149404000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:16:56509024630000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:16:56527033761000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:17:16277222447000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:17:16522806835000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:17:16550634889000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:17:36304110173000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:17:36543688496000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:17:36578503647000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:17:56330932679000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:17:56575607864000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:17:56604879503000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:18:16363666880000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:18:16601293669000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:18:16630555981000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:18:36380790170000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:18:36626074796000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:18:36654926952000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:18:56403754991000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:18:56649546921000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:18:56679470800000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:19:16424189438000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:19:16677834844000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:19:16707492531000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:19:36447358979000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:19:36706723733000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:19:36735431831000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:19:56475212335000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:19:56735781468000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:19:56760543100000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:20:16494894472000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:20:16764569905000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:20:16784276954000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:20:36522954648000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:20:36788158757000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:20:36813089625000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:20:56536477225000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:20:56820934466000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:20:56835205812000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:21:16558539799000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:21:16839628409000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:21:16858823816000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:21:36584604215000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:21:36866145949000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:21:36884583822000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:21:56604192743000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:21:56879807292000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:21:56902379507000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:22:16631327205000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:22:16901323731000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:22:16929551831000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:22:36645969576000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:22:36926804436000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:22:36955543212000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:22:56671570922000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:22:56948326382000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:22:56973509611000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:23:16689736213000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:23:16978775570000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:23:17002189087000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:23:36715623223000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:23:36996768121000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:23:37027170702000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:23:56734250824000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:23:57026879214000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:23:57047493653000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:24:16756258041000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:24:17048634394000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:24:17072974060000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:24:36766653125000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:24:37075511712000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:24:37099396167000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:24:56791840705000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:24:57103886464000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:24:57128373278000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:25:16805118145000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:25:17138029070000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:25:17157680192000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:25:36822594280000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:25:37165391139000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:25:37185388576000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:25:56848965041000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:25:57185740632000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:25:57207835456000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:26:16878518348000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:26:17215085937000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:26:17237071562000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:26:36904478010000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:26:37240349529000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:26:37262840669000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:26:56921681120000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:26:57267063409000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:26:57289175413000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:27:16944799942000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:27:17285144908000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:27:17311610513000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:27:36967702697000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:27:37306065740000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:27:37336102246000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:27:56985892694000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:27:57328789844000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:27:57360114170000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:28:16997942583000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:28:17353235072000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:28:17386365058000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:28:37028359337000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:28:37374885863000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:28:37411974275000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:28:57049423599000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:28:57399871616000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:28:57435810283000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:29:17078562571000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:29:17425266712000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:29:17458872367000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:29:37102903713000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:29:37447405238000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:29:37488101995000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:29:57131086396000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:29:57470885033000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:29:57515369280000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:30:17152695972000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:30:17484940235000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:30:17542525892000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:30:37176302882000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:30:37508461339000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:30:37567953742000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:30:57193593716000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:30:57528643597000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:30:57592066785000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:31:17222290256000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:31:17552512622000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:31:17620742780000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:31:37249357789000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:31:37578350548000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:31:37638119144000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:31:57270129618000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:31:57602092279000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:31:57650410875000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:32:17292458496000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:32:17624072081000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:32:17690045078000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:32:37318630862000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:32:37647815769000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:32:37715501785000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:32:57346841335000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:32:57675371709000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:32:57742181501000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:33:17366277760000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:33:17714872454000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:33:17769856801000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:33:37386402248000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:33:37740057930000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:33:37801813158000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:33:57403494151000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:33:57757539956000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:33:57819029844000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:34:17430114640000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:34:17777730969000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:34:17847945666000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:34:37450790204000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:34:37801231047000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:34:37873369115000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:34:57481681514000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:34:57821125842000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:34:57896338505000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:35:17508995118000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:35:17838320947000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:35:17912173418000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:35:37528306101000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:35:37864568958000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:35:37937340677000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:35:57556669759000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:35:57891646436000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:35:57963714400000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:36:17585307749000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:36:17924217261000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:36:17993359227000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:36:37608653680000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:36:37950239828000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:36:38012950777000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:36:57632243628000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:36:57976739600000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:36:58043685490000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:37:17652617397000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:37:17999698358000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:37:18070197304000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:37:37679565813000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:37:38027138825000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:37:38095729983000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:37:57707144130000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:37:58048749179000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:37:58105796358000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:38:17739785664000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:38:18073772422000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:38:18142216259000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:38:37768133598000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:38:38107522922000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:38:38160331052000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:38:57788734326000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:38:58130579101000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:38:58181165653000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:39:17806872124000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:39:18155850080000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:39:18206573915000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:39:37820535476000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:39:38178763564000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:39:38234080352000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:39:57847270343000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:39:58203566545000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:39:58250516996000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:40:17872729534000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:40:18220371307000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:40:18277025268000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:40:37895011086000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:40:38243807175000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:40:38304863569000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:40:57916629284000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:40:58263383550000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:40:58332336202000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:41:17933635667000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:41:18285207917000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:41:18360437439000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:41:37946313671000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:41:38308465412000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:41:38387953575000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:41:57964316573000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:41:58331613784000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:41:58415430997000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:42:17990045703000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:42:18355199412000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:42:18435596203000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:42:38023536023000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:42:38379895046000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:42:38460486728000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:42:58036902873000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:42:58405783275000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:42:58492332694000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:43:18060133095000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:43:18432401997000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:43:18517404484000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:43:38086948011000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:43:38455627541000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:43:38532260625000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:43:58110599250000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:43:58473579055000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:43:58558238298000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:44:18133300588000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:44:18496738985000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:44:18580979007000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:44:38161126702000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:44:38520170658000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:44:38613697540000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:44:58173554013000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:44:58536201740000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:44:58636656186000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:45:18191157708000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:45:18562846960000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:45:18659906973000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:45:38217120986000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:45:38588312051000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:45:38679603475000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:45:58238659567000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:45:58621174012000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:45:58694391860000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:46:18265138813000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:46:18645835288000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:46:18718177654000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:46:38278147683000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:46:38665577314000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:46:38742853061000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:46:58305038361000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:46:58690163439000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:46:58770067134000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:47:18330659221000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:47:18716091367000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:47:18797173466000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:47:38350408245000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:47:38743525596000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:47:38821898890000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:47:58381921304000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:47:58768677734000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:47:58849755956000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:48:18401945794000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:48:18786222481000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:48:18876126610000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:48:38424870924000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:48:38799195235000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:48:38892873812000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:48:58445201600000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:48:58817978913000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:48:58907583487000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:49:18467012988000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:49:18847824199000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:49:18932830060000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:49:38491561832000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:49:38872357391000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:49:38956854953000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:49:58507716962000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:49:58891612305000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:49:58983100390000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:50:18524300606000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:50:18908840940000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:50:19003987546000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:50:38546814324000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:50:38931655786000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:50:39023147407000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:50:58574318378000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:50:58965170594000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:50:59049708694000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:51:18589663855000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:51:18987725079000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:51:19077722965000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:51:38616572356000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:51:39009806733000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:51:39101666205000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:51:58641995888000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:51:59035829955000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:51:59135233077000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:52:18664427727000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:52:19068846675000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:52:19160473846000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:52:38689935709000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:52:39095361399000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:52:39187122049000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:52:58708905157000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:52:59122119389000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:52:59214141487000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:53:18741770854000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:53:19147666259000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:53:19227475890000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:53:38773253981000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:53:39170085695000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:53:39253374141000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:53:58800396570000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:53:59191206417000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:53:59277433645000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:54:18818762361000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:54:19207617574000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:54:19297554366000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:54:38840335683000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:54:39232481271000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:54:39330997085000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:54:58863760481000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:54:59250787238000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:54:59352102665000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:55:18888185054000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:55:19265655752000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:55:19382030948000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:55:38913513641000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:55:39293936417000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:55:39409519960000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:55:58949595714000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:55:59304881756000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:55:59440160108000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:56:18978397487000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:56:19330251028000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:56:19462563354000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:56:39006373124000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:56:39357184473000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:56:39493326073000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:56:59020180231000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:56:59369369470000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:56:59520680885000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:57:19042385987000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:57:19396081042000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:57:19544390454000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:57:39070036409000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:57:39426976716000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:57:39574128732000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:57:59090709532000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:57:59453408468000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:57:59602772803000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:58:19116467783000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:58:19474707392000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:58:19634843098000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:58:39142908710000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:58:39499854290000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:58:39664446055000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:58:59168106111000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:58:59525669905000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:58:59696732022000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:59:19190752144000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:59:19549609220000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:59:19720882884000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:59:39218833661000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:59:39590302993000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:59:39752137809000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T12:59:59238044543000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T12:59:59611855363000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T12:59:59775948656000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T13:00:19279872554000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T13:00:19639701837000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T13:00:19800742979000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T13:00:39304956542000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T13:00:39664715226000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T13:00:39819914419000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T13:00:59327861983000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T13:00:59683841923000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T13:00:59845866886000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T13:01:19348620457000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T13:01:19709769324000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T13:01:19871738618000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T13:01:39364764766000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T13:01:39741632110000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T13:01:39892424262000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T13:01:59378212974000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T13:01:59759111692000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T13:01:59910231124000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T13:02:19405443555000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T13:02:19785560608000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T13:02:19934705654000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T13:02:39418174130000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T13:02:39812297138000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T13:02:39954238582000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T13:02:59437050674000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T13:02:59841586704000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T13:02:59981605009000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T13:03:19459830748000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T13:03:19867012355000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T13:03:20004984794000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T13:03:39486906710000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T13:03:39892729599000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T13:03:40034487750000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T13:03:59514594243000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T13:03:59905731350000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T13:04:00049006963000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T13:04:19540301787000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T13:04:19931285840000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T13:04:20074829230000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T13:04:39566799036000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T13:04:39954901453000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T13:04:40095840956000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T13:04:59585699808000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T13:04:59974938205000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T13:05:00122297552000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T13:05:19602643382000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T13:05:20002805507000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T13:05:20152633703000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T13:05:39627792969000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T13:05:40028625017000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T13:05:40178818308000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T13:05:59643174519000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T13:06:00047932268000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T13:06:00205764159000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T13:06:19666539857000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T13:06:20072290734000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T13:06:20223004772000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T13:06:39686105580000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T13:06:40094864907000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T13:06:40243707656000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T13:06:59707334957000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T13:07:00115497612000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T13:07:00269248505000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T13:07:19730351081000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T13:07:20132363072000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T13:07:20296099614000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T13:07:39751979473000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T13:07:40162055004000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T13:07:40320700200000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T13:07:59774469505000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T13:08:00184861291000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T13:08:00352798323000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T13:08:19801378966000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T13:08:20218600327000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T13:08:20376049446000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T13:08:39816342234000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T13:08:40241649201000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T13:08:40404876016000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T13:08:59834705534000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T13:09:00257624026000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T13:09:00416434711000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T13:09:19851210232000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T13:09:20282191680000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T13:09:20440927245000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T13:09:39875187879000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T13:09:40300413536000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T13:09:40463266322000+0000 Sending heart beat to directory.
-[32mdatabase_0_1    |[0m 2017-12-10T13:09:45.110+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.1:59842 #1 (1 connection now open)
-[32mdatabase_0_1    |[0m 2017-12-10T13:09:45.111+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.1:59846 #2 (2 connections now open)
-[36mdatabase_1_1    |[0m 2017-12-10T13:09:45.114+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.1:35966 #1 (1 connection now open)
-[36mdatabase_1_1    |[0m 2017-12-10T13:09:45.115+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.1:35970 #2 (2 connections now open)
-[32mdatabase_0_1    |[0m 2017-12-10T13:09:45.117+0000 I NETWORK  [conn2] end connection 172.17.0.1:59846 (1 connection now open)
-[32mdatabase_0_1    |[0m 2017-12-10T13:09:45.117+0000 I NETWORK  [conn1] end connection 172.17.0.1:59842 (1 connection now open)
-[33mdatabase_2_1    |[0m 2017-12-10T13:09:45.120+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.1:56018 #1 (1 connection now open)
-[33mdatabase_2_1    |[0m 2017-12-10T13:09:45.121+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.1:56022 #2 (2 connections now open)
-[36mdatabase_1_1    |[0m 2017-12-10T13:09:45.123+0000 I NETWORK  [conn2] end connection 172.17.0.1:35970 (1 connection now open)
-[36mdatabase_1_1    |[0m 2017-12-10T13:09:45.123+0000 I NETWORK  [conn1] end connection 172.17.0.1:35966 (1 connection now open)
-[33mdatabase_2_1    |[0m 2017-12-10T13:09:45.129+0000 I NETWORK  [conn2] end connection 172.17.0.1:56022 (1 connection now open)
-[33mdatabase_2_1    |[0m 2017-12-10T13:09:45.129+0000 I NETWORK  [conn1] end connection 172.17.0.1:56018 (1 connection now open)
-[35mfileserver_1    |[0m 2017-12-10T13:09:59893257580000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T13:10:00317864304000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T13:10:00490636009000+0000 Sending heart beat to directory.
-[32mdatabase_0_1    |[0m 2017-12-10T13:10:09.618+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.1:59930 #3 (1 connection now open)
-[32mdatabase_0_1    |[0m 2017-12-10T13:10:09.619+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.1:59934 #4 (2 connections now open)
-[36mdatabase_1_1    |[0m 2017-12-10T13:10:09.621+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.1:36054 #3 (1 connection now open)
-[36mdatabase_1_1    |[0m 2017-12-10T13:10:09.622+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.1:36058 #4 (2 connections now open)
-[32mdatabase_0_1    |[0m 2017-12-10T13:10:09.623+0000 I NETWORK  [conn4] end connection 172.17.0.1:59934 (1 connection now open)
-[32mdatabase_0_1    |[0m 2017-12-10T13:10:09.623+0000 I NETWORK  [conn3] end connection 172.17.0.1:59930 (1 connection now open)
-[33mdatabase_2_1    |[0m 2017-12-10T13:10:09.625+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.1:56106 #3 (1 connection now open)
-[33mdatabase_2_1    |[0m 2017-12-10T13:10:09.625+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.1:56110 #4 (2 connections now open)
-[36mdatabase_1_1    |[0m 2017-12-10T13:10:09.626+0000 I NETWORK  [conn4] end connection 172.17.0.1:36058 (1 connection now open)
-[36mdatabase_1_1    |[0m 2017-12-10T13:10:09.626+0000 I NETWORK  [conn3] end connection 172.17.0.1:36054 (1 connection now open)
-[33mdatabase_2_1    |[0m 2017-12-10T13:10:09.629+0000 I NETWORK  [conn4] end connection 172.17.0.1:56110 (1 connection now open)
-[33mdatabase_2_1    |[0m 2017-12-10T13:10:09.629+0000 I NETWORK  [conn3] end connection 172.17.0.1:56106 (1 connection now open)
-[35mfileserver_1    |[0m 2017-12-10T13:10:19913242522000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T13:10:20335934798000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T13:10:20515003261000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T13:10:39940759955000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T13:10:40355084228000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T13:10:40539105288000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T13:10:59970460535000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T13:11:00382839943000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T13:11:00566888409000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T13:11:19988943156000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T13:11:20409241470000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T13:11:20592598372000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T13:11:40006785792000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T13:11:40431398826000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T13:11:40613624858000+0000 Sending heart beat to directory.
-[32mdatabase_0_1    |[0m 2017-12-10T13:11:48.648+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.1:60114 #5 (1 connection now open)
-[32mdatabase_0_1    |[0m 2017-12-10T13:11:48.648+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.1:60118 #6 (2 connections now open)
-[36mdatabase_1_1    |[0m 2017-12-10T13:11:48.650+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.1:36238 #5 (1 connection now open)
-[36mdatabase_1_1    |[0m 2017-12-10T13:11:48.650+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.1:36242 #6 (2 connections now open)
-[32mdatabase_0_1    |[0m 2017-12-10T13:11:48.651+0000 I NETWORK  [conn6] end connection 172.17.0.1:60118 (1 connection now open)
-[32mdatabase_0_1    |[0m 2017-12-10T13:11:48.651+0000 I NETWORK  [conn5] end connection 172.17.0.1:60114 (1 connection now open)
-[33mdatabase_2_1    |[0m 2017-12-10T13:11:48.652+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.1:56290 #5 (1 connection now open)
-[33mdatabase_2_1    |[0m 2017-12-10T13:11:48.653+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.1:56294 #6 (2 connections now open)
-[36mdatabase_1_1    |[0m 2017-12-10T13:11:48.654+0000 I NETWORK  [conn5] end connection 172.17.0.1:36238 (1 connection now open)
-[36mdatabase_1_1    |[0m 2017-12-10T13:11:48.654+0000 I NETWORK  [conn6] end connection 172.17.0.1:36242 (1 connection now open)
-[33mdatabase_2_1    |[0m 2017-12-10T13:11:48.656+0000 I NETWORK  [conn6] end connection 172.17.0.1:56294 (1 connection now open)
-[33mdatabase_2_1    |[0m 2017-12-10T13:11:48.656+0000 I NETWORK  [conn5] end connection 172.17.0.1:56290 (1 connection now open)
-[35mfileserver_1    |[0m 2017-12-10T13:12:00027755348000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T13:12:00456447487000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T13:12:00638387928000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T13:12:20051248055000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T13:12:20476384799000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T13:12:20659246761000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T13:12:40074313991000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T13:12:40499630052000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T13:12:40688583165000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T13:13:00100811854000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T13:13:00524218598000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T13:13:00715457311000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T13:13:20118594455000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T13:13:20549424536000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T13:13:20734748318000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T13:13:40145662205000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T13:13:40571948364000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T13:13:40750046839000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T13:14:00172186386000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T13:14:00599039633000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T13:14:00787481271000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T13:14:20200803744000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T13:14:20622406823000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T13:14:20815399527000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T13:14:40232264925000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T13:14:40645286265000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T13:14:40831910392000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T13:15:00256090408000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T13:15:00670323038000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T13:15:00862477487000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T13:15:20278803131000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T13:15:20687875700000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T13:15:20882151268000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T13:15:40303104056000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T13:15:40707451923000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T13:15:40902844420000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T13:16:00322037578000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T13:16:00730423156000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T13:16:00926194252000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T13:16:20346349940000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T13:16:20752943939000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T13:16:20962176436000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T13:16:40369341911000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T13:16:40788805544000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T13:16:40999078958000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T13:17:00388697206000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T13:17:00805145724000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T13:17:01030180880000+0000 Sending heart beat to directory.
-[35mfileserver_1    |[0m 2017-12-10T13:17:20409847909000+0000 Sending heart beat to directory.
-[31mfileserver_2    |[0m 2017-12-10T13:17:20829550120000+0000 Sending heart beat to directory.
-[34mfileserver_0    |[0m 2017-12-10T13:17:21046523594000+0000 Sending heart beat to directory.
+Creating fileserver_database_2_1 ... 
+Creating fileserver_database_1_1 ... 
+Creating fileserver_database_0_1 ... 
+Creating fileserver_database_2_1
+Creating fileserver_database_1_1
+Creating fileserver_database_0_1
+[1A[2KCreating fileserver_database_2_1 ... [32mdone[0m[1BCreating fileserver_2 ... 
+Creating fileserver_2
+[1A[2KCreating fileserver_database_1_1 ... [32mdone[0m[1B[1A[2KCreating fileserver_database_0_1 ... [32mdone[0m[1BCreating fileserver_1 ... 
+Creating fileserver_0 ... 
+Creating fileserver_1
+Creating fileserver_0
+[1A[2KCreating fileserver_2 ... [32mdone[0m[1B[1A[2KCreating fileserver_1 ... [32mdone[0m[1B[1A[2KCreating fileserver_0 ... [32mdone[0m[1BAttaching to fileserver_database_2_1, fileserver_database_1_1, fileserver_database_0_1, fileserver_2, fileserver_1, fileserver_0
+[32mdatabase_0_1    |[0m 2017-12-10T18:37:13.645+0000 I JOURNAL  [initandlisten] journal dir=/data/db/journal
+[32mdatabase_0_1    |[0m 2017-12-10T18:37:13.645+0000 I JOURNAL  [initandlisten] recover : no journal files present, no recovery needed
+[36mdatabase_2_1    |[0m 2017-12-10T18:37:13.233+0000 I JOURNAL  [initandlisten] journal dir=/data/db/journal
+[36mdatabase_2_1    |[0m 2017-12-10T18:37:13.234+0000 I JOURNAL  [initandlisten] recover : no journal files present, no recovery needed
+[33mdatabase_1_1    |[0m 2017-12-10T18:37:13.635+0000 I JOURNAL  [initandlisten] journal dir=/data/db/journal
+[33mdatabase_1_1    |[0m 2017-12-10T18:37:13.635+0000 I JOURNAL  [initandlisten] recover : no journal files present, no recovery needed
+[36mdatabase_2_1    |[0m 2017-12-10T18:37:14.400+0000 I JOURNAL  [initandlisten] preallocateIsFaster=true 7.56
+[34mfileserver_0    |[0m 2017-12-10T18:37:14882331848000+0000 Environment variable: LOG_LEVEL is not set. Defaulting to "DEBUG"
+[34mfileserver_0    |[0m 2017-12-10T18:37:14882757048000+0000 Starting filesystem
+[34mfileserver_0    |[0m 2017-12-10T18:37:14883379097000+0000 Registering with directory service at port 
+[31mfileserver_1    |[0m 2017-12-10T18:37:14841784453000+0000 Environment variable: LOG_LEVEL is not set. Defaulting to "DEBUG"
+[34mfileserver_0    |[0m 2017-12-10T18:37:14909114882000+0000 Sucessfully registered with directory service
+[35mfileserver_2    |[0m 2017-12-10T18:37:13993832868000+0000 Environment variable: LOG_LEVEL is not set. Defaulting to "DEBUG"
+[34mfileserver_0    |[0m 2017-12-10T18:37:14926723872000+0000 Sending heart beat to directory.
+[31mfileserver_1    |[0m 2017-12-10T18:37:14842243421000+0000 Starting filesystem
+[35mfileserver_2    |[0m 2017-12-10T18:37:13995128707000+0000 Starting filesystem
+[31mfileserver_1    |[0m 2017-12-10T18:37:14842701573000+0000 Registering with directory service at port 
+[31mfileserver_1    |[0m 2017-12-10T18:37:14856862828000+0000 Sucessfully registered with directory service
+[35mfileserver_2    |[0m 2017-12-10T18:37:13998007186000+0000 Registering with directory service at port 
+[31mfileserver_1    |[0m 2017-12-10T18:37:14885488686000+0000 Sending heart beat to directory.
+[35mfileserver_2    |[0m 2017-12-10T18:37:14163807261000+0000 Sucessfully registered with directory service
+[35mfileserver_2    |[0m 2017-12-10T18:37:14192977290000+0000 Sending heart beat to directory.
+[32mdatabase_0_1    |[0m 2017-12-10T18:37:15.024+0000 I JOURNAL  [initandlisten] preallocateIsFaster=true 13.02
+[33mdatabase_1_1    |[0m 2017-12-10T18:37:15.027+0000 I JOURNAL  [initandlisten] preallocateIsFaster=true 12.7
+[36mdatabase_2_1    |[0m 2017-12-10T18:37:15.631+0000 I JOURNAL  [initandlisten] preallocateIsFaster=true 10.24
+[33mdatabase_1_1    |[0m 2017-12-10T18:37:16.105+0000 I JOURNAL  [initandlisten] preallocateIsFaster=true 13.52
+[32mdatabase_0_1    |[0m 2017-12-10T18:37:16.118+0000 I JOURNAL  [initandlisten] preallocateIsFaster=true 13.58
+[36mdatabase_2_1    |[0m 2017-12-10T18:37:17.314+0000 I JOURNAL  [initandlisten] preallocateIsFaster=true 2.5
+[36mdatabase_2_1    |[0m 2017-12-10T18:37:17.314+0000 I JOURNAL  [initandlisten] preallocateIsFaster check took 4.08 secs
+[36mdatabase_2_1    |[0m 2017-12-10T18:37:17.314+0000 I JOURNAL  [initandlisten] preallocating a journal file /data/db/journal/prealloc.0
+[36mdatabase_2_1    |[0m 2017-12-10T18:37:19.519+0000 I JOURNAL  [initandlisten] preallocating a journal file /data/db/journal/prealloc.1
+[33mdatabase_1_1    |[0m 2017-12-10T18:37:19.825+0000 I JOURNAL  [initandlisten] preallocateIsFaster=true 46.48
+[33mdatabase_1_1    |[0m 2017-12-10T18:37:19.825+0000 I JOURNAL  [initandlisten] preallocateIsFaster check took 6.19 secs
+[33mdatabase_1_1    |[0m 2017-12-10T18:37:19.825+0000 I JOURNAL  [initandlisten] preallocating a journal file /data/db/journal/prealloc.0
+[32mdatabase_0_1    |[0m 2017-12-10T18:37:19.840+0000 I JOURNAL  [initandlisten] preallocateIsFaster=true 46.5
+[32mdatabase_0_1    |[0m 2017-12-10T18:37:19.840+0000 I JOURNAL  [initandlisten] preallocateIsFaster check took 6.194 secs
+[32mdatabase_0_1    |[0m 2017-12-10T18:37:19.840+0000 I JOURNAL  [initandlisten] preallocating a journal file /data/db/journal/prealloc.0
+[36mdatabase_2_1    |[0m 2017-12-10T18:37:23.004+0000 I JOURNAL  [initandlisten] preallocating a journal file /data/db/journal/prealloc.2
+[33mdatabase_1_1    |[0m 2017-12-10T18:37:25.705+0000 I JOURNAL  [initandlisten] preallocating a journal file /data/db/journal/prealloc.1
+[32mdatabase_0_1    |[0m 2017-12-10T18:37:25.864+0000 I JOURNAL  [initandlisten] preallocating a journal file /data/db/journal/prealloc.1
+[36mdatabase_2_1    |[0m 2017-12-10T18:37:27.689+0000 I JOURNAL  [durability] Durability thread started
+[36mdatabase_2_1    |[0m 2017-12-10T18:37:27.690+0000 I JOURNAL  [journal writer] Journal writer thread started
+[36mdatabase_2_1    |[0m 2017-12-10T18:37:27.830+0000 I CONTROL  [initandlisten] MongoDB starting : pid=1 port=27017 dbpath=/data/db 64-bit host=e44604c17427
+[36mdatabase_2_1    |[0m 2017-12-10T18:37:27.830+0000 I CONTROL  [initandlisten] 
+[36mdatabase_2_1    |[0m 2017-12-10T18:37:27.830+0000 I CONTROL  [initandlisten] ** WARNING: /sys/kernel/mm/transparent_hugepage/enabled is 'always'.
+[36mdatabase_2_1    |[0m 2017-12-10T18:37:27.830+0000 I CONTROL  [initandlisten] **        We suggest setting it to 'never'
+[36mdatabase_2_1    |[0m 2017-12-10T18:37:27.830+0000 I CONTROL  [initandlisten] 
+[36mdatabase_2_1    |[0m 2017-12-10T18:37:27.830+0000 I CONTROL  [initandlisten] db version v3.0.2
+[36mdatabase_2_1    |[0m 2017-12-10T18:37:27.830+0000 I CONTROL  [initandlisten] git version: 6201872043ecbbc0a4cc169b5482dcf385fc464f
+[36mdatabase_2_1    |[0m 2017-12-10T18:37:27.830+0000 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1e 11 Feb 2013
+[36mdatabase_2_1    |[0m 2017-12-10T18:37:27.830+0000 I CONTROL  [initandlisten] build info: Linux ip-10-171-120-232 3.2.0-4-amd64 #1 SMP Debian 3.2.46-1 x86_64 BOOST_LIB_VERSION=1_49
+[36mdatabase_2_1    |[0m 2017-12-10T18:37:27.830+0000 I CONTROL  [initandlisten] allocator: tcmalloc
+[36mdatabase_2_1    |[0m 2017-12-10T18:37:27.830+0000 I CONTROL  [initandlisten] options: {}
+[36mdatabase_2_1    |[0m 2017-12-10T18:37:27.831+0000 I INDEX    [initandlisten] allocating new ns file /data/db/local.ns, filling with zeroes...
+[36mdatabase_2_1    |[0m 2017-12-10T18:37:28.004+0000 I STORAGE  [FileAllocator] allocating new datafile /data/db/local.0, filling with zeroes...
+[36mdatabase_2_1    |[0m 2017-12-10T18:37:28.004+0000 I STORAGE  [FileAllocator] creating directory /data/db/_tmp
+[36mdatabase_2_1    |[0m 2017-12-10T18:37:28.228+0000 I STORAGE  [FileAllocator] done allocating datafile /data/db/local.0, size: 64MB,  took 0.169 secs
+[36mdatabase_2_1    |[0m 2017-12-10T18:37:28.335+0000 I NETWORK  [initandlisten] waiting for connections on port 27017
+[33mdatabase_1_1    |[0m 2017-12-10T18:37:30.482+0000 I JOURNAL  [initandlisten] preallocating a journal file /data/db/journal/prealloc.2
+[32mdatabase_0_1    |[0m 2017-12-10T18:37:30.856+0000 I JOURNAL  [initandlisten] preallocating a journal file /data/db/journal/prealloc.2
+[33mdatabase_1_1    |[0m 2017-12-10T18:37:33.798+0000 I JOURNAL  [durability] Durability thread started
+[33mdatabase_1_1    |[0m 2017-12-10T18:37:33.798+0000 I JOURNAL  [journal writer] Journal writer thread started
+[33mdatabase_1_1    |[0m 2017-12-10T18:37:33.839+0000 I CONTROL  [initandlisten] MongoDB starting : pid=1 port=27017 dbpath=/data/db 64-bit host=807df6e5cf08
+[33mdatabase_1_1    |[0m 2017-12-10T18:37:33.839+0000 I CONTROL  [initandlisten] 
+[33mdatabase_1_1    |[0m 2017-12-10T18:37:33.839+0000 I CONTROL  [initandlisten] ** WARNING: /sys/kernel/mm/transparent_hugepage/enabled is 'always'.
+[33mdatabase_1_1    |[0m 2017-12-10T18:37:33.839+0000 I CONTROL  [initandlisten] **        We suggest setting it to 'never'
+[33mdatabase_1_1    |[0m 2017-12-10T18:37:33.839+0000 I CONTROL  [initandlisten] 
+[33mdatabase_1_1    |[0m 2017-12-10T18:37:33.839+0000 I CONTROL  [initandlisten] db version v3.0.2
+[33mdatabase_1_1    |[0m 2017-12-10T18:37:33.839+0000 I CONTROL  [initandlisten] git version: 6201872043ecbbc0a4cc169b5482dcf385fc464f
+[33mdatabase_1_1    |[0m 2017-12-10T18:37:33.839+0000 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1e 11 Feb 2013
+[33mdatabase_1_1    |[0m 2017-12-10T18:37:33.839+0000 I CONTROL  [initandlisten] build info: Linux ip-10-171-120-232 3.2.0-4-amd64 #1 SMP Debian 3.2.46-1 x86_64 BOOST_LIB_VERSION=1_49
+[33mdatabase_1_1    |[0m 2017-12-10T18:37:33.839+0000 I CONTROL  [initandlisten] allocator: tcmalloc
+[33mdatabase_1_1    |[0m 2017-12-10T18:37:33.839+0000 I CONTROL  [initandlisten] options: {}
+[33mdatabase_1_1    |[0m 2017-12-10T18:37:33.840+0000 I INDEX    [initandlisten] allocating new ns file /data/db/local.ns, filling with zeroes...
+[33mdatabase_1_1    |[0m 2017-12-10T18:37:34.024+0000 I STORAGE  [FileAllocator] allocating new datafile /data/db/local.0, filling with zeroes...
+[33mdatabase_1_1    |[0m 2017-12-10T18:37:34.024+0000 I STORAGE  [FileAllocator] creating directory /data/db/_tmp
+[33mdatabase_1_1    |[0m 2017-12-10T18:37:34.141+0000 I STORAGE  [FileAllocator] done allocating datafile /data/db/local.0, size: 64MB,  took 0.102 secs
+[33mdatabase_1_1    |[0m 2017-12-10T18:37:34.247+0000 I NETWORK  [initandlisten] waiting for connections on port 27017
+[32mdatabase_0_1    |[0m 2017-12-10T18:37:34.766+0000 I JOURNAL  [durability] Durability thread started
+[32mdatabase_0_1    |[0m 2017-12-10T18:37:34.766+0000 I JOURNAL  [journal writer] Journal writer thread started
+[32mdatabase_0_1    |[0m 2017-12-10T18:37:34.781+0000 I CONTROL  [initandlisten] MongoDB starting : pid=1 port=27017 dbpath=/data/db 64-bit host=4e19b7769b39
+[32mdatabase_0_1    |[0m 2017-12-10T18:37:34.781+0000 I CONTROL  [initandlisten] 
+[32mdatabase_0_1    |[0m 2017-12-10T18:37:34.781+0000 I CONTROL  [initandlisten] ** WARNING: /sys/kernel/mm/transparent_hugepage/enabled is 'always'.
+[32mdatabase_0_1    |[0m 2017-12-10T18:37:34.781+0000 I CONTROL  [initandlisten] **        We suggest setting it to 'never'
+[32mdatabase_0_1    |[0m 2017-12-10T18:37:34.781+0000 I CONTROL  [initandlisten] 
+[32mdatabase_0_1    |[0m 2017-12-10T18:37:34.781+0000 I CONTROL  [initandlisten] db version v3.0.2
+[32mdatabase_0_1    |[0m 2017-12-10T18:37:34.781+0000 I CONTROL  [initandlisten] git version: 6201872043ecbbc0a4cc169b5482dcf385fc464f
+[32mdatabase_0_1    |[0m 2017-12-10T18:37:34.781+0000 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1e 11 Feb 2013
+[32mdatabase_0_1    |[0m 2017-12-10T18:37:34.781+0000 I CONTROL  [initandlisten] build info: Linux ip-10-171-120-232 3.2.0-4-amd64 #1 SMP Debian 3.2.46-1 x86_64 BOOST_LIB_VERSION=1_49
+[32mdatabase_0_1    |[0m 2017-12-10T18:37:34.781+0000 I CONTROL  [initandlisten] allocator: tcmalloc
+[32mdatabase_0_1    |[0m 2017-12-10T18:37:34.782+0000 I CONTROL  [initandlisten] options: {}
+[32mdatabase_0_1    |[0m 2017-12-10T18:37:34.782+0000 I INDEX    [initandlisten] allocating new ns file /data/db/local.ns, filling with zeroes...
+[35mfileserver_2    |[0m 2017-12-10T18:37:34782955051000+0000 Sending heart beat to directory.
+[32mdatabase_0_1    |[0m 2017-12-10T18:37:34.831+0000 I STORAGE  [FileAllocator] allocating new datafile /data/db/local.0, filling with zeroes...
+[32mdatabase_0_1    |[0m 2017-12-10T18:37:34.831+0000 I STORAGE  [FileAllocator] creating directory /data/db/_tmp
+[32mdatabase_0_1    |[0m 2017-12-10T18:37:34.846+0000 I STORAGE  [FileAllocator] done allocating datafile /data/db/local.0, size: 64MB,  took 0.007 secs
+[32mdatabase_0_1    |[0m 2017-12-10T18:37:34.851+0000 I NETWORK  [initandlisten] waiting for connections on port 27017
+[31mfileserver_1    |[0m 2017-12-10T18:37:34907626517000+0000 Sending heart beat to directory.
+[34mfileserver_0    |[0m 2017-12-10T18:37:34957460407000+0000 Sending heart beat to directory.
+[35mfileserver_2    |[0m 2017-12-10T18:37:54844015391000+0000 Sending heart beat to directory.
+[31mfileserver_1    |[0m 2017-12-10T18:37:54930366419000+0000 Sending heart beat to directory.
+[34mfileserver_0    |[0m 2017-12-10T18:37:54981531695000+0000 Sending heart beat to directory.
+[35mfileserver_2    |[0m 2017-12-10T18:38:14870491281000+0000 Sending heart beat to directory.
+[31mfileserver_1    |[0m 2017-12-10T18:38:14955271040000+0000 Sending heart beat to directory.
+[34mfileserver_0    |[0m 2017-12-10T18:38:15005025274000+0000 Sending heart beat to directory.
+[35mfileserver_2    |[0m 2017-12-10T18:38:34887686627000+0000 Sending heart beat to directory.
+[31mfileserver_1    |[0m 2017-12-10T18:38:34978367028000+0000 Sending heart beat to directory.
+[34mfileserver_0    |[0m 2017-12-10T18:38:35031479567000+0000 Sending heart beat to directory.
+[35mfileserver_2    |[0m 2017-12-10T18:38:54899530208000+0000 Sending heart beat to directory.
+[31mfileserver_1    |[0m 2017-12-10T18:38:54990646052000+0000 Sending heart beat to directory.
+[34mfileserver_0    |[0m 2017-12-10T18:38:55044825284000+0000 Sending heart beat to directory.
+[35mfileserver_2    |[0m 2017-12-10T18:39:14921684283000+0000 Sending heart beat to directory.
+[31mfileserver_1    |[0m 2017-12-10T18:39:15011018591000+0000 Sending heart beat to directory.
+[34mfileserver_0    |[0m 2017-12-10T18:39:15072354402000+0000 Sending heart beat to directory.
+[35mfileserver_2    |[0m 2017-12-10T18:39:34948145286000+0000 Sending heart beat to directory.
+[31mfileserver_1    |[0m 2017-12-10T18:39:35033363077000+0000 Sending heart beat to directory.
+[34mfileserver_0    |[0m 2017-12-10T18:39:35096368167000+0000 Sending heart beat to directory.
+[35mfileserver_2    |[0m 2017-12-10T18:39:54967520929000+0000 Sending heart beat to directory.
+[31mfileserver_1    |[0m 2017-12-10T18:39:55050817393000+0000 Sending heart beat to directory.
+[34mfileserver_0    |[0m 2017-12-10T18:39:55122228421000+0000 Sending heart beat to directory.
+[35mfileserver_2    |[0m 2017-12-10T18:40:14986735770000+0000 Sending heart beat to directory.
+[31mfileserver_1    |[0m 2017-12-10T18:40:15077563591000+0000 Sending heart beat to directory.
+[34mfileserver_0    |[0m 2017-12-10T18:40:15142693666000+0000 Sending heart beat to directory.
+[35mfileserver_2    |[0m 2017-12-10T18:40:35004477030000+0000 Sending heart beat to directory.
+[31mfileserver_1    |[0m 2017-12-10T18:40:35102314347000+0000 Sending heart beat to directory.
+[34mfileserver_0    |[0m 2017-12-10T18:40:35172216423000+0000 Sending heart beat to directory.
+[35mfileserver_2    |[0m 2017-12-10T18:40:55023412510000+0000 Sending heart beat to directory.
+[31mfileserver_1    |[0m 2017-12-10T18:40:55124659111000+0000 Sending heart beat to directory.
+[34mfileserver_0    |[0m 2017-12-10T18:40:55194745739000+0000 Sending heart beat to directory.
+[35mfileserver_2    |[0m 2017-12-10T18:41:15048451095000+0000 Sending heart beat to directory.
+[31mfileserver_1    |[0m 2017-12-10T18:41:15150151460000+0000 Sending heart beat to directory.
+[34mfileserver_0    |[0m 2017-12-10T18:41:15219212548000+0000 Sending heart beat to directory.
+[35mfileserver_2    |[0m 2017-12-10T18:41:35074934392000+0000 Sending heart beat to directory.
+[31mfileserver_1    |[0m 2017-12-10T18:41:35175556403000+0000 Sending heart beat to directory.
+[34mfileserver_0    |[0m 2017-12-10T18:41:35237210649000+0000 Sending heart beat to directory.
+[35mfileserver_2    |[0m 2017-12-10T18:41:55099144722000+0000 Sending heart beat to directory.
+[31mfileserver_1    |[0m 2017-12-10T18:41:55188365868000+0000 Sending heart beat to directory.
+[34mfileserver_0    |[0m 2017-12-10T18:41:55259098370000+0000 Sending heart beat to directory.
+[35mfileserver_2    |[0m 2017-12-10T18:42:15122914741000+0000 Sending heart beat to directory.
+[31mfileserver_1    |[0m 2017-12-10T18:42:15215223987000+0000 Sending heart beat to directory.
+[34mfileserver_0    |[0m 2017-12-10T18:42:15283211156000+0000 Sending heart beat to directory.
+[35mfileserver_2    |[0m 2017-12-10T18:42:35140680746000+0000 Sending heart beat to directory.
+[31mfileserver_1    |[0m 2017-12-10T18:42:35234422222000+0000 Sending heart beat to directory.
+[34mfileserver_0    |[0m 2017-12-10T18:42:35300875558000+0000 Sending heart beat to directory.
+[35mfileserver_2    |[0m 2017-12-10T18:42:55165074633000+0000 Sending heart beat to directory.
+[31mfileserver_1    |[0m 2017-12-10T18:42:55275343284000+0000 Sending heart beat to directory.
+[34mfileserver_0    |[0m 2017-12-10T18:42:55326583650000+0000 Sending heart beat to directory.
+[35mfileserver_2    |[0m 2017-12-10T18:43:15188235053000+0000 Sending heart beat to directory.
+[31mfileserver_1    |[0m 2017-12-10T18:43:15298410017000+0000 Sending heart beat to directory.
+[34mfileserver_0    |[0m 2017-12-10T18:43:15353780673000+0000 Sending heart beat to directory.
+[35mfileserver_2    |[0m 2017-12-10T18:43:35212638719000+0000 Sending heart beat to directory.
+[31mfileserver_1    |[0m 2017-12-10T18:43:35323100517000+0000 Sending heart beat to directory.
+[34mfileserver_0    |[0m 2017-12-10T18:43:35380162474000+0000 Sending heart beat to directory.
+[35mfileserver_2    |[0m 2017-12-10T18:43:55232495527000+0000 Sending heart beat to directory.
+[31mfileserver_1    |[0m 2017-12-10T18:43:55348415647000+0000 Sending heart beat to directory.
+[34mfileserver_0    |[0m 2017-12-10T18:43:55400950917000+0000 Sending heart beat to directory.
+[32mdatabase_0_1    |[0m 2017-12-10T18:44:10.880+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.1:48620 #1 (1 connection now open)
+[32mdatabase_0_1    |[0m 2017-12-10T18:44:10.881+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.1:48624 #2 (2 connections now open)
+[32mdatabase_0_1    |[0m 2017-12-10T18:44:10.882+0000 I NETWORK  [conn2] end connection 172.17.0.1:48624 (1 connection now open)
+[32mdatabase_0_1    |[0m 2017-12-10T18:44:10.882+0000 I NETWORK  [conn1] end connection 172.17.0.1:48620 (1 connection now open)
+[33mdatabase_1_1    |[0m 2017-12-10T18:44:10.882+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.1:52468 #1 (1 connection now open)
+[33mdatabase_1_1    |[0m 2017-12-10T18:44:10.883+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.1:52472 #2 (2 connections now open)
+[33mdatabase_1_1    |[0m 2017-12-10T18:44:10.884+0000 I NETWORK  [conn1] end connection 172.17.0.1:52468 (1 connection now open)
+[33mdatabase_1_1    |[0m 2017-12-10T18:44:10.884+0000 I NETWORK  [conn2] end connection 172.17.0.1:52472 (1 connection now open)
+[36mdatabase_2_1    |[0m 2017-12-10T18:44:10.884+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.1:56824 #1 (1 connection now open)
+[36mdatabase_2_1    |[0m 2017-12-10T18:44:10.885+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.1:56828 #2 (2 connections now open)
+[36mdatabase_2_1    |[0m 2017-12-10T18:44:10.886+0000 I NETWORK  [conn2] end connection 172.17.0.1:56828 (1 connection now open)
+[36mdatabase_2_1    |[0m 2017-12-10T18:44:10.886+0000 I NETWORK  [conn1] end connection 172.17.0.1:56824 (1 connection now open)
+[35mfileserver_2    |[0m 2017-12-10T18:44:15257084777000+0000 Sending heart beat to directory.
+[31mfileserver_1    |[0m 2017-12-10T18:44:15375984279000+0000 Sending heart beat to directory.
+[34mfileserver_0    |[0m 2017-12-10T18:44:15427270563000+0000 Sending heart beat to directory.
+[35mfileserver_2    |[0m 2017-12-10T18:44:20621022998000+0000  Storing file in shadow space 0.
+[35mfileserver_2    |[0m 2017-12-10T18:44:20621289100000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_2_1    |[0m 2017-12-10T18:44:20.622+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.11:48462 #3 (1 connection now open)
+[35mfileserver_2    |[0m 2017-12-10T18:44:20622919291000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_2_1    |[0m 2017-12-10T18:44:20.623+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.11:48464 #4 (2 connections now open)
+[36mdatabase_2_1    |[0m 2017-12-10T18:44:20.624+0000 I INDEX    [conn4] allocating new ns file /data/db/USEHASKELLDB.ns, filling with zeroes...
+[36mdatabase_2_1    |[0m 2017-12-10T18:44:20.656+0000 I STORAGE  [FileAllocator] allocating new datafile /data/db/USEHASKELLDB.0, filling with zeroes...
+[36mdatabase_2_1    |[0m 2017-12-10T18:44:20.660+0000 I STORAGE  [FileAllocator] done allocating datafile /data/db/USEHASKELLDB.0, size: 64MB,  took 0.004 secs
+[36mdatabase_2_1    |[0m 2017-12-10T18:44:20.666+0000 I NETWORK  [conn4] end connection 172.17.0.11:48464 (1 connection now open)
+[36mdatabase_2_1    |[0m 2017-12-10T18:44:20.666+0000 I NETWORK  [conn3] end connection 172.17.0.11:48462 (1 connection now open)
+[35mfileserver_2    |[0m 2017-12-10T18:44:20709922289000+0000  Updating the real database.
+[35mfileserver_2    |[0m 2017-12-10T18:44:20710221166000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_2_1    |[0m 2017-12-10T18:44:20.710+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.11:48490 #5 (1 connection now open)
+[36mdatabase_2_1    |[0m 2017-12-10T18:44:20.711+0000 I NETWORK  [conn5] end connection 172.17.0.11:48490 (0 connections now open)
+[31mfileserver_1    |[0m 2017-12-10T18:44:20718156383000+0000  Storing file  0.
+[31mfileserver_1    |[0m 2017-12-10T18:44:20718336656000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[33mdatabase_1_1    |[0m 2017-12-10T18:44:20.719+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.12:41960 #3 (1 connection now open)
+[33mdatabase_1_1    |[0m 2017-12-10T18:44:20.719+0000 I INDEX    [conn3] allocating new ns file /data/db/USEHASKELLDB.ns, filling with zeroes...
+[33mdatabase_1_1    |[0m 2017-12-10T18:44:20.752+0000 I STORAGE  [FileAllocator] allocating new datafile /data/db/USEHASKELLDB.0, filling with zeroes...
+[33mdatabase_1_1    |[0m 2017-12-10T18:44:20.756+0000 I STORAGE  [FileAllocator] done allocating datafile /data/db/USEHASKELLDB.0, size: 64MB,  took 0.003 secs
+[33mdatabase_1_1    |[0m 2017-12-10T18:44:20.762+0000 I NETWORK  [conn3] end connection 172.17.0.12:41960 (0 connections now open)
+[31mfileserver_1    |[0m 172.17.0.1 - - [10/Dec/2017:18:44:20 +0000] "POST /broadcastedUpload HTTP/1.1" 200 - "" ""
+[34mfileserver_0    |[0m 2017-12-10T18:44:20774095230000+0000  Storing file  0.
+[34mfileserver_0    |[0m 2017-12-10T18:44:20774789619000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[32mdatabase_0_1    |[0m 2017-12-10T18:44:20.777+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.13:38960 #3 (1 connection now open)
+[32mdatabase_0_1    |[0m 2017-12-10T18:44:20.779+0000 I INDEX    [conn3] allocating new ns file /data/db/USEHASKELLDB.ns, filling with zeroes...
+[32mdatabase_0_1    |[0m 2017-12-10T18:44:20.829+0000 I STORAGE  [FileAllocator] allocating new datafile /data/db/USEHASKELLDB.0, filling with zeroes...
+[32mdatabase_0_1    |[0m 2017-12-10T18:44:20.834+0000 I STORAGE  [FileAllocator] done allocating datafile /data/db/USEHASKELLDB.0, size: 64MB,  took 0.004 secs
+[32mdatabase_0_1    |[0m 2017-12-10T18:44:20.840+0000 I NETWORK  [conn3] end connection 172.17.0.13:38960 (0 connections now open)
+[34mfileserver_0    |[0m 172.17.0.1 - - [10/Dec/2017:18:44:20 +0000] "POST /broadcastedUpload HTTP/1.1" 200 - "" ""
+[35mfileserver_2    |[0m 2017-12-10T18:44:20841427275000+0000 Sucessfully sent
+[35mfileserver_2    |[0m 2017-12-10T18:44:20842530131000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_2_1    |[0m 2017-12-10T18:44:20.844+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.11:48510 #6 (1 connection now open)
+[36mdatabase_2_1    |[0m 2017-12-10T18:44:20.846+0000 I NETWORK  [conn6] end connection 172.17.0.11:48510 (0 connections now open)
+[35mfileserver_2    |[0m 2017-12-10T18:44:20846331479000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_2_1    |[0m 2017-12-10T18:44:20.848+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.11:48512 #7 (1 connection now open)
+[36mdatabase_2_1    |[0m 2017-12-10T18:44:20.849+0000 I NETWORK  [conn7] end connection 172.17.0.11:48512 (0 connections now open)
+[35mfileserver_2    |[0m 172.17.0.1 - - [10/Dec/2017:18:44:20 +0000] "POST /updateRealDB HTTP/1.1" 200 - "" ""
+[35mfileserver_2    |[0m 172.17.0.1 - - [10/Dec/2017:18:44:20 +0000] "POST /uploadToshadow HTTP/1.1" 200 - "" ""
+[32mdatabase_0_1    |[0m 2017-12-10T18:44:24.947+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.1:48790 #4 (1 connection now open)
+[32mdatabase_0_1    |[0m 2017-12-10T18:44:24.948+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.1:48794 #5 (2 connections now open)
+[33mdatabase_1_1    |[0m 2017-12-10T18:44:24.950+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.1:52638 #4 (1 connection now open)
+[33mdatabase_1_1    |[0m 2017-12-10T18:44:24.950+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.1:52642 #5 (2 connections now open)
+[32mdatabase_0_1    |[0m 2017-12-10T18:44:24.951+0000 I NETWORK  [conn5] end connection 172.17.0.1:48794 (1 connection now open)
+[32mdatabase_0_1    |[0m 2017-12-10T18:44:24.951+0000 I NETWORK  [conn4] end connection 172.17.0.1:48790 (1 connection now open)
+[36mdatabase_2_1    |[0m 2017-12-10T18:44:24.952+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.1:56994 #8 (1 connection now open)
+[36mdatabase_2_1    |[0m 2017-12-10T18:44:24.952+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.1:56998 #9 (2 connections now open)
+[33mdatabase_1_1    |[0m 2017-12-10T18:44:24.954+0000 I NETWORK  [conn4] end connection 172.17.0.1:52638 (1 connection now open)
+[33mdatabase_1_1    |[0m 2017-12-10T18:44:24.954+0000 I NETWORK  [conn5] end connection 172.17.0.1:52642 (1 connection now open)
+[36mdatabase_2_1    |[0m 2017-12-10T18:44:24.956+0000 I NETWORK  [conn9] end connection 172.17.0.1:56998 (1 connection now open)
+[36mdatabase_2_1    |[0m 2017-12-10T18:44:24.956+0000 I NETWORK  [conn8] end connection 172.17.0.1:56994 (1 connection now open)
+[35mfileserver_2    |[0m 2017-12-10T18:44:35277956996000+0000 Sending heart beat to directory.
+[31mfileserver_1    |[0m 2017-12-10T18:44:35403662146000+0000 Sending heart beat to directory.
+[34mfileserver_0    |[0m 2017-12-10T18:44:35451712033000+0000 Sending heart beat to directory.
+[35mfileserver_2    |[0m 2017-12-10T18:44:55295581108000+0000 Sending heart beat to directory.
+[31mfileserver_1    |[0m 2017-12-10T18:44:55420268349000+0000 Sending heart beat to directory.
+[34mfileserver_0    |[0m 2017-12-10T18:44:55466102642000+0000 Sending heart beat to directory.
+[35mfileserver_2    |[0m 2017-12-10T18:45:15315453663000+0000 Sending heart beat to directory.
+[31mfileserver_1    |[0m 2017-12-10T18:45:15444930850000+0000 Sending heart beat to directory.
+[34mfileserver_0    |[0m 2017-12-10T18:45:15491419913000+0000 Sending heart beat to directory.
+[35mfileserver_2    |[0m 2017-12-10T18:45:35329596916000+0000 Sending heart beat to directory.
+[31mfileserver_1    |[0m 2017-12-10T18:45:35463504991000+0000 Sending heart beat to directory.
+[34mfileserver_0    |[0m 2017-12-10T18:45:35510804423000+0000 Sending heart beat to directory.

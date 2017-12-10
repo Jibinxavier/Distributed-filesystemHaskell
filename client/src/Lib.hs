@@ -56,6 +56,7 @@ import           System.Log.Handler           (setFormatter)
 import           System.Log.Handler.Simple
 import           System.Log.Handler.Syslog
 import           System.Log.Logger
+import           System.Directory
 -- write to db
 -- sleep and read from db
 -- 
@@ -271,14 +272,19 @@ doWriteWithTransaction remoteFPath usern newcontent  = do
     (False) -> do
       case localTransactionInfo of  -- get local transaction info
         [LocalTransInfo _ trId] -> liftIO $ do     
-          existingContent <- readFile localfilePath
-          let contents = existingContent ++ newcontent
-       
+          fileExists <- doesFileExist localfilePath 
+          let contents1 =case fileExists of
+                            True -> do 
+                              existingContent <-  readFile localfilePath 
+                              return $ existingContent ++ newcontent
+                            otherwise -> return $ newcontent
+
+          contents <- contents1                   
           doFileLock remoteFPath usern -- lock the file
           appendToLockedFiles remoteFPath trId -- list of locked files which the client keeps a record of
           dirport <- FSA.dirServPort
           res <- mydoCalMsg4WithEnc uploadToShadowDir remotedir fname trId usern ((read $ dirport):: Int) decryptFInfoTransfer -- uploading info to shadow directory 
-
+          
           case res of
             Nothing ->putStrLn $ "\n" ++ redCode  ++ "doWriteWithTransaction: Upload to transaction failed"  ++ resetCode
             Just (a) ->   do 
@@ -348,12 +354,12 @@ doWriteFile  remoteFPath usern newcontent = do   -- call to the directory server
                     appendFile localfilePath $ newcontent
                     contents <- readFile localfilePath
 
-                    putStrLn  contents
+                    -- putStrLn  contents
                     authInfo <- getAuthClientInfo usern
                     case authInfo of 
                       (Just (ticket,seshkey) ) -> do 
                         let msg = encryptFileContents  (FileContents fileid contents "") seshkey ticket -- encrypted message
-                        restfullCall (upload  msg) (Just "systemHost") (Just p)  seshkey -- uploading file
+                        restfullCall (upload  msg) (Just FSA.systemHost) (Just p)  seshkey -- uploading file
                         putStrLn "after uploading"
                         doFileUnLock remoteFPath usern
                         putStrLn "after unlock"
@@ -361,7 +367,7 @@ doWriteFile  remoteFPath usern newcontent = do   -- call to the directory server
                         -- let fpath =  usern ++ remoteFPath -- this is to allow multiple users to use the same database
                         updateLocalMeta remoteFPath $ FInfo remoteFPath remotedir fileid ts
                         putStrLn "file unlocked "
-                      (Nothing) -> putStrLn $ "Expired token . Sigin in again.  "  
+                      (Nothing) -> putStrLn $ "\n" ++ redCode  ++ "Expired token . Sigin in again.  "  ++ resetCode
               [] -> putStrLn "Upload file : Error getting fileinfo from directory service"
 
          
@@ -478,6 +484,7 @@ menu = do
       let cmds =  splitOn " " input
       --"User name" password"
       doLogin (cmds !! 1) (cmds !! 2)
+  
   else if DL.isPrefixOf  "signup" input
     then do
       let cmds =  splitOn " " input
@@ -488,6 +495,27 @@ menu = do
       let cmds =  splitOn " " input
       -- "remote dir/fname (filepath)"    "username"
       doReadFile  (cmds !! 1) (cmds !! 2) 
+  else if DL.isPrefixOf  "startTrans" input
+    then do
+      let cmds =  splitOn " " input
+      --    "user name"
+      doGetTransId  (cmds !! 1) 
+  else if DL.isPrefixOf  "commit" input
+    then do
+      let cmds =  splitOn " " input
+      --    "user name"
+      doCommit  (cmds !! 1) 
+  else if DL.isPrefixOf  "abort" input
+    then do
+      let cmds =  splitOn " " input
+      --    "user name"
+      doAbort  (cmds !! 1) 
+  else if DL.isPrefixOf  "writeT" input
+    then do
+      let cmds =  splitOn " " input
+      let content = last $ splitOn (cmds !! 2) input
+      --  "remote dir/fname (filepath)" "user name" "content to add"
+      doWriteWithTransaction  (cmds !! 1) (cmds !! 2)  content
   else if DL.isPrefixOf  "write" input
     then do
       let cmds =  splitOn " " input
@@ -521,27 +549,7 @@ menu = do
       --  "remote dir"  "remote dir/filename"   "user name"
       doFileSearch  (cmds !! 1) (cmds !! 2) (cmds !! 3) 
 
-  else if DL.isPrefixOf  "startTrans" input
-    then do
-      let cmds =  splitOn " " input
-      --    "user name"
-      doGetTransId  (cmds !! 1) 
-  else if DL.isPrefixOf  "commit" input
-    then do
-      let cmds =  splitOn " " input
-      --    "user name"
-      doCommit  (cmds !! 1) 
-  else if DL.isPrefixOf  "abort" input
-    then do
-      let cmds =  splitOn " " input
-      --    "user name"
-      doAbort  (cmds !! 1) 
-  else if DL.isPrefixOf  "writeT" input
-    then do
-      let cmds =  splitOn " " input
-      let content = last $ splitOn (cmds !! 2) input
-     --  "remote dir/fname (filepath)" "user name" "content to add"
-      doWriteWithTransaction  (cmds !! 1) (cmds !! 2)  content
+  
   else
     putStrLn $"no command specified"
   menu

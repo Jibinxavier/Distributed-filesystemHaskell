@@ -1,67 +1,81 @@
-Starting transactionservice_database_1 ... 
-Starting transactionservice_database_1
-[1A[2KStarting transactionservice_database_1 ... [32mdone[0m[1BStarting transactionservice_filesystem_1 ... 
-Starting transactionservice_filesystem_1
-[1A[2KStarting transactionservice_filesystem_1 ... [32mdone[0m[1BAttaching to transactionservice_database_1, transactionservice_filesystem_1
-[36mdatabase_1    |[0m 2017-12-10T11:52:37.119+0000 I JOURNAL  [initandlisten] journal dir=/data/db/journal
-[36mdatabase_1    |[0m 2017-12-10T11:52:37.120+0000 I JOURNAL  [initandlisten] recover : no journal files present, no recovery needed
-[36mdatabase_1    |[0m 2017-12-10T11:52:37.141+0000 I JOURNAL  [durability] Durability thread started
-[36mdatabase_1    |[0m 2017-12-10T11:52:37.141+0000 I JOURNAL  [journal writer] Journal writer thread started
-[36mdatabase_1    |[0m 2017-12-10T11:52:37.152+0000 I CONTROL  [initandlisten] MongoDB starting : pid=1 port=27017 dbpath=/data/db 64-bit host=cfe62287c88e
-[36mdatabase_1    |[0m 2017-12-10T11:52:37.152+0000 I CONTROL  [initandlisten] 
-[36mdatabase_1    |[0m 2017-12-10T11:52:37.152+0000 I CONTROL  [initandlisten] ** WARNING: /sys/kernel/mm/transparent_hugepage/enabled is 'always'.
-[36mdatabase_1    |[0m 2017-12-10T11:52:37.152+0000 I CONTROL  [initandlisten] **        We suggest setting it to 'never'
-[36mdatabase_1    |[0m 2017-12-10T11:52:37.152+0000 I CONTROL  [initandlisten] 
-[36mdatabase_1    |[0m 2017-12-10T11:52:37.152+0000 I CONTROL  [initandlisten] db version v3.0.2
-[36mdatabase_1    |[0m 2017-12-10T11:52:37.152+0000 I CONTROL  [initandlisten] git version: 6201872043ecbbc0a4cc169b5482dcf385fc464f
-[36mdatabase_1    |[0m 2017-12-10T11:52:37.152+0000 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1e 11 Feb 2013
-[36mdatabase_1    |[0m 2017-12-10T11:52:37.152+0000 I CONTROL  [initandlisten] build info: Linux ip-10-171-120-232 3.2.0-4-amd64 #1 SMP Debian 3.2.46-1 x86_64 BOOST_LIB_VERSION=1_49
-[36mdatabase_1    |[0m 2017-12-10T11:52:37.152+0000 I CONTROL  [initandlisten] allocator: tcmalloc
-[36mdatabase_1    |[0m 2017-12-10T11:52:37.152+0000 I CONTROL  [initandlisten] options: {}
-[33mfilesystem_1  |[0m 2017-12-10T11:52:37463897621000+0000 Environment variable: TRANSERV_PORT is not set. Defaulting to "8083"
-[36mdatabase_1    |[0m 2017-12-10T11:52:37.189+0000 I NETWORK  [initandlisten] waiting for connections on port 27017
-[33mfilesystem_1  |[0m 2017-12-10T11:52:37467338328000+0000 Starting transaction service
-[33mfilesystem_1  |[0m 2017-12-10T12:25:36078743975000+0000 New transaction
-[33mfilesystem_1  |[0m 2017-12-10T12:25:36079765491000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1    |[0m 2017-12-10T12:25:36.082+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.17:60026 #1 (1 connection now open)
-[33mfilesystem_1  |[0m 2017-12-10T12:25:36084181839000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1    |[0m 2017-12-10T12:25:36.086+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.17:60028 #2 (2 connections now open)
-[36mdatabase_1    |[0m 2017-12-10T12:25:36.087+0000 I INDEX    [conn2] allocating new ns file /data/db/USEHASKELLDB.ns, filling with zeroes...
-[36mdatabase_1    |[0m 2017-12-10T12:25:36.135+0000 I STORAGE  [FileAllocator] allocating new datafile /data/db/USEHASKELLDB.0, filling with zeroes...
-[36mdatabase_1    |[0m 2017-12-10T12:25:36.135+0000 I STORAGE  [FileAllocator] creating directory /data/db/_tmp
-[36mdatabase_1    |[0m 2017-12-10T12:25:36.143+0000 I STORAGE  [FileAllocator] done allocating datafile /data/db/USEHASKELLDB.0, size: 64MB,  took 0.004 secs
-[36mdatabase_1    |[0m 2017-12-10T12:25:36.148+0000 I NETWORK  [conn2] end connection 172.17.0.17:60028 (1 connection now open)
-[36mdatabase_1    |[0m 2017-12-10T12:25:36.148+0000 I NETWORK  [conn1] end connection 172.17.0.17:60026 (1 connection now open)
-[33mfilesystem_1  |[0m 2017-12-10T12:25:36148740741000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1    |[0m 2017-12-10T12:25:36.150+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.17:60030 #3 (1 connection now open)
-[36mdatabase_1    |[0m 2017-12-10T12:25:36.152+0000 I NETWORK  [conn3] end connection 172.17.0.17:60030 (0 connections now open)
-[33mfilesystem_1  |[0m 172.17.0.1 - - [10/Dec/2017:12:25:36 +0000] "POST /getTransId HTTP/1.1" 200 - "" ""
-[33mfilesystem_1  |[0m 2017-12-10T12:35:53061730169000+0000 New transaction
-[33mfilesystem_1  |[0m 2017-12-10T12:35:53061929655000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1    |[0m 2017-12-10T12:35:53.062+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.17:60892 #4 (1 connection now open)
-[33mfilesystem_1  |[0m 2017-12-10T12:35:53062757263000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1    |[0m 2017-12-10T12:35:53.063+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.17:60894 #5 (2 connections now open)
-[36mdatabase_1    |[0m 2017-12-10T12:35:53.063+0000 I NETWORK  [conn5] end connection 172.17.0.17:60894 (1 connection now open)
-[36mdatabase_1    |[0m 2017-12-10T12:35:53.063+0000 I NETWORK  [conn4] end connection 172.17.0.17:60892 (1 connection now open)
-[33mfilesystem_1  |[0m 2017-12-10T12:35:53063665033000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1    |[0m 2017-12-10T12:35:53.064+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.17:60896 #6 (1 connection now open)
-[36mdatabase_1    |[0m 2017-12-10T12:35:53.064+0000 I NETWORK  [conn6] end connection 172.17.0.17:60896 (0 connections now open)
-[33mfilesystem_1  |[0m 172.17.0.1 - - [10/Dec/2017:12:35:53 +0000] "POST /getTransId HTTP/1.1" 200 - "" ""
-[33mfilesystem_1  |[0m 2017-12-10T12:35:53070218661000+0000 Aborting transaction
-[33mfilesystem_1  |[0m 2017-12-10T12:35:53070443259000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1    |[0m 2017-12-10T12:35:53.070+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.17:60908 #7 (1 connection now open)
-[36mdatabase_1    |[0m 2017-12-10T12:35:53.086+0000 I NETWORK  [conn7] end connection 172.17.0.17:60908 (0 connections now open)
-[33mfilesystem_1  |[0m 2017-12-10T12:35:53086898527000+0000 Environment variable: DIRSERV_PORT is not set. Defaulting to "8082"
-[33mfilesystem_1  |[0m 172.17.0.1 - - [10/Dec/2017:12:35:53 +0000] "POST /abort HTTP/1.1" 200 - "" ""
-[36mdatabase_1    |[0m 2017-12-10T13:09:45.127+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.1:42982 #8 (1 connection now open)
-[36mdatabase_1    |[0m 2017-12-10T13:09:45.128+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.1:42986 #9 (2 connections now open)
-[36mdatabase_1    |[0m 2017-12-10T13:09:45.135+0000 I NETWORK  [conn9] end connection 172.17.0.1:42986 (1 connection now open)
-[36mdatabase_1    |[0m 2017-12-10T13:09:45.135+0000 I NETWORK  [conn8] end connection 172.17.0.1:42982 (1 connection now open)
-[36mdatabase_1    |[0m 2017-12-10T13:10:09.627+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.1:43070 #10 (1 connection now open)
-[36mdatabase_1    |[0m 2017-12-10T13:10:09.628+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.1:43074 #11 (2 connections now open)
-[36mdatabase_1    |[0m 2017-12-10T13:10:09.631+0000 I NETWORK  [conn11] end connection 172.17.0.1:43074 (1 connection now open)
-[36mdatabase_1    |[0m 2017-12-10T13:10:09.631+0000 I NETWORK  [conn10] end connection 172.17.0.1:43070 (1 connection now open)
-[36mdatabase_1    |[0m 2017-12-10T13:11:48.655+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.1:43254 #12 (1 connection now open)
-[36mdatabase_1    |[0m 2017-12-10T13:11:48.655+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.1:43258 #13 (2 connections now open)
-[36mdatabase_1    |[0m 2017-12-10T13:11:48.659+0000 I NETWORK  [conn13] end connection 172.17.0.1:43258 (1 connection now open)
-[36mdatabase_1    |[0m 2017-12-10T13:11:48.659+0000 I NETWORK  [conn12] end connection 172.17.0.1:43254 (1 connection now open)
+Creating transactionservice_database_1 ... 
+Creating transactionservice_database_1
+[1A[2KCreating transactionservice_database_1 ... [32mdone[0m[1BCreating transactionservice_transactionservice_1 ... 
+Creating transactionservice_transactionservice_1
+[1A[2KCreating transactionservice_transactionservice_1 ... [32mdone[0m[1BAttaching to transactionservice_database_1, transactionservice_transactionservice_1
+[36mdatabase_1            |[0m 2017-12-10T18:37:38.864+0000 I JOURNAL  [initandlisten] journal dir=/data/db/journal
+[36mdatabase_1            |[0m 2017-12-10T18:37:38.864+0000 I JOURNAL  [initandlisten] recover : no journal files present, no recovery needed
+[33mtransactionservice_1  |[0m 2017-12-10T18:37:39557613296000+0000 Starting transaction service
+[36mdatabase_1            |[0m 2017-12-10T18:37:40.069+0000 I JOURNAL  [initandlisten] preallocateIsFaster=true 8.84
+[36mdatabase_1            |[0m 2017-12-10T18:37:41.156+0000 I JOURNAL  [initandlisten] preallocateIsFaster=true 8.8
+[36mdatabase_1            |[0m 2017-12-10T18:37:43.296+0000 I JOURNAL  [initandlisten] preallocateIsFaster=true 4.98
+[36mdatabase_1            |[0m 2017-12-10T18:37:43.296+0000 I JOURNAL  [initandlisten] preallocateIsFaster check took 4.431 secs
+[36mdatabase_1            |[0m 2017-12-10T18:37:43.296+0000 I JOURNAL  [initandlisten] preallocating a journal file /data/db/journal/prealloc.0
+[36mdatabase_1            |[0m 2017-12-10T18:37:47.871+0000 I JOURNAL  [initandlisten] preallocating a journal file /data/db/journal/prealloc.1
+[36mdatabase_1            |[0m 2017-12-10T18:37:51.172+0000 I JOURNAL  [initandlisten] preallocating a journal file /data/db/journal/prealloc.2
+[36mdatabase_1            |[0m 2017-12-10T18:37:58.155+0000 I JOURNAL  [durability] Durability thread started
+[36mdatabase_1            |[0m 2017-12-10T18:37:58.155+0000 I JOURNAL  [journal writer] Journal writer thread started
+[36mdatabase_1            |[0m 2017-12-10T18:37:58.685+0000 I CONTROL  [initandlisten] MongoDB starting : pid=1 port=27017 dbpath=/data/db 64-bit host=7d3254636d1b
+[36mdatabase_1            |[0m 2017-12-10T18:37:58.685+0000 I CONTROL  [initandlisten] 
+[36mdatabase_1            |[0m 2017-12-10T18:37:58.685+0000 I CONTROL  [initandlisten] ** WARNING: /sys/kernel/mm/transparent_hugepage/enabled is 'always'.
+[36mdatabase_1            |[0m 2017-12-10T18:37:58.685+0000 I CONTROL  [initandlisten] **        We suggest setting it to 'never'
+[36mdatabase_1            |[0m 2017-12-10T18:37:58.685+0000 I CONTROL  [initandlisten] 
+[36mdatabase_1            |[0m 2017-12-10T18:37:58.685+0000 I CONTROL  [initandlisten] db version v3.0.2
+[36mdatabase_1            |[0m 2017-12-10T18:37:58.685+0000 I CONTROL  [initandlisten] git version: 6201872043ecbbc0a4cc169b5482dcf385fc464f
+[36mdatabase_1            |[0m 2017-12-10T18:37:58.685+0000 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1e 11 Feb 2013
+[36mdatabase_1            |[0m 2017-12-10T18:37:58.685+0000 I CONTROL  [initandlisten] build info: Linux ip-10-171-120-232 3.2.0-4-amd64 #1 SMP Debian 3.2.46-1 x86_64 BOOST_LIB_VERSION=1_49
+[36mdatabase_1            |[0m 2017-12-10T18:37:58.685+0000 I CONTROL  [initandlisten] allocator: tcmalloc
+[36mdatabase_1            |[0m 2017-12-10T18:37:58.685+0000 I CONTROL  [initandlisten] options: {}
+[36mdatabase_1            |[0m 2017-12-10T18:37:58.686+0000 I INDEX    [initandlisten] allocating new ns file /data/db/local.ns, filling with zeroes...
+[36mdatabase_1            |[0m 2017-12-10T18:37:59.798+0000 I STORAGE  [FileAllocator] allocating new datafile /data/db/local.0, filling with zeroes...
+[36mdatabase_1            |[0m 2017-12-10T18:37:59.798+0000 I STORAGE  [FileAllocator] creating directory /data/db/_tmp
+[36mdatabase_1            |[0m 2017-12-10T18:38:00.558+0000 I STORAGE  [FileAllocator] done allocating datafile /data/db/local.0, size: 64MB,  took 0.193 secs
+[36mdatabase_1            |[0m 2017-12-10T18:38:00.787+0000 I NETWORK  [initandlisten] waiting for connections on port 27017
+[33mtransactionservice_1  |[0m 2017-12-10T18:43:31594632953000+0000 New transaction
+[33mtransactionservice_1  |[0m 2017-12-10T18:43:31595987169000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1            |[0m 2017-12-10T18:43:31.598+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.17:56584 #1 (1 connection now open)
+[33mtransactionservice_1  |[0m 2017-12-10T18:43:31600646943000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1            |[0m 2017-12-10T18:43:31.602+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.17:56586 #2 (2 connections now open)
+[36mdatabase_1            |[0m 2017-12-10T18:43:31.604+0000 I INDEX    [conn2] allocating new ns file /data/db/USEHASKELLDB.ns, filling with zeroes...
+[36mdatabase_1            |[0m 2017-12-10T18:43:31.649+0000 I STORAGE  [FileAllocator] allocating new datafile /data/db/USEHASKELLDB.0, filling with zeroes...
+[36mdatabase_1            |[0m 2017-12-10T18:43:31.653+0000 I STORAGE  [FileAllocator] done allocating datafile /data/db/USEHASKELLDB.0, size: 64MB,  took 0.003 secs
+[36mdatabase_1            |[0m 2017-12-10T18:43:31.659+0000 I NETWORK  [conn2] end connection 172.17.0.17:56586 (1 connection now open)
+[36mdatabase_1            |[0m 2017-12-10T18:43:31.659+0000 I NETWORK  [conn1] end connection 172.17.0.17:56584 (1 connection now open)
+[33mtransactionservice_1  |[0m 2017-12-10T18:43:31659242720000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1            |[0m 2017-12-10T18:43:31.661+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.17:56588 #3 (1 connection now open)
+[36mdatabase_1            |[0m 2017-12-10T18:43:31.663+0000 I NETWORK  [conn3] end connection 172.17.0.17:56588 (0 connections now open)
+[33mtransactionservice_1  |[0m 172.17.0.1 - - [10/Dec/2017:18:43:31 +0000] "POST /getTransId HTTP/1.1" 200 - "" ""
+[33mtransactionservice_1  |[0m 2017-12-10T18:43:36817598237000+0000 Uploading a modification to the transaction server
+[33mtransactionservice_1  |[0m 2017-12-10T18:43:36817969792000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1            |[0m 2017-12-10T18:43:36.818+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.17:56666 #4 (1 connection now open)
+[33mtransactionservice_1  |[0m 2017-12-10T18:43:36819186568000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1            |[0m 2017-12-10T18:43:36.819+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.17:56668 #5 (2 connections now open)
+[36mdatabase_1            |[0m 2017-12-10T18:43:36.820+0000 I NETWORK  [conn5] end connection 172.17.0.17:56668 (1 connection now open)
+[36mdatabase_1            |[0m 2017-12-10T18:43:36.820+0000 I NETWORK  [conn4] end connection 172.17.0.17:56666 (1 connection now open)
+[33mtransactionservice_1  |[0m 172.17.0.1 - - [10/Dec/2017:18:43:36 +0000] "POST /uploadToTransaction HTTP/1.1" 200 - "" ""
+[36mdatabase_1            |[0m 2017-12-10T18:44:10.886+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.1:35600 #6 (1 connection now open)
+[36mdatabase_1            |[0m 2017-12-10T18:44:10.886+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.1:35604 #7 (2 connections now open)
+[36mdatabase_1            |[0m 2017-12-10T18:44:10.890+0000 I NETWORK  [conn7] end connection 172.17.0.1:35604 (1 connection now open)
+[36mdatabase_1            |[0m 2017-12-10T18:44:10.890+0000 I NETWORK  [conn6] end connection 172.17.0.1:35600 (1 connection now open)
+[33mtransactionservice_1  |[0m 2017-12-10T18:44:20600484389000+0000 Committing modifications to the fileservers
+[33mtransactionservice_1  |[0m 2017-12-10T18:44:20600760792000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1            |[0m 2017-12-10T18:44:20.601+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.17:56786 #8 (1 connection now open)
+[33mtransactionservice_1  |[0m 2017-12-10T18:44:20601594181000+0000 Committing modifications to the fileservers
+[33mtransactionservice_1  |[0m 2017-12-10T18:44:20608029098000+0000  port 8002  ip 172.17.0.1
+[33mtransactionservice_1  |[0m 2017-12-10T18:44:20669868317000+0000 Ready to commit 0
+[33mtransactionservice_1  |[0m 2017-12-10T18:44:20670418546000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1            |[0m 2017-12-10T18:44:20.671+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.17:56800 #9 (2 connections now open)
+[33mtransactionservice_1  |[0m 2017-12-10T18:44:20850152261000+0000 Commit message sent to every fs
+[33mtransactionservice_1  |[0m 2017-12-10T18:44:20851173165000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1            |[0m 2017-12-10T18:44:20.852+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.17:56844 #10 (3 connections now open)
+[36mdatabase_1            |[0m 2017-12-10T18:44:20.854+0000 I NETWORK  [conn10] end connection 172.17.0.17:56844 (2 connections now open)
+[33mtransactionservice_1  |[0m 2017-12-10T18:44:20854056456000+0000 Commit message sent to directory service
+[36mdatabase_1            |[0m 2017-12-10T18:44:20.854+0000 I NETWORK  [conn9] end connection 172.17.0.17:56800 (1 connection now open)
+[33mtransactionservice_1  |[0m 172.17.0.1 - - [10/Dec/2017:18:44:20 +0000] "POST /readyToCommit HTTP/1.1" 200 - "" ""
+[33mtransactionservice_1  |[0m 2017-12-10T18:44:20855735629000+0000 Success: sending changes to fileserversTrue
+[36mdatabase_1            |[0m 2017-12-10T18:44:20.857+0000 I NETWORK  [conn8] end connection 172.17.0.17:56786 (0 connections now open)
+[33mtransactionservice_1  |[0m 172.17.0.1 - - [10/Dec/2017:18:44:20 +0000] "POST /commit HTTP/1.1" 200 - "" ""
+[36mdatabase_1            |[0m 2017-12-10T18:44:24.955+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.1:35770 #11 (1 connection now open)
+[36mdatabase_1            |[0m 2017-12-10T18:44:24.955+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.1:35774 #12 (2 connections now open)
+[36mdatabase_1            |[0m 2017-12-10T18:44:24.958+0000 I NETWORK  [conn12] end connection 172.17.0.1:35774 (1 connection now open)
+[36mdatabase_1            |[0m 2017-12-10T18:44:24.958+0000 I NETWORK  [conn11] end connection 172.17.0.1:35770 (1 connection now open)

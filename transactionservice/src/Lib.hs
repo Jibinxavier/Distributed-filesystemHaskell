@@ -122,7 +122,8 @@ server = getTransId
        let path =dir++fileid
        let toFS =TransactionInfoTransfer trid1 fileid contents
        systemHost_ <- FSA.defaultHost
-       res <-  FSA.myrestfullCall (uploadToshadow toFS) ((read portadr) :: Int) systemHost_
+       FSA.warnLog $ " port "++ portadr ++ "  ip "++systemHost_
+       res <-  FSA.myrestfullCall (uploadToshadow toFS) ((read portadr) :: Int)  FSA.systemHost
        case res of
         Left err -> do
           

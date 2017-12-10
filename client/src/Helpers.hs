@@ -69,7 +69,7 @@ instance PrintResponse ResponseData where
   resp  seskey r  = "Response is a single value: " ++(response r)
 
 instance PrintResponse [Message] where
-  resp  _ []  = "No messages."
+  resp  _ []  =   "No messages."
   resp  _ [x]   = "Response is a single message: " ++ message x 
   resp   _ rs  = "Response is an array with messages: " ++ (DL.intercalate ", " $ map message rs)
 instance PrintResponse String where
@@ -87,9 +87,9 @@ instance PrintResponse [FileContents] where-- no ecrypted message back
 
 instance PrintResponse Bool where
   resp _ True =  "Response is a boolean : Totally!"
-  resp _ False  = "Response is a boolean : Like No Way!"
+  resp _ False  = redCode ++ "Response is a boolean : Like No Way!" ++resetCode
 instance PrintResponse [FSContents] where
-  resp _ [] = " File server is empty"
+  resp _ [] =  blueCode ++ " File server is empty"++resetCode
   resp seskey rs = 
     let [(FSContents dirN files)] =decryptFSContents rs [] seskey
     in "Directory server files . Dir name:    " ++ dirN ++(DL.intercalate "   ," files)
@@ -132,8 +132,8 @@ getFileFromFS fileinfo@[FInfoTransfer remotefilepath dirname fileid _ portadr se
               let fpath = usern++ remotefilepath -- this is to allow multiple users to use the same database
               withMongoDbConnection $ upsert (select ["filepath" =: fpath] "CLIENTFileMap_RECORD") $ toBSON $ FInfo fpath dirname fileid servTm1
               writeFile fName contents 
-            [] -> putStrLn "Incorrect filepath and filename  "
-    (Nothing) -> putStrLn $ "Expired token . Sigin in again.  " 
+            [] -> putStrLn $ "\n" ++ redCode  ++ "getFileFromFS: Incorrect filepath and filename  "++ resetCode
+    (Nothing) ->    putStrLn $ "\n" ++ redCode  ++ "getFileFromFS: Expired token . Sigin in again.  " ++ resetCode
 
   
     
@@ -334,7 +334,7 @@ restfullCallMsg3WithEnc restCall str1 str2 usern ip port= do
     (Just (ticket,seshkey) ) -> do 
       let msg =encryptMesg str1 str2 seshkey ticket
       restfullCall  (restCall $ msg) ip port seshkey
-    (Nothing) -> putStrLn $ "Expired token . Sigin in again.  " 
+    (Nothing) ->  putStrLn $ "\n" ++ redCode ++"restfullCallMsg1WithEnc call failed " ++ resetCode
 
 restfullCallMsg1WithEnc restCall str1 usern ip port= do
   authInfo <- getAuthClientInfo usern
@@ -342,7 +342,7 @@ restfullCallMsg1WithEnc restCall str1 usern ip port= do
     (Just (ticket,seshkey) ) -> do 
       let msg =encryptMesg1 str1  seshkey ticket
       restfullCall  (restCall $ msg) ip port seshkey
-    (Nothing) -> putStrLn $ "Expired token . Sigin in again.  " 
+    (Nothing) -> putStrLn $ "\n" ++ redCode ++"restfullCallMsg1WithEnc call failed" ++ resetCode
 
 mydoCalMsg3WithEnc restCall str1 str2 usern port decryptFunc= do
   authInfo <- getAuthClientInfo usern
@@ -352,11 +352,12 @@ mydoCalMsg3WithEnc restCall str1 str2 usern port decryptFunc= do
       res <- myrestfullCall  (restCall $ msg)  port systemHost
       case res of
         Left err -> do
-          putStrLn $ " call failed with error: " ++ show err
+          putStrLn $ "\n" ++ redCode ++"mydoCalMsg3WithEnc call failed with error: " ++ show err ++ resetCode
           return Nothing
         Right (resp) ->  return $ Just $ map (decryptFunc seshkey)  resp
     (Nothing) -> do 
-      putStrLn $ "Expired token . Sigin in again.  "
+      
+      putStrLn $ "\n" ++ redCode ++"mydoCalMsg3WithEnc call failed  " ++ resetCode
       return Nothing
 
 
@@ -369,7 +370,7 @@ mydoCalMsg4WithEnc restCall str1 str2  str3 usern port decryptFunc= do
       res <- myrestfullCall  (restCall $ msg)  port systemHost
       case res of
         Left err -> do
-          putStrLn $ " call failed with error: " ++ show err
+          putStrLn $ "\n" ++ redCode ++"mydoCalMsg4WithEnc call failed with error: " ++ show err ++ resetCode
           return Nothing
         Right (a) ->  return $ Just  $ map (decryptFunc seshkey) a 
     (Nothing) -> do 
@@ -383,7 +384,7 @@ mydoCalMsg1WithEnc restCall   usern port= do
       res <- myrestfullCall  (restCall $ Message1 ticket)  port systemHost
       case res of
         Left err -> do
-          putStrLn $ " call failed with error: " ++ show err
+          putStrLn $ "\n" ++ redCode ++"mydoCalMsg1WithEnc call failed with error: " ++ show err ++ resetCode
           return Nothing
         Right (a) ->  return $ Just a
     (Nothing) -> do 

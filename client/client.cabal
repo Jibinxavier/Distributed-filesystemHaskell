@@ -41,7 +41,9 @@ library
                      , wai-logger
                      , warp
                      , wai
+                     , directory
                      , filesystem-api
+
   default-language:    Haskell2010
 
 executable client-exe
