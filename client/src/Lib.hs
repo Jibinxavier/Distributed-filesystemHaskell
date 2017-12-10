@@ -97,20 +97,20 @@ server = lockAvailable
 
 waitOnLock :: String ->  IO (Bool)
 waitOnLock  filepath = liftIO $ do
-  putStrLn $ "waiting for lock" ++ filepath
+   
  
   docs <- FSA.withMongoDbConnection  $ find  (select ["filepathL" =: filepath] "LockAvailability_RECORD")  >>= FSA.drainCursor 
   let  lock= take 1 $ catMaybes $ DL.map (\ b -> fromBSON b :: Maybe LockTransfer) docs 
   case lock of 
     ([LockTransfer _ True]) -> do 
-      putStrLn "CLIENT: LOCK AVAILABLE YAY!!"
+      putStrLn "waitOnLock: LOCK AVAILABLE YAY!!"
       return True
     ([LockTransfer _ False] ) -> do 
-      putStrLn "CLIENT: Going to sleep as lock is not available"
+      putStrLn $ "\n"++ yellowCode ++ "waitOnLock: Going to sleep as lock is not available for filepath"++filepath ++ resetCode
       threadDelay $ 10 * 1000000
       waitOnLock filepath 
     otherwise  -> do 
-      putStrLn $ "CLIENT: Lock details are not available locally" ++ show lock
+      putStrLn $ "waitOnLock: Lock details are not available locally" ++ show lock
 
       return False
   
@@ -132,19 +132,19 @@ doFileLock fpath usern= do
       resp <- FSA.myrestfullCall  (lock $ Message4  encClientport encFpath encUname ticket) (read lockport) FSA.systemHost
       case resp of
         Left err -> do 
-          putStrLn $ "failed to lock ... " ++  show err
+          putStrLn $ "\n" ++ redCode  ++ "doFileLock: failed to lock ... " ++  show err ++ resetCode
           return False
           -- queue and lock
         Right ([_, True]) -> do
           putStrLn "Got the lock"
           return True
         Right ([True, _]) -> do 
-          putStrLn "On queue now"
+          putStrLn  $ "\n" ++ whiteCode  ++"Joined the queue now" ++ resetCode
           --FSA.withMongoDbConnection $ insert "LockAvailability_RECORD" $ toBSON $ LockTransfer fpath False
           FSA.withMongoDbConnection  $ upsert (select ["filepathL" =: fpath] "LockAvailability_RECORD") $ toBSON $ LockTransfer fpath False
           waitOnLock fpath  
     (Nothing) -> do 
-      putStrLn $ "Expired token . Sigin in again.  " 
+      putStrLn $ "\n" ++ redCode  ++ "doFileLock: Expired token . Sigin in again.  " ++ resetCode
       return False
   
 
@@ -158,7 +158,7 @@ doFileUnLock fpath usern= do
       let encUname = myEncryptAES (aesPad seshkey) (usern)
       -- sesh to decrpt message sent back
       restfullCall (unlock  $ Message3 encFpath encUname ticket) FSA.lockIP (Just lockport)seshkey
-    (Nothing) -> putStrLn $ " Expired token  .Sigin in again. " 
+    (Nothing) -> putStrLn $ "\n" ++ redCode  ++ "doFileUnLock: Expired token . Sigin in again.  " ++ resetCode
 
 doIsLocked :: String  ->  IO ()
 doIsLocked fpath  = do
@@ -179,7 +179,7 @@ doListDirs usern=  do
       dirP <-FSA.dirServPort
       -- sesh to decrpt message sent back
       restfullCall (listdirs $ Just ticket) FSA.dirHost (Just dirP) seshkey
-    (Nothing) -> putStrLn $ "Expired token . Sigin in again.  " 
+    (Nothing) -> putStrLn $ "\n" ++ redCode  ++ "doListDirs: Expired token . Sigin in again.  " ++ resetCode
    
 
 doLSFileServerContents :: String  -> String -> IO ()
@@ -205,7 +205,7 @@ doGetTransId usern=  do
   trsport <-FSA.transPorStr
   res <-  mydoCalMsg1WithEnc getTransId usern ((read $ trsport:: Int))
   case res of
-    Nothing ->   putStrLn $ "get file call to fileserver  failed with error: "  
+    Nothing ->  putStrLn $ "\n" ++ redCode  ++  "get file call to fileserver  failed with error: "  ++ resetCode
     Just (ResponseData enctrId) -> do 
  
 
@@ -218,15 +218,15 @@ doGetTransId usern=  do
           clientTrans <- getLocalTrId usern
           case clientTrans of 
             [LocalTransInfo _  prevId] -> liftIO $ do  -- abort and update
-                putStrLn $ "Aborting old transaction and starting new " 
+                putStrLn $ "\n"++ redCode ++ "doGetTransId: Aborting old transaction and starting new " ++ resetCode
       
                 restfullCallMsg1WithEnc abort prevId usern FSA.transIP (Just trsport) -- notifying transaction server to abort 
                 FSA.withMongoDbConnection $ upsert (select ["key1" =: usern] "Transaction_RECORD") $ toBSON $ LocalTransInfo usern trId -- store the transaction id
-            [] ->  putStrLn $ "Starting new transaction " ++trId
+            [] ->  putStrLn $ "\n doGetTransId: Starting new transaction " ++trId
             
           FSA.withMongoDbConnection $ upsert (select ["key1" =: usern] "Transaction_RECORD") $ toBSON $ LocalTransInfo usern trId -- store the transaction id
  
-        (Nothing) -> putStrLn $ " Expired token  .Sigin in again. " 
+        (Nothing) ->putStrLn $ "\n" ++ redCode  ++ "doGetTransId: Expired token . Sigin in again.  " ++ resetCode
       
  
      
@@ -280,7 +280,7 @@ doWriteWithTransaction remoteFPath usern newcontent  = do
           res <- mydoCalMsg4WithEnc uploadToShadowDir remotedir fname trId usern ((read $ dirport):: Int) decryptFInfoTransfer -- uploading info to shadow directory 
 
           case res of
-            Nothing -> putStrLn $ "Upload to transaction failed"  
+            Nothing ->putStrLn $ "\n" ++ redCode  ++ "doWriteWithTransaction: Upload to transaction failed"  ++ resetCode
             Just (a) ->   do 
               case a of 
                 ([fileinfotransfer @(FInfoTransfer _ _ fileid _ _ _ )]) -> do
@@ -295,7 +295,7 @@ doWriteWithTransaction remoteFPath usern newcontent  = do
                       let msg = encryptTransactionContents transactionContent seshkey ticket
                       
                       restfullCall (uploadToTransaction $ msg) FSA.transIP  (Just trsport) $  seshNop
-                    (Nothing) -> putStrLn $ " Expired token  .Sigin in again. " 
+                    (Nothing) -> putStrLn $ "\n" ++ redCode  ++ "doWriteWithTransaction: Expired token . Sigin in again.  " ++ resetCode
                 [] -> putStrLn "doWriteWithTransaction: Error getting fileinfo "
 
 
@@ -337,14 +337,14 @@ doWriteFile  remoteFPath usern newcontent = do   -- call to the directory server
             case a of 
               [(fileinfotransfer@(FInfoTransfer _ _ fileid h p ts ))] -> do   
                 case  p =="none" of
-                  (True)->  putStrLn "Upload failed : No fileservers available."
+                  (True)->  putStrLn $ "\n" ++ redCode  ++ "doWriteFile failed : No fileservers available."  ++ resetCode
                   (False)-> do
                     -- lock file before storing
                     putStrLn $ "Recieved file lock" 
                     -- update local file and push the changes up
                     
 
-                    putStrLn $ "CLIENT: Primary copy host"++ show h ++ "  port "++ show p
+                    putStrLn $ "doWriteFile: Primary copy host"++ show h ++ "  port "++ show p
                     appendFile localfilePath $ newcontent
                     contents <- readFile localfilePath
 
@@ -404,7 +404,7 @@ doReadFile remoteFPath usern = do
             True ->  getFileFromFS  fileinfo usern -- it also updates local file metadata
             False -> putStrLn "You have most up to date  version" 
           displayFile fname
-        [] -> putStrLn "CLIENT: This file is not in the fileserver directory" 
+        [] -> putStrLn "doReadFile: This file is not in the fileserver directory" 
         
       
  
@@ -472,75 +472,76 @@ someFunc = do
 
 
 menu = do
-  contents <- getLine 
-  if DL.isPrefixOf "login" contents
+  input <- getLine 
+  if DL.isPrefixOf "login" input
     then do
-      let cmds =  splitOn " " contents
+      let cmds =  splitOn " " input
       --"User name" password"
       doLogin (cmds !! 1) (cmds !! 2)
-  else if DL.isPrefixOf  "signup" contents
+  else if DL.isPrefixOf  "signup" input
     then do
-      let cmds =  splitOn " " contents
+      let cmds =  splitOn " " input
       --"User name" password"
       doSignup  (cmds !! 1) (cmds !! 2)
-  else if DL.isPrefixOf  "readfile" contents
+  else if DL.isPrefixOf  "readfile" input
     then do
-      let cmds =  splitOn " " contents
+      let cmds =  splitOn " " input
       -- "remote dir/fname (filepath)"    "username"
       doReadFile  (cmds !! 1) (cmds !! 2) 
-  else if DL.isPrefixOf  "write" contents
+  else if DL.isPrefixOf  "write" input
     then do
-      let cmds =  splitOn " " contents
+      let cmds =  splitOn " " input
       -- "remote dir/fname (filepath)" "user name" "content to add"
-     
-      doWriteFile  (cmds !! 1) (cmds !! 2) (cmds !! 3)  
-  else if DL.isPrefixOf  "lockfile" contents
+      let content = last $ splitOn (cmds !! 2) input
+      doWriteFile  (cmds !! 1) (cmds !! 2) content
+  else if DL.isPrefixOf  "lockfile" input
     then do
-      let cmds =  splitOn " " contents
+      let cmds =  splitOn " " input
       -- "remote dir/filename"   "user name"
       doFileLock  (cmds !! 1) (cmds !! 2) 
       return ()
-  else if DL.isPrefixOf  "unlockfile" contents
+  else if DL.isPrefixOf  "unlockfile" input
     then do
-      let cmds =  splitOn " " contents
+      let cmds =  splitOn " " input
       -- "remote dir/filename"   "user name"
       doFileUnLock  (cmds !! 1) (cmds !! 2) 
-  else if DL.isPrefixOf  "listdirs" contents
+  else if DL.isPrefixOf  "listdirs" input
     then do
-      let cmds =  splitOn " " contents
+      let cmds =  splitOn " " input
       --   "user name"
       doListDirs  (cmds !! 1) 
-  else if DL.isPrefixOf  "lsdircontents" contents
+  else if DL.isPrefixOf  "lsdircontents" input
     then do
-      let cmds =  splitOn " " contents
+      let cmds =  splitOn " " input
       --   "remote dir/filename" "user name"
       doLSFileServerContents  (cmds !! 1)    (cmds !! 2) 
-  else if DL.isPrefixOf  "filesearch" contents
+  else if DL.isPrefixOf  "filesearch" input
     then do
-      let cmds =  splitOn " " contents
+      let cmds =  splitOn " " input
       --  "remote dir"  "remote dir/filename"   "user name"
       doFileSearch  (cmds !! 1) (cmds !! 2) (cmds !! 3) 
 
-  else if DL.isPrefixOf  "startTrans" contents
+  else if DL.isPrefixOf  "startTrans" input
     then do
-      let cmds =  splitOn " " contents
+      let cmds =  splitOn " " input
       --    "user name"
       doGetTransId  (cmds !! 1) 
-  else if DL.isPrefixOf  "commit" contents
+  else if DL.isPrefixOf  "commit" input
     then do
-      let cmds =  splitOn " " contents
+      let cmds =  splitOn " " input
       --    "user name"
       doCommit  (cmds !! 1) 
-  else if DL.isPrefixOf  "abort" contents
+  else if DL.isPrefixOf  "abort" input
     then do
-      let cmds =  splitOn " " contents
+      let cmds =  splitOn " " input
       --    "user name"
       doAbort  (cmds !! 1) 
-  else if DL.isPrefixOf  "writeT" contents
+  else if DL.isPrefixOf  "writeT" input
     then do
-      let cmds =  splitOn " " contents
+      let cmds =  splitOn " " input
+      let content = last $ splitOn (cmds !! 2) input
      --  "remote dir/fname (filepath)" "user name" "content to add"
-      doWriteWithTransaction  (cmds !! 1) (cmds !! 2) (cmds !! 3) 
+      doWriteWithTransaction  (cmds !! 1) (cmds !! 2)  content
   else
     putStrLn $"no command specified"
   menu

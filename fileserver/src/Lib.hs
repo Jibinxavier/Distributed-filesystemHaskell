@@ -95,8 +95,7 @@ sendBroadcast  ((FServer  _ port ):xs) msg  =   do
 sendHeartBeat :: Int ->  String ->String  -> IO ()
 sendHeartBeat delay host port= do
   
-  dirport <- FSA.dirServPort
-  let dirhost = "directory_server"
+  dirport <- FSA.dirServPort 
   systemHost_ <- FSA.defaultHost
   res <-FSA.myrestfullCall (heartbeat $  Message host port)  ((read dirport)::Int) systemHost_
   case res of
@@ -113,8 +112,7 @@ registerWDir= do
   fport <- FSA.fileserverPort
   systemHost_ <- FSA.defaultHost 
   FSA.warnLog "Registering with directory service at port "    
-  port <- FSA.dirServPort
-  let dirhost = "directory_server"
+  port <- FSA.dirServPort 
   res <- FSA.myrestfullCall (add_dir $  Message3 systemHost_ fport dirname ) ((read port)::Int ) systemHost_
   case res of
     Left err -> do

@@ -3,6 +3,7 @@
 Current configuration has two clients. The start.sh accepts parameter that will determine number fileserver.
 ``` bash
 ./start.sh # start all the services with 1 primary fileserver and 2 secondary
+cd client
 docker-compose run client1 # start client 1
 docker-compose run client2 # start client 2
 ```
@@ -34,3 +35,5 @@ Act as a proxy between user interface and filesystem. Client will allow users to
 2. Starts by registering itself then it regularly sends heartbeats to the directory service. 
 3. Each fileserver represent a directory. The directory name is passed in an environment variable
 4. Asynchronously sends the copy (if primary copy)
+
+##### Transaction Service

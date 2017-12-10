@@ -119,7 +119,7 @@ getFileFromFS fileinfo@[FInfoTransfer remotefilepath dirname fileid _ portadr se
     (Just (ticket,seshkey) ) -> do 
       let encFid= myEncryptAES (aesPad seshkey) (fileid) 
 
-      res <- myrestfullCall (getFile $ Message encFid ticket ) ((read portadr):: Int) localhost
+      res <- myrestfullCall (getFile $ Message encFid ticket ) ((read portadr):: Int) systemHost
       
       case res of
         Left err -> do
@@ -157,6 +157,7 @@ cabalCopyright = $( packageVariable (packageString . copyright ))
 redCode   = setSGRCode [SetConsoleIntensity BoldIntensity , SetColor Foreground Vivid Red]
 whiteCode = setSGRCode [SetConsoleIntensity BoldIntensity , SetColor Foreground Vivid White]
 blueCode  = setSGRCode [SetConsoleIntensity BoldIntensity , SetColor Foreground Vivid Blue]
+yellowCode  = setSGRCode [SetConsoleIntensity BoldIntensity , SetColor Foreground Vivid Yellow]
 resetCode = setSGRCode [Reset]
 
 
@@ -231,7 +232,7 @@ env host port = SC.ClientEnv <$> newManager defaultManagerSettings
 
    -- | The url endpoint for contactingt the use-haskell service
    usehaskellHost :: IO String
-   usehaskellHost = devEnv "USE_HASKELL_HOST" id "localhost" True
+   usehaskellHost = devEnv "USE_HASKELL_HOST" id "systemHost" True
 
    -- | The neo4j port
    usehaskellPort :: IO String
@@ -287,7 +288,7 @@ updateLocalMeta filepath fileinfo = do
 isFileLocked :: String -> IO Bool
 isFileLocked filepath  = liftIO $ do
   port <- lockPortStr
-  res <- myrestfullCall (islocked $ Just filepath) ((read port):: Int) localhost
+  res <- myrestfullCall (islocked $ Just filepath) ((read port):: Int) systemHost
   case res of
     Left err -> do
       putStrLn $ " call to lock server  failed with error: " ++ show err
@@ -348,7 +349,7 @@ mydoCalMsg3WithEnc restCall str1 str2 usern port decryptFunc= do
   case authInfo of 
     (Just (ticket,seshkey) ) -> liftIO $ do 
       let msg =encryptMesg str1 str2 seshkey ticket
-      res <- myrestfullCall  (restCall $ msg)  port localhost
+      res <- myrestfullCall  (restCall $ msg)  port systemHost
       case res of
         Left err -> do
           putStrLn $ " call failed with error: " ++ show err
@@ -365,7 +366,7 @@ mydoCalMsg4WithEnc restCall str1 str2  str3 usern port decryptFunc= do
     (Just (ticket,seshkey) ) -> liftIO $ do 
     
       let msg = encryptMesg3 str1 str2 str3 seshkey ticket
-      res <- myrestfullCall  (restCall $ msg)  port localhost
+      res <- myrestfullCall  (restCall $ msg)  port systemHost
       case res of
         Left err -> do
           putStrLn $ " call failed with error: " ++ show err
@@ -379,7 +380,7 @@ mydoCalMsg1WithEnc restCall   usern port= do
   case authInfo of 
     (Just (ticket,seshkey) ) -> liftIO $ do 
      
-      res <- myrestfullCall  (restCall $ Message1 ticket)  port localhost
+      res <- myrestfullCall  (restCall $ Message1 ticket)  port systemHost
       case res of
         Left err -> do
           putStrLn $ " call failed with error: " ++ show err

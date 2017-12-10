@@ -1,129 +1,67 @@
-Creating transactionservice_database_1 ... 
-Creating transactionservice_database_1
-[1A[2KCreating transactionservice_database_1 ... [32mdone[0m[1BCreating transactionservice_filesystem_1 ... 
-Creating transactionservice_filesystem_1
-[1A[2KCreating transactionservice_filesystem_1 ... [32mdone[0m[1BAttaching to transactionservice_database_1, transactionservice_filesystem_1
-[36mdatabase_1    |[0m 2017-12-08T20:57:38.725+0000 I JOURNAL  [initandlisten] journal dir=/data/db/journal
-[36mdatabase_1    |[0m 2017-12-08T20:57:38.725+0000 I JOURNAL  [initandlisten] recover : no journal files present, no recovery needed
-[36mdatabase_1    |[0m 2017-12-08T20:57:39.004+0000 I JOURNAL  [initandlisten] preallocateIsFaster=true 3.32
-[33mfilesystem_1  |[0m 2017-12-08T20:57:39178122672000+0000 Environment variable: TRANSERV_PORT is not set. Defaulting to "8083"
-[33mfilesystem_1  |[0m 2017-12-08T20:57:39178652457000+0000 Starting transaction service
-[36mdatabase_1    |[0m 2017-12-08T20:57:39.251+0000 I JOURNAL  [initandlisten] preallocateIsFaster=true 2.54
-[36mdatabase_1    |[0m 2017-12-08T20:57:40.544+0000 I JOURNAL  [initandlisten] preallocateIsFaster=true 2.56
-[36mdatabase_1    |[0m 2017-12-08T20:57:40.544+0000 I JOURNAL  [initandlisten] preallocating a journal file /data/db/journal/prealloc.0
-[36mdatabase_1    |[0m 2017-12-08T20:57:42.003+0000 I JOURNAL  [initandlisten] preallocating a journal file /data/db/journal/prealloc.1
-[36mdatabase_1    |[0m 2017-12-08T20:57:43.158+0000 I JOURNAL  [initandlisten] preallocating a journal file /data/db/journal/prealloc.2
-[36mdatabase_1    |[0m 2017-12-08T20:57:44.368+0000 I JOURNAL  [durability] Durability thread started
-[36mdatabase_1    |[0m 2017-12-08T20:57:44.368+0000 I JOURNAL  [journal writer] Journal writer thread started
-[36mdatabase_1    |[0m 2017-12-08T20:57:44.374+0000 I CONTROL  [initandlisten] MongoDB starting : pid=1 port=27017 dbpath=/data/db 64-bit host=cfe62287c88e
-[36mdatabase_1    |[0m 2017-12-08T20:57:44.375+0000 I CONTROL  [initandlisten] 
-[36mdatabase_1    |[0m 2017-12-08T20:57:44.375+0000 I CONTROL  [initandlisten] ** WARNING: /sys/kernel/mm/transparent_hugepage/enabled is 'always'.
-[36mdatabase_1    |[0m 2017-12-08T20:57:44.375+0000 I CONTROL  [initandlisten] **        We suggest setting it to 'never'
-[36mdatabase_1    |[0m 2017-12-08T20:57:44.375+0000 I CONTROL  [initandlisten] 
-[36mdatabase_1    |[0m 2017-12-08T20:57:44.375+0000 I CONTROL  [initandlisten] db version v3.0.2
-[36mdatabase_1    |[0m 2017-12-08T20:57:44.375+0000 I CONTROL  [initandlisten] git version: 6201872043ecbbc0a4cc169b5482dcf385fc464f
-[36mdatabase_1    |[0m 2017-12-08T20:57:44.375+0000 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1e 11 Feb 2013
-[36mdatabase_1    |[0m 2017-12-08T20:57:44.375+0000 I CONTROL  [initandlisten] build info: Linux ip-10-171-120-232 3.2.0-4-amd64 #1 SMP Debian 3.2.46-1 x86_64 BOOST_LIB_VERSION=1_49
-[36mdatabase_1    |[0m 2017-12-08T20:57:44.375+0000 I CONTROL  [initandlisten] allocator: tcmalloc
-[36mdatabase_1    |[0m 2017-12-08T20:57:44.375+0000 I CONTROL  [initandlisten] options: {}
-[36mdatabase_1    |[0m 2017-12-08T20:57:44.375+0000 I INDEX    [initandlisten] allocating new ns file /data/db/local.ns, filling with zeroes...
-[36mdatabase_1    |[0m 2017-12-08T20:57:44.399+0000 I STORAGE  [FileAllocator] allocating new datafile /data/db/local.0, filling with zeroes...
-[36mdatabase_1    |[0m 2017-12-08T20:57:44.399+0000 I STORAGE  [FileAllocator] creating directory /data/db/_tmp
-[36mdatabase_1    |[0m 2017-12-08T20:57:44.406+0000 I STORAGE  [FileAllocator] done allocating datafile /data/db/local.0, size: 64MB,  took 0.003 secs
-[36mdatabase_1    |[0m 2017-12-08T20:57:44.409+0000 I NETWORK  [initandlisten] waiting for connections on port 27017
-Stopping transactionservice_filesystem_1 ... 
-Stopping transactionservice_database_1   ... 
-Exception in thread Thread-6:
-Traceback (most recent call last):
-  File "/home/jibin/anaconda2/lib/python2.7/threading.py", line 801, in __bootstrap_inner
-    self.run()
-  File "/home/jibin/anaconda2/lib/python2.7/threading.py", line 754, in run
-    self.__target(*self.__args, **self.__kwargs)
-  File "/home/jibin/anaconda2/lib/python2.7/site-packages/compose/cli/log_printer.py", line 166, in tail_container_logs
-    queue.put(QueueItem.new(presenter.color_func(wait_on_exit(container))))
-  File "/home/jibin/anaconda2/lib/python2.7/site-packages/compose/cli/log_printer.py", line 197, in wait_on_exit
-    exit_code = container.wait()
-  File "/home/jibin/anaconda2/lib/python2.7/site-packages/compose/container.py", line 243, in wait
-    return self.client.wait(self.id)
-  File "/home/jibin/anaconda2/lib/python2.7/site-packages/docker/utils/decorators.py", line 19, in wrapped
-    return f(self, resource_id, *args, **kwargs)
-  File "/home/jibin/anaconda2/lib/python2.7/site-packages/docker/api/container.py", line 1257, in wait
-    res = self._post(url, timeout=timeout)
-  File "/home/jibin/anaconda2/lib/python2.7/site-packages/docker/utils/decorators.py", line 46, in inner
-    return f(self, *args, **kwargs)
-  File "/home/jibin/anaconda2/lib/python2.7/site-packages/docker/api/client.py", line 187, in _post
-    return self.post(url, **self._set_request_timeout(kwargs))
-  File "/home/jibin/anaconda2/lib/python2.7/site-packages/requests/sessions.py", line 522, in post
-    return self.request('POST', url, data=data, json=json, **kwargs)
-  File "/home/jibin/anaconda2/lib/python2.7/site-packages/requests/sessions.py", line 475, in request
-    resp = self.send(prep, **send_kwargs)
-  File "/home/jibin/anaconda2/lib/python2.7/site-packages/requests/sessions.py", line 596, in send
-    r = adapter.send(request, **kwargs)
-  File "/home/jibin/anaconda2/lib/python2.7/site-packages/requests/adapters.py", line 473, in send
-    raise ConnectionError(err, request=request)
-ConnectionError: ('Connection aborted.', error(104, 'Connection reset by peer'))
-
-Exception in thread Thread-7:
-Traceback (most recent call last):
-  File "/home/jibin/anaconda2/lib/python2.7/threading.py", line 801, in __bootstrap_inner
-    self.run()
-  File "/home/jibin/anaconda2/lib/python2.7/threading.py", line 754, in run
-    self.__target(*self.__args, **self.__kwargs)
-  File "/home/jibin/anaconda2/lib/python2.7/site-packages/compose/cli/log_printer.py", line 213, in watch_events
-    for event in event_stream:
-  File "/home/jibin/anaconda2/lib/python2.7/site-packages/compose/project.py", line 399, in events
-    container = Container.from_id(self.client, event['id'])
-  File "/home/jibin/anaconda2/lib/python2.7/site-packages/compose/container.py", line 42, in from_id
-    return cls(client, client.inspect_container(id), has_been_inspected=True)
-  File "/home/jibin/anaconda2/lib/python2.7/site-packages/docker/utils/decorators.py", line 19, in wrapped
-    return f(self, resource_id, *args, **kwargs)
-  File "/home/jibin/anaconda2/lib/python2.7/site-packages/docker/api/container.py", line 760, in inspect_container
-    self._get(self._url("/containers/{0}/json", container)), True
-  File "/home/jibin/anaconda2/lib/python2.7/site-packages/docker/utils/decorators.py", line 46, in inner
-    return f(self, *args, **kwargs)
-  File "/home/jibin/anaconda2/lib/python2.7/site-packages/docker/api/client.py", line 191, in _get
-    return self.get(url, **self._set_request_timeout(kwargs))
-  File "/home/jibin/anaconda2/lib/python2.7/site-packages/requests/sessions.py", line 488, in get
-    return self.request('GET', url, **kwargs)
-  File "/home/jibin/anaconda2/lib/python2.7/site-packages/requests/sessions.py", line 475, in request
-    resp = self.send(prep, **send_kwargs)
-  File "/home/jibin/anaconda2/lib/python2.7/site-packages/requests/sessions.py", line 596, in send
-    r = adapter.send(request, **kwargs)
-  File "/home/jibin/anaconda2/lib/python2.7/site-packages/requests/adapters.py", line 473, in send
-    raise ConnectionError(err, request=request)
-ConnectionError: ('Connection aborted.', error(104, 'Connection reset by peer'))
-
-Exception in thread Thread-5:
-Traceback (most recent call last):
-  File "/home/jibin/anaconda2/lib/python2.7/threading.py", line 801, in __bootstrap_inner
-    self.run()
-  File "/home/jibin/anaconda2/lib/python2.7/threading.py", line 754, in run
-    self.__target(*self.__args, **self.__kwargs)
-  File "/home/jibin/anaconda2/lib/python2.7/site-packages/compose/cli/log_printer.py", line 166, in tail_container_logs
-    queue.put(QueueItem.new(presenter.color_func(wait_on_exit(container))))
-  File "/home/jibin/anaconda2/lib/python2.7/site-packages/compose/cli/log_printer.py", line 197, in wait_on_exit
-    exit_code = container.wait()
-  File "/home/jibin/anaconda2/lib/python2.7/site-packages/compose/container.py", line 243, in wait
-    return self.client.wait(self.id)
-  File "/home/jibin/anaconda2/lib/python2.7/site-packages/docker/utils/decorators.py", line 19, in wrapped
-    return f(self, resource_id, *args, **kwargs)
-  File "/home/jibin/anaconda2/lib/python2.7/site-packages/docker/api/container.py", line 1257, in wait
-    res = self._post(url, timeout=timeout)
-  File "/home/jibin/anaconda2/lib/python2.7/site-packages/docker/utils/decorators.py", line 46, in inner
-    return f(self, *args, **kwargs)
-  File "/home/jibin/anaconda2/lib/python2.7/site-packages/docker/api/client.py", line 187, in _post
-    return self.post(url, **self._set_request_timeout(kwargs))
-  File "/home/jibin/anaconda2/lib/python2.7/site-packages/requests/sessions.py", line 522, in post
-    return self.request('POST', url, data=data, json=json, **kwargs)
-  File "/home/jibin/anaconda2/lib/python2.7/site-packages/requests/sessions.py", line 475, in request
-    resp = self.send(prep, **send_kwargs)
-  File "/home/jibin/anaconda2/lib/python2.7/site-packages/requests/sessions.py", line 596, in send
-    r = adapter.send(request, **kwargs)
-  File "/home/jibin/anaconda2/lib/python2.7/site-packages/requests/adapters.py", line 473, in send
-    raise ConnectionError(err, request=request)
-ConnectionError: ('Connection aborted.', error(104, 'Connection reset by peer'))
-
-[1A[2KStopping transactionservice_database_1   ... [31merror[0m[1B
-ERROR: for transactionservice_filesystem_1  ('Connection aborted.', error(104, 'Connection reset by peer'))
-Couldn't connect to Docker daemon - you might need to run `docker-machine start default`.
-Gracefully stopping... (press Ctrl+C again to force)
+Starting transactionservice_database_1 ... 
+Starting transactionservice_database_1
+[1A[2KStarting transactionservice_database_1 ... [32mdone[0m[1BStarting transactionservice_filesystem_1 ... 
+Starting transactionservice_filesystem_1
+[1A[2KStarting transactionservice_filesystem_1 ... [32mdone[0m[1BAttaching to transactionservice_database_1, transactionservice_filesystem_1
+[36mdatabase_1    |[0m 2017-12-10T11:52:37.119+0000 I JOURNAL  [initandlisten] journal dir=/data/db/journal
+[36mdatabase_1    |[0m 2017-12-10T11:52:37.120+0000 I JOURNAL  [initandlisten] recover : no journal files present, no recovery needed
+[36mdatabase_1    |[0m 2017-12-10T11:52:37.141+0000 I JOURNAL  [durability] Durability thread started
+[36mdatabase_1    |[0m 2017-12-10T11:52:37.141+0000 I JOURNAL  [journal writer] Journal writer thread started
+[36mdatabase_1    |[0m 2017-12-10T11:52:37.152+0000 I CONTROL  [initandlisten] MongoDB starting : pid=1 port=27017 dbpath=/data/db 64-bit host=cfe62287c88e
+[36mdatabase_1    |[0m 2017-12-10T11:52:37.152+0000 I CONTROL  [initandlisten] 
+[36mdatabase_1    |[0m 2017-12-10T11:52:37.152+0000 I CONTROL  [initandlisten] ** WARNING: /sys/kernel/mm/transparent_hugepage/enabled is 'always'.
+[36mdatabase_1    |[0m 2017-12-10T11:52:37.152+0000 I CONTROL  [initandlisten] **        We suggest setting it to 'never'
+[36mdatabase_1    |[0m 2017-12-10T11:52:37.152+0000 I CONTROL  [initandlisten] 
+[36mdatabase_1    |[0m 2017-12-10T11:52:37.152+0000 I CONTROL  [initandlisten] db version v3.0.2
+[36mdatabase_1    |[0m 2017-12-10T11:52:37.152+0000 I CONTROL  [initandlisten] git version: 6201872043ecbbc0a4cc169b5482dcf385fc464f
+[36mdatabase_1    |[0m 2017-12-10T11:52:37.152+0000 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1e 11 Feb 2013
+[36mdatabase_1    |[0m 2017-12-10T11:52:37.152+0000 I CONTROL  [initandlisten] build info: Linux ip-10-171-120-232 3.2.0-4-amd64 #1 SMP Debian 3.2.46-1 x86_64 BOOST_LIB_VERSION=1_49
+[36mdatabase_1    |[0m 2017-12-10T11:52:37.152+0000 I CONTROL  [initandlisten] allocator: tcmalloc
+[36mdatabase_1    |[0m 2017-12-10T11:52:37.152+0000 I CONTROL  [initandlisten] options: {}
+[33mfilesystem_1  |[0m 2017-12-10T11:52:37463897621000+0000 Environment variable: TRANSERV_PORT is not set. Defaulting to "8083"
+[36mdatabase_1    |[0m 2017-12-10T11:52:37.189+0000 I NETWORK  [initandlisten] waiting for connections on port 27017
+[33mfilesystem_1  |[0m 2017-12-10T11:52:37467338328000+0000 Starting transaction service
+[33mfilesystem_1  |[0m 2017-12-10T12:25:36078743975000+0000 New transaction
+[33mfilesystem_1  |[0m 2017-12-10T12:25:36079765491000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1    |[0m 2017-12-10T12:25:36.082+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.17:60026 #1 (1 connection now open)
+[33mfilesystem_1  |[0m 2017-12-10T12:25:36084181839000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1    |[0m 2017-12-10T12:25:36.086+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.17:60028 #2 (2 connections now open)
+[36mdatabase_1    |[0m 2017-12-10T12:25:36.087+0000 I INDEX    [conn2] allocating new ns file /data/db/USEHASKELLDB.ns, filling with zeroes...
+[36mdatabase_1    |[0m 2017-12-10T12:25:36.135+0000 I STORAGE  [FileAllocator] allocating new datafile /data/db/USEHASKELLDB.0, filling with zeroes...
+[36mdatabase_1    |[0m 2017-12-10T12:25:36.135+0000 I STORAGE  [FileAllocator] creating directory /data/db/_tmp
+[36mdatabase_1    |[0m 2017-12-10T12:25:36.143+0000 I STORAGE  [FileAllocator] done allocating datafile /data/db/USEHASKELLDB.0, size: 64MB,  took 0.004 secs
+[36mdatabase_1    |[0m 2017-12-10T12:25:36.148+0000 I NETWORK  [conn2] end connection 172.17.0.17:60028 (1 connection now open)
+[36mdatabase_1    |[0m 2017-12-10T12:25:36.148+0000 I NETWORK  [conn1] end connection 172.17.0.17:60026 (1 connection now open)
+[33mfilesystem_1  |[0m 2017-12-10T12:25:36148740741000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1    |[0m 2017-12-10T12:25:36.150+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.17:60030 #3 (1 connection now open)
+[36mdatabase_1    |[0m 2017-12-10T12:25:36.152+0000 I NETWORK  [conn3] end connection 172.17.0.17:60030 (0 connections now open)
+[33mfilesystem_1  |[0m 172.17.0.1 - - [10/Dec/2017:12:25:36 +0000] "POST /getTransId HTTP/1.1" 200 - "" ""
+[33mfilesystem_1  |[0m 2017-12-10T12:35:53061730169000+0000 New transaction
+[33mfilesystem_1  |[0m 2017-12-10T12:35:53061929655000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1    |[0m 2017-12-10T12:35:53.062+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.17:60892 #4 (1 connection now open)
+[33mfilesystem_1  |[0m 2017-12-10T12:35:53062757263000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1    |[0m 2017-12-10T12:35:53.063+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.17:60894 #5 (2 connections now open)
+[36mdatabase_1    |[0m 2017-12-10T12:35:53.063+0000 I NETWORK  [conn5] end connection 172.17.0.17:60894 (1 connection now open)
+[36mdatabase_1    |[0m 2017-12-10T12:35:53.063+0000 I NETWORK  [conn4] end connection 172.17.0.17:60892 (1 connection now open)
+[33mfilesystem_1  |[0m 2017-12-10T12:35:53063665033000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1    |[0m 2017-12-10T12:35:53.064+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.17:60896 #6 (1 connection now open)
+[36mdatabase_1    |[0m 2017-12-10T12:35:53.064+0000 I NETWORK  [conn6] end connection 172.17.0.17:60896 (0 connections now open)
+[33mfilesystem_1  |[0m 172.17.0.1 - - [10/Dec/2017:12:35:53 +0000] "POST /getTransId HTTP/1.1" 200 - "" ""
+[33mfilesystem_1  |[0m 2017-12-10T12:35:53070218661000+0000 Aborting transaction
+[33mfilesystem_1  |[0m 2017-12-10T12:35:53070443259000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1    |[0m 2017-12-10T12:35:53.070+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.17:60908 #7 (1 connection now open)
+[36mdatabase_1    |[0m 2017-12-10T12:35:53.086+0000 I NETWORK  [conn7] end connection 172.17.0.17:60908 (0 connections now open)
+[33mfilesystem_1  |[0m 2017-12-10T12:35:53086898527000+0000 Environment variable: DIRSERV_PORT is not set. Defaulting to "8082"
+[33mfilesystem_1  |[0m 172.17.0.1 - - [10/Dec/2017:12:35:53 +0000] "POST /abort HTTP/1.1" 200 - "" ""
+[36mdatabase_1    |[0m 2017-12-10T13:09:45.127+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.1:42982 #8 (1 connection now open)
+[36mdatabase_1    |[0m 2017-12-10T13:09:45.128+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.1:42986 #9 (2 connections now open)
+[36mdatabase_1    |[0m 2017-12-10T13:09:45.135+0000 I NETWORK  [conn9] end connection 172.17.0.1:42986 (1 connection now open)
+[36mdatabase_1    |[0m 2017-12-10T13:09:45.135+0000 I NETWORK  [conn8] end connection 172.17.0.1:42982 (1 connection now open)
+[36mdatabase_1    |[0m 2017-12-10T13:10:09.627+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.1:43070 #10 (1 connection now open)
+[36mdatabase_1    |[0m 2017-12-10T13:10:09.628+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.1:43074 #11 (2 connections now open)
+[36mdatabase_1    |[0m 2017-12-10T13:10:09.631+0000 I NETWORK  [conn11] end connection 172.17.0.1:43074 (1 connection now open)
+[36mdatabase_1    |[0m 2017-12-10T13:10:09.631+0000 I NETWORK  [conn10] end connection 172.17.0.1:43070 (1 connection now open)
+[36mdatabase_1    |[0m 2017-12-10T13:11:48.655+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.1:43254 #12 (1 connection now open)
+[36mdatabase_1    |[0m 2017-12-10T13:11:48.655+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.1:43258 #13 (2 connections now open)
+[36mdatabase_1    |[0m 2017-12-10T13:11:48.659+0000 I NETWORK  [conn13] end connection 172.17.0.1:43258 (1 connection now open)
+[36mdatabase_1    |[0m 2017-12-10T13:11:48.659+0000 I NETWORK  [conn12] end connection 172.17.0.1:43254 (1 connection now open)

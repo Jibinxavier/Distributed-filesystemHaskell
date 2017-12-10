@@ -10,9 +10,16 @@ write f_1/testfile hello hi
 
 lockfile f_1/testfile hello
 unlockfile f_1/testfile hello
+ 
+# writing to a file using transaction
+startTrans hello
+writeT f_1/testfile hello this is some content
+commit hello 
 
-authserver 27000 
-client 27014 27017
-dirserver 27222
-filserver 27090 27091 27092
-lockserver 27890
+# writing to file and abort the transaction
+startTrans hello
+writeT f_1/testfile 
+abort hello 
+
+
+ 

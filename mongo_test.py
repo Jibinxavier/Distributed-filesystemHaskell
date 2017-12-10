@@ -1,19 +1,19 @@
 from pymongo import MongoClient
 from bson import json_util
-client = MongoClient("localhost",27222)
-print(client.database_names())
-db = client.USEHASKELLDB
+# client = MongoClient("localhost",27222)
+# print(client.database_names())
+# db = client.USEHASKELLDB
 
-cursor = db.Directory_RECORD.find({})
-for document in cursor:
-        print(document)
-print("filservers")
-cursor = db.DirHealth_RECORD.find({})
-for document in cursor:
-        print(document)
-cursor = db.Files_RECORD.find({})
-for document in cursor:
-        print(document)
+# cursor = db.Directory_RECORD.find({})
+# for document in cursor:
+#         print(document)
+# print("filservers")
+# cursor = db.DirHealth_RECORD.find({})
+# for document in cursor:
+#         print(document)
+# cursor = db.Files_RECORD.find({})
+# for document in cursor:
+#         print(document)
         
 
 
@@ -27,37 +27,30 @@ for document in cursor:
 
 # print("client record")
  
-allports = {"authserver": 27000, "client":27017,"directoryservice":27222 ,"lock": 27890,"fileserver_0":27090, "fileserver_1": 27091, "fileserver_2":27092, "transactionservice":27984}
+
+allports = {"authserver": 27000,"directoryservice":27222 ,"lock": 27890,"fileserver_0":27090, "fileserver_1": 27091, "fileserver_2":27092, "transactionservice":27984}
 for x in allports:      
-        print(x)
-        client = MongoClient("localhost",allports[x])
+    print("printing contents from " + x)
+    client = MongoClient("localhost",allports[x])
 
-        
-        db = client.USEHASKELLDB
-        print(db.collection_names())
-        print("\n \n")
-
-print("\n checking client db")
-client = MongoClient("localhost",27890) 
-
+       
+    db = client.USEHASKELLDB
+    for collection in db.collection_names()[:-1]:
+        print("collection: " + collection)
+	
+	
+        cursor = db[collection].find({})
+        for document in cursor:
+            print(document)
+    print("\n \n \n")
+print("\n checking client1 db")
+client = MongoClient("localhost",27223)   
 db = client.USEHASKELLDB
-
-
-cursor = db.LockService_RECORD.find({})
-for document in cursor:
-        print(document)
- 
-
-
-
-client = MongoClient("localhost",27017)
-
-
-db = client.USEHASKELLDB
-print(db.collection_names())
-cursor = db.LockAvailability_RECORD.find({})
-for document in cursor:
-        print(document)
+for collection in db.collection_names():
+    print("collection: " + collection)
+    cursor = db[collection].find({})
+    for document in cursor:
+    	print(document)
  
         
 # cursor = db.jobs.find({"completed": False,})
