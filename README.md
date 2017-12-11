@@ -61,6 +61,8 @@ When a client introduces an new file to the system, the directory server creates
 5. Upon receiving the shadow copy, fileservers will send a ready to commit signal
 6. If all the servers send ready to commit. Transaction server instructs servers to update their true copy.
 
+There are many possible point of failures, example being where the servers not responding with ready to commit signal. With current implementation the transaction stalls. A better solution would take into account a timeout before canceling the transaction
+
 ### Commands
 `signup user userspassword` Signs up a user
 
@@ -85,5 +87,37 @@ When a client introduces an new file to the system, the directory server creates
 
 `lsdircontents user f1`Lists contents of a remote directories. Requires: "remote dir/filename" "username"
 
-
+### Example
 ![](./distributed_filesystem.png/?raw=true "Filesystem")
+#### Registration
+0.0. As the system starts up the fileserver register themselves to the directory service. Heart beats are sent periodically
+#### Login in
+1.0 Client signs up first
+
+1.1 Client encrpts its message using the authentication servers public key and sends credential.
+
+1.2 Authentication server returns a token 
+#### Write and read
+2.1 The client locks the file before writing to it. If locked it stays in queue and waits for the lock
+
+2.1.1 Client will have the file metadata from the directory service
+
+
+2.2 After acquiring the lock. It writes the file and update the information in directory server
+
+2.3 It unlocks the file
+
+2.4 Filserver distributes the copy
+
+3.1-3.2 For reads, it checks if the local copy is uptodate by checking against the metadata from from the directory server
+
+3.3 Downloads the file if it is outdated
+
+#### Tranasaction 
+4.1-4.2 Calls the Transaction server to initiate a transaction and it returns a transaction id
+
+4.3 File content is written to the transaction
+
+4.4 Locks the file. If it is already locked it joins the queue
+
+4.5 - 4.6 Client calls commit which triggers transaction details to be pushed to the fileservers' shadow copy. Fileservers send back ready to commit signal, if all servers respond TS instructs the filservers to update their copies.
