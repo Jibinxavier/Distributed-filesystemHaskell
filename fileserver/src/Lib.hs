@@ -192,7 +192,7 @@ server = upload
       let msgToTrans = Message trid fileid -- 
       port <-  FSA.transPorStr
  
-      FSA.myrestfullCall   (readyToCommit $  msgToTrans) ((read port)::Int) FSA.systemHost
+      FSA.myrestfullCall   (readyToCommit $  msgToTrans) ((read port)::Int) "transactionservice"
       return True  
      
     updateRealDB :: String -> Handler Bool

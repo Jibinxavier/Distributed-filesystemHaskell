@@ -137,7 +137,7 @@ doFileLock fpath usern= do
           return False
           -- queue and lock
         Right ([_, True]) -> do
-          putStrLn "Got the lock"
+          putStrLn "\ndoFileLock: Got the lock"
           return True
         Right ([True, _]) -> do 
           putStrLn  $ "\n" ++ whiteCode  ++"Joined the queue now" ++ resetCode
@@ -206,7 +206,7 @@ doGetTransId usern=  do
   trsport <-FSA.transPorStr
   res <-  mydoCalMsg1WithEnc getTransId usern ((read $ trsport:: Int))
   case res of
-    Nothing ->  putStrLn $ "\n" ++ redCode  ++  "get file call to fileserver  failed with error: "  ++ resetCode
+    Nothing ->  putStrLn $ "\n" ++ redCode  ++  "doGetTransId: Get transaction id failed."  ++ resetCode
     Just (ResponseData enctrId) -> do 
  
 
@@ -267,20 +267,22 @@ doWriteWithTransaction remoteFPath usern newcontent  = do
   --  Client will just specify where it wants to store the file 
   -- transaction has to figure out the file info and update directory info  
  
-  status <- isFileLocked remoteFPath
+  status <- doFileLock remoteFPath usern 
   case status of  --- if the file is locked it cannot be added to the transaction
     (False) -> do
       case localTransactionInfo of  -- get local transaction info
-        [LocalTransInfo _ trId] -> liftIO $ do     
+        [LocalTransInfo _ trId] -> liftIO $ do  
+          -- downloads file if not available locally   
+          doReadFile remoteFPath usern False
           fileExists <- doesFileExist localfilePath 
-          let contents1 =case fileExists of
-                            True -> do 
-                              existingContent <-  readFile localfilePath 
-                              return $ existingContent ++ newcontent
-                            otherwise -> return $ newcontent
+          -- let contents1 =case fileExists of
+          --                   True -> do 
+          existingContent <-  readFile localfilePath 
+          let contents = existingContent ++ newcontent
+                            -- otherwise -> return $ newcontent
 
-          contents <- contents1                   
-          doFileLock remoteFPath usern -- lock the file
+          -- contents <- contents1                   
+          -- doFileLock remoteFPath usern -- lock the file
           appendToLockedFiles remoteFPath trId -- list of locked files which the client keeps a record of
           dirport <- FSA.dirServPort
           res <- mydoCalMsg4WithEnc uploadToShadowDir remotedir fname trId usern ((read $ dirport):: Int) decryptFInfoTransfer -- uploading info to shadow directory 
@@ -309,7 +311,7 @@ doWriteWithTransaction remoteFPath usern newcontent  = do
           
         [] -> putStrLn "No ongoing transaction"
 
-    (True) -> putStrLn "File is locked"
+    (True) -> putStrLn "File is locked. Restart the transaction "
 
 
 ---------------------------------
@@ -360,18 +362,17 @@ doWriteFile  remoteFPath usern newcontent = do   -- call to the directory server
                       (Just (ticket,seshkey) ) -> do 
                         let msg = encryptFileContents  (FileContents fileid contents "") seshkey ticket -- encrypted message
                         restfullCall (upload  msg) (Just FSA.systemHost) (Just p)  seshkey -- uploading file
-                        putStrLn "after uploading"
+                         
                         doFileUnLock remoteFPath usern
-                        putStrLn "after unlock"
-                        -- store the metadata about the file
-                        -- let fpath =  usern ++ remoteFPath -- this is to allow multiple users to use the same database
+                      
+                        -- store the metadata about the file 
                         updateLocalMeta remoteFPath $ FInfo remoteFPath remotedir fileid ts
-                        putStrLn "file unlocked "
+                        putStrLn "\nWriteFile: Write complete \n"
                       (Nothing) -> putStrLn $ "\n" ++ redCode  ++ "Expired token . Sigin in again.  "  ++ resetCode
-              [] -> putStrLn "Upload file : Error getting fileinfo from directory service"
+              [] -> putStrLn $ "\n" ++ redCode  ++  "Upload file : Error getting fileinfo from directory service" ++ resetCode
 
          
-    (False) -> putStrLn "File is locked"
+    (False) ->putStrLn $ "\n" ++ redCode  ++ "File is locked"  ++ resetCode
 
 -- client
 
@@ -391,8 +392,8 @@ displayFile filepath = do
 
  
 
-doReadFile :: String -> String-> IO ()
-doReadFile remoteFPath usern = do 
+doReadFile :: String -> String-> Bool->IO ()
+doReadFile remoteFPath usern todisplay = do 
   -- talk to the directory service to get the file details
   let remotedir =head $ splitOn "/" remoteFPath
       fname = last $ splitOn "/" remoteFPath
@@ -409,7 +410,11 @@ doReadFile remoteFPath usern = do
           case status of
             True ->  getFileFromFS  fileinfo usern -- it also updates local file metadata
             False -> putStrLn "You have most up to date  version" 
-          displayFile fname
+
+          if todisplay then 
+            displayFile fname
+          else 
+            return ()
         [] -> putStrLn "doReadFile: This file is not in the fileserver directory" 
         
       
@@ -494,7 +499,7 @@ menu = do
     then do
       let cmds =  splitOn " " input
       -- "remote dir/fname (filepath)"    "username"
-      doReadFile  (cmds !! 1) (cmds !! 2) 
+      doReadFile  (cmds !! 1) (cmds !! 2) True
   else if DL.isPrefixOf  "startTrans" input
     then do
       let cmds =  splitOn " " input

@@ -3,502 +3,256 @@ Creating directoryservice_database_1
 [1A[2KCreating directoryservice_database_1 ... [32mdone[0m[1BCreating directory_server ... 
 Creating directory_server
 [1A[2KCreating directory_server ... [32mdone[0m[1BAttaching to directoryservice_database_1, directory_server
-[36mdatabase_1          |[0m 2017-12-10T18:37:03.731+0000 I JOURNAL  [initandlisten] journal dir=/data/db/journal
-[36mdatabase_1          |[0m 2017-12-10T18:37:03.731+0000 I JOURNAL  [initandlisten] recover : no journal files present, no recovery needed
-[36mdatabase_1          |[0m 2017-12-10T18:37:04.587+0000 I JOURNAL  [initandlisten] preallocateIsFaster=true 10.32
-[33mdirectory_server    |[0m 2017-12-10T18:37:04607299284000+0000 Starting directory service
-[36mdatabase_1          |[0m 2017-12-10T18:37:05.196+0000 I JOURNAL  [initandlisten] preallocateIsFaster=true 4.36
-[36mdatabase_1          |[0m 2017-12-10T18:37:06.757+0000 I JOURNAL  [initandlisten] preallocateIsFaster=true 4.68
-[36mdatabase_1          |[0m 2017-12-10T18:37:06.757+0000 I JOURNAL  [initandlisten] preallocateIsFaster check took 3.026 secs
-[36mdatabase_1          |[0m 2017-12-10T18:37:06.757+0000 I JOURNAL  [initandlisten] preallocating a journal file /data/db/journal/prealloc.0
-[36mdatabase_1          |[0m 2017-12-10T18:37:08.819+0000 I JOURNAL  [initandlisten] preallocating a journal file /data/db/journal/prealloc.1
-[36mdatabase_1          |[0m 2017-12-10T18:37:10.870+0000 I JOURNAL  [initandlisten] preallocating a journal file /data/db/journal/prealloc.2
-[36mdatabase_1          |[0m 2017-12-10T18:37:12.669+0000 I JOURNAL  [durability] Durability thread started
-[36mdatabase_1          |[0m 2017-12-10T18:37:12.669+0000 I JOURNAL  [journal writer] Journal writer thread started
-[36mdatabase_1          |[0m 2017-12-10T18:37:12.685+0000 I CONTROL  [initandlisten] MongoDB starting : pid=1 port=27017 dbpath=/data/db 64-bit host=68784b82b8d9
-[36mdatabase_1          |[0m 2017-12-10T18:37:12.685+0000 I CONTROL  [initandlisten] 
-[36mdatabase_1          |[0m 2017-12-10T18:37:12.685+0000 I CONTROL  [initandlisten] ** WARNING: /sys/kernel/mm/transparent_hugepage/enabled is 'always'.
-[36mdatabase_1          |[0m 2017-12-10T18:37:12.685+0000 I CONTROL  [initandlisten] **        We suggest setting it to 'never'
-[36mdatabase_1          |[0m 2017-12-10T18:37:12.685+0000 I CONTROL  [initandlisten] 
-[36mdatabase_1          |[0m 2017-12-10T18:37:12.685+0000 I CONTROL  [initandlisten] db version v3.0.2
-[36mdatabase_1          |[0m 2017-12-10T18:37:12.685+0000 I CONTROL  [initandlisten] git version: 6201872043ecbbc0a4cc169b5482dcf385fc464f
-[36mdatabase_1          |[0m 2017-12-10T18:37:12.685+0000 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1e 11 Feb 2013
-[36mdatabase_1          |[0m 2017-12-10T18:37:12.685+0000 I CONTROL  [initandlisten] build info: Linux ip-10-171-120-232 3.2.0-4-amd64 #1 SMP Debian 3.2.46-1 x86_64 BOOST_LIB_VERSION=1_49
-[36mdatabase_1          |[0m 2017-12-10T18:37:12.685+0000 I CONTROL  [initandlisten] allocator: tcmalloc
-[36mdatabase_1          |[0m 2017-12-10T18:37:12.685+0000 I CONTROL  [initandlisten] options: {}
-[36mdatabase_1          |[0m 2017-12-10T18:37:12.687+0000 I INDEX    [initandlisten] allocating new ns file /data/db/local.ns, filling with zeroes...
-[36mdatabase_1          |[0m 2017-12-10T18:37:12.757+0000 I STORAGE  [FileAllocator] allocating new datafile /data/db/local.0, filling with zeroes...
-[36mdatabase_1          |[0m 2017-12-10T18:37:12.757+0000 I STORAGE  [FileAllocator] creating directory /data/db/_tmp
-[36mdatabase_1          |[0m 2017-12-10T18:37:12.791+0000 I STORAGE  [FileAllocator] done allocating datafile /data/db/local.0, size: 64MB,  took 0.015 secs
-[36mdatabase_1          |[0m 2017-12-10T18:37:12.798+0000 I NETWORK  [initandlisten] waiting for connections on port 27017
-[33mdirectory_server    |[0m 2017-12-10T18:37:14022492482000+0000 Storing new file server to  f_1  directory
-[33mdirectory_server    |[0m 2017-12-10T18:37:14023885559000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:37:14.039+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:58938 #1 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:37:14.042+0000 I NETWORK  [conn1] end connection 172.17.0.7:58938 (0 connections now open)
-[33mdirectory_server    |[0m 2017-12-10T18:37:14041927149000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:37:14.043+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:58940 #2 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:37:14.045+0000 I INDEX    [conn2] allocating new ns file /data/db/USEHASKELLDB.ns, filling with zeroes...
-[36mdatabase_1          |[0m 2017-12-10T18:37:14.133+0000 I STORAGE  [FileAllocator] allocating new datafile /data/db/USEHASKELLDB.0, filling with zeroes...
-[36mdatabase_1          |[0m 2017-12-10T18:37:14.155+0000 I STORAGE  [FileAllocator] done allocating datafile /data/db/USEHASKELLDB.0, size: 64MB,  took 0.021 secs
-[36mdatabase_1          |[0m 2017-12-10T18:37:14.163+0000 I WRITE    [conn2] update USEHASKELLDB.Directory_RECORD query: { dirName: "f_1" } update: { dirName: "f_1", primary: { ip: "172.17.0.1", port: "8002" }, fservers: [] } nscanned:0 nscannedObjects:0 nMatched:1 nModified:1 fastmodinsert:1 upsert:1 keyUpdates:0 writeConflicts:0 numYields:0 locks:{ Global: { acquireCount: { w: 3 } }, MMAPV1Journal: { acquireCount: { w: 9 } }, Database: { acquireCount: { w: 2, W: 1 } }, Collection: { acquireCount: { W: 2 } }, Metadata: { acquireCount: { W: 4 } } } 118ms
-[36mdatabase_1          |[0m 2017-12-10T18:37:14.163+0000 I COMMAND  [conn2] command USEHASKELLDB.$cmd command: update { update: "Directory_RECORD", ordered: true, updates: [ { q: { dirName: "f_1" }, u: { dirName: "f_1", primary: { ip: "172.17.0.1", port: "8002" }, fservers: [] }, upsert: true, multi: false } ], writeConcern: {} } ntoreturn:1 keyUpdates:0 writeConflicts:0 numYields:0 reslen:106 locks:{ Global: { acquireCount: { w: 3 } }, MMAPV1Journal: { acquireCount: { w: 9 } }, Database: { acquireCount: { w: 2, W: 1 } }, Collection: { acquireCount: { W: 2 } }, Metadata: { acquireCount: { W: 4 } } } 118ms
-[36mdatabase_1          |[0m 2017-12-10T18:37:14.163+0000 I NETWORK  [conn2] end connection 172.17.0.7:58940 (0 connections now open)
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:37:14 +0000] "POST /add_dir HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 2017-12-10T18:37:14191223039000+0000  Recieved heartbeat from fileserver at port 8002
-[33mdirectory_server    |[0m 2017-12-10T18:37:14191592849000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:37:14.192+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:58946 #3 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:37:14.192+0000 I NETWORK  [conn3] end connection 172.17.0.7:58946 (0 connections now open)
-[33mdirectory_server    |[0m 2017-12-10T18:37:14854374806000+0000 Storing new file server to  f_1  directory
-[33mdirectory_server    |[0m 2017-12-10T18:37:14854645952000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:37:14.855+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:58954 #4 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:37:14.855+0000 I NETWORK  [conn4] end connection 172.17.0.7:58954 (0 connections now open)
-[36mdatabase_1          |[0m 2017-12-10T18:37:14.856+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:58956 #5 (1 connection now open)
-[33mdirectory_server    |[0m 2017-12-10T18:37:14855592402000+0000 IS NEW DIRECTORY     172.17.0.18001True
-[33mdirectory_server    |[0m 2017-12-10T18:37:14855771944000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:37:14.856+0000 I NETWORK  [conn5] end connection 172.17.0.7:58956 (0 connections now open)
-[33mdirectory_server    |[0m 2017-12-10T18:37:14883065573000+0000  Recieved heartbeat from fileserver at port 8001
-[33mdirectory_server    |[0m 2017-12-10T18:37:14883401114000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:37:14.884+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:58962 #6 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:37:14.885+0000 I NETWORK  [conn6] end connection 172.17.0.7:58962 (0 connections now open)
-[33mdirectory_server    |[0m 2017-12-10T18:37:14906383204000+0000 Storing new file server to  f_1  directory
-[33mdirectory_server    |[0m 2017-12-10T18:37:14906684210000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:37:14.907+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:58968 #7 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:37:14.907+0000 I NETWORK  [conn7] end connection 172.17.0.7:58968 (0 connections now open)
-[33mdirectory_server    |[0m 2017-12-10T18:37:14907664262000+0000 IS NEW DIRECTORY     172.17.0.18000True
-[33mdirectory_server    |[0m 2017-12-10T18:37:14907950924000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:37:14.908+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:58970 #8 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:37:14.908+0000 I NETWORK  [conn8] end connection 172.17.0.7:58970 (0 connections now open)
-[33mdirectory_server    |[0m 2017-12-10T18:37:14925425322000+0000  Recieved heartbeat from fileserver at port 8000
-[33mdirectory_server    |[0m 2017-12-10T18:37:14925686671000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:37:14.926+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:58976 #9 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:37:14.926+0000 I NETWORK  [conn9] end connection 172.17.0.7:58976 (0 connections now open)
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:37:14 +0000] "POST /add_dir HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:37:14 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:37:14 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:37:14 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:37:14 +0000] "POST /add_dir HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 2017-12-10T18:37:34755245134000+0000  Recieved heartbeat from fileserver at port 8002
-[33mdirectory_server    |[0m 2017-12-10T18:37:34761224594000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:37:34.769+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59004 #10 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:37:34.783+0000 I NETWORK  [conn10] end connection 172.17.0.7:59004 (0 connections now open)
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:37:34 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 2017-12-10T18:37:34906049624000+0000  Recieved heartbeat from fileserver at port 8001
-[33mdirectory_server    |[0m 2017-12-10T18:37:34906323394000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:37:34.906+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59010 #11 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:37:34.907+0000 I NETWORK  [conn11] end connection 172.17.0.7:59010 (0 connections now open)
-[33mdirectory_server    |[0m 2017-12-10T18:37:34951194608000+0000  Recieved heartbeat from fileserver at port 8000
-[33mdirectory_server    |[0m 2017-12-10T18:37:34951501528000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:37:34.956+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59016 #12 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:37:34.957+0000 I NETWORK  [conn12] end connection 172.17.0.7:59016 (0 connections now open)
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:37:34 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:37:34 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 2017-12-10T18:37:54839332804000+0000  Recieved heartbeat from fileserver at port 8002
-[33mdirectory_server    |[0m 2017-12-10T18:37:54840280014000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:37:54.841+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59042 #13 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:37:54.843+0000 I NETWORK  [conn13] end connection 172.17.0.7:59042 (0 connections now open)
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:37:54 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 2017-12-10T18:37:54924833091000+0000  Recieved heartbeat from fileserver at port 8001
-[33mdirectory_server    |[0m 2017-12-10T18:37:54925683703000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:37:54.928+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59048 #14 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:37:54.929+0000 I NETWORK  [conn14] end connection 172.17.0.7:59048 (0 connections now open)
-[33mdirectory_server    |[0m 2017-12-10T18:37:54976973240000+0000  Recieved heartbeat from fileserver at port 8000
-[33mdirectory_server    |[0m 2017-12-10T18:37:54977996794000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:37:54.979+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59054 #15 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:37:54.981+0000 I NETWORK  [conn15] end connection 172.17.0.7:59054 (0 connections now open)
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:37:54 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:37:54 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 2017-12-10T18:38:14865893301000+0000  Recieved heartbeat from fileserver at port 8002
-[33mdirectory_server    |[0m 2017-12-10T18:38:14866657339000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:38:14.868+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59066 #16 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:38:14.870+0000 I NETWORK  [conn16] end connection 172.17.0.7:59066 (0 connections now open)
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:38:14 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 2017-12-10T18:38:14953493873000+0000  Recieved heartbeat from fileserver at port 8001
-[33mdirectory_server    |[0m 2017-12-10T18:38:14953803891000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:38:14.954+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59072 #17 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:38:14.955+0000 I NETWORK  [conn17] end connection 172.17.0.7:59072 (0 connections now open)
-[33mdirectory_server    |[0m 2017-12-10T18:38:15000869624000+0000  Recieved heartbeat from fileserver at port 8000
-[33mdirectory_server    |[0m 2017-12-10T18:38:15001709720000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:38:15.003+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59078 #18 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:38:15.004+0000 I NETWORK  [conn18] end connection 172.17.0.7:59078 (0 connections now open)
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:38:14 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:38:14 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 2017-12-10T18:38:34882482437000+0000  Recieved heartbeat from fileserver at port 8002
-[33mdirectory_server    |[0m 2017-12-10T18:38:34883445125000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:38:34.885+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59088 #19 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:38:34.886+0000 I NETWORK  [conn19] end connection 172.17.0.7:59088 (0 connections now open)
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:38:34 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 2017-12-10T18:38:34973289341000+0000  Recieved heartbeat from fileserver at port 8001
-[33mdirectory_server    |[0m 2017-12-10T18:38:34974240068000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:38:34.976+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59094 #20 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:38:34.977+0000 I NETWORK  [conn20] end connection 172.17.0.7:59094 (0 connections now open)
-[33mdirectory_server    |[0m 2017-12-10T18:38:35026107815000+0000  Recieved heartbeat from fileserver at port 8000
-[33mdirectory_server    |[0m 2017-12-10T18:38:35027066364000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:38:35.029+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59100 #21 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:38:35.031+0000 I NETWORK  [conn21] end connection 172.17.0.7:59100 (0 connections now open)
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:38:34 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:38:34 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 2017-12-10T18:38:54894877267000+0000  Recieved heartbeat from fileserver at port 8002
-[33mdirectory_server    |[0m 2017-12-10T18:38:54895772736000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:38:54.897+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59106 #22 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:38:54.898+0000 I NETWORK  [conn22] end connection 172.17.0.7:59106 (0 connections now open)
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:38:54 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 2017-12-10T18:38:54987792414000+0000  Recieved heartbeat from fileserver at port 8001
-[33mdirectory_server    |[0m 2017-12-10T18:38:54988216068000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:38:54.989+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59112 #23 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:38:54.990+0000 I NETWORK  [conn23] end connection 172.17.0.7:59112 (0 connections now open)
-[33mdirectory_server    |[0m 2017-12-10T18:38:55040578262000+0000  Recieved heartbeat from fileserver at port 8000
-[33mdirectory_server    |[0m 2017-12-10T18:38:55041372515000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:38:55.042+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59118 #24 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:38:55.044+0000 I NETWORK  [conn24] end connection 172.17.0.7:59118 (0 connections now open)
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:38:54 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:38:54 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 2017-12-10T18:39:14916966141000+0000  Recieved heartbeat from fileserver at port 8002
-[33mdirectory_server    |[0m 2017-12-10T18:39:14917968546000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:39:14.919+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59124 #25 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:39:14.921+0000 I NETWORK  [conn25] end connection 172.17.0.7:59124 (0 connections now open)
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:39:14 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 2017-12-10T18:39:15006487834000+0000  Recieved heartbeat from fileserver at port 8001
-[33mdirectory_server    |[0m 2017-12-10T18:39:15007503132000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:39:15.009+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59130 #26 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:39:15.010+0000 I NETWORK  [conn26] end connection 172.17.0.7:59130 (0 connections now open)
-[33mdirectory_server    |[0m 2017-12-10T18:39:15067263564000+0000  Recieved heartbeat from fileserver at port 8000
-[33mdirectory_server    |[0m 2017-12-10T18:39:15068118311000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:39:15.070+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59136 #27 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:39:15.072+0000 I NETWORK  [conn27] end connection 172.17.0.7:59136 (0 connections now open)
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:39:14 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:39:14 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 2017-12-10T18:39:34942489922000+0000  Recieved heartbeat from fileserver at port 8002
-[33mdirectory_server    |[0m 2017-12-10T18:39:34943502023000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:39:34.945+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59142 #28 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:39:34.947+0000 I NETWORK  [conn28] end connection 172.17.0.7:59142 (0 connections now open)
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:39:34 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 2017-12-10T18:39:35027872371000+0000  Recieved heartbeat from fileserver at port 8001
-[33mdirectory_server    |[0m 2017-12-10T18:39:35028730105000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:39:35.031+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59148 #29 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:39:35.032+0000 I NETWORK  [conn29] end connection 172.17.0.7:59148 (0 connections now open)
-[33mdirectory_server    |[0m 2017-12-10T18:39:35091866210000+0000  Recieved heartbeat from fileserver at port 8000
-[33mdirectory_server    |[0m 2017-12-10T18:39:35092985927000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:39:35.094+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59154 #30 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:39:35.095+0000 I NETWORK  [conn30] end connection 172.17.0.7:59154 (0 connections now open)
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:39:34 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:39:34 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 2017-12-10T18:39:54966014562000+0000  Recieved heartbeat from fileserver at port 8002
-[33mdirectory_server    |[0m 2017-12-10T18:39:54966333175000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:39:54.966+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59160 #31 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:39:54.967+0000 I NETWORK  [conn31] end connection 172.17.0.7:59160 (0 connections now open)
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:39:54 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 2017-12-10T18:39:55046317925000+0000  Recieved heartbeat from fileserver at port 8001
-[33mdirectory_server    |[0m 2017-12-10T18:39:55047133288000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:39:55.048+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59166 #32 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:39:55.050+0000 I NETWORK  [conn32] end connection 172.17.0.7:59166 (0 connections now open)
-[33mdirectory_server    |[0m 2017-12-10T18:39:55117229190000+0000  Recieved heartbeat from fileserver at port 8000
-[33mdirectory_server    |[0m 2017-12-10T18:39:55118068086000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:39:55.120+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59172 #33 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:39:55.121+0000 I NETWORK  [conn33] end connection 172.17.0.7:59172 (0 connections now open)
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:39:54 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:39:54 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 2017-12-10T18:40:14984387738000+0000  Recieved heartbeat from fileserver at port 8002
-[33mdirectory_server    |[0m 2017-12-10T18:40:14984801420000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:40:14.985+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59178 #34 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:40:14.986+0000 I NETWORK  [conn34] end connection 172.17.0.7:59178 (0 connections now open)
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:40:14 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 2017-12-10T18:40:15072019964000+0000  Recieved heartbeat from fileserver at port 8001
-[33mdirectory_server    |[0m 2017-12-10T18:40:15073099070000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:40:15.075+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59184 #35 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:40:15.077+0000 I NETWORK  [conn35] end connection 172.17.0.7:59184 (0 connections now open)
-[33mdirectory_server    |[0m 2017-12-10T18:40:15138372433000+0000  Recieved heartbeat from fileserver at port 8000
-[33mdirectory_server    |[0m 2017-12-10T18:40:15139129882000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:40:15.140+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59190 #36 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:40:15.142+0000 I NETWORK  [conn36] end connection 172.17.0.7:59190 (0 connections now open)
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:40:14 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:40:14 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 2017-12-10T18:40:34999866016000+0000  Recieved heartbeat from fileserver at port 8002
-[33mdirectory_server    |[0m 2017-12-10T18:40:35000831287000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:40:35.002+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59198 #37 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:40:35.004+0000 I NETWORK  [conn37] end connection 172.17.0.7:59198 (0 connections now open)
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:40:35 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 2017-12-10T18:40:35097964909000+0000  Recieved heartbeat from fileserver at port 8001
-[33mdirectory_server    |[0m 2017-12-10T18:40:35098742462000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:40:35.100+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59204 #38 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:40:35.101+0000 I NETWORK  [conn38] end connection 172.17.0.7:59204 (0 connections now open)
-[33mdirectory_server    |[0m 2017-12-10T18:40:35161964563000+0000  Recieved heartbeat from fileserver at port 8000
-[33mdirectory_server    |[0m 2017-12-10T18:40:35162926118000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:40:35.169+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59210 #39 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:40:35.171+0000 I NETWORK  [conn39] end connection 172.17.0.7:59210 (0 connections now open)
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:40:35 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:40:35 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 2017-12-10T18:40:55019054506000+0000  Recieved heartbeat from fileserver at port 8002
-[33mdirectory_server    |[0m 2017-12-10T18:40:55019933381000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:40:55.021+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59216 #40 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:40:55.023+0000 I NETWORK  [conn40] end connection 172.17.0.7:59216 (0 connections now open)
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:40:55 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 2017-12-10T18:40:55119701622000+0000  Recieved heartbeat from fileserver at port 8001
-[33mdirectory_server    |[0m 2017-12-10T18:40:55120694170000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:40:55.122+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59222 #41 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:40:55.124+0000 I NETWORK  [conn41] end connection 172.17.0.7:59222 (0 connections now open)
-[33mdirectory_server    |[0m 2017-12-10T18:40:55190312391000+0000  Recieved heartbeat from fileserver at port 8000
-[33mdirectory_server    |[0m 2017-12-10T18:40:55191291197000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:40:55.192+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59228 #42 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:40:55.194+0000 I NETWORK  [conn42] end connection 172.17.0.7:59228 (0 connections now open)
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:40:55 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:40:55 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 2017-12-10T18:41:15042857454000+0000  Recieved heartbeat from fileserver at port 8002
-[33mdirectory_server    |[0m 2017-12-10T18:41:15043819547000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:41:15.046+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59234 #43 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:41:15.047+0000 I NETWORK  [conn43] end connection 172.17.0.7:59234 (0 connections now open)
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:41:15 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 2017-12-10T18:41:15146026084000+0000  Recieved heartbeat from fileserver at port 8001
-[33mdirectory_server    |[0m 2017-12-10T18:41:15146869322000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:41:15.148+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59240 #44 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:41:15.149+0000 I NETWORK  [conn44] end connection 172.17.0.7:59240 (0 connections now open)
-[33mdirectory_server    |[0m 2017-12-10T18:41:15214175384000+0000  Recieved heartbeat from fileserver at port 8000
-[33mdirectory_server    |[0m 2017-12-10T18:41:15215002413000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:41:15.217+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59246 #45 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:41:15.218+0000 I NETWORK  [conn45] end connection 172.17.0.7:59246 (0 connections now open)
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:41:15 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:41:15 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 2017-12-10T18:41:35070154182000+0000  Recieved heartbeat from fileserver at port 8002
-[33mdirectory_server    |[0m 2017-12-10T18:41:35071140980000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:41:35.072+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59254 #46 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:41:35.074+0000 I NETWORK  [conn46] end connection 172.17.0.7:59254 (0 connections now open)
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:41:35 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 2017-12-10T18:41:35170617580000+0000  Recieved heartbeat from fileserver at port 8001
-[33mdirectory_server    |[0m 2017-12-10T18:41:35171516866000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:41:35.173+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59260 #47 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:41:35.175+0000 I NETWORK  [conn47] end connection 172.17.0.7:59260 (0 connections now open)
-[33mdirectory_server    |[0m 2017-12-10T18:41:35232385132000+0000  Recieved heartbeat from fileserver at port 8000
-[33mdirectory_server    |[0m 2017-12-10T18:41:35233471727000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:41:35.235+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59266 #48 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:41:35.236+0000 I NETWORK  [conn48] end connection 172.17.0.7:59266 (0 connections now open)
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:41:35 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:41:35 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 2017-12-10T18:41:55097842790000+0000  Recieved heartbeat from fileserver at port 8002
-[33mdirectory_server    |[0m 2017-12-10T18:41:55098139924000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:41:55.098+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59272 #49 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:41:55.098+0000 I NETWORK  [conn49] end connection 172.17.0.7:59272 (0 connections now open)
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:41:55 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 2017-12-10T18:41:55184036314000+0000  Recieved heartbeat from fileserver at port 8001
-[33mdirectory_server    |[0m 2017-12-10T18:41:55184999628000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:41:55.186+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59278 #50 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:41:55.187+0000 I NETWORK  [conn50] end connection 172.17.0.7:59278 (0 connections now open)
-[33mdirectory_server    |[0m 2017-12-10T18:41:55254228208000+0000  Recieved heartbeat from fileserver at port 8000
-[33mdirectory_server    |[0m 2017-12-10T18:41:55255079514000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:41:55.257+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59284 #51 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:41:55.258+0000 I NETWORK  [conn51] end connection 172.17.0.7:59284 (0 connections now open)
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:41:55 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:41:55 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 2017-12-10T18:42:15118520685000+0000  Recieved heartbeat from fileserver at port 8002
-[33mdirectory_server    |[0m 2017-12-10T18:42:15119483648000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:42:15.120+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59306 #52 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:42:15.122+0000 I NETWORK  [conn52] end connection 172.17.0.7:59306 (0 connections now open)
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:42:15 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 2017-12-10T18:42:15209540948000+0000  Recieved heartbeat from fileserver at port 8001
-[33mdirectory_server    |[0m 2017-12-10T18:42:15210370981000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:42:15.213+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59312 #53 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:42:15.214+0000 I NETWORK  [conn53] end connection 172.17.0.7:59312 (0 connections now open)
-[33mdirectory_server    |[0m 2017-12-10T18:42:15278865134000+0000  Recieved heartbeat from fileserver at port 8000
-[33mdirectory_server    |[0m 2017-12-10T18:42:15279674177000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:42:15.281+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59318 #54 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:42:15.282+0000 I NETWORK  [conn54] end connection 172.17.0.7:59318 (0 connections now open)
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:42:15 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:42:15 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 2017-12-10T18:42:35138678449000+0000  Recieved heartbeat from fileserver at port 8002
-[33mdirectory_server    |[0m 2017-12-10T18:42:35138895870000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:42:35.139+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59330 #55 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:42:35.140+0000 I NETWORK  [conn55] end connection 172.17.0.7:59330 (0 connections now open)
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:42:35 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 2017-12-10T18:42:35233006270000+0000  Recieved heartbeat from fileserver at port 8001
-[33mdirectory_server    |[0m 2017-12-10T18:42:35233341194000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:42:35.233+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59336 #56 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:42:35.234+0000 I NETWORK  [conn56] end connection 172.17.0.7:59336 (0 connections now open)
-[33mdirectory_server    |[0m 2017-12-10T18:42:35299255852000+0000  Recieved heartbeat from fileserver at port 8000
-[33mdirectory_server    |[0m 2017-12-10T18:42:35299500793000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:42:35.300+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59342 #57 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:42:35.300+0000 I NETWORK  [conn57] end connection 172.17.0.7:59342 (0 connections now open)
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:42:35 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:42:35 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 2017-12-10T18:42:55158814706000+0000  Recieved heartbeat from fileserver at port 8002
-[36mdatabase_1          |[0m 2017-12-10T18:42:55.162+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59348 #58 (1 connection now open)
-[33mdirectory_server    |[0m 2017-12-10T18:42:55159634073000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:42:55.163+0000 I NETWORK  [conn58] end connection 172.17.0.7:59348 (0 connections now open)
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:42:55 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 2017-12-10T18:42:55266300106000+0000  Recieved heartbeat from fileserver at port 8001
-[33mdirectory_server    |[0m 2017-12-10T18:42:55267406459000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:42:55.273+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59354 #59 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:42:55.274+0000 I NETWORK  [conn59] end connection 172.17.0.7:59354 (0 connections now open)
-[33mdirectory_server    |[0m 2017-12-10T18:42:55322014024000+0000  Recieved heartbeat from fileserver at port 8000
-[33mdirectory_server    |[0m 2017-12-10T18:42:55322863022000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:42:55.324+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59360 #60 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:42:55.326+0000 I NETWORK  [conn60] end connection 172.17.0.7:59360 (0 connections now open)
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:42:55 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:42:55 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 2017-12-10T18:43:15183785628000+0000  Recieved heartbeat from fileserver at port 8002
-[33mdirectory_server    |[0m 2017-12-10T18:43:15184672595000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:43:15.186+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59404 #61 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:43:15.187+0000 I NETWORK  [conn61] end connection 172.17.0.7:59404 (0 connections now open)
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:43:15 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 2017-12-10T18:43:15294157184000+0000  Recieved heartbeat from fileserver at port 8001
-[33mdirectory_server    |[0m 2017-12-10T18:43:15295075831000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:43:15.296+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59410 #62 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:43:15.298+0000 I NETWORK  [conn62] end connection 172.17.0.7:59410 (0 connections now open)
-[33mdirectory_server    |[0m 2017-12-10T18:43:15348257613000+0000  Recieved heartbeat from fileserver at port 8000
-[33mdirectory_server    |[0m 2017-12-10T18:43:15349237340000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:43:15.351+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59416 #63 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:43:15.353+0000 I NETWORK  [conn63] end connection 172.17.0.7:59416 (0 connections now open)
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:43:15 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:43:15 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 2017-12-10T18:43:35207907287000+0000  Recieved heartbeat from fileserver at port 8002
-[33mdirectory_server    |[0m 2017-12-10T18:43:35208958532000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:43:35.210+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59460 #64 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:43:35.212+0000 I NETWORK  [conn64] end connection 172.17.0.7:59460 (0 connections now open)
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:43:35 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 2017-12-10T18:43:35318271904000+0000  Recieved heartbeat from fileserver at port 8001
-[33mdirectory_server    |[0m 2017-12-10T18:43:35319023147000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:43:35.321+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59466 #65 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:43:35.322+0000 I NETWORK  [conn65] end connection 172.17.0.7:59466 (0 connections now open)
-[33mdirectory_server    |[0m 2017-12-10T18:43:35375559886000+0000  Recieved heartbeat from fileserver at port 8000
-[33mdirectory_server    |[0m 2017-12-10T18:43:35376624668000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:43:35.378+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59474 #66 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:43:35.379+0000 I NETWORK  [conn66] end connection 172.17.0.7:59474 (0 connections now open)
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:43:35 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:43:35 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 2017-12-10T18:43:36779505174000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:43:36.781+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59506 #67 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:43:36.784+0000 I NETWORK  [conn67] end connection 172.17.0.7:59506 (0 connections now open)
-[33mdirectory_server    |[0m 2017-12-10T18:43:36784260201000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:43:36.786+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59508 #68 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:43:36.788+0000 I NETWORK  [conn68] end connection 172.17.0.7:59508 (0 connections now open)
-[36mdatabase_1          |[0m 2017-12-10T18:43:36.789+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59510 #69 (1 connection now open)
-[33mdirectory_server    |[0m 2017-12-10T18:43:36788013162000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[33mdirectory_server    |[0m 2017-12-10T18:43:36790814929000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:43:36.792+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59512 #70 (2 connections now open)
-[36mdatabase_1          |[0m 2017-12-10T18:43:36.794+0000 I NETWORK  [conn70] end connection 172.17.0.7:59512 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:43:36.794+0000 I NETWORK  [conn69] end connection 172.17.0.7:59510 (1 connection now open)
-[33mdirectory_server    |[0m 2017-12-10T18:43:36794427041000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:43:36.795+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59514 #71 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:43:36.810+0000 I NETWORK  [conn71] end connection 172.17.0.7:59514 (0 connections now open)
-[33mdirectory_server    |[0m 2017-12-10T18:43:36810348201000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:43:36.811+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59516 #72 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:43:36.812+0000 I NETWORK  [conn72] end connection 172.17.0.7:59516 (0 connections now open)
-[33mdirectory_server    |[0m 2017-12-10T18:43:36812171901000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:43:36.813+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59518 #73 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:43:36.814+0000 I NETWORK  [conn73] end connection 172.17.0.7:59518 (0 connections now open)
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:43:36 +0000] "POST /uploadToShadowDir HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 2017-12-10T18:43:55228119859000+0000  Recieved heartbeat from fileserver at port 8002
-[33mdirectory_server    |[0m 2017-12-10T18:43:55229041836000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:43:55.230+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59538 #74 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:43:55.232+0000 I NETWORK  [conn74] end connection 172.17.0.7:59538 (0 connections now open)
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:43:55 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 2017-12-10T18:43:55343433387000+0000  Recieved heartbeat from fileserver at port 8001
-[33mdirectory_server    |[0m 2017-12-10T18:43:55344456606000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:43:55.346+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59544 #75 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:43:55.347+0000 I NETWORK  [conn75] end connection 172.17.0.7:59544 (0 connections now open)
-[33mdirectory_server    |[0m 2017-12-10T18:43:55394805681000+0000  Recieved heartbeat from fileserver at port 8000
-[33mdirectory_server    |[0m 2017-12-10T18:43:55395693213000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:43:55.398+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59550 #76 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:43:55.400+0000 I NETWORK  [conn76] end connection 172.17.0.7:59550 (0 connections now open)
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:43:55 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:43:55 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
-[36mdatabase_1          |[0m 2017-12-10T18:44:10.874+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.1:54646 #77 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:44:10.875+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.1:54650 #78 (2 connections now open)
-[36mdatabase_1          |[0m 2017-12-10T18:44:10.879+0000 I NETWORK  [conn78] end connection 172.17.0.1:54650 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:44:10.879+0000 I NETWORK  [conn77] end connection 172.17.0.1:54646 (1 connection now open)
-[33mdirectory_server    |[0m 2017-12-10T18:44:15255700223000+0000  Recieved heartbeat from fileserver at port 8002
-[33mdirectory_server    |[0m 2017-12-10T18:44:15255941203000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:44:15.256+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59624 #79 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:44:15.256+0000 I NETWORK  [conn79] end connection 172.17.0.7:59624 (0 connections now open)
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:44:15 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 2017-12-10T18:44:15369450317000+0000  Recieved heartbeat from fileserver at port 8001
-[33mdirectory_server    |[0m 2017-12-10T18:44:15370454929000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:44:15.374+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59630 #80 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:44:15.375+0000 I NETWORK  [conn80] end connection 172.17.0.7:59630 (0 connections now open)
-[33mdirectory_server    |[0m 2017-12-10T18:44:15422934451000+0000  Recieved heartbeat from fileserver at port 8000
-[33mdirectory_server    |[0m 2017-12-10T18:44:15423793458000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:44:15.425+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59636 #81 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:44:15.426+0000 I NETWORK  [conn81] end connection 172.17.0.7:59636 (0 connections now open)
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:44:15 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:44:15 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
-[36mdatabase_1          |[0m 2017-12-10T18:44:20.694+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59666 #82 (1 connection now open)
-[33mdirectory_server    |[0m 2017-12-10T18:44:20692657482000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:44:20.695+0000 I NETWORK  [conn82] end connection 172.17.0.7:59666 (0 connections now open)
-[33mdirectory_server    |[0m 2017-12-10T18:44:20695122314000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:44:20.696+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59668 #83 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:44:20.698+0000 I NETWORK  [conn83] end connection 172.17.0.7:59668 (0 connections now open)
-[33mdirectory_server    |[0m 2017-12-10T18:44:20698123804000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:44:20.699+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59670 #84 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:44:20.699+0000 I NETWORK  [conn84] end connection 172.17.0.7:59670 (0 connections now open)
-[33mdirectory_server    |[0m 2017-12-10T18:44:20699900780000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:44:20.701+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59672 #85 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:44:20.702+0000 I NETWORK  [conn85] end connection 172.17.0.7:59672 (0 connections now open)
-[33mdirectory_server    |[0m 2017-12-10T18:44:20702589207000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:44:20.703+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59674 #86 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:44:20.704+0000 I NETWORK  [conn86] end connection 172.17.0.7:59674 (0 connections now open)
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:44:20 +0000] "POST /commitDirChanges HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 2017-12-10T18:44:20713916036000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:44:20.714+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59686 #87 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:44:20.714+0000 I NETWORK  [conn87] end connection 172.17.0.7:59686 (0 connections now open)
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:44:20 +0000] "GET /getAllReplicas HTTP/1.1" 200 - "" ""
-[36mdatabase_1          |[0m 2017-12-10T18:44:24.942+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.1:54816 #88 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:44:24.942+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.1:54820 #89 (2 connections now open)
-[36mdatabase_1          |[0m 2017-12-10T18:44:24.946+0000 I NETWORK  [conn89] end connection 172.17.0.1:54820 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:44:24.946+0000 I NETWORK  [conn88] end connection 172.17.0.1:54816 (1 connection now open)
-[33mdirectory_server    |[0m 2017-12-10T18:44:35272630447000+0000  Recieved heartbeat from fileserver at port 8002
-[33mdirectory_server    |[0m 2017-12-10T18:44:35273817409000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:44:35.275+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59792 #90 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:44:35.277+0000 I NETWORK  [conn90] end connection 172.17.0.7:59792 (0 connections now open)
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:44:35 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 2017-12-10T18:44:35398649139000+0000  Recieved heartbeat from fileserver at port 8001
-[33mdirectory_server    |[0m 2017-12-10T18:44:35399419650000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:44:35.401+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59798 #91 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:44:35.403+0000 I NETWORK  [conn91] end connection 172.17.0.7:59798 (0 connections now open)
-[33mdirectory_server    |[0m 2017-12-10T18:44:35446699262000+0000  Recieved heartbeat from fileserver at port 8000
-[33mdirectory_server    |[0m 2017-12-10T18:44:35447844235000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:44:35.449+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59804 #92 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:44:35.451+0000 I NETWORK  [conn92] end connection 172.17.0.7:59804 (0 connections now open)
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:44:35 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:44:35 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 2017-12-10T18:44:55294288711000+0000  Recieved heartbeat from fileserver at port 8002
-[33mdirectory_server    |[0m 2017-12-10T18:44:55294495068000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:44:55.294+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59814 #93 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:44:55.295+0000 I NETWORK  [conn93] end connection 172.17.0.7:59814 (0 connections now open)
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:44:55 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 2017-12-10T18:44:55415493859000+0000  Recieved heartbeat from fileserver at port 8001
-[33mdirectory_server    |[0m 2017-12-10T18:44:55416218478000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:44:55.418+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59820 #94 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:44:55.419+0000 I NETWORK  [conn94] end connection 172.17.0.7:59820 (0 connections now open)
-[33mdirectory_server    |[0m 2017-12-10T18:44:55462038043000+0000  Recieved heartbeat from fileserver at port 8000
-[33mdirectory_server    |[0m 2017-12-10T18:44:55462810341000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:44:55.464+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59826 #95 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:44:55.465+0000 I NETWORK  [conn95] end connection 172.17.0.7:59826 (0 connections now open)
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:44:55 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:44:55 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 2017-12-10T18:45:15310604235000+0000  Recieved heartbeat from fileserver at port 8002
-[33mdirectory_server    |[0m 2017-12-10T18:45:15311607809000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:45:15.313+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59832 #96 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:45:15.314+0000 I NETWORK  [conn96] end connection 172.17.0.7:59832 (0 connections now open)
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:45:15 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 2017-12-10T18:45:15440734770000+0000  Recieved heartbeat from fileserver at port 8001
-[33mdirectory_server    |[0m 2017-12-10T18:45:15441469595000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:45:15.442+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59838 #97 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:45:15.444+0000 I NETWORK  [conn97] end connection 172.17.0.7:59838 (0 connections now open)
-[33mdirectory_server    |[0m 2017-12-10T18:45:15486164830000+0000  Recieved heartbeat from fileserver at port 8000
-[33mdirectory_server    |[0m 2017-12-10T18:45:15487122627000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:45:15.489+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59844 #98 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:45:15.491+0000 I NETWORK  [conn98] end connection 172.17.0.7:59844 (0 connections now open)
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:45:15 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:45:15 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 2017-12-10T18:45:35324227825000+0000  Recieved heartbeat from fileserver at port 8002
-[33mdirectory_server    |[0m 2017-12-10T18:45:35325224298000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:45:35.326+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59852 #99 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:45:35.328+0000 I NETWORK  [conn99] end connection 172.17.0.7:59852 (0 connections now open)
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:45:35 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 2017-12-10T18:45:35458137717000+0000  Recieved heartbeat from fileserver at port 8001
-[33mdirectory_server    |[0m 2017-12-10T18:45:35458976462000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:45:35.461+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59858 #100 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:45:35.463+0000 I NETWORK  [conn100] end connection 172.17.0.7:59858 (0 connections now open)
-[33mdirectory_server    |[0m 2017-12-10T18:45:35506641627000+0000  Recieved heartbeat from fileserver at port 8000
-[33mdirectory_server    |[0m 2017-12-10T18:45:35507417873000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
-[36mdatabase_1          |[0m 2017-12-10T18:45:35.508+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:59864 #101 (1 connection now open)
-[36mdatabase_1          |[0m 2017-12-10T18:45:35.510+0000 I NETWORK  [conn101] end connection 172.17.0.7:59864 (0 connections now open)
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:45:35 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
-[33mdirectory_server    |[0m 172.17.0.1 - - [10/Dec/2017:18:45:35 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
+[36mdatabase_1          |[0m 2017-12-11T11:59:03.043+0000 I JOURNAL  [initandlisten] journal dir=/data/db/journal
+[36mdatabase_1          |[0m 2017-12-11T11:59:03.043+0000 I JOURNAL  [initandlisten] recover : no journal files present, no recovery needed
+[36mdatabase_1          |[0m 2017-12-11T11:59:03.829+0000 I JOURNAL  [initandlisten] preallocateIsFaster=true 9.1
+[33mdirectory_server    |[0m 2017-12-11T11:59:03869833800000+0000 Starting directory service
+[36mdatabase_1          |[0m 2017-12-11T11:59:04.457+0000 I JOURNAL  [initandlisten] preallocateIsFaster=true 4.24
+[36mdatabase_1          |[0m 2017-12-11T11:59:06.006+0000 I JOURNAL  [initandlisten] preallocateIsFaster=true 3.62
+[36mdatabase_1          |[0m 2017-12-11T11:59:06.006+0000 I JOURNAL  [initandlisten] preallocating a journal file /data/db/journal/prealloc.0
+[36mdatabase_1          |[0m 2017-12-11T11:59:08.023+0000 I JOURNAL  [initandlisten] preallocating a journal file /data/db/journal/prealloc.1
+[36mdatabase_1          |[0m 2017-12-11T11:59:10.145+0000 I JOURNAL  [initandlisten] preallocating a journal file /data/db/journal/prealloc.2
+[36mdatabase_1          |[0m 2017-12-11T11:59:11.994+0000 I JOURNAL  [durability] Durability thread started
+[36mdatabase_1          |[0m 2017-12-11T11:59:11.994+0000 I JOURNAL  [journal writer] Journal writer thread started
+[36mdatabase_1          |[0m 2017-12-11T11:59:12.013+0000 I CONTROL  [initandlisten] MongoDB starting : pid=1 port=27017 dbpath=/data/db 64-bit host=3f2a17d55fc7
+[36mdatabase_1          |[0m 2017-12-11T11:59:12.014+0000 I CONTROL  [initandlisten] 
+[36mdatabase_1          |[0m 2017-12-11T11:59:12.014+0000 I CONTROL  [initandlisten] ** WARNING: /sys/kernel/mm/transparent_hugepage/enabled is 'always'.
+[36mdatabase_1          |[0m 2017-12-11T11:59:12.014+0000 I CONTROL  [initandlisten] **        We suggest setting it to 'never'
+[36mdatabase_1          |[0m 2017-12-11T11:59:12.014+0000 I CONTROL  [initandlisten] 
+[36mdatabase_1          |[0m 2017-12-11T11:59:12.014+0000 I CONTROL  [initandlisten] db version v3.0.2
+[36mdatabase_1          |[0m 2017-12-11T11:59:12.014+0000 I CONTROL  [initandlisten] git version: 6201872043ecbbc0a4cc169b5482dcf385fc464f
+[36mdatabase_1          |[0m 2017-12-11T11:59:12.014+0000 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1e 11 Feb 2013
+[36mdatabase_1          |[0m 2017-12-11T11:59:12.014+0000 I CONTROL  [initandlisten] build info: Linux ip-10-171-120-232 3.2.0-4-amd64 #1 SMP Debian 3.2.46-1 x86_64 BOOST_LIB_VERSION=1_49
+[36mdatabase_1          |[0m 2017-12-11T11:59:12.014+0000 I CONTROL  [initandlisten] allocator: tcmalloc
+[36mdatabase_1          |[0m 2017-12-11T11:59:12.014+0000 I CONTROL  [initandlisten] options: {}
+[36mdatabase_1          |[0m 2017-12-11T11:59:12.015+0000 I INDEX    [initandlisten] allocating new ns file /data/db/local.ns, filling with zeroes...
+[36mdatabase_1          |[0m 2017-12-11T11:59:12.074+0000 I STORAGE  [FileAllocator] allocating new datafile /data/db/local.0, filling with zeroes...
+[36mdatabase_1          |[0m 2017-12-11T11:59:12.074+0000 I STORAGE  [FileAllocator] creating directory /data/db/_tmp
+[36mdatabase_1          |[0m 2017-12-11T11:59:12.104+0000 I STORAGE  [FileAllocator] done allocating datafile /data/db/local.0, size: 64MB,  took 0.011 secs
+[36mdatabase_1          |[0m 2017-12-11T11:59:12.119+0000 I NETWORK  [initandlisten] waiting for connections on port 27017
+[33mdirectory_server    |[0m 2017-12-11T11:59:14481446833000+0000 Storing new file server to  f_1  directory
+[33mdirectory_server    |[0m 2017-12-11T11:59:14483348551000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1          |[0m 2017-12-11T11:59:14.536+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:57576 #1 (1 connection now open)
+[33mdirectory_server    |[0m 2017-12-11T11:59:14543254004000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1          |[0m 2017-12-11T11:59:14.545+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:57578 #2 (2 connections now open)
+[36mdatabase_1          |[0m 2017-12-11T11:59:14.557+0000 I INDEX    [conn2] allocating new ns file /data/db/USEHASKELLDB.ns, filling with zeroes...
+[36mdatabase_1          |[0m 2017-12-11T11:59:14.562+0000 I NETWORK  [conn1] end connection 172.17.0.7:57576 (1 connection now open)
+[36mdatabase_1          |[0m 2017-12-11T11:59:14.633+0000 I STORAGE  [FileAllocator] allocating new datafile /data/db/USEHASKELLDB.0, filling with zeroes...
+[36mdatabase_1          |[0m 2017-12-11T11:59:14.648+0000 I STORAGE  [FileAllocator] done allocating datafile /data/db/USEHASKELLDB.0, size: 64MB,  took 0.015 secs
+[36mdatabase_1          |[0m 2017-12-11T11:59:14.663+0000 I WRITE    [conn2] update USEHASKELLDB.Directory_RECORD query: { dirName: "f_1" } update: { dirName: "f_1", primary: { ip: "172.17.0.1", port: "8002" }, fservers: [] } nscanned:0 nscannedObjects:0 nMatched:1 nModified:1 fastmodinsert:1 upsert:1 keyUpdates:0 writeConflicts:0 numYields:0 locks:{ Global: { acquireCount: { w: 3 } }, MMAPV1Journal: { acquireCount: { w: 9 } }, Database: { acquireCount: { w: 2, W: 1 } }, Collection: { acquireCount: { W: 2 } }, Metadata: { acquireCount: { W: 4 } } } 106ms
+[36mdatabase_1          |[0m 2017-12-11T11:59:14.663+0000 I COMMAND  [conn2] command USEHASKELLDB.$cmd command: update { update: "Directory_RECORD", ordered: true, updates: [ { q: { dirName: "f_1" }, u: { dirName: "f_1", primary: { ip: "172.17.0.1", port: "8002" }, fservers: [] }, upsert: true, multi: false } ], writeConcern: {} } ntoreturn:1 keyUpdates:0 writeConflicts:0 numYields:0 reslen:106 locks:{ Global: { acquireCount: { w: 3 } }, MMAPV1Journal: { acquireCount: { w: 9 } }, Database: { acquireCount: { w: 2, W: 1 } }, Collection: { acquireCount: { W: 2 } }, Metadata: { acquireCount: { W: 4 } } } 117ms
+[36mdatabase_1          |[0m 2017-12-11T11:59:14.664+0000 I NETWORK  [conn2] end connection 172.17.0.7:57578 (0 connections now open)
+[33mdirectory_server    |[0m 172.17.0.1 - - [11/Dec/2017:11:59:14 +0000] "POST /add_dir HTTP/1.1" 200 - "" ""
+[33mdirectory_server    |[0m 2017-12-11T11:59:14713374173000+0000 Storing new file server to  f_1  directory
+[33mdirectory_server    |[0m 2017-12-11T11:59:14714373689000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1          |[0m 2017-12-11T11:59:14.740+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:57588 #3 (1 connection now open)
+[33mdirectory_server    |[0m 2017-12-11T11:59:14715136184000+0000  Recieved heartbeat from fileserver at port 8002
+[33mdirectory_server    |[0m 2017-12-11T11:59:14740985772000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1          |[0m 2017-12-11T11:59:14.742+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:57590 #4 (2 connections now open)
+[36mdatabase_1          |[0m 2017-12-11T11:59:14.742+0000 I NETWORK  [conn3] end connection 172.17.0.7:57588 (0 connections now open)
+[36mdatabase_1          |[0m 2017-12-11T11:59:14.744+0000 I NETWORK  [conn4] end connection 172.17.0.7:57590 (0 connections now open)
+[33mdirectory_server    |[0m 2017-12-11T11:59:14742396069000+0000 IS NEW DIRECTORY     172.17.0.18000True
+[33mdirectory_server    |[0m 2017-12-11T11:59:14743547577000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1          |[0m 2017-12-11T11:59:14.744+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:57592 #5 (2 connections now open)
+[36mdatabase_1          |[0m 2017-12-11T11:59:14.746+0000 I NETWORK  [conn5] end connection 172.17.0.7:57592 (0 connections now open)
+[33mdirectory_server    |[0m 2017-12-11T11:59:14753470132000+0000  Recieved heartbeat from fileserver at port 8000
+[33mdirectory_server    |[0m 2017-12-11T11:59:14754395225000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1          |[0m 2017-12-11T11:59:14.756+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:57598 #6 (1 connection now open)
+[36mdatabase_1          |[0m 2017-12-11T11:59:14.763+0000 I NETWORK  [conn6] end connection 172.17.0.7:57598 (0 connections now open)
+[33mdirectory_server    |[0m 2017-12-11T11:59:14897128757000+0000 Storing new file server to  f_1  directory
+[33mdirectory_server    |[0m 2017-12-11T11:59:14898062251000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1          |[0m 2017-12-11T11:59:14.899+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:57604 #7 (1 connection now open)
+[36mdatabase_1          |[0m 2017-12-11T11:59:14.901+0000 I NETWORK  [conn7] end connection 172.17.0.7:57604 (0 connections now open)
+[33mdirectory_server    |[0m 2017-12-11T11:59:14901046042000+0000 IS NEW DIRECTORY     172.17.0.18001True
+[36mdatabase_1          |[0m 2017-12-11T11:59:14.904+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:57606 #8 (1 connection now open)
+[33mdirectory_server    |[0m 2017-12-11T11:59:14902258362000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1          |[0m 2017-12-11T11:59:14.906+0000 I NETWORK  [conn8] end connection 172.17.0.7:57606 (0 connections now open)
+[33mdirectory_server    |[0m 2017-12-11T11:59:14921609703000+0000  Recieved heartbeat from fileserver at port 8001
+[33mdirectory_server    |[0m 2017-12-11T11:59:14922333773000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1          |[0m 2017-12-11T11:59:14.929+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:57612 #9 (1 connection now open)
+[36mdatabase_1          |[0m 2017-12-11T11:59:14.931+0000 I NETWORK  [conn9] end connection 172.17.0.7:57612 (0 connections now open)
+[33mdirectory_server    |[0m 172.17.0.1 - - [11/Dec/2017:11:59:14 +0000] "POST /add_dir HTTP/1.1" 200 - "" ""
+[33mdirectory_server    |[0m 172.17.0.1 - - [11/Dec/2017:11:59:14 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
+[33mdirectory_server    |[0m 172.17.0.1 - - [11/Dec/2017:11:59:14 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
+[33mdirectory_server    |[0m 172.17.0.1 - - [11/Dec/2017:11:59:14 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
+[33mdirectory_server    |[0m 172.17.0.1 - - [11/Dec/2017:11:59:14 +0000] "POST /add_dir HTTP/1.1" 200 - "" ""
+[33mdirectory_server    |[0m 2017-12-11T11:59:34871374621000+0000  Recieved heartbeat from fileserver at port 8002
+[33mdirectory_server    |[0m 2017-12-11T11:59:34871374557000+0000  Recieved heartbeat from fileserver at port 8000
+[33mdirectory_server    |[0m 2017-12-11T11:59:34871940267000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1          |[0m 2017-12-11T11:59:34.873+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:57638 #10 (1 connection now open)
+[36mdatabase_1          |[0m 2017-12-11T11:59:34.873+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:57640 #11 (2 connections now open)
+[33mdirectory_server    |[0m 2017-12-11T11:59:34872358398000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1          |[0m 2017-12-11T11:59:34.874+0000 I NETWORK  [conn10] end connection 172.17.0.7:57638 (1 connection now open)
+[33mdirectory_server    |[0m 172.17.0.1 - - [11/Dec/2017:11:59:34 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
+[36mdatabase_1          |[0m 2017-12-11T11:59:34.875+0000 I NETWORK  [conn11] end connection 172.17.0.7:57640 (0 connections now open)
+[33mdirectory_server    |[0m 2017-12-11T11:59:34955415878000+0000  Recieved heartbeat from fileserver at port 8001
+[33mdirectory_server    |[0m 2017-12-11T11:59:34956426076000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1          |[0m 2017-12-11T11:59:34.958+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:57646 #12 (1 connection now open)
+[36mdatabase_1          |[0m 2017-12-11T11:59:34.960+0000 I NETWORK  [conn12] end connection 172.17.0.7:57646 (0 connections now open)
+[33mdirectory_server    |[0m 172.17.0.1 - - [11/Dec/2017:11:59:34 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
+[33mdirectory_server    |[0m 172.17.0.1 - - [11/Dec/2017:11:59:34 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
+[33mdirectory_server    |[0m 2017-12-11T11:59:54902520327000+0000  Recieved heartbeat from fileserver at port 8000
+[33mdirectory_server    |[0m 2017-12-11T11:59:54902920463000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1          |[0m 2017-12-11T11:59:54.903+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:57666 #13 (1 connection now open)
+[36mdatabase_1          |[0m 2017-12-11T11:59:54.904+0000 I NETWORK  [conn13] end connection 172.17.0.7:57666 (0 connections now open)
+[33mdirectory_server    |[0m 172.17.0.1 - - [11/Dec/2017:11:59:54 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
+[33mdirectory_server    |[0m 2017-12-11T11:59:54906227284000+0000  Recieved heartbeat from fileserver at port 8002
+[33mdirectory_server    |[0m 2017-12-11T11:59:54906668182000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1          |[0m 2017-12-11T11:59:54.907+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:57672 #14 (1 connection now open)
+[36mdatabase_1          |[0m 2017-12-11T11:59:54.908+0000 I NETWORK  [conn14] end connection 172.17.0.7:57672 (0 connections now open)
+[33mdirectory_server    |[0m 2017-12-11T11:59:54987420630000+0000  Recieved heartbeat from fileserver at port 8001
+[33mdirectory_server    |[0m 2017-12-11T11:59:54988259632000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1          |[0m 2017-12-11T11:59:54.995+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:57678 #15 (1 connection now open)
+[36mdatabase_1          |[0m 2017-12-11T11:59:54.996+0000 I NETWORK  [conn15] end connection 172.17.0.7:57678 (0 connections now open)
+[33mdirectory_server    |[0m 172.17.0.1 - - [11/Dec/2017:11:59:54 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
+[33mdirectory_server    |[0m 172.17.0.1 - - [11/Dec/2017:11:59:54 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
+[33mdirectory_server    |[0m 2017-12-11T12:00:14926959075000+0000  Recieved heartbeat from fileserver at port 8000
+[33mdirectory_server    |[0m 2017-12-11T12:00:14930416122000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1          |[0m 2017-12-11T12:00:14.934+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:57706 #16 (1 connection now open)
+[36mdatabase_1          |[0m 2017-12-11T12:00:14.936+0000 I NETWORK  [conn16] end connection 172.17.0.7:57706 (0 connections now open)
+[33mdirectory_server    |[0m 172.17.0.1 - - [11/Dec/2017:12:00:14 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
+[33mdirectory_server    |[0m 2017-12-11T12:00:14939361860000+0000  Recieved heartbeat from fileserver at port 8002
+[33mdirectory_server    |[0m 2017-12-11T12:00:14939846328000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1          |[0m 2017-12-11T12:00:14.943+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:57712 #17 (1 connection now open)
+[36mdatabase_1          |[0m 2017-12-11T12:00:14.944+0000 I NETWORK  [conn17] end connection 172.17.0.7:57712 (0 connections now open)
+[33mdirectory_server    |[0m 2017-12-11T12:00:15017216341000+0000  Recieved heartbeat from fileserver at port 8001
+[33mdirectory_server    |[0m 2017-12-11T12:00:15018202867000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1          |[0m 2017-12-11T12:00:15.020+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:57718 #18 (1 connection now open)
+[36mdatabase_1          |[0m 2017-12-11T12:00:15.022+0000 I NETWORK  [conn18] end connection 172.17.0.7:57718 (0 connections now open)
+[33mdirectory_server    |[0m 172.17.0.1 - - [11/Dec/2017:12:00:14 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
+[33mdirectory_server    |[0m 172.17.0.1 - - [11/Dec/2017:12:00:14 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
+[33mdirectory_server    |[0m 2017-12-11T12:00:34956539783000+0000  Recieved heartbeat from fileserver at port 8000
+[33mdirectory_server    |[0m 2017-12-11T12:00:34957500757000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1          |[0m 2017-12-11T12:00:34.959+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:57762 #19 (1 connection now open)
+[36mdatabase_1          |[0m 2017-12-11T12:00:34.961+0000 I NETWORK  [conn19] end connection 172.17.0.7:57762 (0 connections now open)
+[33mdirectory_server    |[0m 172.17.0.1 - - [11/Dec/2017:12:00:34 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
+[33mdirectory_server    |[0m 2017-12-11T12:00:34972602203000+0000  Recieved heartbeat from fileserver at port 8002
+[33mdirectory_server    |[0m 2017-12-11T12:00:34973395263000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1          |[0m 2017-12-11T12:00:34.974+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:57768 #20 (1 connection now open)
+[36mdatabase_1          |[0m 2017-12-11T12:00:34.976+0000 I NETWORK  [conn20] end connection 172.17.0.7:57768 (0 connections now open)
+[33mdirectory_server    |[0m 2017-12-11T12:00:35041927251000+0000  Recieved heartbeat from fileserver at port 8001
+[33mdirectory_server    |[0m 2017-12-11T12:00:35042786551000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1          |[0m 2017-12-11T12:00:35.048+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:57774 #21 (1 connection now open)
+[36mdatabase_1          |[0m 2017-12-11T12:00:35.049+0000 I NETWORK  [conn21] end connection 172.17.0.7:57774 (0 connections now open)
+[33mdirectory_server    |[0m 172.17.0.1 - - [11/Dec/2017:12:00:34 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
+[33mdirectory_server    |[0m 172.17.0.1 - - [11/Dec/2017:12:00:34 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
+[33mdirectory_server    |[0m 2017-12-11T12:00:54981201607000+0000  Recieved heartbeat from fileserver at port 8000
+[33mdirectory_server    |[0m 2017-12-11T12:00:54981939832000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1          |[0m 2017-12-11T12:00:54.983+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:57792 #22 (1 connection now open)
+[36mdatabase_1          |[0m 2017-12-11T12:00:54.985+0000 I NETWORK  [conn22] end connection 172.17.0.7:57792 (0 connections now open)
+[33mdirectory_server    |[0m 172.17.0.1 - - [11/Dec/2017:12:00:54 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
+[33mdirectory_server    |[0m 2017-12-11T12:00:54997148587000+0000  Recieved heartbeat from fileserver at port 8002
+[33mdirectory_server    |[0m 2017-12-11T12:00:54997986552000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1          |[0m 2017-12-11T12:00:55.000+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:57798 #23 (1 connection now open)
+[36mdatabase_1          |[0m 2017-12-11T12:00:55.002+0000 I NETWORK  [conn23] end connection 172.17.0.7:57798 (0 connections now open)
+[33mdirectory_server    |[0m 2017-12-11T12:00:55081782362000+0000  Recieved heartbeat from fileserver at port 8001
+[33mdirectory_server    |[0m 2017-12-11T12:00:55082370980000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1          |[0m 2017-12-11T12:00:55.083+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:57804 #24 (1 connection now open)
+[36mdatabase_1          |[0m 2017-12-11T12:00:55.084+0000 I NETWORK  [conn24] end connection 172.17.0.7:57804 (0 connections now open)
+[33mdirectory_server    |[0m 172.17.0.1 - - [11/Dec/2017:12:00:54 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
+[33mdirectory_server    |[0m 172.17.0.1 - - [11/Dec/2017:12:00:54 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
+[33mdirectory_server    |[0m 2017-12-11T12:01:15000498701000+0000  Recieved heartbeat from fileserver at port 8000
+[33mdirectory_server    |[0m 2017-12-11T12:01:15000905342000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1          |[0m 2017-12-11T12:01:15.001+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:57812 #25 (1 connection now open)
+[36mdatabase_1          |[0m 2017-12-11T12:01:15.002+0000 I NETWORK  [conn25] end connection 172.17.0.7:57812 (0 connections now open)
+[33mdirectory_server    |[0m 172.17.0.1 - - [11/Dec/2017:12:01:14 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
+[33mdirectory_server    |[0m 2017-12-11T12:01:15025241232000+0000  Recieved heartbeat from fileserver at port 8002
+[33mdirectory_server    |[0m 2017-12-11T12:01:15026038532000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1          |[0m 2017-12-11T12:01:15.027+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:57818 #26 (1 connection now open)
+[36mdatabase_1          |[0m 2017-12-11T12:01:15.029+0000 I NETWORK  [conn26] end connection 172.17.0.7:57818 (0 connections now open)
+[33mdirectory_server    |[0m 2017-12-11T12:01:15105212054000+0000  Recieved heartbeat from fileserver at port 8001
+[33mdirectory_server    |[0m 2017-12-11T12:01:15106131940000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1          |[0m 2017-12-11T12:01:15.108+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:57824 #27 (1 connection now open)
+[36mdatabase_1          |[0m 2017-12-11T12:01:15.110+0000 I NETWORK  [conn27] end connection 172.17.0.7:57824 (0 connections now open)
+[33mdirectory_server    |[0m 172.17.0.1 - - [11/Dec/2017:12:01:14 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
+[33mdirectory_server    |[0m 172.17.0.1 - - [11/Dec/2017:12:01:14 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
+[33mdirectory_server    |[0m 2017-12-11T12:01:35022785927000+0000  Recieved heartbeat from fileserver at port 8000
+[33mdirectory_server    |[0m 2017-12-11T12:01:35023715748000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1          |[0m 2017-12-11T12:01:35.025+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:57830 #28 (1 connection now open)
+[36mdatabase_1          |[0m 2017-12-11T12:01:35.026+0000 I NETWORK  [conn28] end connection 172.17.0.7:57830 (0 connections now open)
+[33mdirectory_server    |[0m 172.17.0.1 - - [11/Dec/2017:12:01:35 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
+[33mdirectory_server    |[0m 2017-12-11T12:01:35051746685000+0000  Recieved heartbeat from fileserver at port 8002
+[33mdirectory_server    |[0m 2017-12-11T12:01:35052906547000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1          |[0m 2017-12-11T12:01:35.055+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:57836 #29 (1 connection now open)
+[36mdatabase_1          |[0m 2017-12-11T12:01:35.057+0000 I NETWORK  [conn29] end connection 172.17.0.7:57836 (0 connections now open)
+[33mdirectory_server    |[0m 2017-12-11T12:01:35124849505000+0000  Recieved heartbeat from fileserver at port 8001
+[33mdirectory_server    |[0m 2017-12-11T12:01:35125783440000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1          |[0m 2017-12-11T12:01:35.127+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:57842 #30 (1 connection now open)
+[36mdatabase_1          |[0m 2017-12-11T12:01:35.129+0000 I NETWORK  [conn30] end connection 172.17.0.7:57842 (0 connections now open)
+[33mdirectory_server    |[0m 172.17.0.1 - - [11/Dec/2017:12:01:35 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
+[33mdirectory_server    |[0m 172.17.0.1 - - [11/Dec/2017:12:01:35 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
+[33mdirectory_server    |[0m 2017-12-11T12:01:55036628282000+0000  Recieved heartbeat from fileserver at port 8000
+[33mdirectory_server    |[0m 2017-12-11T12:01:55037156067000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1          |[0m 2017-12-11T12:01:55.038+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:57850 #31 (1 connection now open)
+[36mdatabase_1          |[0m 2017-12-11T12:01:55.038+0000 I NETWORK  [conn31] end connection 172.17.0.7:57850 (0 connections now open)
+[33mdirectory_server    |[0m 172.17.0.1 - - [11/Dec/2017:12:01:55 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
+[33mdirectory_server    |[0m 2017-12-11T12:01:55079289942000+0000  Recieved heartbeat from fileserver at port 8002
+[33mdirectory_server    |[0m 2017-12-11T12:01:55080151843000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1          |[0m 2017-12-11T12:01:55.081+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:57856 #32 (1 connection now open)
+[36mdatabase_1          |[0m 2017-12-11T12:01:55.083+0000 I NETWORK  [conn32] end connection 172.17.0.7:57856 (0 connections now open)
+[33mdirectory_server    |[0m 2017-12-11T12:01:55148791651000+0000  Recieved heartbeat from fileserver at port 8001
+[33mdirectory_server    |[0m 2017-12-11T12:01:55149759575000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1          |[0m 2017-12-11T12:01:55.152+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:57862 #33 (1 connection now open)
+[36mdatabase_1          |[0m 2017-12-11T12:01:55.153+0000 I NETWORK  [conn33] end connection 172.17.0.7:57862 (0 connections now open)
+[33mdirectory_server    |[0m 172.17.0.1 - - [11/Dec/2017:12:01:55 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
+[33mdirectory_server    |[0m 172.17.0.1 - - [11/Dec/2017:12:01:55 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
+[33mdirectory_server    |[0m 2017-12-11T12:02:15061632796000+0000  Recieved heartbeat from fileserver at port 8000
+[33mdirectory_server    |[0m 2017-12-11T12:02:15062738335000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1          |[0m 2017-12-11T12:02:15.064+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:57900 #34 (1 connection now open)
+[36mdatabase_1          |[0m 2017-12-11T12:02:15.066+0000 I NETWORK  [conn34] end connection 172.17.0.7:57900 (0 connections now open)
+[33mdirectory_server    |[0m 172.17.0.1 - - [11/Dec/2017:12:02:15 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
+[33mdirectory_server    |[0m 2017-12-11T12:02:15105501936000+0000  Recieved heartbeat from fileserver at port 8002
+[33mdirectory_server    |[0m 2017-12-11T12:02:15106251594000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1          |[0m 2017-12-11T12:02:15.108+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:57906 #35 (1 connection now open)
+[36mdatabase_1          |[0m 2017-12-11T12:02:15.110+0000 I NETWORK  [conn35] end connection 172.17.0.7:57906 (0 connections now open)
+[33mdirectory_server    |[0m 2017-12-11T12:02:15176972048000+0000  Recieved heartbeat from fileserver at port 8001
+[33mdirectory_server    |[0m 2017-12-11T12:02:15177741827000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1          |[0m 2017-12-11T12:02:15.179+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:57912 #36 (1 connection now open)
+[36mdatabase_1          |[0m 2017-12-11T12:02:15.180+0000 I NETWORK  [conn36] end connection 172.17.0.7:57912 (0 connections now open)
+[33mdirectory_server    |[0m 172.17.0.1 - - [11/Dec/2017:12:02:15 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
+[33mdirectory_server    |[0m 172.17.0.1 - - [11/Dec/2017:12:02:15 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
+[33mdirectory_server    |[0m 2017-12-11T12:02:35091732700000+0000  Recieved heartbeat from fileserver at port 8000
+[33mdirectory_server    |[0m 2017-12-11T12:02:35092572426000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1          |[0m 2017-12-11T12:02:35.094+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:57938 #37 (1 connection now open)
+[36mdatabase_1          |[0m 2017-12-11T12:02:35.095+0000 I NETWORK  [conn37] end connection 172.17.0.7:57938 (0 connections now open)
+[33mdirectory_server    |[0m 172.17.0.1 - - [11/Dec/2017:12:02:35 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
+[33mdirectory_server    |[0m 2017-12-11T12:02:35126433836000+0000  Recieved heartbeat from fileserver at port 8002
+[33mdirectory_server    |[0m 2017-12-11T12:02:35127296479000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1          |[0m 2017-12-11T12:02:35.128+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:57944 #38 (1 connection now open)
+[36mdatabase_1          |[0m 2017-12-11T12:02:35.130+0000 I NETWORK  [conn38] end connection 172.17.0.7:57944 (0 connections now open)
+[33mdirectory_server    |[0m 2017-12-11T12:02:35200059983000+0000  Recieved heartbeat from fileserver at port 8001
+[33mdirectory_server    |[0m 2017-12-11T12:02:35200924582000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1          |[0m 2017-12-11T12:02:35.203+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:57950 #39 (1 connection now open)
+[36mdatabase_1          |[0m 2017-12-11T12:02:35.204+0000 I NETWORK  [conn39] end connection 172.17.0.7:57950 (0 connections now open)
+[33mdirectory_server    |[0m 172.17.0.1 - - [11/Dec/2017:12:02:35 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
+[33mdirectory_server    |[0m 172.17.0.1 - - [11/Dec/2017:12:02:35 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
+[33mdirectory_server    |[0m 2017-12-11T12:02:55115133032000+0000  Recieved heartbeat from fileserver at port 8000
+[33mdirectory_server    |[0m 2017-12-11T12:02:55115953886000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1          |[0m 2017-12-11T12:02:55.117+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:57982 #40 (1 connection now open)
+[36mdatabase_1          |[0m 2017-12-11T12:02:55.119+0000 I NETWORK  [conn40] end connection 172.17.0.7:57982 (0 connections now open)
+[33mdirectory_server    |[0m 172.17.0.1 - - [11/Dec/2017:12:02:55 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
+[33mdirectory_server    |[0m 2017-12-11T12:02:55153276204000+0000  Recieved heartbeat from fileserver at port 8002
+[33mdirectory_server    |[0m 2017-12-11T12:02:55154172280000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1          |[0m 2017-12-11T12:02:55.157+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:57988 #41 (1 connection now open)
+[36mdatabase_1          |[0m 2017-12-11T12:02:55.159+0000 I NETWORK  [conn41] end connection 172.17.0.7:57988 (0 connections now open)
+[33mdirectory_server    |[0m 2017-12-11T12:02:55225529706000+0000  Recieved heartbeat from fileserver at port 8001
+[33mdirectory_server    |[0m 2017-12-11T12:02:55226803038000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1          |[0m 2017-12-11T12:02:55.228+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:57994 #42 (1 connection now open)
+[36mdatabase_1          |[0m 2017-12-11T12:02:55.230+0000 I NETWORK  [conn42] end connection 172.17.0.7:57994 (0 connections now open)
+[33mdirectory_server    |[0m 172.17.0.1 - - [11/Dec/2017:12:02:55 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
+[33mdirectory_server    |[0m 172.17.0.1 - - [11/Dec/2017:12:02:55 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
+[33mdirectory_server    |[0m 2017-12-11T12:03:15142011732000+0000  Recieved heartbeat from fileserver at port 8000
+[33mdirectory_server    |[0m 2017-12-11T12:03:15143130877000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1          |[0m 2017-12-11T12:03:15.144+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:58000 #43 (1 connection now open)
+[36mdatabase_1          |[0m 2017-12-11T12:03:15.146+0000 I NETWORK  [conn43] end connection 172.17.0.7:58000 (0 connections now open)
+[33mdirectory_server    |[0m 172.17.0.1 - - [11/Dec/2017:12:03:15 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
+[33mdirectory_server    |[0m 2017-12-11T12:03:15182073178000+0000  Recieved heartbeat from fileserver at port 8002
+[33mdirectory_server    |[0m 2017-12-11T12:03:15183360926000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1          |[0m 2017-12-11T12:03:15.185+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:58006 #44 (1 connection now open)
+[36mdatabase_1          |[0m 2017-12-11T12:03:15.187+0000 I NETWORK  [conn44] end connection 172.17.0.7:58006 (0 connections now open)
+[33mdirectory_server    |[0m 2017-12-11T12:03:15249768028000+0000  Recieved heartbeat from fileserver at port 8001
+[33mdirectory_server    |[0m 2017-12-11T12:03:15250634887000+0000 Environment variable: MONGODB_DATABASE is not set. Defaulting to "USEHASKELLDB"
+[36mdatabase_1          |[0m 2017-12-11T12:03:15.253+0000 I NETWORK  [initandlisten] connection accepted from 172.17.0.7:58012 #45 (1 connection now open)
+[36mdatabase_1          |[0m 2017-12-11T12:03:15.254+0000 I NETWORK  [conn45] end connection 172.17.0.7:58012 (0 connections now open)
+[33mdirectory_server    |[0m 172.17.0.1 - - [11/Dec/2017:12:03:15 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""
+[33mdirectory_server    |[0m 172.17.0.1 - - [11/Dec/2017:12:03:15 +0000] "POST /heartbeat HTTP/1.1" 200 - "" ""

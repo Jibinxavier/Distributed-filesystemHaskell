@@ -28,8 +28,7 @@ client1:
     -  "8400:8400"
   links:
     - client_database1
-  stdin_open: true
-  tty: true
+ 
   container_name: client
    
 

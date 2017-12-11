@@ -342,7 +342,7 @@ restfullCallMsg1WithEnc restCall str1 usern ip port= do
     (Just (ticket,seshkey) ) -> do 
       let msg =encryptMesg1 str1  seshkey ticket
       restfullCall  (restCall $ msg) ip port seshkey
-    (Nothing) -> putStrLn $ "\n" ++ redCode ++"restfullCallMsg1WithEnc call failed" ++ resetCode
+    (Nothing) -> putStrLn $ "\n" ++ redCode ++ "Expired token . Sigin in again.  " ++ resetCode
 
 mydoCalMsg3WithEnc restCall str1 str2 usern port decryptFunc= do
   authInfo <- getAuthClientInfo usern
@@ -357,7 +357,7 @@ mydoCalMsg3WithEnc restCall str1 str2 usern port decryptFunc= do
         Right (resp) ->  return $ Just $ map (decryptFunc seshkey)  resp
     (Nothing) -> do 
       
-      putStrLn $ "\n" ++ redCode ++"mydoCalMsg3WithEnc call failed  " ++ resetCode
+      putStrLn $ "\n" ++ redCode ++ "Expired token . Sigin in again.  " ++ resetCode
       return Nothing
 
 
@@ -374,7 +374,7 @@ mydoCalMsg4WithEnc restCall str1 str2  str3 usern port decryptFunc= do
           return Nothing
         Right (a) ->  return $ Just  $ map (decryptFunc seshkey) a 
     (Nothing) -> do 
-      putStrLn $ "Expired token . Sigin in again.  "
+      putStrLn $ "\n" ++ redCode ++ "Expired token . Sigin in again.  " ++ resetCode
       return Nothing
 mydoCalMsg1WithEnc restCall   usern port= do
   authInfo <- getAuthClientInfo usern

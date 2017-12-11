@@ -4,8 +4,8 @@ Current configuration has two clients. The start.sh accepts parameter that will 
 ``` bash
 ./start.sh # start all the services with 1 primary fileserver and 2 secondary
 cd client
-docker-compose run client1 # start client 1
-docker-compose run client2 # start client 2
+docker-compose run --service-ports client1 # start client 1
+docker-compose run --service-ports client2 # start client 2
 ```
 
 ##### Client Service

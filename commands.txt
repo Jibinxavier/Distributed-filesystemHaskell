@@ -1,25 +1,25 @@
 # For testing the system
 ######################################
 # login + write
-signup hello world
-login hello world
+signup tim timspassword
+login tim timspassword
 # reading non existent file
-readfile f_1/testfile hello
+readfile f_1/testfile tim
 # wrrting to a file ile
-write f_1/testfile hello hi
+write f_1/testfile tim some contents
 
-lockfile f_1/testfile hello
-unlockfile f_1/testfile hello
+lockfile f_1/testfile tim
+unlockfile f_1/testfile tim
  
 # writing to a file using transaction
-startTrans hello
-writeT f_1/testfile hello this is some content
-commit hello 
+startTrans tim
+writeT f_1/testfile tim hi
+commit tim 
 
 # writing to file and abort the transaction
-startTrans hello
+startTrans tim
 writeT f_1/testfile 
-abort hello 
+abort tim 
 
 
  
