@@ -1,10 +1,10 @@
-# Distributed-filesystem
+# Distributed-filesystem CS7NS1
 This system is constructed using REST services, written in Haskell using the Servant library.
 
 ## Usage
-Current configuration has two clients. The start.sh accepts parameter that will determine number fileserver.
+Current configuration has two clients. The start.sh accepts parameter that will determine number of fileservers.
 ``` bash
-./start.sh # start all the services with 1 primary fileserver and 2 secondary
+./start.sh # start all the services with 1 primary  and 2 secondary fileservers
 cd client
 docker-compose run --service-ports client1 # start client 1
 docker-compose run --service-ports client2 # start client 2
@@ -69,6 +69,7 @@ There are many possible point of failures, example being where the servers not r
 `login user userspassword` Returns a token used for communicating with other services
 
 `readfile f_1/testfile user`  Displays file contents. Requires: "remote dir/fname (filepath)" "username" 
+
 `write f_1/testfile user hello` Writes to a file. Requires:"remote dir/fname (filepath)" "username" "content to add"
 
 `startTrans user` Starts transaction. Requires:  "username"
